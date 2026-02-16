@@ -37,7 +37,7 @@ permalink: /cv/
 </div>
 
 ### <mark>Summary</mark>
-Highly motivated **Bioengineering** graduate student with a strong background in **computational biology**, **data analysis**, and **interdisciplinary research**. Proficient in applying and developing bioinformatics and statistical pipelines for complex biological datasets, including **high-throughput sequencing** and **physiological data**. Experienced in utilizing **Python**, **R**, **cloud computing platforms**, and **high-performance computing environments**. Proven ability to contribute to **research publications**, **develop analytical tools**, and **collaborate effectively** within scientific teams. Eager to leverage expertise in **bioengineering**, **data science**, and **research methodologies** to drive innovation.
+Bioengineering graduate and aspiring **Bioinformatics AI Engineer** focused on building practical machine-learning systems for biological data. Experienced in **single-cell transcriptomics**, **high-throughput sequencing analysis**, and **interactive analytical tooling** using **Python**, **R**, and **cloud platforms**. Strong background in turning scientific questions into reproducible computational workflows, with growing emphasis on evaluation, deployment, and applied AI methods for translational biology.
 
 ### <mark>Education</mark>
 **University of Illinois at Urbana-Champaign**
@@ -81,10 +81,10 @@ Thom Lab, Wheaton College \
 * Developed a comprehensive seven-part video series to document analytical methods and workflows, ensuring reproducibility and facilitating training for future lab members. 
 
 ### <mark>Technical Skills</mark>
-* **Programming Languages:** R, Python, Shell Scripting, SQL 
-* **Bioinformatics & Data Analysis:** High-Throughput Sequencing Data Analysis, scRNAseq, Physiological Data Collection & Analysis, Statistical Modeling, Algorithm Development, Data Transformation & Engineering, Data Visualization, Metadata Capture, Version Control, Machine Learning, Deep Learning
-* **Computing Environment:** UNIX/Linux, Mac, Windows, High-Performance Computing (HPC) systems, 10x Genomics platform, Google Cloud platform (GCP) 
-* **Bioinformatics Tools & Workflows:** Seurat, Cellrank, 10x Genomics Pipeline, Open-Source Bioinformatics Tools, Pandas, NumPy, SciPy, PyTorch
+* **AI/ML & Data Science:** Machine Learning, Deep Learning, Statistical Modeling, Algorithm Development, Data Engineering, Data Visualization, Model Evaluation
+* **Programming Languages:** Python, R, Shell Scripting, SQL
+* **Bioinformatics Tools & Workflows:** Seurat, Cellrank, 10x Genomics Pipeline, High-Throughput Sequencing Analysis, scRNAseq, Pandas, NumPy, SciPy, PyTorch
+* **Computing Environment:** UNIX/Linux, Mac, Windows, High-Performance Computing (HPC), Google Cloud Platform (GCP)
 * **Laboratory Skills:** Biological Sample Processing, PCR, Flow Cytometry 
 * **Software:** MS Office Suite, Google Suite, VS Code, R Studio
 
