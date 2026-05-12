@@ -1,39 +1,45 @@
 @charset "utf-8";
 
-// Define defaults for each variable.
-@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap');
+// Phalaena Automata brand variables surfaced as Sass defaults so the
+// minima partials inherit the right values without further changes.
 
-$base-font-family: "Karma", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$pa-onyx:         #130F11;
+$pa-coffee-bean:  #1D171A;
+$pa-shadow-grey:  #392D34;
+$pa-mauve-shadow: #5B4752;
+$pa-dusty-mauve:  #967386;
+$pa-lilac-ash:    #C2ADB8;
+$pa-pale-slate:   #D7C9D0;
+$pa-alabaster:    #EAE1E5;
+$pa-snow:         #F0E9EC;
+
+$base-font-family: "Plein", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !default;
+$display-font-family: "Sentient", Georgia, "Times New Roman", serif !default;
+$mono-font-family: "Fragment Mono", "JetBrains Mono", "SF Mono", ui-monospace, monospace !default;
+
 $base-font-size:   16px !default;
-$base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
-$base-line-height: 1.5 !default;
+$base-font-weight: 500 !default;
+$small-font-size:  14px !default;
+$base-line-height: 1.6 !default;
 
-$spacing-unit:     30px !default;
+$spacing-unit:     24px !default;
 
-$text-color:       #ffffff !default;
-$background-color: #000000 !default;
-$brand-color:      #ab99ff !default;
+$text-color:       $pa-onyx !default;
+$background-color: $pa-snow !default;
+$brand-color:      $pa-dusty-mauve !default;
+$brand-color-dark: $pa-mauve-shadow !default;
 
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color:       $pa-shadow-grey !default;
+$grey-color-light: $pa-lilac-ash !default;
+$grey-color-dark:  $pa-mauve-shadow !default;
 
 $table-text-align: left !default;
 
-// Width of the content area
-$content-width:    800px !default;
+$content-width:    900px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-palm:          640px !default;
+$on-laptop:        960px !default;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -44,7 +50,6 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-// Import partials.
 @import
   "minima/base",
   "minima/layout",

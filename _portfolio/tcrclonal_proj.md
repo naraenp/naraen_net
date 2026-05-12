@@ -10,6 +10,6 @@ src="/assets/pdf/TCR_analysis.html"
 width="100%"
 height="900px"
 frameborder="0"
-style="border: 2px solid #3b82f6; border-radius: 8px;"
+style="border: 1px solid var(--pa-card-border); border-radius: 0;"
 title="Jupyter Notebook Embedded Report"
 ></iframe>

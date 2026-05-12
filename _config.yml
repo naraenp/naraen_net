@@ -18,10 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Naraen's Website
-email: naraen.p@gmail.com
+title: naraen.net
+author:
+  name: Naraen Palanikumar
+# Email not exposed on site; contact form uses Formspree (set formspree_form_id below).
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal resume and blog website for Naraen Palanikumar.
+  Naraen Palanikumar — bioinformatics AI engineer and cloud architect; founding engineer at Phalaena Automata.
+image: /assets/images/og-image.png
+formspree_form_id: "xdawzyez" # e.g. "xyzabcde" — create a form at formspree.io and paste the form ID here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://naraen.net" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  naraenp
@@ -29,7 +33,8 @@ github_username:  naraenp
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   portfolio:
@@ -38,17 +43,13 @@ collections:
 google_analytics: G-C0F7DZGTG0
 
 header_pages:
-  - portfolio.markdown
-  - blog.markdown
+  - index.markdown  # Main landing page (About, Projects, Experience)
   - cv.markdown
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
+# Exclude from processing (blog disabled for now).
+exclude:
+  - _posts
+  - README.md
 #
 # exclude:
 #   - .sass-cache/

@@ -2,12 +2,9 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
-  {% include google-analytics-ga4.html %}
 
-  <body>
-    <video autoplay loop muted playsinline id="background-video">
-      <source src="{{ '/assets/videos/background.mp4' | relative_url }}" type="video/mp4">
-    </video>
+  <body class="site-body">
+    <div class="atgc-backdrop" id="atgc-backdrop" aria-hidden="true"></div>
 
     {%- include header.html -%}
 
@@ -17,6 +14,44 @@
       </div>
     </main>
 
+    {%- include footer.html -%}
+    {%- include theme_toggle.html -%}
+
+    <script>
+    (function() {
+      var host = document.getElementById('atgc-backdrop');
+      if (!host) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var letters = ['A', 'T', 'G', 'C'];
+      var count = window.innerWidth < 640 ? 90 : 220;
+      var frag = document.createDocumentFragment();
+      for (var i = 0; i < count; i++) {
+        var span = document.createElement('span');
+        span.className = 'atgc-glyph';
+        span.textContent = letters[(Math.random() * 4) | 0];
+        var size = 12 + Math.random() * 10;
+        var rot = (Math.random() * 16 - 8).toFixed(1);
+        var opacity = (0.18 + Math.random() * 0.27).toFixed(2);
+        var top = Math.random() * 100;
+        var left = Math.random() * 100;
+        var distance = 35 + Math.random() * 15;
+        var duration = reduce ? 0 : (distance / (4 + Math.random() * 6));
+        var delay = -Math.random() * (duration || 1);
+        span.style.fontSize = size.toFixed(1) + 'px';
+        span.style.top = top.toFixed(2) + '%';
+        span.style.left = left.toFixed(2) + '%';
+        span.style.opacity = opacity;
+        span.style.setProperty('--atgc-rot', rot + 'deg');
+        span.style.setProperty('--atgc-distance', distance.toFixed(1) + 'px');
+        if (!reduce) {
+          span.style.animationDuration = duration.toFixed(1) + 's';
+          span.style.animationDelay = delay.toFixed(2) + 's';
+        }
+        frag.appendChild(span);
+      }
+      host.appendChild(frag);
+    })();
+    </script>
   </body>
 
 </html>

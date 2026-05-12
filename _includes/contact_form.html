@@ -1,0 +1,31 @@
+<div class="contact-form-wrap">
+  {% if site.formspree_form_id and site.formspree_form_id != "" %}
+  <p class="form-status form-status--success" id="form-success" style="display: none;">Thank you — your message has been sent.</p>
+  <form action="https://formspree.io/f/{{ site.formspree_form_id }}" method="POST" id="contact-form">
+    <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/#contact-sent">
+    <label for="contact-name">Name</label>
+    <input type="text" id="contact-name" name="name" required placeholder="Your name">
+    <label for="contact-email">Your email</label>
+    <input type="email" id="contact-email" name="email" required placeholder="you@example.com">
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" required placeholder="Your message"></textarea>
+    <button type="submit" class="btn-submit">Send message</button>
+    <p class="form-status" id="form-status" aria-live="polite"></p>
+  </form>
+  <script>
+    (function() {
+      if (window.location.hash === '#contact-sent') {
+        var el = document.getElementById('form-success');
+        if (el) el.style.display = 'block';
+      }
+      var form = document.getElementById('contact-form');
+      if (form) form.addEventListener('submit', function() {
+        var status = document.getElementById('form-status');
+        if (status) status.textContent = 'Sending…';
+      });
+    })();
+  </script>
+  {% else %}
+  <p style="color: var(--pa-fg-muted); margin: 0;">Contact form is not configured. Add a <code>formspree_form_id</code> in <code>_config.yml</code> (create a form at <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> and paste the form ID). Messages route to your email without exposing it on the site.</p>
+  {% endif %}
+</div>
