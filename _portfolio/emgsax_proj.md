@@ -7,6 +7,8 @@ thumbnail: "/assets/images/portfolio/emg_saxo.png"
 
 #### Group Members: Amaan Mirza, Lianna Mateski, Wyatt Wethington, Zyra Sheikh, and Myself
 
-This project involved creating a functional prosthetic right hand which would theoretically enable those who have lost limb function to continue to play their favorite instruments in some capacity. The project involved creating an breadboard EMG system linked to an Arduino Uno for signal interpretation and finally to servo motors to control 3 saxophone keys. My role in this project was largely centered around the creation of the breadboard EMG circuit, which you can see on the right side of the table in this image of our exhibit booth at the fair.
+Designed and exhibited a prosthetic concept for the 2023 Engineering Open House that translates forearm muscle activation into saxophone keypresses — exploring how EMG-driven assistive devices could let musicians with limb-function loss continue playing. The system pairs a breadboarded surface-EMG front end (instrumentation amplifier, bandpass filtering, rectification) with an Arduino Uno that thresholds the signal and actuates servo motors over three saxophone keys. My contribution centered on designing and building the analog EMG acquisition circuit, visible on the right side of our exhibit booth below.
+
+**Platforms & Tools:** Arduino, C/C++, surface EMG circuitry, servo actuation
 
 ![picture showing me an emg saxophone](/assets/images/portfolio/emg_saxo.png)

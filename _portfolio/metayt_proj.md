@@ -5,6 +5,8 @@ description: "A video playlist walking through the steps needed to complete a me
 thumbnail: "/assets/images/portfolio/R_logo.png"
 ---
 
-https://www.youtube.com/watch?v=ezhNtgDFOxo&list=PLmFHtQ8-eUICUvMYYj6CHVqWOrQWxvhVH
+An end-to-end video walkthrough of conducting a meta-analysis in R, covering effect size calculation, fixed- and random-effects modeling, forest and funnel plots, and heterogeneity assessment. Produced during my summer 2020 work in the Thom Lab at Wheaton College as an onboarding resource for other students.
 
-This is a video playlist I compiled as part of my brief time in the Thom Lab at Wheaton College. It details the steps taken to conduct a basic meta-analysis in R from beginning to end. This was completed in the summer of 2020.
+**Platforms & Tools:** R, RStudio, metafor
+
+[Watch the playlist on YouTube →](https://www.youtube.com/watch?v=ezhNtgDFOxo&list=PLmFHtQ8-eUICUvMYYj6CHVqWOrQWxvhVH)
