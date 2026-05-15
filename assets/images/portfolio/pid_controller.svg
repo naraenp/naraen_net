@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="PID controller step response thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .axis { stroke: #5B4752; stroke-width: 1; }
+      .setpoint { stroke: #5B4752; stroke-width: 1; stroke-dasharray: 4 4; }
+      .response { stroke: #C2ADB8; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .setpoint-glow { stroke: #967386; stroke-width: 1; }
+      .marker { fill: #967386; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+      .annot { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #967386; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <g class="grid-line">
+    <line x1="0" y1="90"  x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+    <line x1="160" y1="0" x2="160" y2="360"/>
+    <line x1="320" y1="0" x2="320" y2="360"/>
+    <line x1="480" y1="0" x2="480" y2="360"/>
+  </g>
+
+  <g class="axis">
+    <line x1="56" y1="320" x2="600" y2="320"/>
+    <line x1="56" y1="50"  x2="56"  y2="320"/>
+  </g>
+
+  <!-- setpoint -->
+  <line class="setpoint" x1="56" y1="100" x2="600" y2="100"/>
+
+  <!-- step response with overshoot then settle -->
+  <path class="response" d="
+    M 56 280
+    L 80 280
+    C 110 280, 140 110, 200 88
+    C 230 78, 250 110, 270 108
+    C 290 106, 310 96, 340 100
+    C 380 102, 420 100, 460 100
+    L 600 100
+  "/>
+
+  <!-- markers for steady-state and settling -->
+  <g class="marker">
+    <circle cx="200" cy="88" r="3"/>
+    <circle cx="340" cy="100" r="3"/>
+  </g>
+
+  <text class="annot" x="208" y="78">peak</text>
+  <text class="annot" x="346" y="92">settled</text>
+
+  <text class="label" x="56" y="32">PID · step response</text>
+  <text class="label-dim" x="56" y="345">MATLAB · Simulink · anaesthetic dosing</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Fiber photometry signal trace thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .axis { stroke: #5B4752; stroke-width: 1; }
+      .trace { stroke: #C2ADB8; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .baseline { stroke: #5B4752; stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
+      .event { fill: #967386; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <g class="grid-line">
+    <line x1="0" y1="90"  x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <g class="axis">
+    <line x1="56" y1="320" x2="600" y2="320"/>
+    <line x1="56" y1="50"  x2="56"  y2="320"/>
+  </g>
+
+  <!-- baseline 0% -->
+  <line class="baseline" x1="56" y1="220" x2="600" y2="220"/>
+
+  <!-- Ca2+ transient-like trace with sharp rises + slow decays -->
+  <path class="trace" d="
+    M 56 222
+    L 96 220 L 110 218 L 130 220
+    L 150 124 L 162 150 L 176 188 L 196 208 L 220 218 L 240 220
+    L 260 220 L 280 218 L 300 222
+    L 320 96  L 332 122 L 346 162 L 366 196 L 388 214 L 410 220 L 430 222
+    L 450 220 L 470 218
+    L 488 168 L 500 188 L 514 206 L 530 216 L 548 220 L 570 222 L 600 222
+  "/>
+
+  <!-- event markers (ticks) -->
+  <g class="event">
+    <rect x="150" y="40" width="1" height="6"/>
+    <rect x="320" y="40" width="1" height="6"/>
+    <rect x="488" y="40" width="1" height="6"/>
+    <circle cx="150" cy="124" r="3"/>
+    <circle cx="320" cy="96"  r="3"/>
+    <circle cx="488" cy="168" r="3"/>
+  </g>
+
+  <text class="label" x="56" y="32">ΔF/F · photometry</text>
+  <text class="label-dim" x="56" y="345">R Shiny app · ggplot2 · sweeney lab</text>
+</svg>

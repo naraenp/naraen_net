@@ -74,7 +74,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
     <span class="cv-entry__loc">Remote</span>
   </div>
   <ul>
-    <li>Consulted on <strong>single-cell sequencing pipelines</strong>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams.</li>
+    <li>Consulted on <a href="{{ '/portfolio/preleuk_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams.</li>
     <li>Applied cloud-native bioinformatics pipelines built for high-throughput omics research, leveraging a <strong>professional data engineer certification</strong> from Google Cloud.</li>
   </ul>
 </div>
@@ -90,7 +90,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
   </div>
   <ul>
     <li>Processed study participant biosamples and metadata for downstream high-throughput processing using <strong>flow cytometry</strong> and scRNA-seq.</li>
-    <li>Led bioinformatics analysis to extract and analyze CD4 T-cell repertoires from scTCR-seq data, contributing to <strong>published research</strong> in the journal <em>Frontiers in Immunology</em>.</li>
+    <li>Led <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">bioinformatics analysis</a> to extract and analyze CD4 T-cell repertoires from scTCR-seq data, contributing to <strong>published research</strong> in <a href="https://doi.org/10.3389/fimmu.2025.1576903"><em>Frontiers in Immunology</em></a>.</li>
   </ul>
 </div>
 
@@ -120,7 +120,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
   </div>
   <ul>
     <li>Analyzed complex scRNAseq datasets using <strong>Cell Ranger</strong> and <strong>Seurat</strong> to uncover metabolism-associated neural circuits and <strong>rare cell populations</strong>.</li>
-    <li>Built and launched an interactive web application using <strong>R Shiny</strong> to streamline fiber photometry data processing and interpretation, contributing to <strong>published research</strong> in <em>The Journal of Neuroscience</em>.</li>
+    <li>Built and launched an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive web application</a> using <strong>R Shiny</strong> to streamline fiber photometry data processing and interpretation, contributing to <strong>published research</strong> in <a href="https://www.jneurosci.org/content/43/36/6280"><em>The Journal of Neuroscience</em></a>.</li>
   </ul>
 </div>
 
@@ -164,7 +164,21 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
   </div>
   <ul>
     <li>Led a <strong>meta-analysis across 54 studies</strong>, designing R scripts for automated data extraction, transformation, and statistical validation.</li>
-    <li>Produced a seven-part training video series to onboard incoming lab members on <strong>software tools and analytical workflows</strong>.</li>
+    <li>Produced a <a href="{{ '/portfolio/metayt_proj/' | relative_url }}">seven-part training video series</a> to onboard incoming lab members on <strong>software tools and analytical workflows</strong>.</li>
+  </ul>
+</div>
+
+<div class="cv-entry">
+  <div class="cv-entry__head">
+    <span class="cv-entry__org">Portillo's</span>
+    <span class="cv-entry__date">Jun 2019 - Aug 2019</span>
+  </div>
+  <div class="cv-entry__sub">
+    <span class="cv-entry__role">Cashier</span>
+    <span class="cv-entry__loc">Bolingbrook, IL, USA</span>
+  </div>
+  <ul>
+    <li>Facilitated <strong>high-volume order processing</strong> and kitchen communication while developing strong customer service skills.</li>
   </ul>
 </div>
 
@@ -211,11 +225,8 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
     <span class="cv-entry__org">TCR Clonality Analysis <span class="cv-entry__stack">| Python, Jupyter, tcrdist3, pandas, SciPy</span></span>
     <span class="cv-entry__date">2022</span>
   </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Group project</span>
-  </div>
   <ul>
-    <li>End-to-end reproducible <strong>TCR-β repertoire workflow</strong> comparing TB progressors vs. controllers; standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires against curated <strong>IEDB and VDJdb</strong> reference sets to compute total and antigen-specific clonality metrics.</li>
+    <li>Built an end-to-end reproducible <strong>TCR-β repertoire workflow</strong> comparing TB progressors vs. controllers. Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires against curated <strong>IEDB and VDJdb</strong> reference sets to compute total and antigen-specific clonality metrics.</li>
     <li><a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">Link to project</a></li>
   </ul>
 </div>
@@ -229,7 +240,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
     <span class="cv-entry__role">Group project</span>
   </div>
   <ul>
-    <li>Designed and tuned a PID controller for patient-specific anaesthetic dosing under variable drug sensitivity, achieving <strong>top cohort performance</strong> in steady-state error and 10% settling time.</li>
+    <li>Helped design and tune a PID controller for patient-specific anaesthetic dosing under variable drug sensitivity, achieving <strong>top cohort performance</strong> in steady-state error and 10% settling time.</li>
     <li><a href="{{ '/portfolio/bioe420final_proj/' | relative_url }}">Link to project</a></li>
   </ul>
 </div>
@@ -243,7 +254,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
     <span class="cv-entry__role">Group project</span>
   </div>
   <ul>
-    <li>Built a <strong>surface-EMG analog front end</strong> (instrumentation amplifier, bandpass, rectification) paired with an Arduino that drives servo motors over saxophone keys. Exhibited at the 2023 Engineering Open House as an assistive prosthetic concept.</li>
+    <li>Helped build a <strong>surface-EMG analog front end</strong> (instrumentation amplifier, bandpass, rectification) paired with an Arduino that drives servo motors over saxophone keys. Exhibited at the 2023 Engineering Open House as an assistive prosthetic concept.</li>
     <li><a href="{{ '/portfolio/emgsax_proj/' | relative_url }}">Link to project</a></li>
   </ul>
 </div>
@@ -260,7 +271,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 
 <div class="cv-entry">
   <div class="cv-entry__head">
-    <span class="cv-entry__org">Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease</span>
+    <span class="cv-entry__org"><a href="https://doi.org/10.3389/fimmu.2025.1576903">Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease</a></span>
     <span class="cv-entry__date">Oct 2025</span>
   </div>
   <div class="cv-entry__sub">
@@ -273,14 +284,14 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 
 <div class="cv-entry">
   <div class="cv-entry__head">
-    <span class="cv-entry__org">Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior</span>
+    <span class="cv-entry__org"><a href="https://www.jneurosci.org/content/43/36/6280">Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior</a></span>
     <span class="cv-entry__date">Sep 2023</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">The Journal of Neuroscience</span>
   </div>
   <ul>
-    <li>Developed an interactive <strong>R Shiny application</strong> for fiber photometry data processing and visualization used in the publication.</li>
+    <li>Developed an interactive <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}"><strong>R Shiny application</strong></a> for fiber photometry data processing and visualization used in the publication.</li>
   </ul>
 </div>
 

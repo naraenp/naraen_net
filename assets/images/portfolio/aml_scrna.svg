@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AML scRNA-seq UMAP thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .axis { stroke: #5B4752; stroke-width: 1; }
+      .cluster-a { fill: #967386; }
+      .cluster-b { fill: #C2ADB8; }
+      .cluster-c { fill: #5B4752; }
+      .cluster-d { fill: #D7C9D0; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <!-- subtle grid -->
+  <g class="grid-line">
+    <line x1="0" y1="90"  x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+    <line x1="160" y1="0" x2="160" y2="360"/>
+    <line x1="320" y1="0" x2="320" y2="360"/>
+    <line x1="480" y1="0" x2="480" y2="360"/>
+  </g>
+
+  <!-- axes -->
+  <g class="axis">
+    <line x1="56" y1="320" x2="600" y2="320"/>
+    <line x1="56" y1="40"  x2="56"  y2="320"/>
+  </g>
+
+  <!-- cluster A: HSC-like, upper-left -->
+  <g class="cluster-a">
+    <circle cx="160" cy="110" r="4"/><circle cx="178" cy="98" r="4"/><circle cx="190" cy="120" r="4"/>
+    <circle cx="170" cy="130" r="4"/><circle cx="155" cy="140" r="4"/><circle cx="200" cy="105" r="4"/>
+    <circle cx="142" cy="118" r="3"/><circle cx="186" cy="142" r="3"/><circle cx="208" cy="130" r="3"/>
+    <circle cx="220" cy="118" r="3"/><circle cx="168" cy="158" r="3"/>
+  </g>
+
+  <!-- cluster B: progenitor, center -->
+  <g class="cluster-b">
+    <circle cx="300" cy="170" r="4"/><circle cx="318" cy="158" r="4"/><circle cx="330" cy="180" r="4"/>
+    <circle cx="310" cy="190" r="4"/><circle cx="295" cy="200" r="4"/><circle cx="340" cy="165" r="4"/>
+    <circle cx="282" cy="178" r="3"/><circle cx="326" cy="202" r="3"/><circle cx="348" cy="190" r="3"/>
+    <circle cx="360" cy="178" r="3"/><circle cx="308" cy="218" r="3"/><circle cx="292" cy="160" r="3"/>
+  </g>
+
+  <!-- cluster C: pre-leukemic, lower-right -->
+  <g class="cluster-c">
+    <circle cx="460" cy="230" r="4"/><circle cx="478" cy="218" r="4"/><circle cx="490" cy="240" r="4"/>
+    <circle cx="470" cy="250" r="4"/><circle cx="455" cy="260" r="4"/><circle cx="500" cy="225" r="4"/>
+    <circle cx="442" cy="238" r="3"/><circle cx="486" cy="262" r="3"/><circle cx="508" cy="250" r="3"/>
+    <circle cx="520" cy="238" r="3"/><circle cx="468" cy="278" r="3"/>
+  </g>
+
+  <!-- cluster D: differentiated, upper-right -->
+  <g class="cluster-d">
+    <circle cx="440" cy="110" r="3"/><circle cx="458" cy="98" r="3"/><circle cx="470" cy="120" r="3"/>
+    <circle cx="450" cy="130" r="3"/><circle cx="435" cy="140" r="3"/><circle cx="480" cy="105" r="3"/>
+    <circle cx="490" cy="125" r="3"/><circle cx="426" cy="118" r="2"/>
+  </g>
+
+  <!-- labels -->
+  <text class="label" x="56" y="32">AML scRNA-seq · UMAP</text>
+  <text class="label-dim" x="56" y="345">38 patient samples · seurat · scanpy</text>
+</svg>

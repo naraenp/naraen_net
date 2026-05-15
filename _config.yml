@@ -23,9 +23,9 @@ author:
   name: Naraen Palanikumar
 # Email not exposed on site; contact form uses Formspree (set formspree_form_id below).
 description: >- # this means to ignore newlines until "baseurl:"
-  Naraen Palanikumar — bioinformatics AI engineer and cloud architect; founding engineer at Phalaena Automata.
+  Naraen Palanikumar. Bioinformatics engineer and cloud architect; founding engineer at Phalaena Automata.
 image: /assets/images/og-image.png
-formspree_form_id: "xdawzyez" # e.g. "xyzabcde" — create a form at formspree.io and paste the form ID here.
+formspree_form_id: "xdawzyez" # e.g. "xyzabcde". Create a form at formspree.io and paste the form ID here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://naraen.net" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  naraenp

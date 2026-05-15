@@ -2,7 +2,7 @@
 layout: page
 title: "EMG-Controlled Saxophone"
 description: "Assistive prosthetic concept actuating saxophone keys via a surface-EMG analog front end and an Arduino servo system, exhibited at the 2023 Engineering Open House."
-thumbnail: "/assets/images/portfolio/emg_saxo.png"
+thumbnail: "/assets/images/portfolio/emg_saxophone.svg"
 ---
 
 #### Group Members: Amaan Mirza, Lianna Mateski, Wyatt Wethington, Zyra Sheikh, and Myself

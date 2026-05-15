@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="EMG saxophone signal thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .axis { stroke: #5B4752; stroke-width: 1; }
+      .raw { stroke: #5B4752; stroke-width: 1; fill: none; }
+      .envelope { stroke: #C2ADB8; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .threshold { stroke: #967386; stroke-width: 1; stroke-dasharray: 4 4; }
+      .trigger { fill: #967386; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+      .annot { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #967386; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <g class="grid-line">
+    <line x1="0" y1="90"  x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <g class="axis">
+    <line x1="56" y1="320" x2="600" y2="320"/>
+    <line x1="56" y1="50"  x2="56"  y2="320"/>
+  </g>
+
+  <!-- threshold -->
+  <line class="threshold" x1="56" y1="140" x2="600" y2="140"/>
+
+  <!-- raw EMG: dense zigzag -->
+  <path class="raw" d="
+    M 56 200 L 64 188 L 70 212 L 76 196 L 84 208 L 92 192 L 100 210 L 108 198 L 116 204
+    L 124 196 L 132 210 L 140 168 L 146 232 L 152 132 L 158 240 L 164 110 L 170 246 L 178 142 L 184 222 L 192 158 L 200 220 L 208 184 L 216 210
+    L 224 200 L 232 196 L 240 204 L 248 198 L 256 202 L 264 196 L 272 200 L 280 198 L 288 202
+    L 296 196 L 304 208 L 312 136 L 320 232 L 328 102 L 336 246 L 344 116 L 352 244 L 360 132 L 368 230 L 376 158 L 384 220 L 392 184 L 400 212
+    L 408 198 L 416 204 L 424 198 L 432 202 L 440 196 L 448 204 L 456 198 L 464 200
+    L 472 196 L 480 208 L 488 148 L 496 226 L 504 118 L 512 240 L 520 126 L 528 244 L 536 144 L 544 222 L 552 168 L 560 216 L 568 184 L 576 210
+    L 584 200 L 592 198 L 600 202
+  "/>
+
+  <!-- smoothed envelope above raw -->
+  <path class="envelope" d="
+    M 56 210
+    Q 90 210, 116 208
+    Q 140 200, 168 110
+    Q 196 196, 232 208
+    Q 270 210, 300 208
+    Q 320 200, 350 100
+    Q 380 200, 410 208
+    Q 442 210, 472 208
+    Q 500 196, 528 120
+    Q 558 208, 600 208
+  "/>
+
+  <!-- key press triggers -->
+  <g class="trigger">
+    <rect x="164" y="40" width="2" height="8"/>
+    <rect x="344" y="40" width="2" height="8"/>
+    <rect x="520" y="40" width="2" height="8"/>
+    <circle cx="165" cy="110" r="3"/>
+    <circle cx="345" cy="100" r="3"/>
+    <circle cx="521" cy="120" r="3"/>
+  </g>
+
+  <text class="annot" x="172" y="48">K1</text>
+  <text class="annot" x="352" y="48">K2</text>
+  <text class="annot" x="528" y="48">K3</text>
+
+  <text class="label" x="56" y="32">sEMG · keypress</text>
+  <text class="label-dim" x="56" y="345">arduino · servo actuation · EOH 2023</text>
+</svg>

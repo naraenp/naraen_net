@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Meta-analysis forest plot thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .null-line { stroke: #5B4752; stroke-width: 1; stroke-dasharray: 4 4; }
+      .ci { stroke: #C2ADB8; stroke-width: 1.5; }
+      .point { fill: #967386; }
+      .pooled { fill: #C2ADB8; stroke: #967386; stroke-width: 1; }
+      .study-label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <!-- horizontal study rows -->
+  <g class="grid-line">
+    <line x1="180" y1="70"  x2="600" y2="70"/>
+    <line x1="180" y1="110" x2="600" y2="110"/>
+    <line x1="180" y1="150" x2="600" y2="150"/>
+    <line x1="180" y1="190" x2="600" y2="190"/>
+    <line x1="180" y1="230" x2="600" y2="230"/>
+  </g>
+
+  <!-- null effect line (centered) -->
+  <line class="null-line" x1="390" y1="55" x2="390" y2="285"/>
+
+  <!-- Study 1: small positive -->
+  <line class="ci" x1="360" y1="70" x2="430" y2="70"/>
+  <rect class="point" x="392" y="65" width="10" height="10"/>
+  <text class="study-label" x="60" y="74">Carter 2014</text>
+
+  <!-- Study 2: moderate positive -->
+  <line class="ci" x1="350" y1="110" x2="470" y2="110"/>
+  <rect class="point" x="406" y="105" width="10" height="10"/>
+  <text class="study-label" x="60" y="114">Patel 2016</text>
+
+  <!-- Study 3: null -->
+  <line class="ci" x1="340" y1="150" x2="440" y2="150"/>
+  <rect class="point" x="386" y="145" width="10" height="10"/>
+  <text class="study-label" x="60" y="154">Reyes 2017</text>
+
+  <!-- Study 4: strong positive -->
+  <line class="ci" x1="380" y1="190" x2="510" y2="190"/>
+  <rect class="point" x="438" y="185" width="10" height="10"/>
+  <text class="study-label" x="60" y="194">Okafor 2019</text>
+
+  <!-- Study 5: small negative -->
+  <line class="ci" x1="320" y1="230" x2="400" y2="230"/>
+  <rect class="point" x="356" y="225" width="10" height="10"/>
+  <text class="study-label" x="60" y="234">Wang 2021</text>
+
+  <!-- Pooled diamond -->
+  <polygon class="pooled" points="370,275 410,265 450,275 410,285"/>
+  <text class="study-label" x="60" y="279">POOLED</text>
+
+  <text class="label" x="56" y="32">meta-analysis · forest</text>
+  <text class="label-dim" x="56" y="345">R · metafor · seven-part walkthrough</text>
+</svg>

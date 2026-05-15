@@ -157,6 +157,17 @@ a {
 a:visited { color: var(--pa-accent); }
 a:hover { color: var(--pa-accent-2); text-decoration: underline; }
 
+/* Inline emphasis nested inside a link should pick up the link color
+   rather than the default foreground used elsewhere. The a[href] tightening
+   raises specificity over class-scoped strong rules like
+   .post-content strong and .experience-item__desc strong. */
+a[href] strong,
+a[href] b,
+a[href] em,
+a[href] i {
+  color: inherit;
+}
+
 :focus-visible {
   outline: 1px solid var(--pa-accent);
   outline-offset: 2px;
@@ -172,6 +183,23 @@ h1, h2, h3, h4, h5, h6 {
 p { color: var(--pa-fg); }
 
 hr { border: 0; border-top: 1px solid var(--pa-rule); margin: var(--pa-space-6) 0; }
+
+/* Responsive 16:9 video embed (YouTube playlists, etc.) */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: var(--pa-space-4) 0;
+  border: 1px solid var(--pa-card-border);
+  background: var(--pa-card);
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 code, pre, kbd, samp {
   font-family: "Fragment Mono", "JetBrains Mono", ui-monospace, monospace;
@@ -989,7 +1017,8 @@ table tr:nth-child(even) { background: transparent; }
 
 .portfolio-item img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   object-fit: cover;
   border-radius: 0;
   display: block;

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="TCR clonality frequency thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .axis { stroke: #5B4752; stroke-width: 1; }
+      .bar-a { fill: #967386; }
+      .bar-b { fill: #C2ADB8; }
+      .bar-c { fill: #5B4752; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+      .annot { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #5B4752; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <g class="grid-line">
+    <line x1="0" y1="90"  x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <g class="axis">
+    <line x1="56" y1="320" x2="600" y2="320"/>
+    <line x1="56" y1="50"  x2="56"  y2="320"/>
+  </g>
+
+  <!-- Pareto-style descending clonotype frequencies -->
+  <g class="bar-a">
+    <rect x="78"  y="80"  width="40" height="240"/>
+  </g>
+  <g class="bar-b">
+    <rect x="128" y="130" width="40" height="190"/>
+    <rect x="178" y="170" width="40" height="150"/>
+  </g>
+  <g class="bar-c">
+    <rect x="228" y="210" width="40" height="110"/>
+    <rect x="278" y="232" width="40" height="88"/>
+    <rect x="328" y="252" width="40" height="68"/>
+    <rect x="378" y="266" width="40" height="54"/>
+    <rect x="428" y="278" width="40" height="42"/>
+    <rect x="478" y="288" width="40" height="32"/>
+    <rect x="528" y="296" width="40" height="24"/>
+  </g>
+
+  <!-- annotations -->
+  <text class="annot" x="78"  y="74">PROG</text>
+  <text class="annot" x="528" y="290">CTRL</text>
+
+  <text class="label" x="56" y="32">TCR-β · clonality</text>
+  <text class="label-dim" x="56" y="345">TB progressors vs. controllers · tcrdist3</text>
+</svg>
