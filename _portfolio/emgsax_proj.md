@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "EMG Saxophone Project"
-description: "An EMG controlled saxophone made as part of a team project for the 2023 Engineering Open House"
+title: "EMG-Controlled Saxophone"
+description: "Surface-EMG analog front end paired with an Arduino servo system actuating saxophone keys — an assistive prosthetic concept exhibited at the 2023 Engineering Open House."
 thumbnail: "/assets/images/portfolio/emg_saxo.png"
 ---
 

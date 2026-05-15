@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "PID Controller Final Project"
-description: "An unstable PID controller for dosing anaesthesics"
+title: "PID Controller for Anaesthetic Dosing"
+description: "MATLAB/Simulink PID controller for patient-specific anaesthetic dosing — top cohort performance on steady-state error and settling time."
 thumbnail: "/assets/images/portfolio/pidcontroller.png"
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "R Meta-Analysis Walkthrough"
-description: "A video playlist walking through the steps needed to complete a meta-analysis in R"
+description: "Seven-part video walkthrough of an end-to-end meta-analysis in R, produced as a Thom Lab onboarding resource."
 thumbnail: "/assets/images/portfolio/R_logo.png"
 ---
 

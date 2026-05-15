@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Fiber Photometry Application"
-description: "An R Shiny application developed for Fiber Photometry Analysis"
+title: "Fiber Photometry Web App"
+description: "R Shiny web app streamlining fiber photometry data processing and figure generation, built for the Sweeney Lab."
 thumbnail: "/assets/images/portfolio/fiberphot_thumbnail.jpg"
 ---
 

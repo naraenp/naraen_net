@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Pre-Leukemia scRNA-seq Analysis"
-description: "A comprehensive analysis of publicly available AML-associated single-cell RNA data."
+title: "AML scRNA-seq Analysis"
+description: "Reproducible scRNA-seq pipeline characterizing pre-leukemic populations across 38 AML patient samples, deployed as an R Shiny dashboard."
 thumbnail: "/assets/images/portfolio/umapdpt_pseudotime.png"
 ---
 

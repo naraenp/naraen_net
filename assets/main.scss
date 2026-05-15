@@ -830,6 +830,67 @@ mark {
   text-transform: none;
 }
 
+/* ---------- CV resume-style entries ---------- */
+.cv-entry {
+  margin: 0 0 var(--pa-space-5);
+}
+.cv-entry + .cv-entry { margin-top: var(--pa-space-5); }
+
+.cv-entry__head,
+.cv-entry__sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--pa-space-4);
+  flex-wrap: wrap;
+}
+.cv-entry__head { margin-bottom: 2px; }
+.cv-entry__sub  { margin-bottom: var(--pa-space-2); }
+
+.cv-entry__org {
+  font-family: "Plein", system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--pa-fg);
+  font-size: var(--pa-fs-body);
+}
+.cv-entry__role {
+  font-family: "Plein", system-ui, sans-serif;
+  font-style: italic;
+  color: var(--pa-fg-muted);
+  font-size: var(--pa-fs-body-sm);
+}
+.cv-entry__date,
+.cv-entry__loc {
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: var(--pa-fs-mono-sm);
+  color: var(--pa-fg-dim);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-align: right;
+}
+.cv-entry__loc { font-style: italic; }
+
+.cv-entry__stack {
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: var(--pa-fs-mono-sm);
+  color: var(--pa-fg-dim);
+  letter-spacing: 0.02em;
+}
+
+.cv-entry ul {
+  margin: var(--pa-space-2) 0 0 0;
+  padding-left: var(--pa-space-5);
+}
+.cv-entry ul li {
+  margin-bottom: var(--pa-space-2);
+  line-height: 1.55;
+  color: var(--pa-fg-muted);
+}
+.cv-entry ul li strong { color: var(--pa-fg); }
+
+/* Tighten section spacing inside the CV to keep a denser resume feel */
+.post-content h3 + .cv-entry { margin-top: var(--pa-space-3); }
+
 /* Tables */
 table {
   border-collapse: collapse;
@@ -953,9 +1014,12 @@ table tr:nth-child(even) { background: transparent; }
 /* ---------- Footer ---------- */
 .site-footer-bar {
   border-top: 1px solid var(--pa-rule);
-  padding: var(--pa-space-5) 0;
-  margin-top: var(--pa-space-7);
+  padding: var(--pa-space-2) 0;
+  margin-top: var(--pa-space-6);
   background: var(--pa-bg);
+  min-height: 28px;
+  display: flex;
+  align-items: center;
 }
 .site-footer-bar__inner {
   display: flex;

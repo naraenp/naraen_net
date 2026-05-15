@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "TCR Clonality Analysis"
-description: "Bulk TCR repertoire analysis comparing TB progressors vs. controllers"
+description: "Bulk TCR-β repertoire analysis comparing clonality and antigen-specific frequencies in TB progressors vs. controllers."
 thumbnail: "/assets/images/portfolio/tcr_clonal.png"
 ---
 
