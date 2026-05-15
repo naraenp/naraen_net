@@ -9,8 +9,8 @@ layout: default
   <div class="hero__text">
     <span class="hero__eyebrow">Founding engineer, <a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a></span>
     <h1 class="hero__title">Naraen Palanikumar</h1>
-    <p class="hero__tagline">Bioinformatics AI engineer and cloud architect, building production omics platforms and applied AI for biological data.</p>
-    <p class="hero__now"><span class="hero__now-label">Now</span> Building Bench at Phalaena Automata. Consulting on single-cell pipelines.</p>
+    <p class="hero__tagline">Bioinformatics engineer with 4+ years of experience building scalable platforms for lab research, spanning Nextflow pipelines, Google Cloud architectures, and applied AI for biological data.</p>
+    <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong>Bench</strong> at Phalaena Automata. Google Cloud Certified Professional Data Engineer.</p>
   </div>
 </section>
 
@@ -18,9 +18,9 @@ layout: default
 <section class="landing-section" id="about">
   <h2 class="landing-section__title">About</h2>
   <div class="about-block">
-    <p>I build production-grade analytical platforms for genomics, with a focus on cloud-native architecture and applied AI. As founding engineer at <strong><a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a></strong>, I lead the technical development of <strong>Bench</strong>, an omics analysis platform that ingests sequencing data into a centralized API, runs containerized Nextflow workflows on Google Cloud, and uses a tool-augmented RAG loop over Vertex AI to interpret results against PubMed and public catalogs.</p>
-    <p>Before founding Phalaena Automata, I worked on CD4 T-cell repertoire analysis at USUHS, single-cell sequencing in the Sweeney Lab at UIUC, and a handful of clinical and emergency-response roles. My peer-reviewed work covers TCR usage in SARS-CoV-2 vaccination and paraventricular thalamic circuits.</p>
-    <p>Explore my <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>, read my <a href="{{ '/cv/' | relative_url }}">CV</a>, or <a href="{{ '/contact/' | relative_url }}">get in touch</a> if you'd like to collaborate.</p>
+    <p>Founding engineer at <strong><a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a></strong>, leading end-to-end development of <strong>Bench</strong>, a production omics platform that ingests sequencing data into a centralized API, runs containerized Nextflow workflows on Google Cloud, and uses a tool-augmented RAG loop over Vertex AI to cross-reference results with PubMed and public catalogs.</p>
+    <p>Prior work spans CD4 T-cell repertoire analysis at <strong>USUHS</strong>, single-cell sequencing and an interactive R Shiny tool at the <strong>Sweeney Lab</strong> at UIUC, and clinical and emergency-response roles. Peer-reviewed contributions cover restricted TCR usage following SARS-CoV-2 vaccination (<em>Frontiers in Immunology</em>) and paraventricular thalamic MC3R circuits (<em>The Journal of Neuroscience</em>).</p>
+    <p>Browse the <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>, read the <a href="{{ '/cv/' | relative_url }}">CV</a>, or <a href="{{ '/contact/' | relative_url }}">get in touch</a> to collaborate.</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/naraenp/" aria-label="LinkedIn"><img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt="" width="20" height="20"> LinkedIn</a>
       <a href="https://github.com/naraenp" aria-label="GitHub"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="" width="20" height="20"> GitHub</a>
@@ -36,13 +36,13 @@ layout: default
       <p class="project-card__eyebrow">Phalaena Automata</p>
       <h3 class="project-card__title">Bench</h3>
       <p class="project-card__stack">Python · FastAPI · React · Nextflow · Docker · GCP · Vertex AI</p>
-      <p class="project-card__desc">Production omics platform that ingests sequencing data (FASTA, FASTQ, VCF, 10x) into a centralized API, runs containerized Nextflow workflows on Cloud Run with strict IAM, and integrates a tool-augmented RAG loop over Vertex AI to cross-reference results with PubMed.</p>
+      <p class="project-card__desc">Production omics platform ingesting varied sequencing data into a centralized API and running containerized Nextflow workflows on Cloud Run with strict IAM. Integrates a tool-augmented RAG loop over Vertex AI to cross-reference output against PubMed for accelerated insights.</p>
     </div>
     <div class="project-card">
-      <p class="project-card__eyebrow">Research portfolio</p>
-      <h3 class="project-card__title">TCR and scRNA-seq workflows</h3>
-      <p class="project-card__stack">Python · tcrdist3 · R · Seurat · Shiny</p>
-      <p class="project-card__desc">End-to-end reproducible workflow for TCR repertoire analysis with tcrdist3, alongside preleukemia scRNA-seq clustering in R and Seurat. Interactive R Shiny dashboard deployed to shinyapps.io.</p>
+      <p class="project-card__eyebrow">Bioinformatics portfolio</p>
+      <h3 class="project-card__title">AML scRNA-seq & TCR clonality</h3>
+      <p class="project-card__stack">R · Python · Seurat · Scanpy · tcrdist3 · Shiny</p>
+      <p class="project-card__desc">Reproducible scRNA-seq pipeline across 38 public AML patient samples, characterizing pre-leukemic populations with pseudotime, fate mapping, and PLPS/Stem11 survival analysis, deployed as an R Shiny dashboard. Companion TCR-β workflow compares clonality between TB progressors and controllers.</p>
     </div>
   </div>
 </section>
@@ -51,24 +51,48 @@ layout: default
   <h2 class="landing-section__title">Experience</h2>
   <ul class="experience-list">
     <li class="experience-item">
-      <div class="experience-item__role">Founding engineer, Phalaena Automata</div>
-      <div class="experience-item__meta">Remote · Mar 2026 – Present</div>
-      <p class="experience-item__desc">Leading end-to-end technical development of a multi-tenant omics SaaS on Google Cloud. Architecting scalable bioinformatics workflows, full-stack cloud-native AI infrastructure, and LLM-augmented interpretation pipelines.</p>
+      <div class="experience-item__head">
+        <span class="experience-item__org">Phalaena Automata</span>
+        <span class="experience-item__date">Mar 2026 - Present</span>
+      </div>
+      <div class="experience-item__sub">
+        <span class="experience-item__role">Founding Engineer</span>
+        <span class="experience-item__loc">Austin, TX, USA</span>
+      </div>
+      <p class="experience-item__desc">Spearheading end-to-end development of a <strong>biotechnology research accelerator</strong>, managing the product lifecycle from initial architecture to cloud deployment. Developing full-stack AI-centric infrastructure on Google Cloud, integrating <strong>RAG + LLM architecture</strong> to automate unstructured data interpretation.</p>
     </li>
     <li class="experience-item">
-      <div class="experience-item__role">Independent bioinformatics consultant</div>
-      <div class="experience-item__meta">Remote · Jul 2025 – Present</div>
-      <p class="experience-item__desc">Consulting on single-cell sequencing pipelines and metabolic pathway analysis. Building cloud-native workflows for high-throughput omics research teams.</p>
+      <div class="experience-item__head">
+        <span class="experience-item__org">Independent</span>
+        <span class="experience-item__date">Jul 2025 - Feb 2026</span>
+      </div>
+      <div class="experience-item__sub">
+        <span class="experience-item__role">Bioinformatics Consultant</span>
+        <span class="experience-item__loc">Remote</span>
+      </div>
+      <p class="experience-item__desc">Consulted on <strong>single-cell sequencing pipelines</strong>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams. Applied cloud-native bioinformatics pipelines built for high-throughput omics research.</p>
     </li>
     <li class="experience-item">
-      <div class="experience-item__role">Bioinformatics research assistant, Malloy Lab</div>
-      <div class="experience-item__meta">USUHS · Bethesda, MD · Oct 2024 – Jun 2025</div>
-      <p class="experience-item__desc">Led bioinformatic analysis of CD4 T-cell repertoires investigating respiratory infectious diseases. Optimized high-throughput processing for scRNA-seq and flow cytometry, with results published in <em>Frontiers in Immunology</em>.</p>
+      <div class="experience-item__head">
+        <span class="experience-item__org">Malloy Lab @ USUHS</span>
+        <span class="experience-item__date">Oct 2024 - Jun 2025</span>
+      </div>
+      <div class="experience-item__sub">
+        <span class="experience-item__role">Research Assistant</span>
+        <span class="experience-item__loc">Bethesda, MD, USA</span>
+      </div>
+      <p class="experience-item__desc">Led bioinformatics analysis to extract and analyze <strong>CD4 T-cell repertoires</strong> from scTCR-seq data, contributing to published research in <em>Frontiers in Immunology</em>. Processed study participant biosamples and metadata for downstream flow cytometry and scRNA-seq.</p>
     </li>
     <li class="experience-item">
-      <div class="experience-item__role">Research assistant, Sweeney Lab</div>
-      <div class="experience-item__meta">UIUC · Champaign, IL · Aug 2021 – Jun 2023</div>
-      <p class="experience-item__desc">Analyzed scRNA-seq with Cell Ranger and Seurat to surface metabolism-associated neural circuits. Built an interactive R Shiny app for fiber photometry, co-authored in <em>The Journal of Neuroscience</em>.</p>
+      <div class="experience-item__head">
+        <span class="experience-item__org">Sweeney Lab @ UIUC</span>
+        <span class="experience-item__date">Aug 2021 - Jun 2023</span>
+      </div>
+      <div class="experience-item__sub">
+        <span class="experience-item__role">Undergraduate Research Assistant</span>
+        <span class="experience-item__loc">Champaign, IL, USA</span>
+      </div>
+      <p class="experience-item__desc">Analyzed complex scRNAseq datasets using <strong>Cell Ranger</strong> and <strong>Seurat</strong> to uncover metabolism-associated neural circuits and rare cell populations. Built an interactive <strong>R Shiny</strong> web app for fiber photometry data processing, contributing to published research in <em>The Journal of Neuroscience</em>.</p>
     </li>
   </ul>
 </section>

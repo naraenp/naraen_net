@@ -1,14 +1,14 @@
 ---
 layout: page
 title: "PID Controller for Anaesthetic Dosing"
-description: "MATLAB/Simulink PID controller for patient-specific anaesthetic dosing — top cohort performance on steady-state error and settling time."
+description: "MATLAB/Simulink PID controller for patient-specific anaesthetic dosing, achieving top cohort performance on steady-state error and settling time."
 thumbnail: "/assets/images/portfolio/pidcontroller.png"
 ---
 
 #### Group Members: Aryan Shah, Alec Wahl, and Myself
 #### Instructor: Dr. Guillermo L. Monroy
 
-Designed and tuned a PID controller in MATLAB/Simulink to deliver patient-specific anaesthetic dosing given variable drug sensitivity profiles. Modeled plant dynamics, iteratively tuned controller gains, and validated performance across simulated patient cohorts — our submission ranked among the top performers in the course on both steady-state error and 10% settling time. Completed as the capstone group project for BIOE 420 Control Systems.
+Designed and tuned a PID controller in MATLAB/Simulink to deliver patient-specific anaesthetic dosing given variable drug sensitivity profiles. Modeled plant dynamics, iteratively tuned controller gains, and validated performance across simulated patient cohorts. Our submission ranked among the top performers in the course on both steady-state error and 10% settling time. Completed as the capstone group project for BIOE 420 Control Systems.
 
 **Platforms & Tools:** MATLAB, Simulink
 

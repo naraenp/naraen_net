@@ -7,7 +7,7 @@ thumbnail: "/assets/images/portfolio/fiberphot_thumbnail.jpg"
 
 <h3>Live Application Demo</h3>
 
-Developed an R Shiny web app during my undergraduate work in Dr. Sweeney's lab to streamline fiber photometry data analysis. Lab members upload raw recordings and experiment metadata directly through the browser and receive processed signals, summary statistics, and publication-ready figures — eliminating the per-experiment scripting overhead that previously bottlenecked downstream analysis.
+Developed an R Shiny web app during my undergraduate work in Dr. Sweeney's lab to streamline fiber photometry data analysis. Lab members upload raw recordings and experiment metadata directly through the browser and receive processed signals, summary statistics, and publication-ready figures, eliminating the per-experiment scripting overhead that previously bottlenecked downstream analysis.
 
 **Platforms & Tools:** R, R Shiny, ggplot2, shinyapps.io
 

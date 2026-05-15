@@ -4,9 +4,9 @@ Personal portfolio site (Jekyll, GitHub Pages): single-page landing plus CV and 
 
 ## Site structure
 
-- **Home** (`/`) — Hero, About, Projects, Experience. Sticky glass nav; light/dark theme toggle.
-- **CV** (`/cv/`) — Full CV and PDF download. Resume file: `assets/pdf/naraenp_resume.pdf`.
-- **Portfolio** (`/portfolio/`) — Collection of project pages from `_portfolio/` (front matter: `title`, `description`, `thumbnail`, etc.).
+- **Home** (`/`) - Hero, About, Projects, Experience. Sticky glass nav; light/dark theme toggle.
+- **CV** (`/cv/`) - Full CV and PDF download. Resume file: `assets/pdf/naraenp_resume.pdf`.
+- **Portfolio** (`/portfolio/`) - Collection of project pages from `_portfolio/` (front matter: `title`, `description`, `thumbnail`, etc.).
 
 ## Repo structure
 

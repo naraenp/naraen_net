@@ -9,7 +9,7 @@ Analyzed publicly available bulk TCR-β sequencing data to test whether repertoi
 
 **Platforms & Tools:** Python, Jupyter, tcrdist3, pandas, NumPy, SciPy, seaborn, Conda
 
-Source data drawn from [Musvosvi et al., *Nature Medicine* (2022)](https://doi.org/10.1038/s41591-022-02110-9); methodology mirrors prior work published in *Frontiers in Immunology*.
+Source data drawn from [Musvosvi et al., *Nature Medicine* (2022)](https://doi.org/10.1038/s41591-022-02110-9). Methodology mirrors prior work published in *Frontiers in Immunology*.
 
 <iframe
 src="/assets/pdf/TCR_analysis.html"

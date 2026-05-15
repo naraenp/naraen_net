@@ -27,8 +27,8 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 
 <div class="cv-entry">
   <div class="cv-entry__head">
-    <span class="cv-entry__org">University of Illinois — Urbana-Champaign</span>
-    <span class="cv-entry__date">Aug 2023 — May 2024</span>
+    <span class="cv-entry__org">University of Illinois - Urbana-Champaign</span>
+    <span class="cv-entry__date">Aug 2023 - May 2024</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Master of Engineering (M.Eng.), Biomedical Engineering</span>
@@ -38,8 +38,8 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 
 <div class="cv-entry">
   <div class="cv-entry__head">
-    <span class="cv-entry__org">University of Illinois — Urbana-Champaign</span>
-    <span class="cv-entry__date">Aug 2019 — May 2023</span>
+    <span class="cv-entry__org">University of Illinois - Urbana-Champaign</span>
+    <span class="cv-entry__date">Aug 2019 - May 2023</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Bachelor of Science (B.S.), Biomedical Engineering</span>
@@ -52,7 +52,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Phalaena Automata</span>
-    <span class="cv-entry__date">Mar 2026 — Present</span>
+    <span class="cv-entry__date">Mar 2026 - Present</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Founding Engineer</span>
@@ -67,7 +67,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Independent</span>
-    <span class="cv-entry__date">Jul 2025 — Feb 2026</span>
+    <span class="cv-entry__date">Jul 2025 - Feb 2026</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Bioinformatics Consultant</span>
@@ -82,7 +82,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Malloy Lab @ Uniformed Services University of the Health Sciences</span>
-    <span class="cv-entry__date">Oct 2024 — Jun 2025</span>
+    <span class="cv-entry__date">Oct 2024 - Jun 2025</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Research Assistant</span>
@@ -96,8 +96,8 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 
 <div class="cv-entry">
   <div class="cv-entry__head">
-    <span class="cv-entry__org">Carle Foundation Hospital — Emergency Department</span>
-    <span class="cv-entry__date">Sep 2023 — Jul 2024</span>
+    <span class="cv-entry__org">Carle Foundation Hospital - Emergency Department</span>
+    <span class="cv-entry__date">Sep 2023 - Jul 2024</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Healthcare Technician</span>
@@ -112,7 +112,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Sweeney Lab @ University of Illinois at Urbana-Champaign</span>
-    <span class="cv-entry__date">Aug 2021 — Jun 2023</span>
+    <span class="cv-entry__date">Aug 2021 - Jun 2023</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Undergraduate Research Assistant</span>
@@ -127,7 +127,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Illini Emergency Medical Services</span>
-    <span class="cv-entry__date">Jan 2022 — May 2023</span>
+    <span class="cv-entry__date">Jan 2022 - May 2023</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Emergency Medical Technician (EMT-B)</span>
@@ -142,7 +142,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Haedos</span>
-    <span class="cv-entry__date">Sep 2020 — Feb 2021</span>
+    <span class="cv-entry__date">Sep 2020 - Feb 2021</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Coding Tutor</span>
@@ -156,7 +156,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Thom Lab @ Wheaton College</span>
-    <span class="cv-entry__date">May 2020 — Aug 2020</span>
+    <span class="cv-entry__date">May 2020 - Aug 2020</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">Data Analyst and Research Assistant</span>
@@ -171,7 +171,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Argonne National Laboratory</span>
-    <span class="cv-entry__date">Sep 2017 — May 2018</span>
+    <span class="cv-entry__date">Sep 2017 - May 2018</span>
   </div>
   <div class="cv-entry__sub">
     <span class="cv-entry__role">ESRP Intern</span>
@@ -187,7 +187,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">Bench @ Phalaena Automata <span class="cv-entry__stack">| Python, FastAPI, React, Nextflow, Docker, GCP, Vertex AI</span></span>
-    <span class="cv-entry__date">Mar 2026 — Present</span>
+    <span class="cv-entry__date">Mar 2026 - Present</span>
   </div>
   <ul>
     <li>Building a production omics platform that ingests varied sequencing data into a centralized API and runs <strong>containerized Nextflow workflows</strong> on Cloud Run with strict IAM. Integrates a <strong>tool-augmented RAG loop</strong> over Vertex AI to cross-reference output results with PubMed for accelerated insights.</li>
@@ -198,7 +198,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 <div class="cv-entry">
   <div class="cv-entry__head">
     <span class="cv-entry__org">AML scRNA-seq Analysis <span class="cv-entry__stack">| R, Python, R Shiny, Seurat, Scanpy</span></span>
-    <span class="cv-entry__date">Sep 2025 — Oct 2025</span>
+    <span class="cv-entry__date">Sep 2025 - Oct 2025</span>
   </div>
   <ul>
     <li>Built a reproducible scRNA-seq pipeline on <strong>38 public AML patient samples</strong>, performing QC, anchor-based integration, and reference-guided cell-type annotation to characterize pre-leukemic populations. Extended with <strong>pseudotime, fate mapping, and survival analysis</strong> of PLPS/Stem11 signatures against NCI clinical data and deployed findings via an interactive R Shiny dashboard.</li>
@@ -243,7 +243,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
     <span class="cv-entry__role">Group project</span>
   </div>
   <ul>
-    <li>Built a <strong>surface-EMG analog front end</strong> (instrumentation amplifier, bandpass, rectification) paired with an Arduino that drives servo motors over saxophone keys — exhibited at the 2023 Engineering Open House as an assistive prosthetic concept.</li>
+    <li>Built a <strong>surface-EMG analog front end</strong> (instrumentation amplifier, bandpass, rectification) paired with an Arduino that drives servo motors over saxophone keys. Exhibited at the 2023 Engineering Open House as an assistive prosthetic concept.</li>
     <li><a href="{{ '/portfolio/emgsax_proj/' | relative_url }}">Link to project</a></li>
   </ul>
 </div>
@@ -291,9 +291,9 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
 
 ### Honors & awards
 
-* **National Merit Scholarship Finalist** — Feb 2019
-* **National AP Scholar** — May 2019
-* **USA Biology Olympiad Semifinalist** — Apr 2018
+* **National Merit Scholarship Finalist** - Feb 2019
+* **National AP Scholar** - May 2019
+* **USA Biology Olympiad Semifinalist** - Apr 2018
 
 ### Standardized exam scores
 
