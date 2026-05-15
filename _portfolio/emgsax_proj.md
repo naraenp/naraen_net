@@ -11,4 +11,4 @@ Designed and exhibited a prosthetic concept for the 2023 Engineering Open House 
 
 **Platforms & Tools:** Arduino, C/C++, surface EMG circuitry, servo actuation
 
-![picture showing me an emg saxophone](/assets/images/portfolio/emg_saxo.png)
+![Exhibit booth at the 2023 Engineering Open House showing the breadboarded EMG circuit on the right side of the table](/assets/images/portfolio/emg_saxophone_booth.png)
