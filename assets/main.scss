@@ -1095,8 +1095,10 @@ table tr:nth-child(even) { background: transparent; }
 }
 .site-footer-bar__top:hover { color: var(--pa-accent); text-decoration: none; }
 
-/* ---------- ATGC drifting backdrop (site-wide, fixed) ---------- */
-.atgc-backdrop {
+/* ---------- ASCII art backdrop (site-wide, fixed) ---------- */
+html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a page scrollbar */
+
+.ascii-backdrop {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -1106,23 +1108,34 @@ table tr:nth-child(even) { background: transparent; }
 /* Lift real content above the backdrop. Header keeps its own z-index. */
 .page-content,
 .site-footer-bar { position: relative; z-index: 1; }
-.atgc-glyph {
-  position: absolute;
-  font-family: "Fragment Mono", ui-monospace, monospace;
-  color: var(--pa-mauve-shadow);
-  user-select: none;
-  will-change: transform;
-  animation: atgc-drift linear infinite;
-}
-.theme-light .atgc-glyph { color: var(--pa-lilac-ash); }
 
-@keyframes atgc-drift {
-  0%   { transform: translate3d(0, 0, 0) rotate(var(--atgc-rot, 0deg)); }
-  100% { transform: translate3d(0, calc(-1 * var(--atgc-distance, 60px)), 0) rotate(var(--atgc-rot, 0deg)); }
+.ascii-art {
+  position: absolute;
+  top: var(--ascii-top, 50vh);
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  color: var(--pa-lilac-ash);   /* light mauve on the dark bg — readable */
+  white-space: pre;
+  overflow: visible;        /* override base `pre { overflow-x: auto }` */
+  background: transparent;  /* override base `pre` background */
+  border: 0;                /* override base `pre` border */
+  line-height: 1.05;
+  user-select: none;
+  opacity: var(--ascii-opacity, 0.4);
+  animation: ascii-slide var(--ascii-duration, 14s) linear forwards;
+  will-change: transform;
+}
+.theme-light .ascii-art { color: var(--pa-mauve-shadow); }   /* dark mauve on the light bg */
+
+@keyframes ascii-slide {
+  from { transform: translate3d(100vw, 0, 0); }
+  to   { transform: translate3d(calc(-100% - 2em), 0, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .atgc-glyph { animation: none !important; }
+  .ascii-art { animation-duration: 40s; }
 }
 
 /* ---------- 404 ---------- */
