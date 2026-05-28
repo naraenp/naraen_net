@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AML RNA-seq volcano thumbnail">
+  <defs>
+    <style>
+      .bg { fill: #1D171A; }
+      .grid-line { stroke: #392D34; stroke-width: 1; }
+      .axis { stroke: #5B4752; stroke-width: 1; }
+      .thresh { stroke: #5B4752; stroke-width: 1; stroke-dasharray: 4 4; }
+      .ns { fill: #5B4752; }
+      .up { fill: #C4736E; }
+      .down { fill: #6E8FAD; }
+      .sig-marker { fill: none; stroke: #D7C9D0; stroke-width: 1.2; }
+      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #C2ADB8; letter-spacing: 0.04em; }
+      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+      .gene-label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #D7C9D0; letter-spacing: 0.02em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <!-- subtle grid -->
+  <g class="grid-line">
+    <line x1="0" y1="90"  x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+    <line x1="160" y1="0" x2="160" y2="360"/>
+    <line x1="320" y1="0" x2="320" y2="360"/>
+    <line x1="480" y1="0" x2="480" y2="360"/>
+  </g>
+
+  <!-- axes -->
+  <g class="axis">
+    <line x1="56" y1="320" x2="600" y2="320"/>
+    <line x1="320" y1="40"  x2="320" y2="320"/>
+  </g>
+
+  <!-- FDR + LFC threshold guides -->
+  <g class="thresh">
+    <line x1="56" y1="270" x2="600" y2="270"/>
+    <line x1="240" y1="40" x2="240" y2="320"/>
+    <line x1="400" y1="40" x2="400" y2="320"/>
+  </g>
+
+  <!-- non-significant cloud (central, low) -->
+  <g class="ns">
+    <circle cx="318" cy="295" r="2"/><circle cx="305" cy="290" r="2"/><circle cx="330" cy="288" r="2"/>
+    <circle cx="295" cy="285" r="2"/><circle cx="340" cy="283" r="2"/><circle cx="315" cy="278" r="2"/>
+    <circle cx="278" cy="290" r="2"/><circle cx="355" cy="298" r="2"/><circle cx="265" cy="295" r="2"/>
+    <circle cx="368" cy="290" r="2"/><circle cx="248" cy="288" r="2"/><circle cx="382" cy="285" r="2"/>
+    <circle cx="232" cy="295" r="2"/><circle cx="395" cy="297" r="2"/><circle cx="220" cy="285" r="2"/>
+    <circle cx="410" cy="289" r="2"/><circle cx="338" cy="272" r="2"/><circle cx="302" cy="275" r="2"/>
+  </g>
+
+  <!-- down-in-AML (left, blue) -->
+  <g class="down">
+    <circle cx="200" cy="230" r="3"/><circle cx="180" cy="220" r="3"/><circle cx="160" cy="200" r="3"/>
+    <circle cx="140" cy="190" r="3"/><circle cx="120" cy="170" r="3"/><circle cx="100" cy="160" r="2"/>
+    <circle cx="190" cy="250" r="3"/><circle cx="170" cy="240" r="3"/><circle cx="150" cy="220" r="3"/>
+    <circle cx="210" cy="245" r="2"/><circle cx="130" cy="210" r="2"/><circle cx="105" cy="200" r="2"/>
+    <circle cx="185" cy="205" r="2"/><circle cx="155" cy="175" r="2"/><circle cx="220" cy="262" r="2"/>
+  </g>
+
+  <!-- up-in-AML (right, red) — denser to mirror real-data biology -->
+  <g class="up">
+    <circle cx="430" cy="240" r="3"/><circle cx="450" cy="220" r="3"/><circle cx="470" cy="200" r="3"/>
+    <circle cx="490" cy="180" r="3"/><circle cx="510" cy="160" r="3"/><circle cx="530" cy="140" r="3"/>
+    <circle cx="445" cy="255" r="3"/><circle cx="465" cy="230" r="3"/><circle cx="485" cy="215" r="3"/>
+    <circle cx="505" cy="195" r="3"/><circle cx="525" cy="170" r="3"/><circle cx="548" cy="155" r="3"/>
+    <circle cx="420" cy="262" r="2"/><circle cx="440" cy="248" r="2"/><circle cx="460" cy="225" r="2"/>
+    <circle cx="480" cy="205" r="2"/><circle cx="500" cy="185" r="2"/><circle cx="520" cy="172" r="2"/>
+    <circle cx="540" cy="148" r="2"/><circle cx="560" cy="132" r="2"/><circle cx="412" cy="270" r="2"/>
+    <circle cx="495" cy="160" r="2"/><circle cx="475" cy="175" r="2"/><circle cx="455" cy="195" r="2"/>
+    <circle cx="515" cy="125" r="2"/><circle cx="535" cy="118" r="2"/><circle cx="555" cy="108" r="2"/>
+  </g>
+
+  <!-- labeled signature genes -->
+  <g class="sig-marker">
+    <circle cx="530" cy="140" r="6"/>
+    <circle cx="490" cy="180" r="6"/>
+    <circle cx="510" cy="160" r="6"/>
+    <circle cx="555" cy="108" r="6"/>
+  </g>
+  <g class="gene-label">
+    <text x="540" y="135">FLT3</text>
+    <text x="500" y="175">MEIS1</text>
+    <text x="520" y="155">MPO</text>
+    <text x="565" y="103">KIT</text>
+  </g>
+
+  <!-- labels -->
+  <text class="label" x="56" y="32">AML RNA-seq · volcano</text>
+  <text class="label-dim" x="56" y="345">TCGA-LAML vs GTEx whole blood · nextflow DSL2</text>
+</svg>

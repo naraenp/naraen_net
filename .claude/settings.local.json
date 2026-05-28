@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /home/naraenpc/Desktop/Projects/naraen_net/assets/fonts)",
+      "Bash(cp /home/naraenpc/Desktop/Projects/naraen_net/website_revamp/fonts/*.ttf /home/naraenpc/Desktop/Projects/naraen_net/assets/fonts/)",
+      "Bash(cp /home/naraenpc/Desktop/Projects/naraen_net/website_revamp/fonts/*.txt /home/naraenpc/Desktop/Projects/naraen_net/assets/fonts/)",
+      "Bash(cp /home/naraenpc/Desktop/Projects/naraen_net/website_revamp/resumes/*.pdf /home/naraenpc/Desktop/Projects/naraen_net/assets/pdf/)",
+      "Bash(mv \"Master Canonical Resume.pdf\" naraenp_resume_master.pdf)",
+      "Bash(mv \"Bioinformatics Resume.pdf\" naraenp_resume_bioinformatics.pdf)",
+      "Bash(mv \"Data Engineering Resume.pdf\" naraenp_resume_data_engineering.pdf)",
+      "Bash(mv \"Startup Generalist Resume.pdf\" naraenp_resume_startup_generalist.pdf)",
+      "Bash(rm -f naraenp_resume.pdf)",
+      "Bash(command -v rsvg-convert inkscape magick convert chromium chromium-browser google-chrome python3)",
+      "Bash(inkscape --export-type=png --export-filename=favicon-32.png --export-width=32 --export-height=32 favicon.svg)",
+      "Bash(inkscape --export-type=png --export-filename=favicon-180.png --export-width=180 --export-height=180 favicon.svg)",
+      "Bash(mkdir -p ~/.local/share/fonts/naraen)",
+      "Bash(cp /home/naraenpc/Desktop/Projects/naraen_net/assets/fonts/*.ttf ~/.local/share/fonts/naraen/)",
+      "Bash(fc-cache -f ~/.local/share/fonts/naraen)",
+      "Bash(fc-list)",
+      "Bash(inkscape --export-type=png --export-filename=og-image.png --export-width=1200 --export-height=630 og-image.svg)",
+      "Bash(rm -rf _site)",
+      "Bash(bundle exec *)",
+      "Bash(git reset *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git log *)",
+      "Bash(gh api *)",
+      "Bash(gh run *)",
+      "Bash(git commit *)",
+      "Bash(XDG_CACHE_HOME=/tmp/gh-cache-watch TMPDIR=/tmp/gh-tmp-watch mkdir -p /tmp/gh-cache-watch /tmp/gh-tmp-watch)",
+      "Bash(XDG_CACHE_HOME=/tmp/gh-cache-watch TMPDIR=/tmp/gh-tmp-watch gh run watch 25758920796 --repo naraenp/naraen_net --exit-status)"
+    ]
+  }
+}
