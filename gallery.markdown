@@ -10,11 +10,13 @@ permalink: /gallery/
 <ul class="gallery-grid" id="gallery-grid" aria-label="Photo thumbnails"></ul>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button type="button" class="lightbox__btn lightbox__close" id="lb-close" aria-label="Close (Esc)">&times;</button>
-  <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Previous (left arrow)">&lsaquo;</button>
-  <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Next (right arrow)">&rsaquo;</button>
   <figure class="lightbox__figure">
-    <img class="lightbox__img" id="lb-img" alt="">
+    <div class="lightbox__stage">
+      <button type="button" class="lightbox__btn lightbox__close" id="lb-close" aria-label="Close (Esc)">&times;</button>
+      <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="Previous (left arrow)">&lsaquo;</button>
+      <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--next" id="lb-next" aria-label="Next (right arrow)">&rsaquo;</button>
+      <img class="lightbox__img" id="lb-img" alt="">
+    </div>
     <figcaption class="lightbox__caption" id="lb-caption"></figcaption>
     <span class="lightbox__counter" id="lb-counter"></span>
   </figure>
