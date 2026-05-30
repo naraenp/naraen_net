@@ -1278,8 +1278,9 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
 }
 .lightbox__btn:hover { color: var(--pa-accent); border-color: var(--pa-accent); }
 
-/* X just above the image's top-right corner, with the same gap as the arrows. */
-.lightbox__close { top: -56px; right: 0; }
+/* X to the right of the image's top corner (not above it, so the sticky
+   header never covers it). */
+.lightbox__close { top: 0; right: -56px; }
 /* Arrows hugging the image's left/right sides, centered on the image. */
 .lightbox__nav { top: 50%; transform: translateY(-50%); }
 .lightbox__nav--prev { left: -56px; }
@@ -1295,7 +1296,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
 @media (max-width: 600px) {
   .lightbox { padding-inline: 48px; }
   .lightbox__btn { width: 38px; height: 38px; font-size: 18px; }
-  .lightbox__close { top: -46px; }
+  .lightbox__close { top: 0; right: -44px; }
   .lightbox__nav--prev { left: -44px; }
   .lightbox__nav--next { right: -44px; }
 }

@@ -1,18 +1,27 @@
 ---
 layout: page
 title: "AML Bulk RNA-seq Pipeline (Nextflow)"
-description: "Mini Nextflow DSL2 pipeline for AML vs. healthy bulk RNA-seq DE, exercised end-to-end on TCGA-LAML + GTEx whole blood via recount3."
+description: "A small Nextflow DSL2 pipeline for AML vs. healthy bulk RNA-seq differential expression, run end-to-end on real TCGA-LAML and GTEx data via recount3."
 thumbnail: "/assets/images/portfolio/aml_rnaseq.svg"
 ---
 
-Built a small **[Nextflow DSL2](https://www.nextflow.io/)** pipeline for bulk RNA-seq differential expression (AML vs. healthy) with a deliberately dual-mode design: a fast **simulated-counts mode** with planted log-fold-changes on canonical AML genes for CI and self-checking, and a **`--real_data` mode** that pulls **TCGA-LAML** and **GTEx whole-blood** gene-level counts from the **[recount3](https://rna.recount.bio/)** project (uniform Monorail / STAR / GENCODE v26 alignment) so the same pipeline operates on real public RNA-seq cohorts.
+A compact **[Nextflow DSL2](https://www.nextflow.io/)** pipeline for bulk RNA-seq differential expression — **AML vs. healthy** — run end-to-end on real public RNA-seq cohorts. AML samples come from **TCGA-LAML** and healthy controls from **GTEx whole blood**, both pulled from the **[recount3](https://rna.recount.bio/)** project, which re-aligns and re-quantifies TCGA and GTEx through one uniform Monorail / STAR / GENCODE v26 pipeline so the gene-level counts are directly comparable across the two sources.
 
-End-to-end on **50 AML vs. 50 healthy whole-blood samples × ~20 k expressed genes**: pipeline runs in ~11 s, recovers **all 20** canonical AML signature genes (FLT3, KIT, MEIS1, HOXA9, MPO, CD34, RUNX1, GATA2, …) as significant at FDR<0.05, with **14/20** in the published-literature direction. The 6 "direction mismatches" are progenitor-associated TFs (RUNX1, GATA2, DNMT3A, ASXL1, TET2) — a known confound when comparing AML bone-marrow blasts against mature peripheral blood. The signature-recovery stage surfaces it explicitly rather than hiding it.
+It's a workflow-engineering exercise: a small, readable pipeline (channels, processes, `publishDir`, profile-driven config) on top of a transparent, dependency-light biology layer — library-size CPM normalization, a per-gene Welch t-test on log2-CPM, and a hand-rolled Benjamini–Hochberg FDR. The interactive volcano labels the canonical AML markers (FLT3, KIT, MEIS1, HOXA9, MPO, CD34, …), which sit cleanly above the significance line.
 
-Five Nextflow processes — `LOAD_REAL_COUNTS` (or `SIMULATE_COUNTS`) → `NORMALIZE_COUNTS` → `RUN_DE` (Welch t-test on log2-CPM + hand-rolled BH FDR) → `MAKE_VOLCANO` (interactive Plotly) → `SIGNATURE_RECOVERY` (recall / precision / median rank vs. a curated 20-gene AML signature). Pinned conda env, project-relative paths, pytest smoke test on the simulated mode.
+**Four stages:**
 
-**Platforms & Tools:** Nextflow DSL2, Python (numpy / pandas / scipy / plotly / kaleido), recount3, GENCODE v26, conda, pytest
+1. [`LOAD_COUNTS`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/load_counts.py) — join the TCGA-LAML + GTEx gene sums on Ensembl ID, map to HGNC symbols via GENCODE v26, subsample to balanced groups, and filter low-expression genes.
+2. [`NORMALIZE_COUNTS`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/normalize_counts.py) — library-size CPM, then `log2(CPM + 1)`.
+3. [`RUN_DE`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/run_de.py) — per-gene Welch t-test with BH-adjusted p-values.
+4. [`MAKE_VOLCANO`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/make_volcano.py) — an interactive Plotly volcano.
 
-Pipeline source and the full real-data run report live in [`bioinformatics-public/aml_rnaseq_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/aml_rnaseq_nf) — see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/docs/REPORT.md) for the narrative walkthrough (methods, dataset provenance, embedded volcano, signature recovery table, runtime profile).
+The real-data inputs (~130 MB from recount3 + the GENCODE annotation) are fetched once with a small [`fetch_real_data.sh`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/fetch_real_data.sh) helper, and the whole thing runs in seconds on a laptop. Pinned conda env, project-relative paths, and fast data-free unit tests for the DE math.
 
-![Volcano plot from the real-data run: TCGA-LAML AML vs. GTEx whole-blood healthy, with the curated AML signature genes labeled. All 20 markers sit above the FDR line.](https://raw.githubusercontent.com/naraenp/bioinformatics-public/main/aml_rnaseq_nf/docs/volcano.png)
+> **Comparator caveat:** GTEx has no bone-marrow tissue, so whole peripheral blood is the closest large healthy comparator. The AML markers recover cleanly, but progenitor-associated genes can read as "up in AML" simply because mature blood lacks progenitor populations — swapping in a healthy bone-marrow cohort is the natural next step.
+
+**Platforms & Tools:** Nextflow DSL2, Python (numpy / pandas / scipy / plotly), recount3, GENCODE v26, conda, pytest
+
+The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/main.nf) workflow live in [`bioinformatics-public/aml_rnaseq_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/aml_rnaseq_nf); see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/docs/REPORT.md) for a full run report — dataset provenance, the embedded volcano, and a runtime profile.
+
+![Volcano plot from a run on TCGA-LAML AML vs. GTEx whole-blood healthy samples, with the canonical AML marker genes labeled above the FDR line.](https://raw.githubusercontent.com/naraenp/bioinformatics-public/main/aml_rnaseq_nf/docs/volcano.png)
