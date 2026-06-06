@@ -1531,6 +1531,30 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
 }
 .post-content a:hover { color: var(--pa-accent-2); }
 
+/* Captioned media figures (portfolio images) */
+.post-content figure.media-figure { margin: var(--pa-space-6) auto; }
+.media-figure {
+  margin: var(--pa-space-6) auto;
+  max-width: 560px;
+}
+.media-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--pa-card-border);
+  background: var(--pa-bg-flair);
+}
+.media-figure figcaption {
+  margin-top: var(--pa-space-2);
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: var(--pa-fs-mono-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: var(--pa-fg-dim);
+  text-align: center;
+}
+.media-figure--portrait { max-width: 420px; }
+
 /* Paper-review citation card */
 .paper-card {
   background: var(--pa-bg-flair);
