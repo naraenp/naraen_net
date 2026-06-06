@@ -5,7 +5,7 @@ description: "Books I'm reading, have read, and want to read next."
 permalink: /reading/
 ---
 
-<p class="reading-intro">A running shelf — what I'm reading now, recently finished, and queued up next.</p>
+<p class="reading-intro">A running shelf of what I'm reading now, recently finished, and queued up next.</p>
 
 {% assign groups = "reading,finished,queue" | split: "," %}
 {% assign labels = "Currently reading,Finished,Queue" | split: "," %}

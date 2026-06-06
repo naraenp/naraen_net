@@ -1,18 +1,18 @@
 ---
 layout: page
 title: Log
-description: "Occasional notes — things on my mind, what I'm reading, and what I'm building."
+description: "Occasional notes on what's on my mind, what I'm reading, and what I'm building."
 permalink: /log/
 ---
 
-<p class="log-intro">Occasional notes on what I'm building and thinking about — including a running habit of reading and reviewing one paper a day. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
+<p class="log-intro">Occasional notes on what I'm building and thinking about, including a running habit of reading and reviewing one paper a day. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
 
 {% assign now_reading = site.data.reading | where: "status", "reading" %}
 {% if now_reading.size > 0 %}
 <aside class="log-reading">
   <span class="log-reading__label">Currently reading</span>
   <span class="log-reading__books">
-    {% for book in now_reading %}<span class="log-reading__book"><em>{{ book.title }}</em> — {{ book.author }}</span>{% unless forloop.last %}<span class="log-reading__sep"> · </span>{% endunless %}{% endfor %}
+    {% for book in now_reading %}<span class="log-reading__book"><em>{{ book.title }}</em> by {{ book.author }}</span>{% unless forloop.last %}<span class="log-reading__sep"> · </span>{% endunless %}{% endfor %}
   </span>
   <a class="log-reading__more" href="{{ '/reading/' | relative_url }}">Full shelf →</a>
 </aside>
@@ -32,7 +32,7 @@ permalink: /log/
 {% endif %}
 
 {% if site.posts.size == 0 %}
-<p class="log-empty">No posts yet — the first one is on its way.</p>
+<p class="log-empty">No posts yet. The first one is on its way.</p>
 {% endif %}
 
 <ul class="post-list" id="post-list">

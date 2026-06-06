@@ -13,7 +13,7 @@ layout: default
     <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong><a href="https://bench.phalaena.ai" rel="noopener">Bench</a></strong> at Phalaena Automata. Google Cloud Certified Professional Data Engineer.</p>
     {%- assign current_book = site.data.reading | where: "status", "reading" | first -%}
     {%- if current_book -%}
-    <p class="hero__now"><span class="hero__now-label">Reading</span> <em>{{ current_book.title }}</em> — {{ current_book.author }}. <a href="{{ '/reading/' | relative_url }}">More on the shelf</a>.</p>
+    <p class="hero__now"><span class="hero__now-label">Reading</span> <em>{{ current_book.title }}</em> by {{ current_book.author }}. <a href="{{ '/reading/' | relative_url }}">More on the shelf</a>.</p>
     {%- endif -%}
   </div>
 </section>

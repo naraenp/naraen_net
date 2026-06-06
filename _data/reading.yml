@@ -1,4 +1,4 @@
-# Reading list — drives /reading/, the "Now reading" line on the home page,
+# Reading list. Drives /reading/, the "Now reading" line on the home page,
 # and the "Currently reading" strip on /log/.
 # status: reading | finished | queue
 # Optional fields per entry: link, note, post (a /log/ write-up URL).
@@ -10,7 +10,7 @@
   status: reading
 
 # --- Finished ---
-# Mistborn — Era 1
+# Mistborn, Era 1
 - title: "The Final Empire"
   author: "Brandon Sanderson"
   status: finished
@@ -20,7 +20,7 @@
 - title: "The Hero of Ages"
   author: "Brandon Sanderson"
   status: finished
-# Mistborn — Era 2 (Wax and Wayne)
+# Mistborn, Era 2 (Wax and Wayne)
 - title: "The Alloy of Law"
   author: "Brandon Sanderson"
   status: finished
@@ -33,7 +33,7 @@
 - title: "The Lost Metal"
   author: "Brandon Sanderson"
   status: finished
-# Stormlight Archive — read so far
+# Stormlight Archive, read so far
 - title: "The Way of Kings"
   author: "Brandon Sanderson"
   status: finished
@@ -42,7 +42,7 @@
   status: finished
 
 # --- To read ---
-# Stormlight Archive — up next
+# Stormlight Archive, up next
 - title: "Rhythm of War"
   author: "Brandon Sanderson"
   status: queue
