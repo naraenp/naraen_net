@@ -31,15 +31,12 @@ url: "https://naraen.net" # the base hostname & protocol for your site, e.g. htt
 github_username:  naraenp
 
 # Build settings
-theme: minima
+# minima's layouts, includes, and styles are vendored in-repo (_layouts/,
+# _includes/, _sass/minima*), so the theme gem isn't used. Dropping it also
+# avoids pulling in jekyll-feed as a transitive dependency.
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
-
-# Atom feed (jekyll-feed) is generated at /feed.xml from site.posts.
-feed:
-  path: feed.xml
 
 collections:
   portfolio:

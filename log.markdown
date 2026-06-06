@@ -5,7 +5,7 @@ description: "Occasional notes on what's on my mind, what I'm reading, and what 
 permalink: /log/
 ---
 
-<p class="log-intro">Occasional notes on what I'm building and thinking about, including a running habit of reading and reviewing one paper a day. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
+<p class="log-intro">Occasional notes on what I'm building and thinking about, including a running habit of reading and reviewing one paper a day.</p>
 
 {% assign now_reading = site.data.reading | where: "status", "reading" %}
 {% if now_reading.size > 0 %}
