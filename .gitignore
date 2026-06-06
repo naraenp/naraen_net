@@ -3,3 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# Personal scratch tooling (not for publishing)
+bin/write-log.sh
