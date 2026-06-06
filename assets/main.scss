@@ -296,7 +296,15 @@ img { max-width: 100%; height: auto; }
 .site-header--glass .site-nav {
   float: none;
   margin-left: auto;
+  position: relative;          /* anchors the mobile dropdown; beats minima's palm absolute */
+  background: none;
+  border: 0;
 }
+
+/* Desktop: full horizontal nav, no hamburger. */
+.site-header--glass .nav-trigger { display: none; }
+.site-header--glass label[for="nav-trigger"] { display: none; }
+.site-header--glass .menu-icon { display: none; }
 
 .site-header--glass .trigger {
   display: flex;
@@ -311,6 +319,7 @@ img { max-width: 100%; height: auto; }
   color: var(--pa-fg);
   margin: 0 !important;
   padding: 8px 4px;
+  white-space: nowrap;
   transition: color var(--pa-dur-fast) var(--pa-ease-symmetric);
 }
 .site-header--glass .page-link:hover {
@@ -318,22 +327,53 @@ img { max-width: 100%; height: auto; }
   text-decoration: none;
 }
 
-.site-header--glass .menu-icon > svg { fill: var(--pa-fg); }
-
-@include media-query($on-palm) {
-  .site-header--glass .trigger {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0;
-  }
-  .site-header--glass .trigger .page-link {
-    margin: 0;
-    padding: 8px 12px;
-  }
-  .site-header--glass .site-nav {
-    background: var(--pa-card);
+/* Collapse the nav into a hamburger menu once the row gets tight.
+   Self-contained (overrides minima's $on-palm nav rules) so links stay
+   reachable from every page at every width. */
+@media (max-width: 768px) {
+  .site-header--glass label[for="nav-trigger"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     border: 1px solid var(--pa-card-border);
-    border-radius: 0;
+    cursor: pointer;
+    transition: border-color var(--pa-dur-fast) var(--pa-ease-symmetric);
+  }
+  .site-header--glass label[for="nav-trigger"]:hover { border-color: var(--pa-accent); }
+  .site-header--glass .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-header--glass .menu-icon > svg { fill: var(--pa-fg); display: block; }
+
+  /* Links hidden until the checkbox toggle is checked. */
+  .site-header--glass .trigger {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 200px;
+    padding: var(--pa-space-2);
+    background: var(--pa-bg);
+    border: 1px solid var(--pa-card-border);
+    z-index: 200;
+  }
+  .site-header--glass .nav-trigger:checked ~ .trigger { display: flex; }
+
+  .site-header--glass .trigger .page-link {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+  }
+  .site-header--glass .trigger .theme-toggle {
+    align-self: flex-start;
+    margin: var(--pa-space-1) var(--pa-space-3) var(--pa-space-2);
   }
 }
 
