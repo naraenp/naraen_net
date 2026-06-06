@@ -6,3 +6,4 @@ vendor
 
 # Personal scratch tooling (not for publishing)
 bin/write-log.sh
+bin/reading.sh
