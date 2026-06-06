@@ -11,16 +11,16 @@ Designed and exhibited a prosthetic concept for the 2023 Engineering Open House 
 
 **Platforms & Tools:** Arduino, C/C++, surface EMG circuitry, servo actuation
 
-<figure class="media-figure media-figure--portrait">
+<figure class="media-figure media-figure--square">
   <img src="{{ '/assets/images/portfolio/emg_saxophone_circuit.jpg' | relative_url }}"
        alt="Close-up of the EMG saxophone build, with the breadboarded acquisition circuit and its jumper wires in the foreground and the wired saxophone in its case behind it"
-       width="1200" height="1600" loading="lazy">
+       width="880" height="880" loading="lazy">
   <figcaption>The breadboarded EMG acquisition circuit (foreground) and the wired saxophone behind it. Building this circuit was my primary responsibility on the project.</figcaption>
 </figure>
 
-<figure class="media-figure">
+<figure class="media-figure media-figure--square">
   <img src="{{ '/assets/images/portfolio/emg_saxophone_booth.png' | relative_url }}"
        alt="Exhibit booth at the 2023 Engineering Open House showing the breadboarded EMG circuit on the right side of the table"
-       width="682" height="666" loading="lazy">
+       width="666" height="666" loading="lazy">
   <figcaption>Our booth at the 2023 Engineering Open House, with the EMG circuit set up on the right.</figcaption>
 </figure>

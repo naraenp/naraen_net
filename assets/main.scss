@@ -1531,12 +1531,12 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
 }
 .post-content a:hover { color: var(--pa-accent-2); }
 
-/* Captioned media figures (portfolio images) */
+/* Captioned media figures (portfolio images and embeds).
+   Media sits in a 1px frame; the caption is a distinct footer with a subtle
+   fill and an accent stripe so it reads clearly as a caption. */
 .post-content figure.media-figure { margin: var(--pa-space-6) auto; }
-.media-figure {
-  margin: var(--pa-space-6) auto;
-  max-width: 560px;
-}
+.media-figure { margin: var(--pa-space-6) auto; }
+
 .media-figure img {
   display: block;
   width: 100%;
@@ -1544,16 +1544,33 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   border: 1px solid var(--pa-card-border);
   background: var(--pa-bg-flair);
 }
+.media-figure iframe {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--pa-card-border);
+  background: var(--pa-card);
+}
+.media-figure .video-embed { margin: 0; }
+
 .media-figure figcaption {
-  margin-top: var(--pa-space-2);
+  padding: var(--pa-space-3) var(--pa-space-4);
+  background: var(--pa-bg-flair);
+  border: 1px solid var(--pa-card-border);
+  border-top: 0;
+  border-left: 2px solid var(--pa-accent);
   font-family: "Fragment Mono", ui-monospace, monospace;
   font-size: var(--pa-fs-mono-sm);
   letter-spacing: 0.02em;
   line-height: 1.5;
-  color: var(--pa-fg-dim);
-  text-align: center;
+  color: var(--pa-fg-muted);
 }
-.media-figure--portrait { max-width: 420px; }
+
+/* Square crop for the saxophone photos so the two read at a consistent size. */
+.media-figure--square { max-width: 440px; }
+.media-figure--square img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
 
 /* Paper-review citation card */
 .paper-card {

@@ -13,11 +13,12 @@ Across these metrics, the analysis found **no strong correlation** between TCR-Î
 
 Source data drawn from [Musvosvi et al., *Nature Medicine* (2022)](https://doi.org/10.1038/s41591-022-02110-9). Methodology mirrors prior work published in [*Frontiers in Immunology*](https://doi.org/10.3389/fimmu.2025.1576903). Notebook source lives in [`bioinformatics-public/tcr_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/tcr_analysis).
 
-<iframe
-src="/assets/pdf/TCR_analysis.html"
-width="100%"
-height="900px"
-frameborder="0"
-style="border: 1px solid var(--pa-card-border); border-radius: 0;"
-title="Jupyter Notebook Embedded Report"
-></iframe>
+<figure class="media-figure">
+  <iframe
+  src="/assets/pdf/TCR_analysis.html"
+  height="900px"
+  frameborder="0"
+  title="Jupyter Notebook Embedded Report"
+  ></iframe>
+  <figcaption>Embedded Jupyter notebook report: the full TCR-Î² clonality analysis, figures and all.</figcaption>
+</figure>

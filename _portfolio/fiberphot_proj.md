@@ -13,6 +13,11 @@ The tool was used in [Sweeney et al., *Journal of Neuroscience* (2023) "Paravent
 
 **Platforms & Tools:** R, R Shiny, ggplot2, shinyapps.io
 
-<iframe src="https://naraenp2.shinyapps.io/fp_final/" 
-        style="width: 100%; height: 800px; border: 1px solid var(--pa-card-border);">
-</iframe>
+<figure class="media-figure">
+  <iframe src="https://naraenp2.shinyapps.io/fp_final/"
+          title="Fiber photometry R Shiny app"
+          loading="lazy"
+          style="height: 800px;">
+  </iframe>
+  <figcaption>Live R Shiny app: upload raw fiber photometry recordings and metadata to get processed signals, summary statistics, and publication-ready figures.</figcaption>
+</figure>

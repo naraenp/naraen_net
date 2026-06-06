@@ -12,13 +12,14 @@ Designed and tuned a PID controller in MATLAB/Simulink to deliver patient-specif
 
 **Platforms & Tools:** MATLAB, Simulink
 
-<iframe 
-    src="/assets/pdf/bioe420_group81_finalproject.pdf" 
-    width="100%" 
-    height="700px" 
-    style="border: none;"
-    title="BIOE 420 Group Final Project"
->
-    <!-- Fallback text if the browser does not support iframes -->
-    This browser does not support PDFs. Please <a href="/assets/pdf/bioe420_group81_finalproject.pdf">download the PDF</a> to view the document.
-</iframe>
+<figure class="media-figure">
+  <iframe
+      src="/assets/pdf/bioe420_group81_finalproject.pdf"
+      height="700px"
+      title="BIOE 420 Group Final Project"
+  >
+      <!-- Fallback text if the browser does not support iframes -->
+      This browser does not support PDFs. Please <a href="/assets/pdf/bioe420_group81_finalproject.pdf">download the PDF</a> to view the document.
+  </iframe>
+  <figcaption>Our final project report for BIOE 420 Control Systems (PDF).</figcaption>
+</figure>

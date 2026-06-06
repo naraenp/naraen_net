@@ -17,11 +17,14 @@ Findings are surfaced through an interactive R Shiny dashboard with two views: a
 
 Source data drawn from [Zeng et al., *Cell Genomics* (2023)](https://doi.org/10.1016/j.xgen.2023.100426) and AML clinical data from NCI. Pipeline source lives in [`bioinformatics-public/preleukemia_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/preleukemia_analysis).
 
-<iframe src="https://naraenp2.shinyapps.io/preleuk_dashboard/"
-        title="AML scRNA-seq Shiny dashboard"
-        loading="lazy"
-        style="width: 100%; height: 800px; border: 1px solid var(--pa-card-border);">
-</iframe>
+<figure class="media-figure">
+  <iframe src="https://naraenp2.shinyapps.io/preleuk_dashboard/"
+          title="AML scRNA-seq Shiny dashboard"
+          loading="lazy"
+          style="height: 800px;">
+  </iframe>
+  <figcaption>Interactive R Shiny dashboard: a filterable UMAP of integrated hematopoietic lineages and a gallery of analysis figures.</figcaption>
+</figure>
 
 ### Bulk RNA-seq differential expression (Nextflow)
 
@@ -44,8 +47,11 @@ The real-data inputs (~130 MB from recount3 + the GENCODE annotation) are fetche
 
 The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/main.nf) workflow live in [`bioinformatics-public/aml_rnaseq_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/aml_rnaseq_nf); see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/docs/REPORT.md) for a full run report: dataset provenance, the embedded volcano, and a runtime profile.
 
-<iframe src="{{ '/assets/embeds/aml_volcano.html' | relative_url }}"
-        title="Interactive volcano plot, AML vs. healthy bulk RNA-seq"
-        loading="lazy"
-        style="width: 100%; height: 760px; border: 1px solid var(--pa-card-border);">
-</iframe>
+<figure class="media-figure">
+  <iframe src="{{ '/assets/embeds/aml_volcano.html' | relative_url }}"
+          title="Interactive volcano plot, AML vs. healthy bulk RNA-seq"
+          loading="lazy"
+          style="height: 760px;">
+  </iframe>
+  <figcaption>Interactive volcano of the differential-expression results, with the canonical AML markers labeled above the significance line.</figcaption>
+</figure>

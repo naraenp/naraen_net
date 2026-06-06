@@ -9,11 +9,14 @@ An end-to-end video walkthrough of conducting a meta-analysis in R, covering eff
 
 **Platforms & Tools:** R, RStudio, metafor
 
-<div class="video-embed">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/videoseries?list=PLmFHtQ8-eUICUvMYYj6CHVqWOrQWxvhVH"
-    title="R Meta-Analysis Walkthrough playlist"
-    frameborder="0"
-    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen></iframe>
-</div>
+<figure class="media-figure">
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/videoseries?list=PLmFHtQ8-eUICUvMYYj6CHVqWOrQWxvhVH"
+      title="R Meta-Analysis Walkthrough playlist"
+      frameborder="0"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <figcaption>Seven-part YouTube walkthrough of an end-to-end meta-analysis in R.</figcaption>
+</figure>
