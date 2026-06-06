@@ -20,17 +20,8 @@
 - title: "The Hero of Ages"
   author: "Brandon Sanderson"
   status: finished
-# Mistborn, Era 2 (Wax and Wayne)
-- title: "The Alloy of Law"
-  author: "Brandon Sanderson"
-  status: finished
-- title: "Shadows of Self"
-  author: "Brandon Sanderson"
-  status: finished
-- title: "The Bands of Mourning"
-  author: "Brandon Sanderson"
-  status: finished
-- title: "The Lost Metal"
+# Elantris
+- title: "Elantris"
   author: "Brandon Sanderson"
   status: finished
 # Stormlight Archive, read so far
@@ -48,4 +39,14 @@
   status: queue
 - title: "Wind and Truth"
   author: "Brandon Sanderson"
+  status: queue
+# Nonfiction, up next
+- title: "The Price of Peace"
+  author: "Zachary D. Carter"
+  status: queue
+- title: "Atomic Habits"
+  author: "James Clear"
+  status: queue
+- title: "Deep Work"
+  author: "Cal Newport"
   status: queue
