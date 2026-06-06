@@ -1,6 +1,9 @@
 <footer class="site-footer-bar" role="contentinfo">
   <div class="wrapper site-footer-bar__inner">
     <span class="site-footer-bar__copyright">© {{ site.time | date: "%Y" }} Naraen Palanikumar</span>
-    <a class="site-footer-bar__top" href="#top">Back to top ↑</a>
+    <span class="site-footer-bar__links">
+      <a class="site-footer-bar__feed" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a class="site-footer-bar__top" href="#top">Back to top ↑</a>
+    </span>
   </div>
 </footer>

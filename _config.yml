@@ -35,20 +35,36 @@ theme: minima
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
+
+# Atom feed (jekyll-feed) is generated at /feed.xml from site.posts.
+feed:
+  path: feed.xml
 
 collections:
   portfolio:
     output: true
+
+# Blog posts ("Log") live under /log/<title>/.
+permalink: /log/:title/
+
+# Fixed tag vocabulary for the Log. The /log/ filter only shows chips from this
+# list (and only those with at least one post). Keep post tags within this set.
+log_tags:
+  - paper
+  - books
+  - meta
+  - random
 
 google_analytics: G-C0F7DZGTG0
 
 header_pages:
   - index.markdown  # Main landing page (About, Projects, Experience)
   - cv.markdown
+  - log.markdown
 
-# Exclude from processing (blog disabled for now).
+# Exclude from processing.
 exclude:
-  - _posts
   - README.md
 #
 # exclude:

@@ -74,7 +74,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
     <span class="cv-entry__loc">Remote</span>
   </div>
   <ul>
-    <li>Consulted on <a href="{{ '/portfolio/preleuk_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams.</li>
+    <li>Consulted on <a href="{{ '/portfolio/aml_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams.</li>
     <li>Applied cloud-native bioinformatics pipelines built for high-throughput omics research, leveraging a <strong>professional data engineer certification</strong> from Google Cloud.</li>
   </ul>
 </div>
@@ -216,7 +216,7 @@ Bioinformatics engineer with 4+ years of experience building scalable platforms 
   </div>
   <ul>
     <li>Built a reproducible scRNA-seq pipeline on <strong>38 public AML patient samples</strong>, performing QC, anchor-based integration, and reference-guided cell-type annotation to characterize pre-leukemic populations. Extended with <strong>pseudotime, fate mapping, and survival analysis</strong> of PLPS/Stem11 signatures against NCI clinical data and deployed findings via an interactive R Shiny dashboard.</li>
-    <li><a href="{{ '/portfolio/preleuk_proj/' | relative_url }}">Link to project</a></li>
+    <li><a href="{{ '/portfolio/aml_proj/' | relative_url }}">Link to project</a></li>
   </ul>
 </div>
 

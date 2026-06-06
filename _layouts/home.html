@@ -11,6 +11,10 @@ layout: default
     <h1 class="hero__title">Naraen Palanikumar</h1>
     <p class="hero__tagline">Bioinformatics engineer with 4+ years of experience building scalable platforms for lab research, spanning Nextflow pipelines, Google Cloud architectures, and applied AI for biological data.</p>
     <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong><a href="https://bench.phalaena.ai" rel="noopener">Bench</a></strong> at Phalaena Automata. Google Cloud Certified Professional Data Engineer.</p>
+    {%- assign current_book = site.data.reading | where: "status", "reading" | first -%}
+    {%- if current_book -%}
+    <p class="hero__now"><span class="hero__now-label">Reading</span> <em>{{ current_book.title }}</em> — {{ current_book.author }}. <a href="{{ '/reading/' | relative_url }}">More on the shelf</a>.</p>
+    {%- endif -%}
   </div>
 </section>
 
@@ -38,11 +42,11 @@ layout: default
       <p class="project-card__stack">Python · FastAPI · React · Nextflow · Docker · GCP · Vertex AI</p>
       <p class="project-card__desc">Production omics platform ingesting varied sequencing data into a centralized API and running containerized Nextflow workflows on Cloud Run with strict IAM. Integrates a tool-augmented RAG loop over Vertex AI to cross-reference output against PubMed for accelerated insights.</p>
     </a>
-    <a class="project-card" href="{{ '/portfolio/preleuk_proj/' | relative_url }}">
+    <a class="project-card" href="{{ '/portfolio/aml_proj/' | relative_url }}">
       <p class="project-card__eyebrow">Bioinformatics portfolio</p>
-      <h3 class="project-card__title">AML scRNA-seq Analysis</h3>
-      <p class="project-card__stack">R · Python · Seurat · Scanpy · R Shiny</p>
-      <p class="project-card__desc">Reproducible scRNA-seq pipeline across 38 public AML patient samples, characterizing pre-leukemic populations with pseudotime, fate mapping, and PLPS/Stem11 survival analysis, deployed as an interactive R Shiny dashboard.</p>
+      <h3 class="project-card__title">AML transcriptomics</h3>
+      <p class="project-card__stack">R · Python · Seurat · Scanpy · Nextflow · R Shiny</p>
+      <p class="project-card__desc">Two complementary AML projects: a single-cell pipeline characterizing pre-leukemic populations across 38 patient samples (pseudotime, fate mapping, PLPS/Stem11 survival) as an R Shiny dashboard, and a Nextflow bulk RNA-seq differential-expression pipeline on TCGA-LAML vs. GTEx with an interactive volcano.</p>
     </a>
   </div>
 </section>
@@ -70,7 +74,7 @@ layout: default
         <span class="experience-item__role">Bioinformatics Consultant</span>
         <span class="experience-item__loc">Remote</span>
       </div>
-      <p class="experience-item__desc">Consulted on <a href="{{ '/portfolio/preleuk_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams. Applied cloud-native bioinformatics pipelines built for high-throughput omics research.</p>
+      <p class="experience-item__desc">Consulted on <a href="{{ '/portfolio/aml_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams. Applied cloud-native bioinformatics pipelines built for high-throughput omics research.</p>
     </li>
     <li class="experience-item">
       <div class="experience-item__head">
