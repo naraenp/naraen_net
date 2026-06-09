@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "Plant RNA-seq: drought tolerance differential expression (Nextflow)"
-description: "A reproducible Nextflow DSL2 pipeline taking raw Illumina reads from drought-tolerant and drought-susceptible rice cultivars through alignment, quantification, and differential expression to a GO-enrichment view of the genes and processes that separate the two phenotypes."
+title: "Plant bulk RNA-seq: drought tolerance differential expression (Nextflow)"
+description: "A reproducible Nextflow DSL2 pipeline taking raw Illumina bulk RNA-seq reads from drought-tolerant and drought-susceptible rice cultivars through alignment, quantification, and differential expression to a GO-enrichment view of the genes and processes that separate the two phenotypes."
 thumbnail: "/assets/images/portfolio/plant_rnaseq.svg"
 ---
 
 A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes
-**raw Illumina short reads** from two rice cultivars with opposite drought
+**raw Illumina bulk RNA-seq reads** from two rice cultivars with opposite drought
 phenotypes (the tolerant landrace **Apo** and the susceptible variety
 **IR64**) all the way to a functional read-out of *which genes, and which
 biological processes, distinguish the two*. It's the read-processing companion
@@ -17,7 +17,7 @@ expression, and **GO over-representation**) on real public plant data.
 
 ### Data
 
-Paired-end RNA-seq from **[BioProject PRJNA338445](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA338445)** (Wilkins et al.): the
+Paired-end bulk RNA-seq from **[BioProject PRJNA338445](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA338445)** (Wilkins et al.): the
 drought-tolerant cultivar **Apo** and the drought-susceptible cultivar
 **IR64**, each sampled under control and drought-stress conditions. Reads are
 pulled straight from the **[ENA](https://www.ebi.ac.uk/ena/browser/home)** and stream-subsampled (only the leading read
