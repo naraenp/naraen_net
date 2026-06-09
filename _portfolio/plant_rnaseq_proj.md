@@ -1,19 +1,19 @@
 ---
 layout: page
 title: "Plant RNA-seq: drought tolerance differential expression (Nextflow)"
-description: "A reproducible Nextflow DSL2 pipeline taking raw Illumina reads from drought-tolerant and drought-susceptible rice cultivars through alignment, quantification, and differential expression to a GO-enrichment view of the genes — and processes — that separate the two phenotypes."
+description: "A reproducible Nextflow DSL2 pipeline taking raw Illumina reads from drought-tolerant and drought-susceptible rice cultivars through alignment, quantification, and differential expression to a GO-enrichment view of the genes and processes that separate the two phenotypes."
 thumbnail: "/assets/images/portfolio/plant_rnaseq.svg"
 ---
 
 A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes
 **raw Illumina short reads** from two rice cultivars with opposite drought
-phenotypes — the tolerant landrace **Apo** and the susceptible variety
-**IR64** — all the way to a functional read-out of *which genes, and which
+phenotypes (the tolerant landrace **Apo** and the susceptible variety
+**IR64**) all the way to a functional read-out of *which genes, and which
 biological processes, distinguish the two*. It's the read-processing companion
 to my [bulk AML pipeline](aml_proj): where that one starts from pre-quantified
-counts, this one demonstrates the full short-read path — QC and trimming,
+counts, this one demonstrates the full short-read path (QC and trimming,
 spliced **genome alignment**, gene-level quantification, differential
-expression, and **GO over-representation** — on real public plant data.
+expression, and **GO over-representation**) on real public plant data.
 
 ### Data
 
@@ -36,22 +36,22 @@ profile-driven config) over a standard short-read toolchain. **Ten stages:**
 3. `HISAT2_BUILD` / [`ALIGN`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/main.nf): spliced `HISAT2` alignment to the rice genome, sorted with `samtools`.
 4. `QUANTIFY`: `featureCounts` gene-level counts.
 5. [`BUILD_MATRIX`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/bin/build_count_matrix.py): tidy counts + sample metadata.
-6. [`RUN_DE`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/bin/run_de.py): **[pydeseq2](https://pydeseq2.readthedocs.io/)** — DESeq2 median-of-ratios normalization and a negative-binomial Wald test on the design `~condition + genotype`, so the genotype contrast (tolerant vs. susceptible) is estimated *controlling for the drought treatment*.
+6. [`RUN_DE`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/bin/run_de.py): **[pydeseq2](https://pydeseq2.readthedocs.io/)**: DESeq2 median-of-ratios normalization and a negative-binomial Wald test on the design `~condition + genotype`, so the genotype contrast (tolerant vs. susceptible) is estimated *controlling for the drought treatment*.
 7. [`ENRICH`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/bin/run_enrichment.py): hypergeometric GO over-representation on the significant DE genes, with a hand-rolled Benjamini-Hochberg adjustment.
 8. [`MAKE_HEATMAP`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/bin/make_heatmap.py) / [`MAKE_ENRICH_PLT`](https://github.com/naraenp/bioinformatics-public/blob/main/plant_rnaseq_nf/bin/make_enrichment_plot.py): the two interactive charts below.
 
-The enriched processes are the phenotype link: they name the biology — stress
-response, signalling, transport — that the most differentially expressed genes
+The enriched processes are the phenotype link: they name the biology (stress
+response, signalling, transport) that the most differentially expressed genes
 belong to, connecting the transcriptome back to drought tolerance.
 
 ### Result
 
-Across ~2 M read pairs/sample (HISAT2 to IRGSP-1.0, 83–94% aligned, 38,993 genes
+Across ~2 M read pairs/sample (HISAT2 to IRGSP-1.0, 83-94% aligned, 38,993 genes
 quantified), **56 genes** separate the tolerant and susceptible cultivars at
 padj < 0.05. Those genes are over-represented for **defense response** (padj
 1.4 × 10⁻⁴), **response to other organism**, and **defense response to other
-organism**, with **diterpenoid metabolic process** — rice phytoalexin
-(momilactone) biosynthesis — and photosynthesis close behind. That is the
+organism**, with **diterpenoid metabolic process** (rice phytoalexin /
+momilactone biosynthesis) and photosynthesis close behind. That is the
 phenotype link in one line: the transcriptional gap between a drought-tolerant
 and a drought-susceptible rice line concentrates in stress- and defense-related
 biology. The heatmap below shows the two genotype blocks separating cleanly; the
@@ -76,11 +76,11 @@ The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatic
           loading="lazy"
           style="height: 620px;">
   </iframe>
-  <figcaption>Biological processes over-represented among the DE genes — the phenotype-facing summary, linking the differentially expressed genes to drought-relevant biology.</figcaption>
+  <figcaption>Biological processes over-represented among the DE genes: the phenotype-facing summary, linking the differentially expressed genes to drought-relevant biology.</figcaption>
 </figure>
 
 > **Scope note:** reads are stream-subsampled and the two within-genotype
-> libraries (control + stress) act as replicates for the genotype contrast — a
+> libraries (control + stress) act as replicates for the genotype contrast, a
 > deliberate, documented trade-off that keeps the project laptop-reproducible
 > rather than a maximally powered study. Swapping in more biological replicates
 > and the full read depth is a drop-in change.
