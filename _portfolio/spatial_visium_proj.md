@@ -62,9 +62,16 @@ and breast-cancer mucin), **MGP** and **IGFBP5** (stromal matrix), **CD74**
 plasma-cell and lymphoid aggregates). The second figure shows the top genes in
 space.
 
+Because the reference is not patient-matched to this section, the absolute
+proportions carry the cross-platform shift between the two assays; the
+inverse-mean weighting is what keeps the transparent NNLS baseline honest under
+that shift. Quantifying it against a probabilistic method built for the problem
+(cell2location or RCTD), alongside an interactive R Shiny viewer over the exported
+maps, is a planned follow-up.
+
 **Platforms & Tools:** Nextflow DSL2, Python (scanpy, anndata, squidpy, numpy, scipy, scikit-learn, pandas, plotly), 10x Visium, conda, pytest
 
-The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/main.nf) workflow live in [`bioinformatics-public/spatial_visium_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf); see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/docs/REPORT.md) for a full run report. The whole thing is reproducible with one fetch script, a pinned conda env, and an offline synthetic mode used as the CI smoke test.
+The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/main.nf) workflow live in [`bioinformatics-public/spatial_visium_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf); see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/docs/REPORT.md) for a full run report. The whole thing is reproducible with one fetch script, a pinned conda env, and an offline `--demo` mode that synthesizes a toy section with planted, spatially structured cell-type proportions and self-checks that the deconvolution recovers them (mean absolute error 0.008 against the known truth), the spatial analogue of the planted differential-expression checks in my bulk pipelines and the CI smoke test; the Nextflow and no-Nextflow paths are verified to produce identical proportions.
 
 <figure class="media-figure">
   <iframe src="{{ '/assets/embeds/spatial_celltypes.html' | relative_url }}"
@@ -83,18 +90,3 @@ The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatic
   </iframe>
   <figcaption>The top spatially variable genes (Moran's I) in tissue space, naming the compartments that vary: epithelial (MUC1), stromal (MGP, IGFBP5), and immune (CD74, immunoglobulins).</figcaption>
 </figure>
-
-> **Validation:** the pipeline ships with an offline `--demo` mode that
-> synthesizes a toy Visium section and reference with **planted, spatially
-> structured cell-type proportions**, then self-checks that the deconvolution
-> recovers them (mean absolute error 0.008 against the known truth). This is the
-> spatial analogue of the planted differential-expression checks in my bulk
-> pipelines, it is the CI smoke test, and the Nextflow and no-Nextflow paths are
-> verified to produce identical proportions.
-
-> **Scope note:** NNLS is the transparent default here, and the inverse-mean gene
-> weighting is what keeps it honest on cross-platform data; absolute proportions
-> still carry the platform shift between the Visium section and the scRNA-seq
-> reference. Quantifying that against a probabilistic method built for it
-> (cell2location or RCTD) is a planned follow-up, as is an interactive R Shiny
-> viewer over the exported maps.
