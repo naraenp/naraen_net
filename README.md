@@ -64,13 +64,16 @@ for some live demos). Thumbnails are scaled to a 180px-tall card via
 
 ## Design system
 
-The site follows the Phalaena Automata identity, scoped to naraen.net:
+The site follows the **Aequorea** identity (personal, named for the GFP
+jellyfish *Aequorea victoria*), scoped to naraen.net:
 
-- One mauve color ramp (tokens: `--pa-onyx` through `--pa-snow`).
-- Three fonts (Sentient serif, Plein sans, Fragment Mono monospace),
-  self-hosted under `assets/fonts/`.
-- Zero border radius except the avatar and spinner; no box shadows; 1px
-  borders; sentence-case headings.
+- A deep marine-ink "Abyssal" neutral ramp (tokens: `--aq-abyss` through
+  `--aq-sail`) lit by a single bioluminescent aquamarine accent
+  (`--aq-glow`) that lives outside the ramp.
+- Three fonts (Zodiak serif, Switzer sans, JetBrains Mono monospace),
+  self-hosted under `assets/fonts/` with their licenses alongside.
+- 6px border radius; 1px borders; sentence-case headings; and a "glow,
+  don't move" hover (an accent box-shadow bloom) instead of translate/scale.
 
 Component CSS lives in `assets/main.scss`; tokens are declared at the top of
 that file and surfaced as Sass defaults in `_sass/minima.scss`.

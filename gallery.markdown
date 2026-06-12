@@ -118,7 +118,7 @@ permalink: /gallery/
       render();
     })
     .catch(function (err) {
-      grid.innerHTML = '<li class="gallery-cell" style="padding:16px;color:var(--pa-fg-muted)">' +
+      grid.innerHTML = '<li class="gallery-cell" style="padding:16px;color:var(--aq-fg-muted)">' +
         'Could not load captions (' + err.message + ').</li>';
     });
 })();

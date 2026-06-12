@@ -5,8 +5,6 @@ description: "Search the Log, portfolio, and pages on naraen.net."
 permalink: /search/
 ---
 
-<p class="log-intro">Search across the Log, portfolio, and pages. Runs entirely in your browser against a static index, no server.</p>
-
 <div id="search" class="pf-search"></div>
 
 <noscript><p class="log-empty">Search needs JavaScript. Browse the <a href="{{ '/log/' | relative_url }}">Log</a> or <a href="{{ '/portfolio/' | relative_url }}">portfolio</a> directly.</p></noscript>
