@@ -1,6 +1,35 @@
 ---
 layout: default
 ---
+{%- comment -%}
+Structured data for the post, in addition to jekyll-seo-tag. `paper`-tagged
+reviews emit ScholarlyArticle (about the reviewed paper); everything else
+emits BlogPosting.
+{%- endcomment -%}
+{%- if page.tags contains "paper" -%}{%- assign post_schema = "ScholarlyArticle" -%}{%- else -%}{%- assign post_schema = "BlogPosting" -%}{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ post_schema }}",
+  "headline": {{ page.title | jsonify }},
+  "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+  "mainEntityOfPage": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "image": "{{ site.url }}{{ site.baseurl }}{{ site.image }}",
+  "author": { "@type": "Person", "name": "Naraen Palanikumar", "url": "{{ site.url }}{{ site.baseurl }}/" },
+  "publisher": { "@type": "Person", "name": "Naraen Palanikumar", "url": "{{ site.url }}{{ site.baseurl }}/" },
+  "description": {{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 200 | jsonify }}
+  {%- if page.tags.size > 0 -%}, "keywords": {{ page.tags | join: ", " | jsonify }}{%- endif -%}
+  {%- if page.paper -%}, "about": {
+    "@type": "ScholarlyArticle",
+    "name": {{ page.paper.title | jsonify }}
+    {%- if page.paper.authors -%}, "author": {{ page.paper.authors | jsonify }}{%- endif -%}
+    {%- if page.paper.venue -%}, "publication": {{ page.paper.venue | jsonify }}{%- endif -%}
+    {%- if page.paper.link -%}, "url": {{ page.paper.link | jsonify }}{%- endif -%}
+  }{%- endif -%}
+}
+</script>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -15,7 +44,7 @@ layout: default
     </p>
     {% if page.tags.size > 0 %}
     <ul class="post-tags" aria-label="Tags">
-      {% for tag in page.tags %}<li class="post-tag">{{ tag }}</li>{% endfor %}
+      {% for tag in page.tags %}{% assign tag_slug = tag | slugify %}<li><a class="post-tag" href="{{ '/log/tag/' | append: tag_slug | append: '/' | relative_url }}">{{ tag }}</a></li>{% endfor %}
     </ul>
     {% endif %}
   </header>

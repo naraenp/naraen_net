@@ -22,11 +22,16 @@ permalink: /log/
 {% assign present_tags = "" | split: "" %}
 {% for tag in site.log_tags %}{% assign n = site.posts | where_exp: "p", "p.tags contains tag" | size %}{% if n > 0 %}{% assign present_tags = present_tags | push: tag %}{% endif %}{% endfor %}
 
+{% comment %}
+Chips are real links to per-tag pages (/log/tag/<tag>/) so each tag is
+shareable and indexable. When JS is on, the script below intercepts clicks to
+filter in place; with JS off, they navigate to the static tag page.
+{% endcomment %}
 {% if present_tags.size > 0 %}
 <div class="log-filter" role="group" aria-label="Filter posts by tag">
   <button type="button" class="filter-chip is-active" data-tag="all" aria-pressed="true">All</button>
-  {% for tag in present_tags %}
-  <button type="button" class="filter-chip" data-tag="{{ tag | slugify }}" aria-pressed="false">{{ tag }}</button>
+  {% for tag in present_tags %}{% assign tag_slug = tag | slugify %}
+  <a class="filter-chip" href="{{ '/log/tag/' | append: tag_slug | append: '/' | relative_url }}" data-tag="{{ tag_slug }}">{{ tag }}</a>
   {% endfor %}
 </div>
 {% endif %}
@@ -35,21 +40,7 @@ permalink: /log/
 <p class="log-empty">No posts yet. The first one is on its way.</p>
 {% endif %}
 
-<ul class="post-list" id="post-list">
-  {% for post in site.posts %}
-  {% assign tag_slugs = "" %}{% for tag in post.tags %}{% assign tag_slugs = tag_slugs | append: tag | slugify | append: " " %}{% endfor %}
-  <li class="post-card" data-tags="{{ tag_slugs | strip }}">
-    <a href="{{ post.url | relative_url }}">
-      <span class="post-card__date">{{ post.date | date: "%b %-d, %Y" }} · {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
-      <h3 class="post-card__title">{{ post.title | escape }}</h3>
-      <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
-      {% if post.tags.size > 0 %}
-      <span class="post-card__tags">{% for tag in post.tags %}<span class="post-tag">{{ tag }}</span>{% endfor %}</span>
-      {% endif %}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+{% include post-list.html posts=site.posts %}
 
 <p class="log-empty" id="log-empty" hidden>No posts with that tag yet.</p>
 
@@ -73,7 +64,10 @@ permalink: /log/
   }
 
   chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
+    chip.addEventListener('click', function (e) {
+      // Chips are <a> links to /log/tag/<tag>/ for no-JS / shareability; with
+      // JS we filter in place instead of navigating.
+      if (chip.tagName === 'A') e.preventDefault();
       chips.forEach(function (c) { c.classList.remove('is-active'); c.setAttribute('aria-pressed', 'false'); });
       chip.classList.add('is-active');
       chip.setAttribute('aria-pressed', 'true');

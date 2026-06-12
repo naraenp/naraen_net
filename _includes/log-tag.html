@@ -1,0 +1,16 @@
+{%- comment -%}
+Body for a per-tag Log page. Expects `page.tag` to hold the tag string.
+Lists every post whose `tags` contain that tag, reusing the /log/ card markup.
+{%- endcomment -%}
+{% assign tagged = site.posts | where_exp: "p", "p.tags contains page.tag" %}
+
+<p class="log-tag-head">
+  <a class="post-back" href="{{ '/log/' | relative_url }}">← Log</a>
+  <span class="log-tag-head__label">Tag: <span class="post-tag">{{ page.tag }}</span></span>
+</p>
+
+{% if tagged.size > 0 %}
+{% include post-list.html posts=tagged %}
+{% else %}
+<p class="log-empty">No posts with that tag yet.</p>
+{% endif %}

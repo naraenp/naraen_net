@@ -1422,11 +1422,31 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   transition: color var(--pa-dur-fast) var(--pa-ease-symmetric),
               border-color var(--pa-dur-fast) var(--pa-ease-symmetric);
 }
-.filter-chip:hover { color: var(--pa-accent); border-color: var(--pa-accent); }
-.filter-chip.is-active {
+/* Chips are a mix of <button> (All) and <a> (per-tag links); normalize the
+   anchor look so both read identically. */
+a.filter-chip { text-decoration: none; display: inline-block; }
+.filter-chip:hover { color: var(--pa-accent); border-color: var(--pa-accent); text-decoration: none; }
+.filter-chip.is-active,
+a.filter-chip.is-active {
   color: var(--pa-snow);
   background: var(--pa-accent);
   border-color: var(--pa-accent);
+}
+
+/* Per-tag Log page header */
+.log-tag-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--pa-space-4);
+  flex-wrap: wrap;
+  margin: 0 0 var(--pa-space-5);
+}
+.log-tag-head .post-back { margin-bottom: 0; }
+.log-tag-head__label {
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: var(--pa-fs-mono-sm);
+  letter-spacing: 0.02em;
+  color: var(--pa-fg-dim);
 }
 
 /* Post listing */
@@ -1483,8 +1503,8 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
 }
 
 /* Tags (shared by cards and post header) */
-.post-tag,
-.post-tags li {
+.post-tag {
+  display: inline-block;
   font-family: "Fragment Mono", ui-monospace, monospace;
   font-size: var(--pa-fs-mono-sm);
   letter-spacing: 0.02em;
@@ -1493,6 +1513,9 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   border-radius: var(--pa-radius);
   padding: 1px var(--pa-space-2);
 }
+/* Post-header tags are links to per-tag pages; keep the chip look. */
+a.post-tag { text-decoration: none; transition: color var(--pa-dur-fast) var(--pa-ease-symmetric), border-color var(--pa-dur-fast) var(--pa-ease-symmetric); }
+a.post-tag:hover { color: var(--pa-accent); border-color: var(--pa-accent); text-decoration: none; }
 .post-tags {
   list-style: none;
   display: flex;
@@ -1501,6 +1524,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   padding: 0;
   margin: var(--pa-space-3) 0 0;
 }
+.post-tags li { display: inline-flex; }
 
 /* Single post header bits */
 .post-back {
@@ -1696,6 +1720,116 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   text-decoration: none;
 }
 .reading-item__post:hover { color: var(--pa-accent-2); }
+
+/* ==========================================================================
+   Search (/search/) — Pagefind UI themed to the mauve design system.
+   Pagefind ships its own static JS/CSS and exposes --pagefind-ui-* custom
+   properties; we rebind them to the --pa-* tokens and square off its defaults
+   (zero radius, 1px borders, no shadows) to match the rest of the site.
+   ========================================================================== */
+.pf-search {
+  margin-top: var(--pa-space-5);
+
+  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-primary: var(--pa-accent);
+  --pagefind-ui-text: var(--pa-fg);
+  --pagefind-ui-background: var(--pa-card);
+  --pagefind-ui-border: var(--pa-card-border);
+  --pagefind-ui-tag: var(--pa-bg-flair);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 0;
+  --pagefind-ui-image-border-radius: 0;
+  --pagefind-ui-image-box-ratio: 3 / 2;
+  --pagefind-ui-font: "Plein", system-ui, sans-serif;
+}
+
+/* Search input box */
+.pf-search .pagefind-ui__search-input {
+  font-family: "Plein", system-ui, sans-serif;
+  font-weight: 500;
+  background: transparent;
+  color: var(--pa-fg);
+  border: 1px solid var(--pa-card-border);
+  border-radius: 0;
+}
+.pf-search .pagefind-ui__search-input::placeholder { color: var(--pa-fg-dim); }
+.pf-search .pagefind-ui__search-input:focus {
+  outline: none;
+  border-color: var(--pa-accent);
+}
+.pf-search .pagefind-ui__search-clear {
+  background: transparent;
+  color: var(--pa-fg-dim);
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: var(--pa-fs-mono-sm);
+}
+.pf-search .pagefind-ui__search-clear:hover { color: var(--pa-accent); }
+
+/* Result count / messages */
+.pf-search .pagefind-ui__message {
+  font-family: "Fragment Mono", ui-monospace, monospace;
+  font-size: var(--pa-fs-mono-sm);
+  letter-spacing: 0.02em;
+  color: var(--pa-fg-dim);
+}
+
+/* Individual result cards */
+.pf-search .pagefind-ui__result {
+  border-top: 1px solid var(--pa-rule);
+  padding: var(--pa-space-4) 0;
+}
+.pf-search .pagefind-ui__result-title {
+  font-family: "Sentient", Georgia, serif;
+  font-weight: 400;
+  font-size: var(--pa-fs-h3);
+  letter-spacing: -0.01em;
+}
+.pf-search .pagefind-ui__result-link {
+  color: var(--pa-fg);
+  text-decoration: none;
+}
+.pf-search .pagefind-ui__result-link:hover { color: var(--pa-accent); text-decoration: underline; }
+.pf-search .pagefind-ui__result-excerpt {
+  font-family: "Plein", system-ui, sans-serif;
+  font-size: var(--pa-fs-body-sm);
+  color: var(--pa-fg-muted);
+  line-height: 1.6;
+}
+.pf-search .pagefind-ui__result-excerpt mark {
+  background: transparent;
+  color: var(--pa-accent);
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0;
+}
+
+/* Sub-results (matching sections within a page) */
+.pf-search .pagefind-ui__result-nested {
+  border-left: 1px solid var(--pa-card-border);
+}
+.pf-search .pagefind-ui__result-nested .pagefind-ui__result-link {
+  color: var(--pa-fg-muted);
+  font-family: "Plein", system-ui, sans-serif;
+  font-size: var(--pa-fs-body-sm);
+}
+.pf-search .pagefind-ui__result-nested .pagefind-ui__result-link:hover { color: var(--pa-accent); }
+
+/* "Load more" button */
+.pf-search .pagefind-ui__button {
+  font-family: "Plein", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--pa-fs-body-sm);
+  color: var(--pa-fg);
+  background: transparent;
+  border: 1px solid var(--pa-card-border);
+  border-radius: 0;
+  transition: background var(--pa-dur-fast) var(--pa-ease-symmetric),
+              border-color var(--pa-dur-fast) var(--pa-ease-symmetric);
+}
+.pf-search .pagefind-ui__button:hover {
+  background: var(--pa-hover-card);
+  border-color: var(--pa-accent);
+}
 
 /* ---------- Reduce-motion ---------- */
 @media (prefers-reduced-motion: reduce) {

@@ -36,6 +36,10 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      # Static client-side search index. Runs after the Jekyll build so it can
+      # crawl the rendered HTML in _site, writing _site/pagefind/. No backend.
+      - name: Build Pagefind search index
+        run: npx --yes pagefind@1 --site _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
