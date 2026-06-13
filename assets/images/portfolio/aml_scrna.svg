@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AML scRNA-seq UMAP thumbnail">
   <defs>
     <style>
-      .bg { fill: #1D171A; }
-      .grid-line { stroke: #392D34; stroke-width: 1; }
-      .axis { stroke: #5B4752; stroke-width: 1; }
-      .cluster-a { fill: #967386; }
-      .cluster-b { fill: #C2ADB8; }
-      .cluster-c { fill: #5B4752; }
-      .cluster-d { fill: #D7C9D0; }
-      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #967386; letter-spacing: 0.04em; }
-      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
+      .bg { fill: #0A141A; }
+      .grid-line { stroke: #163239; stroke-width: 1; }
+      .axis { stroke: #294E57; stroke-width: 1; }
+      .cluster-a { fill: #8CB6BE; }
+      .cluster-b { fill: #56858F; }
+      .cluster-c { fill: #4BDDE6; }
+      .cluster-d { fill: #BBD7DC; }
+      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #4BDDE6; letter-spacing: 0.04em; }
+      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #56858F; letter-spacing: 0.04em; }
     </style>
   </defs>
 

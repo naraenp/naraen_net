@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="AML RNA-seq volcano thumbnail">
   <defs>
     <style>
-      .bg { fill: #1D171A; }
-      .grid-line { stroke: #392D34; stroke-width: 1; }
-      .axis { stroke: #5B4752; stroke-width: 1; }
-      .thresh { stroke: #5B4752; stroke-width: 1; stroke-dasharray: 4 4; }
-      .ns { fill: #5B4752; }
-      .up { fill: #C2ADB8; }
-      .down { fill: #967386; }
-      .sig-marker { fill: none; stroke: #D7C9D0; stroke-width: 1.2; }
-      .label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #C2ADB8; letter-spacing: 0.04em; }
-      .label-dim { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #5B4752; letter-spacing: 0.04em; }
-      .gene-label { font-family: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #D7C9D0; letter-spacing: 0.02em; }
+      .bg { fill: #0A141A; }
+      .grid-line { stroke: #163239; stroke-width: 1; }
+      .axis { stroke: #294E57; stroke-width: 1; }
+      .thresh { stroke: #294E57; stroke-width: 1; stroke-dasharray: 4 4; }
+      .ns { fill: #294E57; }
+      .up { fill: #4BDDE6; }
+      .down { fill: #8CB6BE; }
+      .sig-marker { fill: none; stroke: #EDF4F6; stroke-width: 1.2; }
+      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #4BDDE6; letter-spacing: 0.04em; }
+      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #56858F; letter-spacing: 0.04em; }
+      .gene-label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #DBEBEE; letter-spacing: 0.02em; }
     </style>
   </defs>
 
@@ -50,7 +50,7 @@
     <circle cx="410" cy="289" r="2"/><circle cx="338" cy="272" r="2"/><circle cx="302" cy="275" r="2"/>
   </g>
 
-  <!-- down-in-AML (left, dusty-mauve) -->
+  <!-- down-in-AML (left, mist) -->
   <g class="down">
     <circle cx="200" cy="230" r="3"/><circle cx="180" cy="220" r="3"/><circle cx="160" cy="200" r="3"/>
     <circle cx="140" cy="190" r="3"/><circle cx="120" cy="170" r="3"/><circle cx="100" cy="160" r="2"/>
@@ -59,7 +59,7 @@
     <circle cx="185" cy="205" r="2"/><circle cx="155" cy="175" r="2"/><circle cx="220" cy="262" r="2"/>
   </g>
 
-  <!-- up-in-AML (right, lilac-ash) — denser to mirror real-data biology -->
+  <!-- up-in-AML (right, glow) — denser to mirror real-data biology -->
   <g class="up">
     <circle cx="430" cy="240" r="3"/><circle cx="450" cy="220" r="3"/><circle cx="470" cy="200" r="3"/>
     <circle cx="490" cy="180" r="3"/><circle cx="510" cy="160" r="3"/><circle cx="530" cy="140" r="3"/>
