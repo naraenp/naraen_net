@@ -1215,7 +1215,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   border: 0;                /* override base `pre` border */
   line-height: 1.05;
   user-select: none;
-  opacity: var(--ascii-opacity, 0.4);
+  opacity: var(--ascii-opacity, 0.18);
   animation: ascii-slide var(--ascii-duration, 14s) linear forwards;
   will-change: transform;
 }
