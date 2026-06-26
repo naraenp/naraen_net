@@ -63,6 +63,7 @@ header_pages:
 # Exclude from processing.
 exclude:
   - README.md
+  - CLAUDE.md
 #
 # exclude:
 #   - .sass-cache/

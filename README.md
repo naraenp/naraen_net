@@ -7,28 +7,40 @@ and published via GitHub Pages from `main`.
 
 - **Home** (`/`): Hero, About, Selected projects, and Experience sections.
   Sticky glass nav with a light/dark theme toggle.
-- **CV** (`/cv/`): Full CV with a downloadable résumé PDF
-  (`assets/pdf/naraenp_resume.pdf`).
 - **Portfolio** (`/portfolio/`): Auto-generated grid of project pages collected
   from `_portfolio/` (front matter: `title`, `description`, `thumbnail`).
+- **Log** (`/log/`): The blog. Posts live in `_posts/` and use the
+  `/log/:title/` permalink. The index (`log.markdown`) filters posts
+  client-side by a fixed tag vocabulary (`log_tags` in `_config.yml`).
+- **CV** (`/cv/`): Full CV with a downloadable résumé PDF
+  (`assets/pdf/naraenp_resume.pdf`).
+- **Gallery** (`/gallery/`): Lightbox photo grid driven by
+  `assets/gallery/captions.json`.
+- **Reading** (`/reading/`): Bookshelf driven by `_data/reading.yml`; the same
+  data feeds a "Currently reading" strip on `/log/` and the home hero.
+- **Search** (`/search/`): Client-side site search (Pagefind).
 - **Contact** (`/contact/`): Formspree-backed contact form; the recipient
   email is not stored in the repo.
-
-The blog is intentionally disabled (`_posts` is in `exclude:` in
-`_config.yml`).
 
 ## Repo layout
 
 ```text
 ├── _config.yml          # Site config, formspree_form_id, plugin list
+├── _data/               # reading.yml (bookshelf data)
 ├── _includes/           # header, head, footer, contact_form, theme_toggle
 ├── _layouts/            # default, home, page, post
 ├── _portfolio/          # One .md per portfolio project (collection)
-├── _sass/               # Minima overrides + PA design tokens
-├── assets/              # main.scss, images/, icons/, fonts/, pdf/
+├── _posts/              # Log entries (the blog)
+├── _sass/               # Vendored minima + Aequorea design tokens
+├── assets/              # main.scss, images/, icons/, fonts/, pdf/, gallery/, embeds/
+├── bin/                 # Authoring/publish helpers (new-post.sh, publish.sh)
 ├── index.markdown       # layout: home
 ├── portfolio.markdown   # Portfolio grid index
+├── log.markdown         # Log index (client-side tag filter)
 ├── cv.markdown          # CV page
+├── gallery.markdown     # Photo gallery (lightbox)
+├── reading.markdown     # Reading bookshelf
+├── search.markdown      # Site search (Pagefind)
 ├── contact.markdown     # Contact page
 ├── 404.html             # Custom 404
 ├── CNAME                # Custom domain (naraen.net)
@@ -77,6 +89,24 @@ jellyfish *Aequorea victoria*), scoped to naraen.net:
 
 Component CSS lives in `assets/main.scss`; tokens are declared at the top of
 that file and surfaced as Sass defaults in `_sass/minima.scss`.
+
+## Conventions worth preserving
+
+A few deliberate decisions that are easy to undo by accident:
+
+- **No theme gem.** minima's layouts, includes, and styles are vendored in-repo
+  (`_layouts/`, `_includes/`, `_sass/minima.scss` + `_sass/minima/`), and
+  `theme: minima` / `gem "minima"` are intentionally omitted. This keeps local
+  builds matching production and stops Jekyll auto-loading minima's
+  `jekyll-feed` dependency. Don't reintroduce the theme gem.
+- **No RSS/Atom feed.** `jekyll-feed` is intentionally not in the plugin list
+  (see `_config.yml`). The site is **content-only**: no comments, no
+  third-party interaction widgets, no feed. The Formspree contact form is the
+  single interaction channel.
+- **Nav is hardcoded** in `_includes/header.html`, not generated from
+  `header_pages`. Add new top-level pages to both.
+- **Design system is fixed.** The Aequorea tokens, fonts, and identity rules
+  above are intentional; treat them as the contract for any new UI.
 
 ## Config notes
 
