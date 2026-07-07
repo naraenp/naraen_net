@@ -58,6 +58,7 @@ google_analytics: G-C0F7DZGTG0
 header_pages:
   - index.markdown  # Main landing page (About, Projects, Experience)
   - cv.markdown
+  - log.markdown
 
 # Exclude from processing.
 exclude:
