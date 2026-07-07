@@ -3,7 +3,6 @@ layout: post
 title: "The edit button"
 date: 2026-07-07 13:00:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity"
   authors: "Jinek, Chylinski, Fonfara, Hauer, Doudna & Charpentier"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1126/science.1225829"
   verdict: "The biochemistry that made genome editing programmable — and cheap enough to change who gets to compete."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** Targeted DNA cutting existed before CRISPR — zinc fingers, TALENs — but each new target meant engineering a new *protein*. That's slow and expensive. The question was whether you could retarget a nuclease by changing something cheap instead.
 

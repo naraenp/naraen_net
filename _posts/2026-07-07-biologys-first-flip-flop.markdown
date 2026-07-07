@@ -3,7 +3,6 @@ layout: post
 title: "Biology's first flip-flop"
 date: 2026-07-07 09:10:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Construction of a genetic toggle switch in Escherichia coli"
   authors: "Gardner, Cantor & Collins"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/35002131"
   verdict: "The cleanest possible proof that a cell can hold a designed state — engineering, not just observation."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** By 2000, molecular biology could *describe* gene regulation exquisitely but rarely *design* it. Gardner, Cantor and Collins asked a pointed engineering question: can you build a gene network, from a simple model, that behaves like a component you'd find in electronics?
 

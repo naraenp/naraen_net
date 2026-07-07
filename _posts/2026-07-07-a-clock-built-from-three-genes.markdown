@@ -3,7 +3,6 @@ layout: post
 title: "A clock built from three genes"
 date: 2026-07-07 10:05:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "A synthetic oscillator network of transcriptional regulators (the repressilator)"
   authors: "Elowitz & Leibler"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/35002125"
   verdict: "Designed dynamics in a living cell — and an honest first look at how noisy biology makes them."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** The toggle switch showed a cell could *hold* a state. Elowitz and Leibler asked the harder dynamical question: could you make a cell *cycle* through states on a schedule you designed, with no natural clock to borrow from?
 

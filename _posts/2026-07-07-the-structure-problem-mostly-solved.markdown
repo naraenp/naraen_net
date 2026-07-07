@@ -3,7 +3,6 @@ layout: post
 title: "The structure problem, mostly solved"
 date: 2026-07-07 14:45:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Highly accurate protein structure prediction with AlphaFold (AlphaFold2)"
   authors: "Jumper et al. (AlphaFold, DeepMind)"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/s41586-021-03819-2"
   verdict: "A model triumph that's secretly a data-and-evaluation triumph — and now just infrastructure."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** Predicting a protein's 3D structure from its sequence was a 50-year open problem. Physics-based folding didn't scale; earlier ML got close-ish. Then at CASP14, AlphaFold2 predicted structures at roughly experimental accuracy for most targets, and the field's central question changed overnight.
 

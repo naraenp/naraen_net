@@ -3,7 +3,6 @@ layout: post
 title: "Inverse folding"
 date: 2026-07-07 15:55:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Robust deep learning–based protein sequence design using ProteinMPNN"
   authors: "Dauparas et al. (Baker lab)"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1126/science.add2187"
   verdict: "The workhorse that answers the design question: given a shape, what sequence folds to it?"
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** Structure prediction runs sequence → structure. Protein *design* needs the inverse: you have a backbone you want (a fold, a binder, a scaffold), and you need an amino-acid sequence that will actually fold to it. Physics-based design (Rosetta) worked but was slow and often failed.
 

@@ -3,7 +3,6 @@ layout: post
 title: "Standard parts for living systems"
 date: 2026-07-07 11:00:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Foundations for engineering biology"
   authors: "Drew Endy"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/nature04342"
   verdict: "The manifesto that argued biology's bottleneck is engineering discipline, not biology — still the right diagnosis."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** After the toggle switch and repressilator, building anything *bigger* was miserable: every part behaved differently in every new context, and each project started from scratch. Endy's claim is that this is not a biology problem but an *engineering* one — biology lacked the abstractions that let other fields compose complexity.
 

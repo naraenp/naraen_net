@@ -3,7 +3,6 @@ layout: post
 title: "Find-and-replace on a genome"
 date: 2026-07-07 14:00:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Total synthesis of Escherichia coli with a recoded genome (Syn61)"
   authors: "Fredens et al. (Chin lab)"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/s41586-019-1192-5"
   verdict: "The clearest answer yet to 'what does Build mean at genome scale' — and it lived."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** The genetic code is redundant — 64 codons for 20 amino acids plus stop — so in principle you don't need all 64. But "in principle" is cheap. Could you actually *rewrite* an entire genome to use fewer codons, across every gene at once, and have the organism survive?
 

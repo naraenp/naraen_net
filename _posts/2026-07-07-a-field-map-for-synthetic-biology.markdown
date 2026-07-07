@@ -3,7 +3,6 @@ layout: post
 title: "A field map for synthetic biology"
 date: 2026-07-07 12:00:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Synthetic biology: applications come of age"
   authors: "Khalil & Collins"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/nrg2775"
   verdict: "The single best orientation to the field a decade in — the map I'll keep pointing back to."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** By 2010 synthetic biology had gone from two proof-of-concept circuits to a sprawl of switches, oscillators, logic gates, and early applications. Someone needed to draw the map. Khalil and Collins did.
 

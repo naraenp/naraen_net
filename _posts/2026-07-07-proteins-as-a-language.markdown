@@ -3,7 +3,6 @@ layout: post
 title: "Proteins as a language"
 date: 2026-07-07 15:20:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "Evolutionary-scale prediction of atomic-level protein structure with a language model (ESM-2 / ESMFold)"
   authors: "Lin et al. (Meta AI / ESM)"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1126/science.ade2574"
   verdict: "Structure straight from a sequence model, no alignment — the 'LLM for proteins' idea made concrete."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** AlphaFold2 is accurate but leans on a multiple-sequence alignment per target, which is slow to build and thin for orphan or designed sequences. Could a model learn enough biology from *raw sequences alone* to skip the MSA entirely?
 

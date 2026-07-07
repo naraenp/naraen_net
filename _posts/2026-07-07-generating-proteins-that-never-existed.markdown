@@ -3,7 +3,6 @@ layout: post
 title: "Generating proteins that never existed"
 date: 2026-07-07 16:30:00 -0500
 tags: [paper]
-published: false
 paper:
   title: "De novo design of protein structure and function with RFdiffusion"
   authors: "Watson et al. (Baker lab)"
@@ -11,7 +10,6 @@ paper:
   link: "https://doi.org/10.1038/s41586-023-06415-8"
   verdict: "The same diffusion idea behind image models, pointed at protein backbones — and it makes real binders."
 ---
-<!-- DRAFT — AI-generated sample review for the paper-a-day comparison exercise. Held at published:false; verify against your own reading before shipping. -->
 
 **The problem.** Prediction and inverse folding both start from something — a sequence, or a backbone you already drew. Design's most ambitious version starts from *intent*: "give me a protein that binds this target" or "that scaffolds this active site," with no template. Can you *generate* a plausible new backbone from noise?
 
