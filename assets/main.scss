@@ -68,7 +68,7 @@
   --aq-glow:         #{$aq-glow};
   --aq-glow-deep:    #{$aq-glow-deep};
   --aq-glow-ink:     #{$aq-glow-ink};
-  --aq-accent-halo:  rgba(75, 221, 230, 0.20);   /* the "glow, don't move" bloom */
+  --aq-accent-halo:  rgba(208, 123, 69, 0.20);   /* the "glow, don't move" bloom */
 
   --aq-success: #6FB58A;
   --aq-error:   #E0685E;
@@ -88,6 +88,10 @@
   --aq-fg:          var(--aq-sail);
   --aq-fg-muted:    var(--aq-haze);
   --aq-fg-dim:      var(--aq-mist);
+
+  /* Logo sweep — a slow drift within the burnt-orange accent family.
+     Dark ground gets a brighter amber peak; light ground stays deeper. */
+  --aq-title-sweep: linear-gradient(100deg, #B75E2D 0%, #D07B45 33%, #E7A960 55%, #D07B45 77%, #B75E2D 100%);
 
   /* Geometry (Aequorea softens the company's hard 0 to a 6px radius) */
   --aq-radius: 6px;
@@ -149,6 +153,8 @@
   --aq-fg:          var(--aq-abyss);
   --aq-fg-muted:    var(--aq-fathom);
   --aq-fg-dim:      var(--aq-current);
+  /* Deeper sweep on the light glass header, where a bright amber would wash out. */
+  --aq-title-sweep: linear-gradient(100deg, #8A4620 0%, #B75E2D 40%, #D07B45 55%, #B75E2D 70%, #8A4620 100%);
 }
 
 /* ---------- Base ---------- */
@@ -310,8 +316,28 @@ img { max-width: 100%; height: auto; }
   text-decoration: none;
 }
 
-.site-header--glass .site-title__accent { color: var(--aq-accent); }
+/* The "naraen" word carries a slow in-family gradient sweep — a touch of life
+   without motion. The parent .site-title forces -webkit-text-fill-color to
+   currentColor, so the accent span must reclaim transparency to reveal the
+   clipped gradient. */
+.site-header--glass .site-title__accent {
+  background-image: var(--aq-title-sweep);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: aq-title-sweep 9s ease-in-out infinite alternate;
+}
 .site-header--glass .site-title__rest { color: var(--aq-fg); }
+
+@keyframes aq-title-sweep {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header--glass .site-title__accent { animation: none; background-position: 30% 50%; }
+}
 
 @include media-query($on-palm) {
   .site-header--glass .site-title { font-size: 18px; }
@@ -1208,7 +1234,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   margin: 0;
   padding: 0;
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  color: var(--aq-mist);   /* soft mist-blue on the dark abyss — readable */
+  color: var(--aq-mist);   /* soft warm sand on the dark ember ground — readable */
   white-space: pre;
   overflow: visible;        /* override base `pre { overflow-x: auto }` */
   background: transparent;  /* override base `pre` background */
@@ -1219,7 +1245,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   animation: ascii-slide var(--ascii-duration, 14s) linear forwards;
   will-change: transform;
 }
-.theme-light .ascii-art { color: var(--aq-current); }   /* deep teal on the light bg */
+.theme-light .ascii-art { color: var(--aq-current); }   /* deep umber on the light bg */
 
 @keyframes ascii-slide {
   from { transform: translate3d(100vw, 0, 0); }

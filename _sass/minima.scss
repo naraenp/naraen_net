@@ -1,21 +1,21 @@
 @charset "utf-8";
 
 // Aequorea (personal) design system, surfaced as Sass defaults so the minima
-// partials inherit the right values. Neutral "Abyssal" ramp, dark -> light.
-$aq-abyss:    #0A141A;   // 1 · bg
-$aq-tide:     #0F2028;   // 2 · bg-flair
-$aq-fathom:   #163239;   // 3 · card
-$aq-current:  #294E57;   // 4 · card-border / rule
-$aq-seaglass: #56858F;   // 5
-$aq-mist:     #8CB6BE;   // 6 · fg-dim
-$aq-haze:     #BBD7DC;   // 7 · fg-muted
-$aq-foam:     #DBEBEE;   // 8
-$aq-sail:     #EDF4F6;   // 9 · fg
+// partials inherit the right values. Warm "Ember" ramp, dark -> light.
+$aq-abyss:    #14100D;   // 1 · bg
+$aq-tide:     #1D1611;   // 2 · bg-flair
+$aq-fathom:   #241C15;   // 3 · card
+$aq-current:  #43352A;   // 4 · card-border / rule
+$aq-seaglass: #6E5642;   // 5
+$aq-mist:     #9C8875;   // 6 · fg-dim
+$aq-haze:     #CBB9A6;   // 7 · fg-muted
+$aq-foam:     #E3D6C6;   // 8
+$aq-sail:     #F3ECE2;   // 9 · fg
 
-// Bioluminescent aquamarine accent — a true signal hue OUTSIDE the ramp.
-$aq-glow:      #4BDDE6;   // glow: dark-mode accent, links, fills
-$aq-glow-deep: #1FAAC2;   // hover / visited / light-mode accent
-$aq-glow-ink:  #16839A;   // light-mode hover
+// Muted burnt-orange accent — a warm signal hue OUTSIDE the ramp.
+$aq-glow:      #D07B45;   // glow: dark-mode accent, links, fills
+$aq-glow-deep: #B75E2D;   // hover / visited / light-mode accent
+$aq-glow-ink:  #8A4620;   // light-mode hover
 
 $base-font-family: "Switzer", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !default;
 $display-font-family: "Zodiak", Georgia, "Times New Roman", serif !default;
