@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Meta-analysis forest plot thumbnail">
   <defs>
     <style>
-      .bg { fill: #0A141A; }
-      .grid-line { stroke: #163239; stroke-width: 1; }
-      .null-line { stroke: #294E57; stroke-width: 1; stroke-dasharray: 4 4; }
-      .ci { stroke: #8CB6BE; stroke-width: 1.5; }
-      .point { fill: #56858F; }
-      .pooled { fill: #4BDDE6; stroke: #1FAAC2; stroke-width: 1; }
-      .study-label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #56858F; letter-spacing: 0.04em; }
-      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #4BDDE6; letter-spacing: 0.04em; }
-      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #56858F; letter-spacing: 0.04em; }
+      .bg { fill: #18150C; }
+      .grid-line { stroke: #35281A; stroke-width: 1; }
+      .null-line { stroke: #52412E; stroke-width: 1; stroke-dasharray: 4 4; }
+      .ci { stroke: #B9A591; stroke-width: 1.5; }
+      .point { fill: #89735C; }
+      .pooled { fill: #D68B5B; stroke: #B16E30; stroke-width: 1; }
+      .study-label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #89735C; letter-spacing: 0.04em; }
+      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #D68B5B; letter-spacing: 0.04em; }
+      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #89735C; letter-spacing: 0.04em; }
     </style>
   </defs>
 

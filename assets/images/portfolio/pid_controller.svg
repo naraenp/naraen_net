@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="PID controller step response thumbnail">
   <defs>
     <style>
-      .bg { fill: #0A141A; }
-      .grid-line { stroke: #163239; stroke-width: 1; }
-      .axis { stroke: #294E57; stroke-width: 1; }
-      .setpoint { stroke: #294E57; stroke-width: 1; stroke-dasharray: 4 4; }
-      .response { stroke: #4BDDE6; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-      .setpoint-glow { stroke: #56858F; stroke-width: 1; }
-      .marker { fill: #8CB6BE; }
-      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #4BDDE6; letter-spacing: 0.04em; }
-      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #56858F; letter-spacing: 0.04em; }
-      .annot { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #8CB6BE; letter-spacing: 0.04em; }
+      .bg { fill: #18150C; }
+      .grid-line { stroke: #35281A; stroke-width: 1; }
+      .axis { stroke: #52412E; stroke-width: 1; }
+      .setpoint { stroke: #52412E; stroke-width: 1; stroke-dasharray: 4 4; }
+      .response { stroke: #D68B5B; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .setpoint-glow { stroke: #89735C; stroke-width: 1; }
+      .marker { fill: #B9A591; }
+      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #D68B5B; letter-spacing: 0.04em; }
+      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #89735C; letter-spacing: 0.04em; }
+      .annot { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #B9A591; letter-spacing: 0.04em; }
     </style>
   </defs>
 
