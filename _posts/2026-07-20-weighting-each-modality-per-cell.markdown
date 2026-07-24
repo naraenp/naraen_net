@@ -4,14 +4,14 @@ title: "Weighting each modality per cell"
 date: 2026-07-20 12:20:00 -0500
 tags: [paper]
 paper:
-  title: "Integrated analysis of multimodal single-cell data (Seurat v4 / WNN)"
-  authors: "Hao et al."
-  venue: "Cell, 2021"
-  link: "https://doi.org/10.1016/j.cell.2021.04.048"
-  verdict: "Weighted-nearest-neighbor analysis lets each cell decide how much to trust its RNA versus its protein — multimodal integration that adapts per cell, plus a reference atlas you can map onto."
+ title: "Integrated analysis of multimodal single-cell data (Seurat v4 / WNN)"
+ authors: "Hao et al."
+ venue: "Cell, 2021"
+ link: "https://doi.org/10.1016/j.cell.2021.04.048"
+ verdict: "Weighted-nearest-neighbor analysis lets each cell decide how much to trust its RNA versus its protein, multimodal integration that adapts per cell, plus a reference atlas you can map onto."
 ---
 
-**The problem.** CITE-seq gives every cell both a transcriptome and a surface-protein profile, but the two modalities aren't equally informative for every cell — protein resolves some cell states that RNA blurs, and vice versa. Concatenating them, or averaging, throws that away. You want an integration that learns, cell by cell, which modality to lean on.
+**The problem.** CITE-seq gives every cell both a transcriptome and a surface-protein profile, but the two modalities aren't equally informative for every cell, protein resolves some cell states that RNA blurs, and vice versa. Concatenating them, or averaging, throws that away. You want an integration that learns, cell by cell, which modality to lean on.
 
 **The idea.** Weighted-nearest-neighbor (WNN) analysis learns a per-cell weighting of each modality, then builds a single joint neighbour graph from the weighted combination. Clustering, visualization, and downstream analysis run on that shared graph. The paper also assembles a large multimodal PBMC reference atlas and a procedure to map new query datasets onto it, transferring annotations in the reference's coordinate system.
 
