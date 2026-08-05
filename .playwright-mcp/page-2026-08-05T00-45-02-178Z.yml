@@ -1,0 +1,87 @@
+- generic [active] [ref=f5e1]:
+  - link "Skip to content" [ref=f5e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic: "__ _ /\\ \\ \\__ _ _ __ __ _ ___ _ __( )__ / \\/ / _` | '__/ _` |/ _ \\ '_ \\/ __| / /\\ / (_| | | | (_| | __/ | | \\__ \\ \\_\\ \\/ \\__,_|_| \\__,_|\\___|_| |_|___/ ___ _ __ __ _ _ _ / _ \\___ _ __ ___ ___ _ __ __ _| | / / /\\ \\ \\___| |__ ___(_) |_ ___ / /_)/ _ \\ '__/ __|/ _ \\| '_ \\ / _` | | \\ \\/ \\/ / _ \\ '_ \\/ __| | __/ _ \\ / ___/ __/ | \\__ \\ (_) | | | | (_| | | \\ /\\ / __/ |_) \\__ \\ | || __/ \\/ \\___|_| |___/\\___/|_| |_|\\__,_|_| \\/ \\/ \\___|_.__/|___/_|\\__\\___|"
+  - banner [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - link "naraen .net" [ref=f5e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f5e6]: naraen
+        - generic [ref=f5e7]: .net
+      - navigation [ref=f5e8]:
+        - generic [ref=f5e9]:
+          - link "Portfolio" [ref=f5e10] [cursor=pointer]:
+            - /url: /portfolio/
+          - link "Log" [ref=f5e11] [cursor=pointer]:
+            - /url: /log/
+          - link "CV" [ref=f5e12] [cursor=pointer]:
+            - /url: /cv/
+          - link "Gallery" [ref=f5e13] [cursor=pointer]:
+            - /url: /gallery/
+          - link "Search" [ref=f5e14] [cursor=pointer]:
+            - /url: /search/
+          - link "Contact" [ref=f5e18] [cursor=pointer]:
+            - /url: /contact/
+          - button "Switch to dark mode" [ref=f5e22] [cursor=pointer]
+  - main "Content" [ref=f5e26]:
+    - article [ref=f5e28]:
+      - heading "Portfolio" [level=1] [ref=f5e30]
+      - generic [ref=f5e32]:
+        - link "External link Bench @ Phalaena Automata Python · FastAPI · React · Nextflow · Docker · GCP · Cloud Run · Vertex AI Production omics platform ingesting varied sequencing data into a centralized API and running containerized Nextflow workflows on Cloud Run under strict IAM." [ref=f5e33] [cursor=pointer]:
+          - /url: https://bench.phalaena.ai
+          - paragraph [ref=f5e34]:
+            - text: External
+            - generic [ref=f5e35]: link
+          - heading "Bench @ Phalaena Automata" [level=2] [ref=f5e36]
+          - paragraph [ref=f5e37]: Python · FastAPI · React · Nextflow · Docker · GCP · Cloud Run · Vertex AI
+          - paragraph [ref=f5e38]: Production omics platform ingesting varied sequencing data into a centralized API and running containerized Nextflow workflows on Cloud Run under strict IAM.
+        - link [ref=f5e39] [cursor=pointer]:
+          - /url: /portfolio/aml_proj/
+          - 'heading "AML transcriptomics: single-cell + bulk RNA-seq" [level=2] [ref=f5e40]'
+          - paragraph [ref=f5e41]: R · Python · R Shiny · Seurat · Scanpy · Nextflow
+          - paragraph [ref=f5e42]: "Two complementary acute myeloid leukemia projects: a single-cell pipeline characterizing pre-leukemic populations (R Shiny dashboard) and a Nextflow bulk RNA-seq differential-expression pipeline (interactive volcano)."
+        - link [ref=f5e43] [cursor=pointer]:
+          - /url: /portfolio/variant_calling_proj/
+          - 'heading "Germline variant calling: GATK short-variant pipeline (Nextflow)" [level=2] [ref=f5e44]'
+          - paragraph [ref=f5e45]: Nextflow · GATK4 · BWA-MEM · samtools · bcftools · fastp · Python
+          - paragraph [ref=f5e46]: A reproducible Nextflow DSL2 pipeline taking raw Illumina short reads through the GATK germline best-practice path — BWA-MEM alignment, duplicate marking, HaplotypeCaller joint genotyping, hard-filtering, and consequence annotation — to a filtered cohort VCF, validated on a synthetic cohort with planted variants and wired to benchmark against the GIAB HG002 truth set.
+        - link [ref=f5e47] [cursor=pointer]:
+          - /url: /portfolio/spatial_visium_proj/
+          - 'heading "Spatial transcriptomics: Visium breast-cancer cell-type deconvolution (Nextflow)" [level=2] [ref=f5e48]'
+          - paragraph [ref=f5e49]: Nextflow · Python · scanpy · anndata · squidpy · SciPy · scikit-learn
+          - paragraph [ref=f5e50]: "A reproducible Nextflow DSL2 pipeline that takes a 10x Visium breast-cancer section plus a matched scRNA-seq atlas and maps cell types back into tissue space: per-spot NNLS deconvolution and spatially variable genes, rendered as interactive figures."
+        - link [ref=f5e51] [cursor=pointer]:
+          - /url: /portfolio/plant_rnaseq_proj/
+          - 'heading "Plant bulk RNA-seq: drought tolerance differential expression (Nextflow)" [level=2] [ref=f5e52]'
+          - paragraph [ref=f5e53]: Nextflow · HISAT2 · featureCounts · pydeseq2 · Python · samtools
+          - paragraph [ref=f5e54]: A reproducible Nextflow DSL2 pipeline taking raw Illumina bulk RNA-seq reads from drought-tolerant and drought-susceptible rice cultivars through alignment, quantification, and differential expression to a GO-enrichment view of the genes and processes that separate the two phenotypes.
+        - link [ref=f5e55] [cursor=pointer]:
+          - /url: /portfolio/tcrclonal_proj/
+          - heading "TCR Clonality Analysis" [level=2] [ref=f5e56]
+          - paragraph [ref=f5e57]: Python · Jupyter · tcrdist3 · pandas · SciPy
+          - paragraph [ref=f5e58]: Bulk TCR-β repertoire analysis comparing clonality and antigen-specific frequencies in TB progressors vs. controllers.
+        - link [ref=f5e59] [cursor=pointer]:
+          - /url: /portfolio/fiberphot_proj/
+          - heading "Fiber Photometry Web App" [level=2] [ref=f5e60]
+          - paragraph [ref=f5e61]: R · R Shiny
+          - paragraph [ref=f5e62]: R Shiny web app streamlining fiber photometry data processing and figure generation, built for the Sweeney Lab.
+        - link [ref=f5e63] [cursor=pointer]:
+          - /url: /portfolio/metayt_proj/
+          - heading "R Meta-Analysis Walkthrough" [level=2] [ref=f5e64]
+          - paragraph [ref=f5e65]: R
+          - paragraph [ref=f5e66]: Seven-part video walkthrough of an end-to-end meta-analysis in R, produced as a Thom Lab onboarding resource.
+        - link [ref=f5e67] [cursor=pointer]:
+          - /url: /portfolio/bioe420final_proj/
+          - heading "PID Controller for Anaesthetic Dosing" [level=2] [ref=f5e68]
+          - paragraph [ref=f5e69]: MATLAB · Simulink
+          - paragraph [ref=f5e70]: MATLAB/Simulink PID controller for patient-specific anaesthetic dosing, achieving top cohort performance on steady-state error and settling time.
+        - link [ref=f5e71] [cursor=pointer]:
+          - /url: /portfolio/emgsax_proj/
+          - heading "EMG-Controlled Saxophone" [level=2] [ref=f5e72]
+          - paragraph [ref=f5e73]: Arduino · C/C++ · surface EMG circuitry
+          - paragraph [ref=f5e74]: Assistive prosthetic concept actuating saxophone keys via a surface-EMG analog front end and an Arduino servo system, exhibited at the 2023 Engineering Open House.
+  - contentinfo [ref=f5e75]:
+    - generic [ref=f5e76]:
+      - generic [ref=f5e77]: © 2026 Naraen Palanikumar
+      - link "Back to top ↑" [ref=f5e79] [cursor=pointer]:
+        - /url: "#top"

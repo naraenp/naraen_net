@@ -1,0 +1,372 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic: __ .-----.---.-.----.---.-.-----.-----.| |.-----. | | _ | _| _ | -__| | |_||__ --| |__|__|___._|__| |___._|_____|__|__| |_____| __ .-----.-----.----.-----.-----.-----.---.-.| | | _ | -__| _|__ --| _ | | _ || | | __|_____|__| |_____|_____|__|__|___._||__| |__| __ __ __ .--.--.--.-----.| |--.-----.|__| |_.-----. | | | | -__|| _ |__ --|| | _| -__| |________|_____||_____|_____||__|____|_____|
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "naraen .net" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e6]: naraen
+        - generic [ref=f4e7]: .net
+      - navigation [ref=f4e8]:
+        - generic [ref=f4e9]:
+          - link "Portfolio" [ref=f4e10] [cursor=pointer]:
+            - /url: /portfolio/
+          - link "Log" [ref=f4e11] [cursor=pointer]:
+            - /url: /log/
+          - link "CV" [ref=f4e12] [cursor=pointer]:
+            - /url: /cv/
+          - link "Gallery" [ref=f4e13] [cursor=pointer]:
+            - /url: /gallery/
+          - link "Search" [ref=f4e14] [cursor=pointer]:
+            - /url: /search/
+          - link "Contact" [ref=f4e18] [cursor=pointer]:
+            - /url: /contact/
+          - button "Switch to dark mode" [ref=f4e22] [cursor=pointer]
+  - main "Content" [ref=f4e26]:
+    - article [ref=f4e28]:
+      - generic [ref=f4e29]:
+        - generic [ref=f4e30]:
+          - heading "Naraen Palanikumar" [level=1] [ref=f4e31]
+          - paragraph [ref=f4e32]: Bioinformatics engineer · Cloud architect · Frisco, TX, USA
+          - paragraph [ref=f4e33]:
+            - link "Contact" [ref=f4e34] [cursor=pointer]:
+              - /url: /contact/
+            - link "LinkedIn" [ref=f4e35] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/naraenp/
+            - link "GitHub" [ref=f4e36] [cursor=pointer]:
+              - /url: https://github.com/naraenp
+            - link "ORCID" [ref=f4e37] [cursor=pointer]:
+              - /url: https://orcid.org/0000-0001-8513-4590
+        - link "Download resume (PDF) ↓" [ref=f4e38] [cursor=pointer]:
+          - /url: /assets/pdf/naraenp_resume.pdf
+      - generic [ref=f4e39]:
+        - region [ref=f4e40]:
+          - heading "Professional summary" [level=2] [ref=f4e41]
+          - paragraph [ref=f4e42]: Bioinformatics engineer with 2+ years of professional experience spanning wet-lab sample processing, single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed co-authorships, and a record of building tools researchers actually use.
+        - region [ref=f4e43]:
+          - heading "Education" [level=2] [ref=f4e44]
+          - generic [ref=f4e45]:
+            - generic [ref=f4e46]:
+              - generic [ref=f4e47]: University of Illinois Urbana-Champaign
+              - generic [ref=f4e48]: Aug 2023 - May 2024
+            - generic [ref=f4e49]:
+              - generic [ref=f4e50]: Master of Engineering (M.Eng.), Bioengineering
+              - generic [ref=f4e51]: Urbana-Champaign, IL
+          - generic [ref=f4e52]:
+            - generic [ref=f4e53]:
+              - generic [ref=f4e54]: University of Illinois Urbana-Champaign
+              - generic [ref=f4e55]: Aug 2019 - May 2023
+            - generic [ref=f4e56]:
+              - generic [ref=f4e57]: Bachelor of Science (B.S.), Bioengineering
+              - generic [ref=f4e58]: Urbana-Champaign, IL
+        - region [ref=f4e59]:
+          - heading "Professional experience" [level=2] [ref=f4e60]
+          - generic [ref=f4e61]:
+            - generic [ref=f4e62]:
+              - generic [ref=f4e63]: Phalaena Automata
+              - generic [ref=f4e64]: Mar 2026 - Present
+            - generic [ref=f4e65]:
+              - generic [ref=f4e66]: Founding Engineer
+              - generic [ref=f4e67]: Austin, TX
+            - list [ref=f4e68]:
+              - listitem [ref=f4e69]: Spearheading end-to-end development of a biotechnology research accelerator platform, managing the product lifecycle from initial architecture to cloud deployment.
+              - listitem [ref=f4e70]: Developing full-stack AI-centric infrastructure on Google Cloud, integrating RAG and LLM architecture to automate unstructured data interpretation pipelines and accelerate the sequence-to-insight loop.
+              - listitem [ref=f4e71]: Architected containerized Nextflow DSL2 workflows executing on Cloud Run under least-privilege IAM, with a FastAPI ingestion layer normalizing heterogeneous sequencing inputs.
+          - generic [ref=f4e72]:
+            - generic [ref=f4e73]:
+              - generic [ref=f4e74]: Independent Research & Development
+              - generic [ref=f4e75]: Jul 2025 - Mar 2026
+            - generic [ref=f4e76]:
+              - generic [ref=f4e77]: Bioinformatics Engineer (Independent Projects)
+              - generic [ref=f4e78]: Remote
+            - list [ref=f4e79]:
+              - listitem [ref=f4e80]: Built end-to-end single-cell and bulk RNA-seq analyses on public oncology datasets, covering QC, integration, cell-type annotation, trajectory inference, and survival analysis.
+              - listitem [ref=f4e81]: Developed cloud-native, containerized bioinformatics pipelines for high-throughput omics workflows, applying Google Cloud Professional Data Engineer practices to reproducible research infrastructure.
+              - listitem [ref=f4e82]: Published analyses as interactive dashboards and open project write-ups to make results explorable by non-computational audiences.
+              - listitem [ref=f4e83]: Self-directed period spent deepening single-cell methods, pipeline engineering, and cloud architecture, culminating in founding Phalaena Automata to productionize these workflows.
+          - generic [ref=f4e84]:
+            - generic [ref=f4e85]:
+              - generic [ref=f4e86]: Malloy Lab, Uniformed Services University of the Health Sciences
+              - generic [ref=f4e87]: Oct 2024 - Jun 2025
+            - generic [ref=f4e88]:
+              - generic [ref=f4e89]: Research Assistant
+              - generic [ref=f4e90]: Bethesda, MD
+            - list [ref=f4e91]:
+              - listitem [ref=f4e92]: Processed study participant biosamples and metadata for downstream high-throughput processing using flow cytometry and scRNA-seq.
+              - listitem [ref=f4e93]: Led bioinformatics analysis to extract and analyze CD4 T-cell repertoires from scTCR-seq data, contributing to published research in Frontiers in Immunology.
+              - listitem [ref=f4e94]: Bioinformatically isolated and modeled CD4 T-cell populations using custom extraction scripts, comparing TCR repertoire usage across participants stratified by COVID-19 severity and vaccination status.
+              - listitem [ref=f4e95]: Handled nasopharyngeal and blood specimen processing for a longitudinal respiratory infectious disease cohort.
+              - listitem [ref=f4e96]: Performed mammalian cell culture, PCR, and microscopy in support of a longitudinal respiratory infectious disease study.
+              - listitem [ref=f4e97]: Analyzed high-parameter spectral flow cytometry data in FlowJo, including gating strategy design, compensation, and population quantification.
+              - listitem [ref=f4e98]: Executed molecular and cell-based assays end to end, from sample receipt and processing through staining, acquisition, and downstream analysis, bridging bench work and computational output within a single workflow.
+              - listitem [ref=f4e99]: Presented bioinformatic findings to lab and collaborator audiences, translating repertoire analyses into figures and diagrams for non-computational stakeholders.
+          - generic [ref=f4e100]:
+            - generic [ref=f4e101]:
+              - generic [ref=f4e102]: Carle Foundation Hospital, Emergency Department
+              - generic [ref=f4e103]: Sep 2023 - Jul 2024
+            - generic [ref=f4e104]:
+              - generic [ref=f4e105]: Healthcare Technician
+              - generic [ref=f4e106]: Champaign, IL
+            - list [ref=f4e107]:
+              - listitem [ref=f4e108]: Managed patient care and diagnostic workflows on Epic EMR in a Level I Trauma Center, performing EKGs, blood collection, and urinalysis.
+              - listitem [ref=f4e109]: Facilitated information flow between patients and providers, rotating across triage and specialized EKG technician roles.
+              - listitem [ref=f4e110]: Worked across every ED functional area over roughly 1,000 hours, building direct familiarity with clinical data capture at point of care.
+          - generic [ref=f4e111]:
+            - generic [ref=f4e112]:
+              - generic [ref=f4e113]: Sweeney Lab, University of Illinois Urbana-Champaign
+              - generic [ref=f4e114]: Aug 2021 - Jun 2023
+            - generic [ref=f4e115]:
+              - generic [ref=f4e116]: Undergraduate Research Assistant
+              - generic [ref=f4e117]: Champaign, IL
+            - list [ref=f4e118]:
+              - listitem [ref=f4e119]: Analyzed complex scRNA-seq datasets using Cell Ranger and Seurat to uncover metabolism-associated neural circuits and rare cell populations.
+              - listitem [ref=f4e120]: Built and launched an interactive R Shiny application to streamline fiber photometry data processing and interpretation, contributing to published research in The Journal of Neuroscience.
+              - listitem [ref=f4e121]: Consolidated a multi-step manual analysis into a single reactive application, cutting photometry processing from a multi-hour scripting task per session to minutes and enabling non-programmer lab members to run their own analyses.
+              - listitem [ref=f4e122]: Performed mouse brain slice mounting, immunostaining, and imaging, iterating antibody concentration protocols to resolve failed staining runs.
+              - listitem [ref=f4e123]: Used both R and Python to analyze scRNA-seq and fiber photometry data characterizing MC3R-expressing neurons in energy homeostasis.
+          - generic [ref=f4e124]:
+            - generic [ref=f4e125]:
+              - generic [ref=f4e126]: Illini Emergency Medical Services
+              - generic [ref=f4e127]: Jan 2022 - May 2023
+            - generic [ref=f4e128]:
+              - generic [ref=f4e129]: Emergency Medical Technician (EMT-B)
+              - generic [ref=f4e130]: Champaign, IL
+            - list [ref=f4e131]:
+              - listitem [ref=f4e132]: Provided immediate medical response and direct patient care at university athletic and cultural events.
+              - listitem [ref=f4e133]: Maintained meticulous incident records and managed essential medical equipment across shifts.
+          - generic [ref=f4e134]:
+            - generic [ref=f4e135]:
+              - generic [ref=f4e136]: Haedos LLC
+              - generic [ref=f4e137]: Sep 2020 - Feb 2021
+            - generic [ref=f4e138]:
+              - generic [ref=f4e139]: Coding Tutor
+              - generic [ref=f4e140]: Naperville, IL
+            - list [ref=f4e141]:
+              - listitem [ref=f4e142]: Tutored students aged 10 to 17 in Python, Java, and JavaScript, and volunteered at interstate Hour of Code events.
+              - listitem [ref=f4e143]: Adapted instruction to individual learning styles, using project-based builds to sustain engagement over traditional exercises.
+          - generic [ref=f4e144]:
+            - generic [ref=f4e145]:
+              - generic [ref=f4e146]: Thom Lab, Wheaton College
+              - generic [ref=f4e147]: May 2020 - Aug 2020
+            - generic [ref=f4e148]:
+              - generic [ref=f4e149]: Data Analyst and Research Assistant
+              - generic [ref=f4e150]: Wheaton, IL
+            - list [ref=f4e151]:
+              - listitem [ref=f4e152]: Led a meta-analysis across 54 studies and 94 effect sizes, designing R scripts for automated data extraction, transformation, and statistical validation.
+              - listitem [ref=f4e153]: Produced a seven-part training video series onboarding incoming lab members on software tools and analytical workflows, from raw data to results.
+          - generic [ref=f4e154]:
+            - generic [ref=f4e155]:
+              - generic [ref=f4e156]: Argonne National Laboratory
+              - generic [ref=f4e157]: Sep 2017 - May 2018
+            - generic [ref=f4e158]:
+              - generic [ref=f4e159]: ESRP Intern
+              - generic [ref=f4e160]: Lemont, IL
+            - list [ref=f4e161]:
+              - listitem [ref=f4e162]: Explored applications of synchrotron X-ray scanning tunneling microscopy (SX-STM) for atomic-scale imaging and characterization of metallic surfaces.
+          - generic [ref=f4e163]:
+            - generic [ref=f4e164]:
+              - generic [ref=f4e165]: Portillo's
+              - generic [ref=f4e166]: Jun 2019 - Aug 2019
+            - generic [ref=f4e167]:
+              - generic [ref=f4e168]: Cashier
+              - generic [ref=f4e169]: Bolingbrook, IL
+            - list [ref=f4e170]:
+              - listitem [ref=f4e171]: Facilitated high-volume order processing and kitchen communication in a fast-paced service environment.
+        - region [ref=f4e172]:
+          - heading "Projects" [level=2] [ref=f4e173]
+          - generic [ref=f4e174]:
+            - generic [ref=f4e175]:
+              - link "Bench @ Phalaena Automata" [ref=f4e177] [cursor=pointer]:
+                - /url: https://bench.phalaena.ai
+              - generic [ref=f4e178]: Mar 2026 - Present
+            - generic [ref=f4e179]: Python · FastAPI · React · Nextflow · Docker · GCP · Cloud Run · Vertex AI
+            - list [ref=f4e181]:
+              - listitem [ref=f4e182]: Production omics platform ingesting varied sequencing data into a centralized API and running containerized Nextflow workflows on Cloud Run under strict IAM.
+              - listitem [ref=f4e183]: Tool-augmented RAG loop over Vertex AI cross-referencing pipeline output against PubMed and public catalogs for accelerated interpretation.
+          - generic [ref=f4e184]:
+            - generic [ref=f4e185]:
+              - link "AML scRNA-seq Analysis (pre-leukemic populations)" [ref=f4e187] [cursor=pointer]:
+                - /url: https://naraen.net/portfolio/aml_proj/
+              - generic [ref=f4e188]: Sep 2025 - Oct 2025
+            - generic [ref=f4e189]: R · Python · R Shiny · Seurat · Scanpy
+            - list [ref=f4e191]:
+              - listitem [ref=f4e192]: Reproducible scRNA-seq pipeline across 38 public AML patient samples, covering QC, anchor-based integration, and reference-guided cell-type annotation to characterize pre-leukemic populations.
+              - listitem [ref=f4e193]: Extended with pseudotime, fate mapping, and survival analysis of PLPS/Stem11 signatures against NCI clinical data.
+              - listitem [ref=f4e194]: Deployed findings as an interactive R Shiny dashboard.
+          - generic [ref=f4e195]:
+            - link "AML Bulk RNA-seq Differential Expression (TCGA-LAML vs. GTEx)" [ref=f4e198] [cursor=pointer]:
+              - /url: https://naraen.net/portfolio/aml_proj/
+            - generic [ref=f4e199]: Nextflow · R · Python
+            - list [ref=f4e201]:
+              - listitem [ref=f4e202]: Nextflow bulk RNA-seq differential-expression pipeline comparing TCGA-LAML against GTEx normal tissue, with an interactive volcano plot for result exploration.
+          - generic [ref=f4e203]:
+            - link "Germline Variant Calling (GATK short-variant pipeline)" [ref=f4e206] [cursor=pointer]:
+              - /url: https://naraen.net/portfolio/variant_calling_proj/
+            - generic [ref=f4e207]: Nextflow · GATK4 · BWA-MEM · samtools · bcftools · fastp · Python
+            - list [ref=f4e209]:
+              - listitem [ref=f4e210]: Twelve-stage Nextflow DSL2 germline short-variant pipeline following the GATK best-practice path, from BWA-MEM alignment and duplicate marking through HaplotypeCaller GVCF calling, joint genotyping, hard-filtering, and consequence annotation to a filtered cohort VCF.
+              - listitem [ref=f4e211]: Built a synthetic diploid cohort with planted germline variants as the offline validation path, achieving perfect recovery of all 24 planted sites (recall = precision = 1.00, genotype concordance 1.00 across 144 sample-genotypes) via an automated self-check that gates every run.
+              - listitem [ref=f4e212]: Made the whole pipeline laptop-reproducible with one fetch script, a pinned conda environment, and a sub-minute offline mode used as the CI smoke test, with the Nextflow and shell-driven paths verified to emit identical normalized callsets.
+              - listitem [ref=f4e213]: Wired a GIAB HG002 benchmarking path against the NIST v4.2.1 high-confidence truth set, range-slicing reads directly out of GIAB's chr20 BAM over HTTPS so only the bytes for the target window are fetched.
+              - listitem [ref=f4e214]:
+                - link "Source on GitHub" [ref=f4e215] [cursor=pointer]:
+                  - /url: https://github.com/naraenp/bioinformatics-public/tree/main/variant_calling_nf
+          - generic [ref=f4e216]:
+            - link "Spatial Transcriptomics Deconvolution (10x Visium breast cancer)" [ref=f4e219] [cursor=pointer]:
+              - /url: https://naraen.net/portfolio/spatial_visium_proj/
+            - generic [ref=f4e220]: Nextflow · Python · scanpy · anndata · squidpy · SciPy · scikit-learn
+            - list [ref=f4e222]:
+              - listitem [ref=f4e223]: Nine-stage Nextflow DSL2 pipeline mapping cell types into tissue space from a 10x Visium breast-cancer section (3,798 spots) against a 100,064-cell annotated scRNA-seq reference, covering QC, shared-gene-space normalization, signature construction, per-spot deconvolution, and spatially variable genes.
+              - listitem [ref=f4e224]: Implemented per-spot deconvolution as non-negative least squares with inverse-mean gene weighting to keep the fit from collapsing onto high-expression immune signatures under cross-platform reference shift, recovering the expected tumor composition with cancer epithelium leading in 2,201 of 3,798 spots.
+              - listitem [ref=f4e225]: Computed spatially variable genes by a from-first-principles Moran's I on a symmetric kNN spot graph, vectorized across genes with a seeded permutation test, identifying 949 significant genes that resolve into epithelial, stromal, and immune compartments.
+              - listitem [ref=f4e226]: Validated with an offline demo mode that synthesizes a toy section with planted spatial cell-type proportions and self-checks recovery to 0.008 mean absolute error against known truth.
+              - listitem [ref=f4e227]:
+                - link "Source on GitHub" [ref=f4e228] [cursor=pointer]:
+                  - /url: https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf
+          - generic [ref=f4e229]:
+            - link "Plant Bulk RNA-seq (rice drought tolerance, Nextflow)" [ref=f4e232] [cursor=pointer]:
+              - /url: https://naraen.net/portfolio/plant_rnaseq_proj/
+            - generic [ref=f4e233]: Nextflow · HISAT2 · featureCounts · pydeseq2 · Python · samtools
+            - list [ref=f4e235]:
+              - listitem [ref=f4e236]: Ten-stage Nextflow DSL2 bulk RNA-seq pipeline taking raw Illumina reads from drought-tolerant and drought-susceptible rice cultivars through trimming, spliced HISAT2 alignment (83-94% aligned across 38,993 quantified genes), featureCounts quantification, differential expression, and GO over-representation.
+              - listitem [ref=f4e237]: Modeled the genotype contrast with pydeseq2 on a ~condition + genotype design so tolerance is estimated controlling for drought treatment, resolving 56 genes at padj < 0.05 that concentrate in defense-response and diterpenoid (phytoalexin) biology.
+              - listitem [ref=f4e238]: Hand-rolled hypergeometric GO over-representation with Benjamini-Hochberg adjustment rather than a black-box package, keeping every reported number traceable to a few lines of source.
+              - listitem [ref=f4e239]:
+                - link "Source on GitHub" [ref=f4e240] [cursor=pointer]:
+                  - /url: https://github.com/naraenp/bioinformatics-public/tree/main/plant_rnaseq_nf
+          - generic [ref=f4e241]:
+            - generic [ref=f4e242]:
+              - link "TCR Clonality Analysis (TB progressors vs. controllers)" [ref=f4e244] [cursor=pointer]:
+                - /url: https://naraen.net/portfolio/tcrclonal_proj/
+              - generic [ref=f4e245]: "2022"
+            - generic [ref=f4e246]: Python · Jupyter · tcrdist3 · pandas · SciPy
+            - list [ref=f4e248]:
+              - listitem [ref=f4e249]: End-to-end reproducible TCR-beta repertoire workflow comparing TB progressors against controllers.
+              - listitem [ref=f4e250]: Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires against curated IEDB and VDJdb reference sets to compute total and antigen-specific clonality metrics.
+          - generic [ref=f4e251]:
+            - link "Fiber Photometry Web App" [ref=f4e254] [cursor=pointer]:
+              - /url: https://naraen.net/portfolio/fiberphot_proj/
+            - generic [ref=f4e255]: R · R Shiny
+            - list [ref=f4e257]:
+              - listitem [ref=f4e258]: R Shiny application streamlining fiber photometry data processing and figure generation for the Sweeney Lab, with outputs used in a Journal of Neuroscience publication.
+          - generic [ref=f4e259]:
+            - link "R Meta-Analysis Walkthrough" [ref=f4e262] [cursor=pointer]:
+              - /url: https://naraen.net/portfolio/metayt_proj/
+            - generic [ref=f4e263]: R
+            - list [ref=f4e265]:
+              - listitem [ref=f4e266]: Seven-part video walkthrough of an end-to-end meta-analysis in R, produced as a lab onboarding resource.
+          - generic [ref=f4e267]:
+            - generic [ref=f4e268]:
+              - link "PID Controller for Anaesthetic Dosing" [ref=f4e270] [cursor=pointer]:
+                - /url: https://naraen.net/portfolio/bioe420final_proj/
+              - generic [ref=f4e271]: "2023"
+            - generic [ref=f4e272]:
+              - generic [ref=f4e273]: MATLAB · Simulink
+              - generic [ref=f4e274]: group project
+            - list [ref=f4e275]:
+              - listitem [ref=f4e276]: Designed and tuned a PID controller for patient-specific anaesthetic dosing under variable drug sensitivity, achieving top cohort performance in steady-state error and 10% settling time.
+          - generic [ref=f4e277]:
+            - generic [ref=f4e278]:
+              - link "EMG-Controlled Saxophone" [ref=f4e280] [cursor=pointer]:
+                - /url: https://naraen.net/portfolio/emgsax_proj/
+              - generic [ref=f4e281]: "2023"
+            - generic [ref=f4e282]:
+              - generic [ref=f4e283]: Arduino · C/C++ · surface EMG circuitry
+              - generic [ref=f4e284]: group project
+            - list [ref=f4e285]:
+              - listitem [ref=f4e286]: Built a surface-EMG analog front end with instrumentation amplifier, bandpass filtering, and rectification, paired with an Arduino driving servo motors over saxophone keys. Exhibited at the 2023 Engineering Open House as an assistive prosthetic concept.
+        - region [ref=f4e287]:
+          - heading "Peer-reviewed publications" [level=2] [ref=f4e288]
+          - list [ref=f4e289]:
+            - listitem [ref=f4e290]:
+              - paragraph [ref=f4e291]:
+                - link "Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease" [ref=f4e292] [cursor=pointer]:
+                  - /url: https://doi.org/10.3389/fimmu.2025.1576903
+              - paragraph [ref=f4e293]: Parsons E, Lu Z, Richard SA, Zelkoski A, Le J, Palanikumar N, Nguyen P, Alba C, Sukumar G, Rosenberger J, Zhang X, Burgess TH, Colombo R, Mende K, Berjohn C, Epsi N, Agan BK, Tribble D, Lindholm DA, Dalgard CL, Pollett SD, Malloy AMW, and EPICC COVID-19 Cohort Study Group. Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease. Frontiers in Immunology. 2025;16:1576903. doi:10.3389/fimmu.2025.1576903
+              - paragraph [ref=f4e294]:
+                - link "doi:10.3389/fimmu.2025.1576903" [ref=f4e295] [cursor=pointer]:
+                  - /url: https://doi.org/10.3389/fimmu.2025.1576903
+              - paragraph [ref=f4e296]: Contribution Bioinformatically isolated and modeled CD4 T-cell populations using custom data extraction scripts to analyze TCR repertoires.
+            - listitem [ref=f4e297]:
+              - paragraph [ref=f4e298]:
+                - link "Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior" [ref=f4e299] [cursor=pointer]:
+                  - /url: https://doi.org/10.1523/JNEUROSCI.0704-23.2023
+              - paragraph [ref=f4e300]: "Cho D, O'Berry K, Possa-Paranhos IC, Butts J, Palanikumar N, Sweeney P. Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior. The Journal of Neuroscience. 2023 Sep 6;43(36):6280-6296. doi:10.1523/JNEUROSCI.0704-23.2023. PMID: 37591737. PMCID: PMC10490510."
+              - paragraph [ref=f4e301]:
+                - link "doi:10.1523/JNEUROSCI.0704-23.2023" [ref=f4e302] [cursor=pointer]:
+                  - /url: https://doi.org/10.1523/JNEUROSCI.0704-23.2023
+                - text: ·
+                - link "PMID 37591737" [ref=f4e303] [cursor=pointer]:
+                  - /url: https://pubmed.ncbi.nlm.nih.gov/37591737/
+                - text: ·
+                - link "PMC10490510" [ref=f4e304] [cursor=pointer]:
+                  - /url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10490510/
+              - paragraph [ref=f4e305]: Contribution Developed an interactive R Shiny application for fiber photometry data processing and visualization used in the publication.
+        - region [ref=f4e306]:
+          - heading "Skills" [level=2] [ref=f4e307]
+          - generic [ref=f4e308]:
+            - term [ref=f4e309]: Languages
+            - definition [ref=f4e310]: Python, R, SQL, Bash, MATLAB, JavaScript, TypeScript, HTML/CSS
+            - term [ref=f4e311]: Frameworks
+            - definition [ref=f4e312]: FastAPI, React, R Shiny, Jekyll
+            - term [ref=f4e313]: Workflow & reproducibility
+            - definition [ref=f4e314]: Nextflow (DSL2), Docker, Git, containerization, CI, conda, pytest, reproducible pipelines
+            - term [ref=f4e315]: Cloud & infrastructure
+            - definition [ref=f4e316]: Google Cloud Platform, Cloud Run, Vertex AI, IAM, cloud-native architecture, data engineering
+            - term [ref=f4e317]: Genomics & sequencing
+            - definition [ref=f4e318]: genomics, transcriptomics, proteomics, metabolomics, 10x Genomics, variant calling, bulk RNA-seq, differential expression, GIAB/HG002 benchmarking, GATK4, HaplotypeCaller, joint genotyping, BWA-MEM, HISAT2, samtools, bcftools, featureCounts, fastp, seqtk, FASTQ/BAM/VCF, pydeseq2, DESeq2, GO over-representation analysis, spatial transcriptomics (computational), 10x Visium, cell-type deconvolution
+            - term [ref=f4e319]: Single-cell & spatial
+            - definition [ref=f4e320]: Seurat, Scanpy, Cell Ranger, tcrdist3, UMAP, clustering, pseudotime, trajectory inference, anchor-based integration, reference-guided annotation, AnnData, Squidpy
+            - term [ref=f4e321]: ML & AI
+            - definition [ref=f4e322]: PyTorch, machine learning, LLM/RAG architecture, dimensionality reduction
+            - term [ref=f4e323]: Statistics & analysis
+            - definition [ref=f4e324]: meta-analysis, survival analysis, statistical validation, SciPy, pandas, NumPy, scikit-learn, negative-binomial modeling, hypergeometric enrichment, multiple-testing correction, permutation testing, non-negative least squares, spatial autocorrelation (Moran's I)
+            - term [ref=f4e325]: Laboratory
+            - definition [ref=f4e326]: spectral flow cytometry (Cytek Aurora), FlowJo, flow panel design, compensation, gating strategy, PCR, qPCR, mammalian cell culture, aseptic technique, immunostaining, immunohistochemistry, fluorescence microscopy, tissue sectioning and slide mounting, PBMC and biospecimen processing, nasopharyngeal and blood specimen handling, 10x Genomics library prep support, biosafety and specimen chain-of-custody, laboratory documentation
+            - term [ref=f4e327]: Clinical research
+            - definition [ref=f4e328]: Epic EMR, clinical data capture, patient-facing workflows, IRB-context human-subjects research, longitudinal cohort study support, participant biosample and metadata handling, HIPAA-context data handling, EKG, phlebotomy, urinalysis
+            - term [ref=f4e329]: Domain
+            - definition [ref=f4e330]: immune repertoire analysis, computational immunology, reproducible research, regulatory and safety awareness
+        - region [ref=f4e331]:
+          - heading "Certifications" [level=2] [ref=f4e332]
+          - list [ref=f4e333]:
+            - listitem [ref=f4e334]: Google Cloud Professional Data Engineer (Dec 2025 - Dec 2027)
+            - listitem [ref=f4e335]: IBM Data Science Professional Certificate
+        - region [ref=f4e336]:
+          - heading "Honors & awards" [level=2] [ref=f4e337]
+          - list [ref=f4e338]:
+            - listitem [ref=f4e339]: National Merit Scholarship Finalist (Feb 2019)
+            - listitem [ref=f4e340]: National AP Scholar (May 2019)
+            - listitem [ref=f4e341]: USA Biology Olympiad Semifinalist (Apr 2018)
+        - region [ref=f4e342]:
+          - heading "Standardized exam scores" [level=2] [ref=f4e343]
+          - table [ref=f4e345]:
+            - caption [ref=f4e346]: Standardized exam scores with percentile and date taken
+            - rowgroup [ref=f4e347]:
+              - row [ref=f4e348]:
+                - columnheader "Exam" [ref=f4e349]
+                - columnheader "Score" [ref=f4e350]
+                - columnheader "Percentile" [ref=f4e351]
+                - columnheader "Date" [ref=f4e352]
+            - rowgroup [ref=f4e353]:
+              - row [ref=f4e354]:
+                - rowheader "MCAT" [ref=f4e355]
+                - cell "521 / 528" [ref=f4e356]
+                - cell "98th" [ref=f4e357]
+                - cell "Jan 2024" [ref=f4e358]
+              - row [ref=f4e359]:
+                - rowheader "ACT" [ref=f4e360]
+                - cell "35 / 36" [ref=f4e361]
+                - cell "99th" [ref=f4e362]
+                - cell "Jul 2018" [ref=f4e363]
+              - row [ref=f4e364]:
+                - rowheader "SAT" [ref=f4e365]
+                - cell "1550 / 1600" [ref=f4e366]
+                - cell "99th" [ref=f4e367]
+                - cell "Apr 2018" [ref=f4e368]
+  - contentinfo [ref=f4e369]:
+    - generic [ref=f4e370]:
+      - generic [ref=f4e371]: © 2026 Naraen Palanikumar
+      - link "Back to top ↑" [ref=f4e373] [cursor=pointer]:
+        - /url: "#top"

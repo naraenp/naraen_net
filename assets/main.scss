@@ -2,7 +2,62 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import "minima";
+/* ==========================================================================
+   Foundation. Replaces the vendored minima partials, which were 640 lines of
+   which almost everything was either overridden below or dead (minima's
+   .site-footer / .footer-col-* / .social-media-list / .svg-icon match nothing
+   this site renders). What genuinely carried weight is kept here, rewritten
+   against the palette. Inlining it also removes every @import, darken(), and
+   lighten() call, which were the only source of Sass deprecation warnings.
+   ========================================================================== */
+
+/* Reset */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Vertical rhythm */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure {
+  margin-bottom: 12px;
+}
+
+/* The sticky footer depends on this: body is the flex column and
+   .page-content takes flex: 1. */
+body {
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main { display: block; }
+
+img { vertical-align: middle; }
+figure > img { display: block; }
+figcaption { font-size: var(--aq-fs-body-sm); color: var(--aq-fg-muted); }
+
+ul, ol { margin-left: 24px; }
+li > ul,
+li > ol { margin-bottom: 0; }
+
+/* Blockquotes. minima rendered these as #241C15 text on a #14100D page, i.e.
+   1.1:1 and effectively invisible in the default dark theme -- which is what
+   the "Scope note" pull-quotes on the pipeline pages use. */
+blockquote {
+  color: var(--aq-fg-muted);
+  border-left: 3px solid var(--aq-accent);
+  padding-left: var(--aq-space-4);
+  margin: var(--aq-space-5) 0;
+  font-style: italic;
+}
+blockquote > :last-child { margin-bottom: 0; }
 
 /* ==========================================================================
    Aequorea design system, scoped to naraen.net (personal identity).
@@ -54,24 +109,24 @@
 
 /* ---------- Tokens: palette ---------- */
 :root {
-  --aq-abyss:         #{$aq-abyss};
-  --aq-tide:  #{$aq-tide};
-  --aq-fathom:  #{$aq-fathom};
-  --aq-current: #{$aq-current};
-  --aq-seaglass:  #{$aq-seaglass};
-  --aq-mist:    #{$aq-mist};
-  --aq-haze:   #{$aq-haze};
-  --aq-foam:    #{$aq-foam};
-  --aq-sail:         #{$aq-sail};
+  --aq-abyss:         #14100D;
+  --aq-tide:  #1D1611;
+  --aq-fathom:  #241C15;
+  --aq-current: #43352A;
+  --aq-seaglass:  #6E5642;
+  --aq-mist:    #9C8875;
+  --aq-haze:   #CBB9A6;
+  --aq-foam:    #E3D6C6;
+  --aq-sail:         #F3ECE2;
 
   /* Burnt-orange accent — separate signal hue, lives outside the ramp.
      Five steps rather than three, so hover can move *away* from the ground on
      both themes (brighter on dark, darker on light) and still clear WCAG AA. */
-  --aq-glow:         #{$aq-glow};
-  --aq-glow-lift:    #{$aq-glow-lift};
-  --aq-glow-deep:    #{$aq-glow-deep};
-  --aq-glow-ink:     #{$aq-glow-ink};
-  --aq-glow-abyssal: #{$aq-glow-abyssal};
+  --aq-glow:         #D07B45;
+  --aq-glow-lift:    #E7A960;
+  --aq-glow-deep:    #B75E2D;
+  --aq-glow-ink:     #8A4620;
+  --aq-glow-abyssal: #653214;
   --aq-accent-halo:  rgba(208, 123, 69, 0.20);   /* the "glow, don't move" bloom */
 
   --aq-success: #6FB58A;
@@ -347,7 +402,7 @@ img { max-width: 100%; height: auto; }
   .site-header--glass .site-title__accent { animation: none; background-position: 30% 50%; }
 }
 
-@include media-query($on-palm) {
+@media screen and (max-width: 640px) {
   .site-header--glass .site-title { font-size: 18px; }
 }
 
@@ -522,7 +577,7 @@ img { max-width: 100%; height: auto; }
   align-items: center;
 }
 
-@include media-query($on-palm) {
+@media screen and (max-width: 640px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -976,6 +1031,27 @@ img { max-width: 100%; height: auto; }
 }
 
 /* CV body */
+.post-content { margin-bottom: var(--aq-space-5); }
+
+/* h2 and h4 inside prose. Nothing styled these except the vendored minima
+   partials, so they need explicit sizes now that those are gone: h4 is used
+   on the two group-project pages, and h2 is available to any future post. */
+.post-content h2 {
+  font-family: "Zodiak", Georgia, serif;
+  font-weight: 400;
+  font-size: var(--aq-fs-h2);
+  color: var(--aq-fg);
+  margin: var(--aq-space-7) 0 var(--aq-space-3);
+  letter-spacing: -0.01em;
+}
+.post-content h4 {
+  font-family: "Switzer", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: var(--aq-fs-body);
+  color: var(--aq-fg);
+  margin: var(--aq-space-5) 0 var(--aq-space-2);
+}
+
 .post-content h3 {
   font-family: "Zodiak", Georgia, serif;
   font-weight: 400;
@@ -2109,3 +2185,44 @@ a.post-tag:hover { color: var(--aq-accent); border-color: var(--aq-accent); text
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ==========================================================================
+   Syntax highlighting (Rouge token classes).
+   minima's version hardcoded a #fff background and light-theme token colours,
+   which would have rendered white-on-dark the first time a fenced code block
+   appeared. This maps the same token set onto the palette so it works in both
+   themes. Colours are chosen to clear 4.5:1 against --aq-bg-flair.
+   ========================================================================== */
+.highlight,
+.highlighter-rouge .highlight { background: var(--aq-bg-flair); }
+.highlight pre { background: transparent; border: 0; padding: 0; }
+
+.highlight .c,  .highlight .c1, .highlight .cm,
+.highlight .cd, .highlight .cs                { color: var(--aq-fg-dim); font-style: italic; }
+.highlight .cp                                { color: var(--aq-fg-dim); }
+.highlight .k,  .highlight .kc, .highlight .kd,
+.highlight .kn, .highlight .kp, .highlight .kr,
+.highlight .kt                                { color: var(--aq-accent); font-weight: 600; }
+.highlight .o,  .highlight .ow                { color: var(--aq-fg); font-weight: 600; }
+.highlight .s,  .highlight .s1, .highlight .s2,
+.highlight .sb, .highlight .sc, .highlight .sd,
+.highlight .se, .highlight .sh, .highlight .si,
+.highlight .sx, .highlight .sr, .highlight .ss { color: var(--aq-success); }
+.highlight .m,  .highlight .mf, .highlight .mh,
+.highlight .mi, .highlight .mo, .highlight .il { color: var(--aq-info); }
+.highlight .n,  .highlight .nn, .highlight .nx { color: var(--aq-fg); }
+.highlight .bp, .highlight .vc, .highlight .vg,
+.highlight .vi                                { color: var(--aq-fg-muted); }
+.highlight .go                                { color: var(--aq-fg-muted); }
+.highlight .gp, .highlight .gr, .highlight .gt { color: var(--aq-fg-dim); }
+.highlight .na, .highlight .nb, .highlight .nc,
+.highlight .nd, .highlight .ne, .highlight .nf,
+.highlight .ni, .highlight .nl, .highlight .no,
+.highlight .nt, .highlight .nv                { color: var(--aq-accent-2); }
+.highlight .err                               { color: var(--aq-error); }
+.highlight .gd                                { color: var(--aq-error); }
+.highlight .gi                                { color: var(--aq-success); }
+.highlight .gh, .highlight .gu                { color: var(--aq-fg-dim); font-weight: 600; }
+.highlight .ge                                { font-style: italic; }
+.highlight .gs                                { font-weight: 600; }
+.highlight .w                                 { color: var(--aq-fg-dim); }

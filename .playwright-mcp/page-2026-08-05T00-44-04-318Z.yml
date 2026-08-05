@@ -1,0 +1,322 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic:
+    - generic: "_ _ _ | \\ | | ( ) | \\| | __ _ _ __ __ _ ___ _ __ |/ ___ | . ` |/ _` | '__/ _` |/ _ \\ '_ \\ / __| | |\\ | (_| | | | (_| | __/ | | | \\__ \\ \\_| \\_/\\__,_|_| \\__,_|\\___|_| |_| |___/ ______ _ _ _ _ _ _ | ___ \\ | | | | | | | | (_) | | |_/ /__ _ __ ___ ___ _ __ __ _| | | | | | ___| |__ ___ _| |_ ___ | __/ _ \\ '__/ __|/ _ \\| '_ \\ / _` | | | |/\\| |/ _ \\ '_ \\/ __| | __/ _ \\ | | | __/ | \\__ \\ (_) | | | | (_| | | \\ /\\ / __/ |_) \\__ \\ | || __/ \\_| \\___|_| |___/\\___/|_| |_|\\__,_|_| \\/ \\/ \\___|_.__/|___/_|\\__\\___|"
+    - generic: "_ _ _ _ __ _ _ _ __ _ ___ _ _ ( )___ _ __ ___ _ _ ___ ___ _ _ __ _| | | ' \\/ _` | '_/ _` / -_) ' \\|/(_-< | '_ \\/ -_) '_(_-</ _ \\ ' \\/ _` | | |_||_\\__,_|_| \\__,_\\___|_||_| /__/ | .__/\\___|_| /__/\\___/_||_\\__,_|_| |_| _ _ _ __ __ _____| |__ __(_) |_ ___ \\ V V / -_) '_ (_-< | _/ -_) \\_/\\_/\\___|_.__/__/_|\\__\\___|"
+    - generic: "_ _ _ _ __ _ _ _ __ _ ___ _ _ ( )___ _ __ ___ _ _ ___ ___ _ _ __ _| | | ' \\/ _` | '_/ _` / -_) ' \\|/(_-< | '_ \\/ -_) '_(_-</ _ \\ ' \\/ _` | | |_||_\\__,_|_| \\__,_\\___|_||_| /__/ | .__/\\___|_| /__/\\___/_||_\\__,_|_| |_| _ _ _ __ __ _____| |__ __(_) |_ ___ \\ V V / -_) '_ (_-< | _/ -_) \\_/\\_/\\___|_.__/__/_|\\__\\___|"
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "naraen .net" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e6]: naraen
+        - generic [ref=f1e7]: .net
+      - navigation [ref=f1e8]:
+        - generic [ref=f1e9]:
+          - link "Portfolio" [ref=f1e10] [cursor=pointer]:
+            - /url: /portfolio/
+          - link "Log" [ref=f1e11] [cursor=pointer]:
+            - /url: /log/
+          - link "CV" [ref=f1e12] [cursor=pointer]:
+            - /url: /cv/
+          - link "Gallery" [ref=f1e13] [cursor=pointer]:
+            - /url: /gallery/
+          - link "Search" [ref=f1e14] [cursor=pointer]:
+            - /url: /search/
+          - link "Contact" [ref=f1e18] [cursor=pointer]:
+            - /url: /contact/
+          - button "Switch to light mode" [ref=f1e22] [cursor=pointer]
+  - main "Content" [ref=f1e27]:
+    - article [ref=f1e29]:
+      - 'heading "Germline variant calling: GATK short-variant pipeline (Nextflow)" [level=1] [ref=f1e31]'
+      - generic [ref=f1e32]:
+        - paragraph [ref=f1e33]:
+          - text: A reproducible
+          - strong [ref=f1e34]:
+            - link "Nextflow DSL2" [ref=f1e35] [cursor=pointer]:
+              - /url: https://www.nextflow.io/
+          - text: pipeline that takes
+          - strong [ref=f1e36]: raw Illumina short reads
+          - text: through the
+          - strong [ref=f1e37]:
+            - link "GATK" [ref=f1e38] [cursor=pointer]:
+              - /url: https://gatk.broadinstitute.org/
+            - text: germline short-variant best-practice path
+          - text: to a filtered, annotated
+          - strong [ref=f1e39]: cohort VCF
+          - text: . It is the
+          - strong [ref=f1e40]: DNA-variant
+          - text: "member of my bioinformatics portfolio: where the"
+          - link "bulk" [ref=f1e41] [cursor=pointer]:
+            - /url: plant_rnaseq_proj
+          - link "RNA-seq" [ref=f1e42] [cursor=pointer]:
+            - /url: aml_proj
+          - text: and
+          - link "spatial" [ref=f1e43] [cursor=pointer]:
+            - /url: spatial_visium_proj
+          - text: pipelines quantify
+          - emphasis [ref=f1e44]: expression
+          - text: ", this one genotypes"
+          - strong [ref=f1e45]: SNVs and short indels
+          - text: from the genome itself — the most common task in clinical and population genomics.
+        - heading "Data" [level=3] [ref=f1e46]
+        - paragraph [ref=f1e47]:
+          - text: The offline path runs on a
+          - strong [ref=f1e48]: synthetic diploid cohort
+          - text: — six samples in two groups, with a planted set of
+          - strong [ref=f1e49]: germline variants
+          - text: (shared across the cohort plus group-specific) written to a ground-truth VCF — so the whole DAG, including a recovery self-check, runs in under a minute with no download. The
+          - strong [ref=f1e50]: real target
+          - text: is the
+          - strong [ref=f1e51]:
+            - link "Genome in a Bottle" [ref=f1e52] [cursor=pointer]:
+              - /url: https://www.nist.gov/programs-projects/genome-bottle
+          - text: sample
+          - strong [ref=f1e53]: HG002
+          - text: "(NIST / NA24385): a high-confidence slice of GRCh38"
+          - strong [ref=f1e54]: chr20
+          - text: ", with reads"
+          - strong [ref=f1e55]: range-sliced
+          - text: straight out of GIAB’s chr20 300× BAM over HTTPS (only the bytes for the target window are fetched), benchmarked against the
+          - strong [ref=f1e56]: NIST v4.2.1
+          - text: high-confidence truth VCF and confident-region BED. The reference is GRCh38 chr20 (UCSC) and the annotation is
+          - strong [ref=f1e57]: GENCODE v46
+          - text: .
+        - heading "Pipeline" [level=3] [ref=f1e58]
+        - paragraph [ref=f1e59]:
+          - text: A small, readable DSL2 workflow (channels, processes,
+          - code [ref=f1e60]: publishDir
+          - text: ", profile-driven config) over the standard germline toolchain."
+          - strong [ref=f1e61]: "Twelve stages:"
+        - list [ref=f1e62]:
+          - listitem [ref=f1e63]:
+            - link [ref=f1e64] [cursor=pointer]:
+              - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/bin/subsample_reads.sh
+              - code [ref=f1e65]: SUBSAMPLE
+            - text: ": deterministic"
+            - code [ref=f1e66]: seqtk
+            - text: downsampling.
+          - listitem [ref=f1e67]:
+            - code [ref=f1e68]: QC_TRIM
+            - text: ":"
+            - code [ref=f1e69]: fastp
+            - text: adapter/quality trimming.
+          - listitem [ref=f1e70]:
+            - code [ref=f1e71]: PREP_REFERENCE
+            - text: ":"
+            - code [ref=f1e72]: samtools faidx
+            - text: + GATK sequence dictionary +
+            - code [ref=f1e73]: bwa index
+            - text: .
+          - listitem [ref=f1e74]:
+            - link [ref=f1e75] [cursor=pointer]:
+              - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/main.nf
+              - code [ref=f1e76]: ALIGN
+            - text: ":"
+            - code [ref=f1e77]: bwa mem
+            - text: with per-sample read groups, sorted with
+            - code [ref=f1e78]: samtools
+            - text: .
+          - listitem [ref=f1e79]:
+            - code [ref=f1e80]: MARK_DUPLICATES
+            - text: ":"
+            - code [ref=f1e81]: gatk MarkDuplicates
+            - text: .
+          - listitem [ref=f1e82]:
+            - code [ref=f1e83]: CALL_VARIANTS
+            - text: ":"
+            - code [ref=f1e84]: gatk HaplotypeCaller
+            - text: in
+            - strong [ref=f1e85]: GVCF mode
+            - text: per sample (local haplotype reassembly).
+          - listitem [ref=f1e86]:
+            - code [ref=f1e87]: JOINT_GENOTYPE
+            - text: ":"
+            - code [ref=f1e88]: CombineGVCFs
+            - text: +
+            - code [ref=f1e89]: GenotypeGVCFs
+            - text: — the GATK best-practice cohort call.
+          - listitem [ref=f1e90]:
+            - code [ref=f1e91]: FILTER_VARIANTS
+            - text: ":"
+            - code [ref=f1e92]: gatk VariantFiltration
+            - text: hard filters on
+            - strong [ref=f1e93]: separate SNP and indel tracks
+            - text: (the documented substitute for VQSR on small cohorts).
+          - listitem [ref=f1e94]:
+            - code [ref=f1e95]: NORMALIZE
+            - text: ":"
+            - code [ref=f1e96]: bcftools norm
+            - text: splits multiallelics and left-aligns indels.
+          - listitem [ref=f1e97]:
+            - link [ref=f1e98] [cursor=pointer]:
+              - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/bin/annotate_variants.py
+              - code [ref=f1e99]: ANNOTATE
+            - text: ": a hand-rolled genic-consequence annotator (exonic / intronic / intergenic) that also tags SNVs as transitions or transversions."
+          - listitem [ref=f1e100]:
+            - link [ref=f1e101] [cursor=pointer]:
+              - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/bin/make_overview.py
+              - code [ref=f1e102]: MAKE_OVERVIEW
+            - text: /
+            - link [ref=f1e103] [cursor=pointer]:
+              - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/bin/make_geno_heatmap.py
+              - code [ref=f1e104]: MAKE_GENO_HEATMAP
+            - text: ": the two interactive charts below."
+        - heading "Result" [level=3] [ref=f1e105]
+        - paragraph [ref=f1e106]:
+          - text: On the synthetic cohort the pipeline achieves
+          - strong [ref=f1e107]: perfect recovery
+          - text: of the planted variants —
+          - strong [ref=f1e108]: 24/24 sites at recall = precision = 1.00
+          - text: ", with"
+          - strong [ref=f1e109]: genotype concordance 1.00
+          - text: across all 144 sample-genotypes and a cohort
+          - strong [ref=f1e110]: Ts/Tv of 2.17
+          - text: — and the Nextflow and
+          - code [ref=f1e111]: run_local.sh
+          - text: paths produce an
+          - emphasis [ref=f1e112]: identical
+          - text: normalized callset. The self-check (
+          - code [ref=f1e113]: check_truth.py
+          - text: ) normalizes the called VCF and the planted truth with
+          - code [ref=f1e114]: bcftools
+          - text: and asserts recall, precision, and genotype concordance pass threshold — the variant-calling analog of the planted-DE-gene and planted-cell-type checks in the sibling pipelines. The overview chart breaks each sample’s calls down by genic region; the genotype heatmap shows the planted group structure separating cleanly into group-A and group-B variant blocks.
+        - paragraph [ref=f1e115]:
+          - strong [ref=f1e116]: "Platforms & Tools:"
+          - text: Nextflow DSL2, BWA-MEM, samtools, GATK4 (MarkDuplicates / HaplotypeCaller / GenotypeGVCFs / VariantFiltration), bcftools, fastp, seqtk, Python (pandas / numpy / scipy / plotly), GIAB / NIST, GENCODE, conda, pytest
+        - paragraph [ref=f1e117]:
+          - text: The pipeline source and the
+          - link [ref=f1e118] [cursor=pointer]:
+            - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/main.nf
+            - code [ref=f1e119]: main.nf
+          - text: workflow live in
+          - link [ref=f1e120] [cursor=pointer]:
+            - /url: https://github.com/naraenp/bioinformatics-public/tree/main/variant_calling_nf
+            - code [ref=f1e121]: bioinformatics-public/variant_calling_nf
+          - text: ; see
+          - link [ref=f1e122] [cursor=pointer]:
+            - /url: https://github.com/naraenp/bioinformatics-public/blob/main/variant_calling_nf/docs/REPORT.md
+            - code [ref=f1e123]: docs/REPORT.md
+          - text: for a full run report. The whole thing is reproducible with one fetch script, a pinned conda env, and an offline synthetic mode that self-checks variant recovery and acts as the validation path.
+        - figure "Alt-allele dosage of the most discriminating variants across the synthetic cohort. The planted group-specific variants partition cleanly into group-A and group-B blocks; shared variants are present across all samples." [ref=f1e124]:
+          - iframe [ref=f1e125]:
+            - generic [ref=f2e5]:
+              - img:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: A_s1(groupA)
+                      - generic: A_s2(groupA)
+                      - generic: A_s3(groupA)
+                      - generic: B_s1(groupB)
+                      - generic: B_s2(groupB)
+                      - generic: B_s3(groupB)
+                    - generic:
+                      - generic: chr1:1130 G>GC
+                      - generic: chr1:2570 T>A
+                      - generic: chr1:6008 G>C
+                      - generic: chr2:8031 T>C
+                      - generic: chr2:829 G>A
+                      - generic: chr2:2134 G>C
+                      - generic: chr2:2512 A>G
+                      - generic: chr1:8244 T>C
+                      - generic: chr2:8810 A>G
+                      - generic: chr2:7296 GA>G
+                      - generic: chr2:6890 G>C
+                      - generic: chr2:2762 C>T
+                      - generic: chr1:4462 C>G
+                      - generic: chr2:4109 T>TCG
+                      - generic: chr2:1407 A>G
+                      - generic: chr1:7085 G>A
+                      - generic: chr2:10258 A>T
+                      - generic: chr1:10377 C>CGCA
+                      - generic: chr1:7988 C>T
+                      - generic: chr1:624 C>CG
+                      - generic: chr1:5430 T>C
+                      - generic: chr1:8948 A>G
+                      - generic: chr1:9782 A>G
+                      - generic: chr2:10465 G>A
+              - img:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: "0"
+                      - generic: "1"
+                      - generic: "2"
+                    - generic: alt dosage
+                  - generic:
+                    - generic:
+                      - generic: Top 24 discriminating variants
+                      - generic: alt-allele dosage per sample; sites ranked by cross-sample variance
+              - toolbar [ref=f2e19]:
+                - button "Download plot as a PNG" [ref=f2e21] [cursor=pointer]
+                - generic [ref=f2e24]:
+                  - button "Zoom" [ref=f2e25] [cursor=pointer]
+                  - button "Pan" [ref=f2e28] [cursor=pointer]
+                - generic [ref=f2e31]:
+                  - button "Zoom in" [ref=f2e32] [cursor=pointer]
+                  - button "Zoom out" [ref=f2e35] [cursor=pointer]
+                  - button "Autoscale" [ref=f2e38] [cursor=pointer]
+                  - button "Reset axes" [ref=f2e41] [cursor=pointer]
+        - figure "Per-sample PASS-variant counts split by genic region (exonic / intronic / intergenic), with the cohort transition/transversion ratio — a standard germline callset-QC read-out." [ref=f1e127]:
+          - iframe [ref=f1e128]:
+            - generic [ref=f3e5]:
+              - img:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: A_s1
+                      - generic: A_s2
+                      - generic: A_s3
+                      - generic: B_s1
+                      - generic: B_s2
+                      - generic: B_s3
+                    - generic:
+                      - generic: "0"
+                      - generic: "2"
+                      - generic: "4"
+                      - generic: "6"
+                      - generic: "8"
+                      - generic: "10"
+                      - generic: "12"
+                      - generic: "14"
+                      - generic: "16"
+              - img:
+                - generic:
+                  - generic [ref=f3e21]:
+                    - generic [ref=f3e22]: region
+                    - generic [ref=f3e23]:
+                      - generic [ref=f3e24]: exonic
+                      - generic [ref=f3e31]: intronic
+                      - generic [ref=f3e38]: intergenic
+                  - generic:
+                    - generic:
+                      - generic: Cohort variant overview
+                      - generic: per-sample PASS variants by genic region — cohort Ts/Tv = 2.17
+                  - generic: sample
+                  - generic: variant count
+              - toolbar [ref=f3e45]:
+                - button "Download plot as a PNG" [ref=f3e47] [cursor=pointer]
+                - generic [ref=f3e50]:
+                  - button "Zoom" [ref=f3e51] [cursor=pointer]
+                  - button "Pan" [ref=f3e54] [cursor=pointer]
+                  - button "Box Select" [ref=f3e57] [cursor=pointer]
+                  - button "Lasso Select" [ref=f3e60] [cursor=pointer]
+                - generic [ref=f3e63]:
+                  - button "Zoom in" [ref=f3e64] [cursor=pointer]
+                  - button "Zoom out" [ref=f3e67] [cursor=pointer]
+                  - button "Autoscale" [ref=f3e70] [cursor=pointer]
+                  - button "Reset axes" [ref=f3e73] [cursor=pointer]
+        - blockquote [ref=f1e130]:
+          - paragraph [ref=f1e131]:
+            - strong [ref=f1e132]: "Scope note:"
+            - text: the headline metrics are from the offline synthetic cohort, where ground truth is exact. The real GIAB HG002 run is fully wired and the data sources verified (
+            - code [ref=f1e133]: fetch_real_data.sh
+            - text: ), benchmarked with
+            - code [ref=f1e134]: bcftools isec
+            - text: against the NIST truth, but the multi-GB-adjacent fetch is run on demand rather than in CI. Filtering is GATK hard-filters rather than VQSR/CNN (which need large cohorts or pretrained models), and somatic calling (Mutect2) is a natural drop-in sibling — both deliberate, documented trade-offs that keep the project laptop-reproducible.
+  - contentinfo [ref=f1e135]:
+    - generic [ref=f1e136]:
+      - generic [ref=f1e137]: © 2026 Naraen Palanikumar
+      - link "Back to top ↑" [ref=f1e139] [cursor=pointer]:
+        - /url: "#top"
