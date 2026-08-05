@@ -3,6 +3,7 @@ layout: page
 title: "Fiber Photometry Web App"
 description: "R Shiny web app streamlining fiber photometry data processing and figure generation, built for the Sweeney Lab."
 thumbnail: "/assets/images/portfolio/fiber_photometry.svg"
+slug: fiberphot_proj   # joins this page to its entry in content.yml projects
 ---
 
 <h3>Live Application Demo</h3>

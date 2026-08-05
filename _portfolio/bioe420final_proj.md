@@ -3,6 +3,7 @@ layout: page
 title: "PID Controller for Anaesthetic Dosing"
 description: "MATLAB/Simulink PID controller for patient-specific anaesthetic dosing, achieving top cohort performance on steady-state error and settling time."
 thumbnail: "/assets/images/portfolio/pid_controller.svg"
+slug: bioe420final_proj   # joins this page to its entry in content.yml projects
 ---
 
 #### Group Members: Aryan Shah, Alec Wahl, and Myself

@@ -3,6 +3,7 @@ layout: page
 title: "Spatial transcriptomics: Visium breast-cancer cell-type deconvolution (Nextflow)"
 description: "A reproducible Nextflow DSL2 pipeline that takes a 10x Visium breast-cancer section plus a matched scRNA-seq atlas and maps cell types back into tissue space: per-spot NNLS deconvolution and spatially variable genes, rendered as interactive figures."
 thumbnail: "/assets/images/portfolio/spatial_visium.svg"
+slug: spatial_visium_proj   # joins this page to its entry in content.yml projects
 ---
 
 A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes a

@@ -3,6 +3,7 @@ layout: page
 title: "AML transcriptomics: single-cell + bulk RNA-seq"
 description: "Two complementary acute myeloid leukemia projects: a single-cell pipeline characterizing pre-leukemic populations (R Shiny dashboard) and a Nextflow bulk RNA-seq differential-expression pipeline (interactive volcano)."
 thumbnail: "/assets/images/portfolio/aml_scrna.svg"
+slug: aml_proj   # joins this page to its entry in content.yml projects
 ---
 
 Two complementary takes on **acute myeloid leukemia** transcriptomics: a single-cell pipeline that characterizes pre-leukemic populations across patient cohorts, and a bulk RNA-seq differential-expression pipeline built as a workflow-engineering exercise. The first asks *which cells* drive the disease; the second asks *which genes* separate AML from healthy blood at the cohort level.

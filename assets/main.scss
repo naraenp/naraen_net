@@ -1280,12 +1280,14 @@ table tr:nth-child(even) { background: transparent; }
   border: 1px solid var(--aq-card-border);
 }
 
-.portfolio-item h3 {
+.portfolio-item h3,
+.portfolio-item__title {
   font-family: "Zodiak", Georgia, serif;
   font-weight: 400;
   font-size: var(--aq-fs-h3);
   margin: var(--aq-space-4) 0 var(--aq-space-2);
   color: var(--aq-fg);
+  line-height: 1.25;
 }
 
 .portfolio-item p {
@@ -1295,6 +1297,26 @@ table tr:nth-child(even) { background: transparent; }
   margin: 0;
   line-height: 1.55;
 }
+
+/* Stack chips, driven by content.yml's per-project `stack`. The two-class
+   selectors beat the `.portfolio-item p` rule above without !important. */
+.portfolio-item .portfolio-item__stack {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  color: var(--aq-fg-dim);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--aq-space-3);
+}
+
+/* Cards for projects that have no page here (Bench). No thumbnail, so the
+   eyebrow carries the top edge the image would otherwise occupy. */
+.portfolio-item .portfolio-item__eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  color: var(--aq-accent);
+  letter-spacing: 0.02em;
+}
+.portfolio-item--external .portfolio-item__title { margin-top: var(--aq-space-2); }
 
 /* ---------- Legacy about-container (kept for safety) ---------- */
 .about-container {

@@ -3,6 +3,7 @@ layout: page
 title: "Plant bulk RNA-seq: drought tolerance differential expression (Nextflow)"
 description: "A reproducible Nextflow DSL2 pipeline taking raw Illumina bulk RNA-seq reads from drought-tolerant and drought-susceptible rice cultivars through alignment, quantification, and differential expression to a GO-enrichment view of the genes and processes that separate the two phenotypes."
 thumbnail: "/assets/images/portfolio/plant_rnaseq.svg"
+slug: plant_rnaseq_proj   # joins this page to its entry in content.yml projects
 ---
 
 A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes

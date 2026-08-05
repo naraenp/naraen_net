@@ -3,6 +3,7 @@ layout: page
 title: "Germline variant calling: GATK short-variant pipeline (Nextflow)"
 description: "A reproducible Nextflow DSL2 pipeline taking raw Illumina short reads through the GATK germline best-practice path — BWA-MEM alignment, duplicate marking, HaplotypeCaller joint genotyping, hard-filtering, and consequence annotation — to a filtered cohort VCF, validated on a synthetic cohort with planted variants and wired to benchmark against the GIAB HG002 truth set."
 thumbnail: "/assets/images/portfolio/variant_calling.svg"
+slug: variant_calling_proj   # joins this page to its entry in content.yml projects
 ---
 
 A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes

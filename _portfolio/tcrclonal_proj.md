@@ -3,6 +3,7 @@ layout: page
 title: "TCR Clonality Analysis"
 description: "Bulk TCR-β repertoire analysis comparing clonality and antigen-specific frequencies in TB progressors vs. controllers."
 thumbnail: "/assets/images/portfolio/tcr_clonality.svg"
+slug: tcrclonal_proj   # joins this page to its entry in content.yml projects
 ---
 
 Analyzed publicly available bulk TCR-β sequencing data to test whether **repertoire clonality** and ***M. tuberculosis*-specific clonotype frequency** differ between TB progressors and controllers. The workflow imports Adaptive-format repertoires with [`tcrdist3`](https://tcrdist3.readthedocs.io/), standardizes V/J/CDR3 nomenclature to IMGT format, and cross-references experimental repertoires against curated **IEDB** and **VDJdb** reference sets to flag TB-specific clonotypes. From there it computes total and antigen-specific clonality (1 - normalized Shannon entropy) and TB-specific template frequency, then statistically compares the two cohorts.
