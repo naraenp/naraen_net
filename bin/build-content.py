@@ -267,6 +267,15 @@ def check_site_renders(public: dict) -> list[str]:
                 "`short_name` -> its card title and the hero link would be blank"
             )
 
+    # A project with no page here supplies its own portfolio-grid thumbnail.
+    for project in public.get("projects", []):
+        if project.get("url") and not project.get("slug") and not project.get("thumbnail"):
+            problems.append(
+                f"project {project['id']!r} has a url but no `slug` and no "
+                "`thumbnail` -> its portfolio card would have no art and sit "
+                "shorter than the rest of the grid"
+            )
+
     for pub in public.get("publications", []):
         if not pub.get("short_title"):
             problems.append(

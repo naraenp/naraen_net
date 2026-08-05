@@ -367,6 +367,7 @@ projects:
   featured: true
   name: Bench @ Phalaena Automata
   short_name: Bench
+  thumbnail: /assets/images/portfolio/bench_platform.svg
   stack:
   - Python
   - FastAPI

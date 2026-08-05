@@ -54,8 +54,17 @@ permalink: /portfolio/
     {%- endunless -%}
   {%- elsif project.url %}
   <a href="{{ project.url }}" class="portfolio-item portfolio-item--external" rel="noopener">
+    {%- comment -%}
+      Bench has no page in _portfolio/, so its card carries its own thumbnail
+      from content.yml to sit flush with the rest of the grid. Without one it
+      falls back to the text eyebrow rather than rendering a broken image.
+    {%- endcomment -%}
+    {%- if project.thumbnail %}
+    <img src="{{ project.thumbnail | relative_url }}" alt="" width="640" height="360" loading="lazy" decoding="async">
+    {%- else %}
     <p class="portfolio-item__eyebrow">External<span class="visually-hidden"> link</span></p>
-    <h2 class="portfolio-item__title">{{ project.name }}</h2>
+    {%- endif %}
+    <h2 class="portfolio-item__title">{{ project.short_name | default: project.name }}<span class="portfolio-item__external" aria-hidden="true">↗</span><span class="visually-hidden"> (external site)</span></h2>
     {%- if project.stack.size > 0 %}
     <p class="portfolio-item__stack">{{ project.stack | join: " · " }}</p>
     {%- endif %}

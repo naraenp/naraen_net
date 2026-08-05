@@ -322,6 +322,11 @@ img { max-width: 100%; height: auto; }
 /* Wrapper width override (minima sets it via $content-width) */
 .wrapper {
   max-width: var(--aq-page-max);
+  /* These two are load-bearing: they centre every page. They used to come from
+     the vendored minima .wrapper rule, and this override only ever set the
+     width and padding on top of it. */
+  margin-left: auto;
+  margin-right: auto;
   padding-left: var(--aq-fluid-page-padding);
   padding-right: var(--aq-fluid-page-padding);
 }
@@ -1412,7 +1417,14 @@ table tr:nth-child(even) { background: transparent; }
   color: var(--aq-accent);
   letter-spacing: 0.02em;
 }
-.portfolio-item--external .portfolio-item__title { margin-top: var(--aq-space-2); }
+/* With a thumbnail the external card matches the rest of the grid exactly; the
+   arrow is the only thing marking it as leaving the site. */
+.portfolio-item--external .portfolio-item__external {
+  margin-left: 0.35em;
+  font-size: 0.72em;
+  color: var(--aq-accent);
+  vertical-align: 0.12em;
+}
 
 /* ---------- Legacy about-container (kept for safety) ---------- */
 .about-container {
