@@ -7,13 +7,14 @@ and published via GitHub Pages from `main`.
 
 - **Home** (`/`): Hero, About, Selected projects, and Experience sections.
   Sticky glass nav with a light/dark theme toggle.
-- **Portfolio** (`/portfolio/`): Auto-generated grid of project pages collected
-  from `_portfolio/` (front matter: `title`, `description`, `thumbnail`).
+- **Portfolio** (`/portfolio/`): Grid generated from the `projects` list in
+  `_data/profile.yml`, joined to the pages in `_portfolio/` on a `slug` front
+  matter key (which also carries `title`, `description`, `thumbnail`).
 - **Log** (`/log/`): The blog. Posts live in `_posts/` and use the
   `/log/:title/` permalink. The index (`log.markdown`) filters posts
   client-side by a fixed tag vocabulary (`log_tags` in `_config.yml`).
-- **CV** (`/cv/`): Full CV with a downloadable résumé PDF
-  (`assets/pdf/naraenp_resume.pdf`).
+- **CV** (`/cv/`): Rendered entirely from `_data/profile.yml`. The résumé PDF
+  link comes from `resume_pdf` in `_config.yml`.
 - **Gallery** (`/gallery/`): Lightbox photo grid driven by
   `assets/gallery/captions.json`.
 - **Reading** (`/reading/`): Bookshelf driven by `_data/reading.yml`; the same
@@ -22,18 +23,40 @@ and published via GitHub Pages from `main`.
 - **Contact** (`/contact/`): Formspree-backed contact form; the recipient
   email is not stored in the repo.
 
+## Content source of truth
+
+Professional history, publications, projects, skills, and education live in
+**`content.yml`** at the repo root. It is **gitignored**: alongside the public
+facts it carries job-search strategy, reference contact details, interview
+answers, and personal disclosure decisions.
+
+`bin/build-content.py` derives the public subset into **`_data/profile.yml`**,
+which *is* committed and is what Liquid reads as `site.data.profile`. The CV,
+the portfolio index, the home page, and the Person JSON-LD all render from it.
+
+```bash
+python3 bin/build-content.py           # content.yml -> _data/profile.yml
+python3 bin/build-content.py --check   # fail if the derived file is stale
+```
+
+`bin/publish.sh` runs this automatically before committing, so editing
+`content.yml` and publishing is enough. The script strips the private sections,
+strips `note` / `verify` / `context` and personal contact fields at any depth,
+then re-scans its own output and refuses to write if anything private survived.
+Edit `content.yml`, never `_data/profile.yml`.
+
 ## Repo layout
 
 ```text
 ├── _config.yml          # Site config, formspree_form_id, plugin list
-├── _data/               # reading.yml (bookshelf data)
+├── _data/               # profile.yml (generated, see below), reading.yml
 ├── _includes/           # header, head, footer, contact_form, theme_toggle
 ├── _layouts/            # default, home, page, post
 ├── _portfolio/          # One .md per portfolio project (collection)
 ├── _posts/              # Log entries (the blog)
-├── _sass/               # Vendored minima + Aequorea design tokens
+├── _sass/               # (empty; the design system lives in assets/main.scss)
 ├── assets/              # main.scss, images/, icons/, fonts/, pdf/, gallery/, embeds/
-├── bin/                 # Authoring/publish helpers (new-post.sh, publish.sh)
+├── bin/                 # Helpers (new-post.sh, publish.sh, build-content.py)
 ├── index.markdown       # layout: home
 ├── portfolio.markdown   # Portfolio grid index
 ├── log.markdown         # Log index (client-side tag filter)
