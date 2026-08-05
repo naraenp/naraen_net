@@ -134,23 +134,27 @@ blockquote > :last-child { margin-bottom: 0; }
   --aq-warning: #E0B255;
   --aq-info:    #5EA6C9;
 
-  /* Dark mode is the unprefixed default. The .theme-light class flips role
-     bindings without changing token values. */
-  --aq-bg:          var(--aq-abyss);
-  --aq-bg-flair:    var(--aq-tide);
-  --aq-card:        var(--aq-fathom);
-  --aq-card-border: var(--aq-current);
-  --aq-hover-card:  color-mix(in srgb, var(--aq-fathom) 80%, var(--aq-current) 20%);
-  --aq-accent:      var(--aq-glow);
-  --aq-accent-2:    var(--aq-glow-lift);
-  --aq-rule:        var(--aq-current);
-  --aq-fg:          var(--aq-sail);
-  --aq-fg-muted:    var(--aq-haze);
-  --aq-fg-dim:      var(--aq-mist);
+  /* Light mode is the unprefixed default. The .theme-dark class flips role
+     bindings without changing token values. Light being the default means a
+     no-JS visitor also gets it, rather than falling through to the opposite
+     theme from the one the toggle would pick. */
+  --aq-bg:          var(--aq-sail);
+  --aq-bg-flair:    var(--aq-foam);
+  /* Card is foam, not haze: haze is too dark a beige for accent text to clear
+     AA against (it measured 2.37:1). On foam every foreground role passes. */
+  --aq-card:        var(--aq-foam);
+  --aq-card-border: var(--aq-seaglass);
+  --aq-hover-card:  color-mix(in srgb, var(--aq-foam) 60%, var(--aq-sail) 40%);
+  --aq-accent:      var(--aq-glow-ink);
+  --aq-accent-2:    var(--aq-glow-abyssal);
+  --aq-rule:        var(--aq-mist);
+  --aq-fg:          var(--aq-abyss);
+  --aq-fg-muted:    var(--aq-fathom);
+  --aq-fg-dim:      var(--aq-current);
 
   /* Logo sweep — a slow drift within the burnt-orange accent family.
-     Dark ground gets a brighter amber peak; light ground stays deeper. */
-  --aq-title-sweep: linear-gradient(100deg, #B75E2D 0%, #D07B45 33%, #E7A960 55%, #D07B45 77%, #B75E2D 100%);
+     Light ground stays deeper; the dark ground gets a brighter amber peak. */
+  --aq-title-sweep: linear-gradient(100deg, #8A4620 0%, #B75E2D 40%, #D07B45 55%, #B75E2D 70%, #8A4620 100%);
 
   /* Geometry (Aequorea softens the company's hard 0 to a 6px radius) */
   --aq-radius: 6px;
@@ -199,24 +203,21 @@ blockquote > :last-child { margin-bottom: 0; }
   --aq-ease-snappy:    cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-/* Light mode role swap */
-.theme-light {
-  --aq-bg:          var(--aq-sail);
-  --aq-bg-flair:    var(--aq-foam);
-  /* Card was --aq-haze, too dark a beige for accent text to clear AA against
-     (glow-deep on haze measured 2.37:1). Foam is one step lighter and every
-     foreground role now passes on it. */
-  --aq-card:        var(--aq-foam);
-  --aq-card-border: var(--aq-seaglass);
-  --aq-hover-card:  color-mix(in srgb, var(--aq-foam) 60%, var(--aq-sail) 40%);
-  --aq-accent:      var(--aq-glow-ink);
-  --aq-accent-2:    var(--aq-glow-abyssal);
-  --aq-rule:        var(--aq-mist);
-  --aq-fg:          var(--aq-abyss);
-  --aq-fg-muted:    var(--aq-fathom);
-  --aq-fg-dim:      var(--aq-current);
-  /* Deeper sweep on the light glass header, where a bright amber would wash out. */
-  --aq-title-sweep: linear-gradient(100deg, #8A4620 0%, #B75E2D 40%, #D07B45 55%, #B75E2D 70%, #8A4620 100%);
+/* Dark mode role swap */
+.theme-dark {
+  --aq-bg:          var(--aq-abyss);
+  --aq-bg-flair:    var(--aq-tide);
+  --aq-card:        var(--aq-fathom);
+  --aq-card-border: var(--aq-current);
+  --aq-hover-card:  color-mix(in srgb, var(--aq-fathom) 80%, var(--aq-current) 20%);
+  --aq-accent:      var(--aq-glow);
+  --aq-accent-2:    var(--aq-glow-lift);
+  --aq-rule:        var(--aq-current);
+  --aq-fg:          var(--aq-sail);
+  --aq-fg-muted:    var(--aq-haze);
+  --aq-fg-dim:      var(--aq-mist);
+  /* Brighter amber peak, which would wash out on the light glass header. */
+  --aq-title-sweep: linear-gradient(100deg, #B75E2D 0%, #D07B45 33%, #E7A960 55%, #D07B45 77%, #B75E2D 100%);
 }
 
 /* ---------- Base ---------- */
@@ -524,9 +525,9 @@ img { max-width: 100%; height: auto; }
 }
 
 .theme-toggle__icon { display: inline-flex; align-items: center; justify-content: center; }
-.theme-toggle__icon--moon { display: none; }
-.theme-light .theme-toggle__icon--sun { display: none; }
-.theme-light .theme-toggle__icon--moon { display: inline-flex; }
+.theme-toggle__icon--sun { display: none; }
+.theme-dark .theme-toggle__icon--sun { display: inline-flex; }
+.theme-dark .theme-toggle__icon--moon { display: none; }
 
 /* ---------- Eyebrow (mono small caps-equivalent without uppercase) ---------- */
 .pa-eyebrow {
@@ -712,13 +713,13 @@ img { max-width: 100%; height: auto; }
   padding: 0;
   background: transparent;
   box-sizing: content-box;
-  /* Source icons are filled black SVGs. Invert in dark mode so they read as
-     light foreground; light mode leaves them dark to match the body text. */
-  filter: invert(1);
+  /* Source icons are filled black SVGs, so they match the body text on the
+     light default. Dark mode inverts them to read as light foreground. */
+  filter: invert(0);
   transition: filter var(--aq-dur-fast) var(--aq-ease-symmetric);
 }
-.theme-light .social-links a img {
-  filter: invert(0);
+.theme-dark .social-links a img {
+  filter: invert(1);
 }
 
 /* ---------- Project cards ---------- */
@@ -1499,7 +1500,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   margin: 0;
   padding: 0;
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  color: var(--aq-mist);   /* soft warm sand on the dark ember ground — readable */
+  color: var(--aq-current);   /* deep umber on the light ground */
   white-space: pre;
   overflow: visible;        /* override base `pre { overflow-x: auto }` */
   background: transparent;  /* override base `pre` background */
@@ -1510,7 +1511,7 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   animation: ascii-slide var(--ascii-duration, 14s) linear forwards;
   will-change: transform;
 }
-.theme-light .ascii-art { color: var(--aq-current); }   /* deep umber on the light bg */
+.theme-dark .ascii-art { color: var(--aq-mist); }   /* soft warm sand on the dark ember ground */
 
 @keyframes ascii-slide {
   from { transform: translate3d(100vw, 0, 0); }

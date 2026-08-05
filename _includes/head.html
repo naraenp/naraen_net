@@ -1,12 +1,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- comment -%}
+    Runs before first paint so the theme never flashes. Light is the default:
+    the class is applied only to opt into dark, and nothing is written to
+    localStorage here, so "no stored preference" stays distinguishable from an
+    explicit choice.
+  {%- endcomment -%}
   <script>
   (function(){
-    var k='theme';
-    var v=localStorage.getItem(k);
-    if(v===null||v===''){ localStorage.setItem(k,'dark'); v='dark'; }
-    if(v==='light') document.documentElement.classList.add('theme-light');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('theme-dark');
+    }
   })();
   </script>
   {%- seo -%}
