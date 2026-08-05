@@ -4,11 +4,12 @@
   {%- include head.html -%}
 
   <body class="site-body">
+    <a class="skip-link visually-hidden" href="#main-content">Skip to content</a>
     <div class="ascii-backdrop" id="ascii-backdrop" aria-hidden="true" data-pagefind-ignore></div>
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content"{% unless page.url == "/search/" %} data-pagefind-body{% endunless %}>
+    <main class="page-content" id="main-content" tabindex="-1" aria-label="Content"{% unless page.url == "/search/" %} data-pagefind-body{% endunless %}>
       <div class="wrapper">
         {{ content }}
       </div>

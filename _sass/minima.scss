@@ -14,8 +14,10 @@ $aq-sail:     #F3ECE2;   // 9 · fg
 
 // Muted burnt-orange accent — a warm signal hue OUTSIDE the ramp.
 $aq-glow:      #D07B45;   // glow: dark-mode accent, links, fills
-$aq-glow-deep: #B75E2D;   // hover / visited / light-mode accent
-$aq-glow-ink:  #8A4620;   // light-mode hover
+$aq-glow-lift: #E7A960;   // dark-mode hover (brighter on a dark ground)
+$aq-glow-deep: #B75E2D;   // mid burnt-orange; decorative / gradient use only
+$aq-glow-ink:  #8A4620;   // light-mode accent
+$aq-glow-abyssal: #653214; // light-mode hover (darker on a light ground)
 
 $base-font-family: "Switzer", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !default;
 $display-font-family: "Zodiak", Georgia, "Times New Roman", serif !default;

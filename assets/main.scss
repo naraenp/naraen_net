@@ -64,10 +64,14 @@
   --aq-foam:    #{$aq-foam};
   --aq-sail:         #{$aq-sail};
 
-  /* Aquamarine accent — separate signal hue, lives outside the ramp */
+  /* Burnt-orange accent — separate signal hue, lives outside the ramp.
+     Five steps rather than three, so hover can move *away* from the ground on
+     both themes (brighter on dark, darker on light) and still clear WCAG AA. */
   --aq-glow:         #{$aq-glow};
+  --aq-glow-lift:    #{$aq-glow-lift};
   --aq-glow-deep:    #{$aq-glow-deep};
   --aq-glow-ink:     #{$aq-glow-ink};
+  --aq-glow-abyssal: #{$aq-glow-abyssal};
   --aq-accent-halo:  rgba(208, 123, 69, 0.20);   /* the "glow, don't move" bloom */
 
   --aq-success: #6FB58A;
@@ -81,9 +85,9 @@
   --aq-bg-flair:    var(--aq-tide);
   --aq-card:        var(--aq-fathom);
   --aq-card-border: var(--aq-current);
-  --aq-hover-card:  color-mix(in srgb, var(--aq-fathom) 55%, var(--aq-current) 45%);
+  --aq-hover-card:  color-mix(in srgb, var(--aq-fathom) 80%, var(--aq-current) 20%);
   --aq-accent:      var(--aq-glow);
-  --aq-accent-2:    var(--aq-glow-deep);
+  --aq-accent-2:    var(--aq-glow-lift);
   --aq-rule:        var(--aq-current);
   --aq-fg:          var(--aq-sail);
   --aq-fg-muted:    var(--aq-haze);
@@ -144,11 +148,14 @@
 .theme-light {
   --aq-bg:          var(--aq-sail);
   --aq-bg-flair:    var(--aq-foam);
-  --aq-card:        var(--aq-haze);
-  --aq-card-border: var(--aq-mist);
-  --aq-hover-card:  color-mix(in srgb, var(--aq-haze) 55%, var(--aq-mist) 45%);
-  --aq-accent:      var(--aq-glow-deep);
-  --aq-accent-2:    var(--aq-glow-ink);
+  /* Card was --aq-haze, too dark a beige for accent text to clear AA against
+     (glow-deep on haze measured 2.37:1). Foam is one step lighter and every
+     foreground role now passes on it. */
+  --aq-card:        var(--aq-foam);
+  --aq-card-border: var(--aq-seaglass);
+  --aq-hover-card:  color-mix(in srgb, var(--aq-foam) 60%, var(--aq-sail) 40%);
+  --aq-accent:      var(--aq-glow-ink);
+  --aq-accent-2:    var(--aq-glow-abyssal);
   --aq-rule:        var(--aq-mist);
   --aq-fg:          var(--aq-abyss);
   --aq-fg-muted:    var(--aq-fathom);
@@ -199,8 +206,9 @@ a[href] i {
 }
 
 :focus-visible {
-  outline: 1px solid var(--aq-accent);
+  outline: 2px solid var(--aq-accent);
   outline-offset: 2px;
+  border-radius: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -833,10 +841,14 @@ img { max-width: 100%; height: auto; }
 .contact-form-wrap input::placeholder,
 .contact-form-wrap textarea::placeholder { color: var(--aq-fg-dim); }
 
-.contact-form-wrap input:focus,
-.contact-form-wrap textarea:focus {
-  outline: none;
+/* A 1px border-colour change alone is not a discernible focus indicator.
+   Keep the accent border and add the same visible ring every other control
+   gets, so keyboard focus is never ambiguous. */
+.contact-form-wrap input:focus-visible,
+.contact-form-wrap textarea:focus-visible {
   border-color: var(--aq-accent);
+  outline: 2px solid var(--aq-accent);
+  outline-offset: 2px;
 }
 
 .contact-form-wrap textarea { min-height: 140px; resize: vertical; }
@@ -1445,6 +1457,15 @@ html { overflow-x: clip; }   /* keep wide off-screen ASCII art from triggering a
   font-family: "Switzer", system-ui, sans-serif;
   color: var(--aq-fg-muted);
   margin: 0 0 var(--aq-space-3);
+}
+/* The numeral is decoration beside the real "Page not found" h1, so it is a
+   <p> rather than a second, competing h1. */
+.error-container .error-code {
+  font-family: "Zodiak", Georgia, serif;
+  font-size: var(--aq-fs-display);
+  color: var(--aq-accent);
+  line-height: 1;
+  margin: 0 0 var(--aq-space-4);
 }
 
 /* ---------- Photo gallery (/gallery/) ----------

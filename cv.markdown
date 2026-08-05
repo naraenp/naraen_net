@@ -3,7 +3,6 @@ layout: default
 title: CV
 description: "Curriculum vitae of Naraen Palanikumar: bioinformatics engineer and cloud architect. Experience, peer-reviewed publications, projects, and skills."
 permalink: /cv/
-og_type: profile
 ---
 
 {%- assign cv = site.data.profile -%}

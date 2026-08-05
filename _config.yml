@@ -47,6 +47,15 @@ collections:
   portfolio:
     output: true
 
+# jekyll-seo-tag only reads `image` from page front matter, so a site-level
+# `image:` never reaches og:image. Setting it as a default gives every page a
+# link preview; individual pages can still override it in their front matter.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-image.png
+
 # Blog posts ("Log") live under /log/<title>/.
 permalink: /log/:title/
 

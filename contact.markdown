@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-description: Contact.
+description: "Get in touch with Naraen Palanikumar about bioinformatics pipelines, cloud-native genomics, and applied AI in the life sciences."
 permalink: /contact/
 ---
 

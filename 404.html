@@ -1,10 +1,13 @@
 ---
 permalink: /404.html
 layout: page
+title: Page not found
+description: "That page does not exist on naraen.net."
+sitemap: false
 ---
 
 <div class="error-container">
-  <h1>404</h1>
-  <p><strong>Page not found.</strong></p>
-  <p>The requested page could not be found. Return to the <a href="{{ '/' | relative_url }}">home page</a>.</p>
+  <p class="error-code" aria-hidden="true">404</p>
+  <p>The requested page could not be found. It may have moved, or the link may be wrong.</p>
+  <p>Try the <a href="{{ '/' | relative_url }}">home page</a>, the <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>, the <a href="{{ '/log/' | relative_url }}">Log</a>, or <a href="{{ '/search/' | relative_url }}">search the site</a>.</p>
 </div>

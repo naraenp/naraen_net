@@ -1,6 +1,5 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
   (function(){
@@ -11,25 +10,69 @@
   })();
   </script>
   {%- seo -%}
-  {%- comment -%} Sitewide Person JSON-LD, in addition to jekyll-seo-tag. Wired to the ORCID and social profiles used on the home page. {%- endcomment -%}
+  {%- comment -%}
+    jekyll-seo-tag reads `image` from page front matter only, so the sitewide
+    og:image comes from the `defaults` block in _config.yml. Given an image it
+    also upgrades twitter:card to summary_large_image on its own. These two fill
+    the gap it leaves: dimensions, so a crawler need not fetch the file to lay
+    the preview out.
+  {%- endcomment -%}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="naraen.net — {{ site.author.name }}">
+  {%- comment -%}
+    Sitewide Person JSON-LD, in addition to jekyll-seo-tag. Driven by
+    _data/profile.yml so it cannot drift from the CV.
+  {%- endcomment -%}
+  {%- assign cv = site.data.profile -%}
+  {%- assign current_job = cv.experience | first -%}
+  {%- assign knows = "" | split: "" -%}
+  {%- for group in cv.skills -%}
+    {%- for item in group.items limit: 3 -%}{%- assign knows = knows | push: item -%}{%- endfor -%}
+  {%- endfor -%}
+  {%- comment -%} Two degrees from one university must not list it twice. {%- endcomment -%}
+  {%- assign schools = "" | split: "" -%}
+  {%- for edu in cv.education -%}
+    {%- unless schools contains edu.institution -%}{%- assign schools = schools | push: edu.institution -%}{%- endunless -%}
+  {%- endfor -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Naraen Palanikumar",
+    "name": {{ cv.identity.name | jsonify }},
     "url": "{{ site.url }}{{ site.baseurl }}/",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/profile.webp",
-    "jobTitle": "Founding Engineer",
-    "worksFor": { "@type": "Organization", "name": "Phalaena Automata", "url": "https://phalaena.ai" },
+    "jobTitle": {{ current_job.title | jsonify }},
+    "description": {{ cv.summary | jsonify }},
+    "worksFor": { "@type": "Organization", "name": {{ current_job.org | jsonify }}, "url": "https://phalaena.ai" },
+    "alumniOf": [
+      {%- for school in schools -%}
+      { "@type": "CollegeOrUniversity", "name": {{ school | jsonify }} }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ],
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "ORCID",
+      "value": {{ cv.identity.orcid | jsonify }},
+      "url": {{ cv.identity.orcid | jsonify }}
+    },
+    "knowsAbout": {{ knows | jsonify }},
     "sameAs": [
-      "https://orcid.org/0000-0001-8513-4590",
-      "https://github.com/naraenp",
-      "https://www.linkedin.com/in/naraenp/"
+      {{ cv.identity.orcid | jsonify }},
+      {{ cv.identity.github | jsonify }},
+      {{ cv.identity.linkedin | jsonify }}
     ]
   }
   </script>
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon-180.png' | relative_url }}">
+  {%- comment -%}
+    Preload the three faces used above the fold on every page: body text, the
+    medium weight for entry titles, and the display serif for headings.
+    JetBrains Mono is small-label-only, so it is left to font-display: swap.
+  {%- endcomment -%}
+  <link rel="preload" href="{{ '/assets/fonts/Switzer-Regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/Switzer-Medium.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/Zodiak-Regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
