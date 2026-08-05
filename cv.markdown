@@ -1,315 +1,181 @@
 ---
-layout: page
+layout: default
 title: CV
-description: CV
+description: "Curriculum vitae of Naraen Palanikumar: bioinformatics engineer and cloud architect. Experience, peer-reviewed publications, projects, and skills."
 permalink: /cv/
+og_type: profile
 ---
 
-<div class="title-container">
-  <div class="name-and-links">
-    <h2>Naraen Palanikumar</h2>
-    <p class="pa-eyebrow">Bioinformatics engineer · Cloud architect · Frisco, TX</p>
-    <p class="social-links">
-      <a href="{{ '/contact/' | relative_url }}"><img src="{{ '/assets/icons/mail.svg' | relative_url }}" alt=""> Contact</a>
-      <a href="https://www.linkedin.com/in/naraenp/"><img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt=""> LinkedIn</a>
-      <a href="https://github.com/naraenp"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt=""> GitHub</a>
-      <a href="https://orcid.org/0000-0001-8513-4590"><img src="{{ '/assets/icons/orcid.svg' | relative_url }}" alt=""> ORCID</a>
-    </p>
-  </div>
-  <a href="{{ '/assets/pdf/naraenp_resume.pdf' | relative_url }}" class="download-button" download="naraenp_resume.pdf">Download</a>
-</div>
+{%- assign cv = site.data.profile -%}
 
-### Professional summary
+<article class="post cv-page">
 
-Bioinformatics engineer with 4+ years of experience building scalable platforms for lab research. Proficient in designing Nextflow pipelines, Google Cloud architectures, and bioinformatics workflows. Proven track record of optimizing data analysis for peer-reviewed publications and deploying production-grade bioinformatics solutions on Google Cloud, while leveraging AI to automate complex data interpretation and accelerate scientific discovery.
+  <header class="title-container">
+    <div class="name-and-links">
+      <h1 class="cv-name">{{ cv.identity.name }}</h1>
+      <p class="pa-eyebrow">Bioinformatics engineer · Cloud architect · {{ cv.identity.location }}</p>
+      <p class="social-links">
+        <a href="{{ '/contact/' | relative_url }}"><img src="{{ '/assets/icons/mail.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> Contact</a>
+        <a href="{{ cv.identity.linkedin }}" rel="me noopener"><img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> LinkedIn</a>
+        <a href="{{ cv.identity.github }}" rel="me noopener"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> GitHub</a>
+        <a href="{{ cv.identity.orcid }}" rel="me noopener"><img src="{{ '/assets/icons/orcid.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> ORCID</a>
+      </p>
+    </div>
+    <a href="{{ site.resume_pdf | relative_url }}" class="download-button" download>Download resume (PDF)</a>
+  </header>
 
-### Education
+  <div class="post-content">
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">University of Illinois - Urbana-Champaign</span>
-    <span class="cv-entry__date">Aug 2023 - May 2024</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Master of Engineering (M.Eng.), Biomedical Engineering</span>
-    <span class="cv-entry__loc">Urbana-Champaign, IL</span>
-  </div>
-</div>
+    <section class="cv-section" aria-labelledby="cv-summary">
+      <h2 class="cv-section__title" id="cv-summary">Professional summary</h2>
+      <p>{{ cv.summary }}</p>
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">University of Illinois - Urbana-Champaign</span>
-    <span class="cv-entry__date">Aug 2019 - May 2023</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Bachelor of Science (B.S.), Biomedical Engineering</span>
-    <span class="cv-entry__loc">Urbana-Champaign, IL</span>
-  </div>
-</div>
+    <section class="cv-section" aria-labelledby="cv-education">
+      <h2 class="cv-section__title" id="cv-education">Education</h2>
+      {%- for edu in cv.education %}
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__org">{{ edu.institution }}</span>
+          <span class="cv-entry__date">{{ edu.dates }}</span>
+        </div>
+        <div class="cv-entry__sub">
+          <span class="cv-entry__role">{{ edu.degree_line }}</span>
+          <span class="cv-entry__loc">{{ edu.location }}</span>
+        </div>
+      </div>
+      {%- endfor %}
+    </section>
 
-### Professional experience
+    <section class="cv-section" aria-labelledby="cv-experience">
+      <h2 class="cv-section__title" id="cv-experience">Professional experience</h2>
+      {%- for job in cv.experience %}
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__org">{{ job.org }}</span>
+          <span class="cv-entry__date">{{ job.dates }}</span>
+        </div>
+        <div class="cv-entry__sub">
+          <span class="cv-entry__role">{{ job.title }}</span>
+          <span class="cv-entry__loc">{{ job.location }}</span>
+        </div>
+        {%- if job.bullets.size > 0 %}
+        <ul>
+          {%- for bullet in job.bullets %}
+          <li>{{ bullet.text }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Phalaena Automata</span>
-    <span class="cv-entry__date">Mar 2026 - Present</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Founding Engineer</span>
-    <span class="cv-entry__loc">Austin, TX, USA</span>
-  </div>
-  <ul>
-    <li>Spearheading end-to-end development of a <strong>biotechnology research accelerator</strong> platform, managing the product lifecycle from initial architecture to cloud deployment.</li>
-    <li>Developing <strong>full-stack AI-centric infrastructure</strong> on Google Cloud, integrating RAG + LLM architecture to automate unstructured data interpretation pipelines and accelerate the sequence-to-insight loop.</li>
-  </ul>
-</div>
+    <section class="cv-section" aria-labelledby="cv-projects">
+      <h2 class="cv-section__title" id="cv-projects">Projects</h2>
+      {%- for project in cv.projects %}
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__org">
+            {%- if project.url %}<a href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif -%}
+          </span>
+          {%- if project.dates %}<span class="cv-entry__date">{{ project.dates }}</span>{% endif -%}
+        </div>
+        {%- if project.stack.size > 0 or project.team %}
+        <div class="cv-entry__sub">
+          <span class="cv-entry__stack">{{ project.stack | join: " · " }}</span>
+          {%- if project.team %}<span class="cv-entry__loc">{{ project.team }}</span>{% endif -%}
+        </div>
+        {%- endif %}
+        {%- if project.bullets.size > 0 %}
+        <ul>
+          {%- for bullet in project.bullets %}
+          <li>{{ bullet.text }}</li>
+          {%- endfor %}
+          {%- if project.repo %}
+          <li><a href="{{ project.repo }}" rel="noopener">Source on GitHub</a></li>
+          {%- endif %}
+        </ul>
+        {%- endif %}
+      </div>
+      {%- endfor %}
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Independent</span>
-    <span class="cv-entry__date">Jul 2025 - Feb 2026</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Bioinformatics Consultant</span>
-    <span class="cv-entry__loc">Remote</span>
-  </div>
-  <ul>
-    <li>Consulted on <a href="{{ '/portfolio/aml_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams.</li>
-    <li>Applied cloud-native bioinformatics pipelines built for high-throughput omics research, leveraging a <strong>professional data engineer certification</strong> from Google Cloud.</li>
-  </ul>
-</div>
+    <section class="cv-section" aria-labelledby="cv-publications">
+      <h2 class="cv-section__title" id="cv-publications">Peer-reviewed publications</h2>
+      <ol class="cv-pub-list">
+        {%- for pub in cv.publications %}
+        <li class="cv-pub">
+          <p class="cv-pub__title">
+            <a href="https://doi.org/{{ pub.doi }}" rel="noopener">{{ pub.title }}</a>
+          </p>
+          <p class="cv-pub__citation">{{ pub.citation }}</p>
+          <p class="cv-pub__links">
+            <a href="https://doi.org/{{ pub.doi }}" rel="noopener">doi:{{ pub.doi }}</a>
+            {%- if pub.pmid %}<span class="cv-pub__sep" aria-hidden="true">·</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/{{ pub.pmid }}/" rel="noopener">PMID {{ pub.pmid }}</a>{% endif -%}
+            {%- if pub.pmcid %}<span class="cv-pub__sep" aria-hidden="true">·</span>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{ pub.pmcid }}/" rel="noopener">{{ pub.pmcid }}</a>{% endif -%}
+          </p>
+          {%- if pub.contribution %}
+          <p class="cv-pub__contribution"><span class="cv-pub__label">Contribution</span> {{ pub.contribution }}</p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Malloy Lab @ Uniformed Services University of the Health Sciences</span>
-    <span class="cv-entry__date">Oct 2024 - Jun 2025</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Research Assistant</span>
-    <span class="cv-entry__loc">Bethesda, MD, USA</span>
-  </div>
-  <ul>
-    <li>Processed study participant biosamples and metadata for downstream high-throughput processing using <strong>flow cytometry</strong> and scRNA-seq.</li>
-    <li>Led <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">bioinformatics analysis</a> to extract and analyze CD4 T-cell repertoires from scTCR-seq data, contributing to <strong>published research</strong> in <a href="https://doi.org/10.3389/fimmu.2025.1576903"><em>Frontiers in Immunology</em></a>.</li>
-  </ul>
-</div>
+    <section class="cv-section" aria-labelledby="cv-skills">
+      <h2 class="cv-section__title" id="cv-skills">Skills</h2>
+      <dl class="cv-skills">
+        {%- for group in cv.skills %}
+        <dt>{{ group.label }}</dt>
+        <dd>{{ group.items | join: ", " }}</dd>
+        {%- endfor %}
+      </dl>
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Carle Foundation Hospital - Emergency Department</span>
-    <span class="cv-entry__date">Sep 2023 - Jul 2024</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Healthcare Technician</span>
-    <span class="cv-entry__loc">Champaign, IL, USA</span>
-  </div>
-  <ul>
-    <li>Managed patient care and diagnostic workflows on <strong>Epic EMR</strong> in a Level I Trauma Center, performing critical tasks including EKGs, blood collection, and urinalysis.</li>
-    <li>Facilitated information flow between patients and providers, rotating across triage and <strong>specialized EKG technician</strong> roles.</li>
-  </ul>
-</div>
+    <section class="cv-section" aria-labelledby="cv-certifications">
+      <h2 class="cv-section__title" id="cv-certifications">Certifications</h2>
+      <ul>
+        {%- for cert in cv.certifications %}
+        <li>
+          {{ cert.name }}
+          {%- if cert.issued_display %} <span class="cv-inline-date">({{ cert.issued_display }}{% if cert.expires_display %} - {{ cert.expires_display }}{% endif %})</span>{% endif -%}
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Sweeney Lab @ University of Illinois at Urbana-Champaign</span>
-    <span class="cv-entry__date">Aug 2021 - Jun 2023</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Undergraduate Research Assistant</span>
-    <span class="cv-entry__loc">Champaign, IL, USA</span>
-  </div>
-  <ul>
-    <li>Analyzed complex scRNAseq datasets using <strong>Cell Ranger</strong> and <strong>Seurat</strong> to uncover metabolism-associated neural circuits and <strong>rare cell populations</strong>.</li>
-    <li>Built and launched an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive web application</a> using <strong>R Shiny</strong> to streamline fiber photometry data processing and interpretation, contributing to <strong>published research</strong> in <a href="https://www.jneurosci.org/content/43/36/6280"><em>The Journal of Neuroscience</em></a>.</li>
-  </ul>
-</div>
+    <section class="cv-section" aria-labelledby="cv-honors">
+      <h2 class="cv-section__title" id="cv-honors">Honors &amp; awards</h2>
+      <ul>
+        {%- for honor in cv.honors %}
+        <li>{{ honor.text }}</li>
+        {%- endfor %}
+      </ul>
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Illini Emergency Medical Services</span>
-    <span class="cv-entry__date">Jan 2022 - May 2023</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Emergency Medical Technician (EMT-B)</span>
-    <span class="cv-entry__loc">Champaign, IL, USA</span>
-  </div>
-  <ul>
-    <li>Provided <strong>immediate medical response</strong> and direct patient care at university athletic and cultural events.</li>
-    <li>Maintained meticulous incident records and managed essential medical equipment across shifts.</li>
-  </ul>
-</div>
+    {%- comment -%}
+      Standardized exam scores are deliberately hardcoded. The numbers exist
+      nowhere in content.yml (its `exam_scores` key holds only a suppression
+      policy, and is private), so there is nothing to render them from.
+    {%- endcomment -%}
+    <section class="cv-section" aria-labelledby="cv-exams">
+      <h2 class="cv-section__title" id="cv-exams">Standardized exam scores</h2>
+      <div class="table-scroll">
+        <table>
+          <caption class="visually-hidden">Standardized exam scores with percentile and date taken</caption>
+          <thead>
+            <tr><th scope="col">Exam</th><th scope="col">Score</th><th scope="col">Percentile</th><th scope="col">Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">MCAT</th><td>521 / 528</td><td>98th</td><td>Jan 2024</td></tr>
+            <tr><th scope="row">ACT</th><td>35 / 36</td><td>99th</td><td>Jul 2018</td></tr>
+            <tr><th scope="row">SAT</th><td>1550 / 1600</td><td>99th</td><td>Apr 2018</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Haedos</span>
-    <span class="cv-entry__date">Sep 2020 - Feb 2021</span>
   </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Coding Tutor</span>
-    <span class="cv-entry__loc">Naperville, IL, USA</span>
-  </div>
-  <ul>
-    <li>Tutored students aged 10 to 17 in <strong>Python, Java, and JavaScript</strong>, and volunteered at several interstate Hour of Code events.</li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Thom Lab @ Wheaton College</span>
-    <span class="cv-entry__date">May 2020 - Aug 2020</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Data Analyst and Research Assistant</span>
-    <span class="cv-entry__loc">Wheaton, IL, USA</span>
-  </div>
-  <ul>
-    <li>Led a <strong>meta-analysis across 54 studies</strong>, designing R scripts for automated data extraction, transformation, and statistical validation.</li>
-    <li>Produced a <a href="{{ '/portfolio/metayt_proj/' | relative_url }}">seven-part training video series</a> to onboard incoming lab members on <strong>software tools and analytical workflows</strong>.</li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Portillo's</span>
-    <span class="cv-entry__date">Jun 2019 - Aug 2019</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Cashier</span>
-    <span class="cv-entry__loc">Bolingbrook, IL, USA</span>
-  </div>
-  <ul>
-    <li>Facilitated <strong>high-volume order processing</strong> and kitchen communication while developing strong customer service skills.</li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Argonne National Laboratory</span>
-    <span class="cv-entry__date">Sep 2017 - May 2018</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">ESRP Intern</span>
-    <span class="cv-entry__loc">Lemont, IL, USA</span>
-  </div>
-  <ul>
-    <li>Explored applications of <strong>SX-STM technology</strong> for atomic-scale imaging and characterization of metallic surfaces.</li>
-  </ul>
-</div>
-
-### Projects & outside experience
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">Bench @ Phalaena Automata <span class="cv-entry__stack">| Python, FastAPI, React, Nextflow, Docker, GCP, Vertex AI</span></span>
-    <span class="cv-entry__date">Mar 2026 - Present</span>
-  </div>
-  <ul>
-    <li>Building a production omics platform that ingests varied sequencing data into a centralized API and runs <strong>containerized Nextflow workflows</strong> on Cloud Run with strict IAM. Integrates a <strong>tool-augmented RAG loop</strong> over Vertex AI to cross-reference output results with PubMed for accelerated insights.</li>
-    <li><a href="https://bench.phalaena.ai">Link to project</a></li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">AML scRNA-seq Analysis <span class="cv-entry__stack">| R, Python, R Shiny, Seurat, Scanpy</span></span>
-    <span class="cv-entry__date">Sep 2025 - Oct 2025</span>
-  </div>
-  <ul>
-    <li>Built a reproducible scRNA-seq pipeline on <strong>38 public AML patient samples</strong>, performing QC, anchor-based integration, and reference-guided cell-type annotation to characterize pre-leukemic populations. Extended with <strong>pseudotime, fate mapping, and survival analysis</strong> of PLPS/Stem11 signatures against NCI clinical data and deployed findings via an interactive R Shiny dashboard.</li>
-    <li><a href="{{ '/portfolio/aml_proj/' | relative_url }}">Link to project</a></li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">TCR Clonality Analysis <span class="cv-entry__stack">| Python, Jupyter, tcrdist3, pandas, SciPy</span></span>
-    <span class="cv-entry__date">2022</span>
-  </div>
-  <ul>
-    <li>Built an end-to-end reproducible <strong>TCR-β repertoire workflow</strong> comparing TB progressors vs. controllers. Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires against curated <strong>IEDB and VDJdb</strong> reference sets to compute total and antigen-specific clonality metrics.</li>
-    <li><a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">Link to project</a></li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">PID Controller for Anaesthetic Dosing <span class="cv-entry__stack">| MATLAB, Simulink</span></span>
-    <span class="cv-entry__date">May 2023</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Group project</span>
-  </div>
-  <ul>
-    <li>Helped design and tune a PID controller for patient-specific anaesthetic dosing under variable drug sensitivity, achieving <strong>top cohort performance</strong> in steady-state error and 10% settling time.</li>
-    <li><a href="{{ '/portfolio/bioe420final_proj/' | relative_url }}">Link to project</a></li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org">EMG Saxophone <span class="cv-entry__stack">| Arduino, C/C++, surface EMG circuitry</span></span>
-    <span class="cv-entry__date">Apr 2023</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Group project</span>
-  </div>
-  <ul>
-    <li>Helped build a <strong>surface-EMG analog front end</strong> (instrumentation amplifier, bandpass, rectification) paired with an Arduino that drives servo motors over saxophone keys. Exhibited at the 2023 Engineering Open House as an assistive prosthetic concept.</li>
-    <li><a href="{{ '/portfolio/emgsax_proj/' | relative_url }}">Link to project</a></li>
-  </ul>
-</div>
-
-### Skills
-
-* **Programming & Data Science:** Python, R, SQL, MATLAB, JavaScript, TypeScript, HTML/CSS, React, Bash
-* **Bioinformatics & Genomics:** Bioinformatics, Genomics, Transcriptomics, Proteomics, Metabolomics, 10x Genomics, Nextflow
-* **Cloud & Infrastructure:** Google Cloud Platform, FastAPI, Data Engineering, Cloud-Native Architecture, Docker
-* **AI & Machine Learning:** Machine Learning, PyTorch, Clustering, UMAP, LLM/RAG Architecture, Vertex AI
-* **Laboratory:** flow cytometry, PCR, biological sample processing
-
-### Peer-reviewed publications
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org"><a href="https://doi.org/10.3389/fimmu.2025.1576903">Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease</a></span>
-    <span class="cv-entry__date">Oct 2025</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">Frontiers in Immunology</span>
-  </div>
-  <ul>
-    <li>Bioinformatically <strong>isolated and modeled specific CD4 T-cells</strong> using custom data extraction scripts to analyze TCR repertoires.</li>
-  </ul>
-</div>
-
-<div class="cv-entry">
-  <div class="cv-entry__head">
-    <span class="cv-entry__org"><a href="https://www.jneurosci.org/content/43/36/6280">Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior</a></span>
-    <span class="cv-entry__date">Sep 2023</span>
-  </div>
-  <div class="cv-entry__sub">
-    <span class="cv-entry__role">The Journal of Neuroscience</span>
-  </div>
-  <ul>
-    <li>Developed an interactive <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}"><strong>R Shiny application</strong></a> for fiber photometry data processing and visualization used in the publication.</li>
-  </ul>
-</div>
-
-### Certifications
-
-* **Google Cloud Professional Data Engineer**
-* **IBM Data Science Professional**
-
-### Honors & awards
-
-* **National Merit Scholarship Finalist** - Feb 2019
-* **National AP Scholar** - May 2019
-* **USA Biology Olympiad Semifinalist** - Apr 2018
-
-### Standardized exam scores
-
-| Exam | Score | Percentile | Date |
-| :--- | :--- | :--- | :--- |
-| MCAT | 521 / 528 | 98th | Jan 2024 |
-| ACT  | 35 / 36   | 99th | Jul 2018 |
-| SAT  | 1550 / 1600 | 99th | Apr 2018 |
+</article>

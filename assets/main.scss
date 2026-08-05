@@ -879,7 +879,8 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--aq-rule);
 }
 
-.name-and-links h2 {
+.name-and-links h2,
+.cv-name {
   font-family: "Zodiak", Georgia, serif;
   font-weight: 400;
   font-size: var(--aq-fs-h1);
@@ -1053,6 +1054,112 @@ mark {
 /* Tighten section spacing inside the CV to keep a denser resume feel */
 .post-content h3 + .cv-entry { margin-top: var(--aq-space-3); }
 
+/* ---------- CV sections (data-driven page) ----------
+   The CV owns its <h1> (the name), so its section headings are <h2>. They take
+   the same rule-under-serif treatment the h3 section headers used to carry. */
+.cv-section__title {
+  font-family: "Zodiak", Georgia, serif;
+  font-weight: 400;
+  font-size: var(--aq-fs-h3);
+  color: var(--aq-fg);
+  margin: 0 0 var(--aq-space-3);
+  padding-bottom: var(--aq-space-2);
+  border-bottom: 1px solid var(--aq-rule);
+  letter-spacing: -0.01em;
+}
+.cv-section { margin: 0 0 var(--aq-space-7); }
+.cv-section:last-child { margin-bottom: 0; }
+.cv-section__title + .cv-entry { margin-top: var(--aq-space-3); }
+
+.cv-inline-date {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  color: var(--aq-fg-dim);
+  letter-spacing: 0.02em;
+}
+
+/* Publications: full citation, then the persistent identifiers. */
+.cv-pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: cv-pub;
+}
+.cv-pub {
+  margin: 0 0 var(--aq-space-5);
+  padding-left: var(--aq-space-6);
+  position: relative;
+  counter-increment: cv-pub;
+}
+.cv-pub::before {
+  content: counter(cv-pub) ".";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  color: var(--aq-accent);
+}
+.cv-pub:last-child { margin-bottom: 0; }
+.cv-pub__title {
+  font-family: "Switzer", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--aq-fs-body);
+  color: var(--aq-fg);
+  margin: 0 0 var(--aq-space-2);
+  line-height: 1.4;
+}
+.cv-pub__citation {
+  font-size: var(--aq-fs-body-sm);
+  color: var(--aq-fg-muted);
+  margin: 0 0 var(--aq-space-2);
+  line-height: 1.55;
+}
+.cv-pub__links {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  margin: 0 0 var(--aq-space-2);
+  /* Long DOIs must wrap rather than push the page sideways on a phone. */
+  overflow-wrap: anywhere;
+}
+.cv-pub__sep { color: var(--aq-fg-dim); margin: 0 var(--aq-space-2); }
+.cv-pub__contribution {
+  font-size: var(--aq-fs-body-sm);
+  color: var(--aq-fg-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+.cv-pub__label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  color: var(--aq-accent);
+  margin-right: var(--aq-space-2);
+}
+
+/* Skills: label/value rows that collapse to stacked blocks on narrow screens. */
+.cv-skills {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  gap: var(--aq-space-3) var(--aq-space-5);
+  margin: 0;
+}
+.cv-skills dt {
+  font-family: "Switzer", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--aq-fs-body-sm);
+  color: var(--aq-fg);
+}
+.cv-skills dd {
+  margin: 0;
+  font-size: var(--aq-fs-body-sm);
+  color: var(--aq-fg-muted);
+  line-height: 1.6;
+}
+@media (max-width: 640px) {
+  .cv-skills { grid-template-columns: 1fr; gap: var(--aq-space-1) 0; }
+  .cv-skills dd { margin-bottom: var(--aq-space-3); }
+}
+
 /* Tables */
 table {
   border-collapse: collapse;
@@ -1075,6 +1182,47 @@ table td {
   color: var(--aq-fg-muted);
 }
 table tr:nth-child(even) { background: transparent; }
+
+/* Wide content scrolls inside its own box so the page body never does. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--aq-space-3) 0 var(--aq-space-5);
+}
+.table-scroll table { margin: 0; }
+
+/* Visible only to screen readers, until focused (used by the skip link). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link:focus {
+  position: fixed;
+  top: var(--aq-space-3);
+  left: var(--aq-space-3);
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 10px 14px;
+  clip: auto;
+  clip-path: none;
+  background: var(--aq-accent);
+  color: var(--aq-abyss);
+  font-family: "Switzer", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--aq-fs-body-sm);
+  border-radius: var(--aq-radius);
+  text-decoration: none;
+}
 
 /* Post page heading */
 .post-title {

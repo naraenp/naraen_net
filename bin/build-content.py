@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import date
 from pathlib import Path
 
 try:
@@ -70,6 +71,7 @@ PRIVATE_ANYWHERE = {
     "employer_of_record", # experience.*.employer_of_record (HJF payroll detail)
     "hours",              # experience.*.hours (application-form detail)
     "author_position",    # publications.*.author_position
+    "variant_of",         # alternate phrasing marker; see strip() below
 }
 
 # Bullets carrying `verify: true` are unconfirmed and are dropped by default.
@@ -81,6 +83,23 @@ UNVERIFIED_BUT_PUBLIC = {"ph_3"}
 
 # Which summary variant the site uses. The others are job-application framings.
 SITE_SUMMARY_ID = "sum_general"
+
+# Display order and headings for the skills block. Keys absent from content.yml
+# are skipped; keys present but unlisted here are appended with a title-cased
+# label, so adding a skills group upstream never silently drops it.
+SKILL_GROUPS = (
+    ("languages", "Languages"),
+    ("frameworks", "Frameworks"),
+    ("workflow", "Workflow &amp; reproducibility"),
+    ("cloud", "Cloud &amp; infrastructure"),
+    ("genomics", "Genomics &amp; sequencing"),
+    ("singlecell", "Single-cell &amp; spatial"),
+    ("ml", "ML &amp; AI"),
+    ("stats", "Statistics &amp; analysis"),
+    ("wetlab", "Laboratory"),
+    ("clinical_research", "Clinical research"),
+    ("domain", "Domain"),
+)
 
 
 def strip(node):
@@ -95,8 +114,14 @@ def strip(node):
     if isinstance(node, list):
         kept = []
         for item in node:
-            if isinstance(item, dict) and item.get("verify") is True:
-                if item.get("id") not in UNVERIFIED_BUT_PUBLIC:
+            if isinstance(item, dict):
+                # Unconfirmed claims: dropped unless already published.
+                if item.get("verify") is True and item.get("id") not in UNVERIFIED_BUT_PUBLIC:
+                    continue
+                # `variant_of: <id>` marks an alternate phrasing of another
+                # bullet, kept upstream so a targeted resume can pick either.
+                # The site renders one, so the variant is dropped here.
+                if item.get("variant_of"):
                     continue
             kept.append(strip(item))
         return kept
@@ -118,6 +143,41 @@ def scan_for_private(node, path="") -> list[str]:
     return found
 
 
+MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+
+def human_date(value) -> str:
+    """'2026-03' -> 'Mar 2026'; date(2025,10,2) -> 'Oct 2025'; 'present' -> 'Present'."""
+    if value is None:
+        return ""
+    if isinstance(value, date):
+        return f"{MONTHS[value.month - 1]} {value.year}"
+    text = str(value).strip()
+    if text.lower() in ("present", "current"):
+        return "Present"
+    parts = text.split("-")
+    if len(parts) >= 2 and parts[0].isdigit() and parts[1].isdigit():
+        month = int(parts[1])
+        if 1 <= month <= 12:
+            return f"{MONTHS[month - 1]} {parts[0]}"
+    return text
+
+
+def add_display_dates(entry: dict) -> None:
+    """Attach a rendered `dates` range plus ISO values for <time datetime=...>."""
+    start, end, year = entry.get("start"), entry.get("end"), entry.get("year")
+    if start:
+        left, right = human_date(start), human_date(end)
+        entry["dates"] = f"{left} - {right}" if right else left
+        entry["start_iso"] = str(start)
+        if end and str(end).lower() != "present":
+            entry["end_iso"] = str(end)
+    elif year:
+        entry["dates"] = str(year)
+        entry["start_iso"] = str(year)
+
+
 def build(master: dict) -> dict:
     public = {k: v for k, v in master.items() if k not in PRIVATE_TOP_LEVEL}
     public = strip(public)
@@ -134,6 +194,36 @@ def build(master: dict) -> dict:
         field = entry.get("field")
         if field:
             entry["degree_line"] = f"{entry['degree']}, {field}"
+
+    # Render dates once here so no template has to parse them.
+    for section in ("education", "experience", "projects"):
+        for entry in public.get(section, []):
+            add_display_dates(entry)
+    for pub in public.get("publications", []):
+        pub["published_display"] = human_date(pub.get("published"))
+        pub["published_iso"] = str(pub.get("published", ""))
+        # Collapse the folded citation block into one clean line.
+        if pub.get("citation"):
+            pub["citation"] = " ".join(pub["citation"].split())
+    # Flatten skills into an ordered, labelled list so the template just loops.
+    skills = public.pop("skills", {}) or {}
+    ordered, seen = [], set()
+    for key, label in SKILL_GROUPS:
+        if skills.get(key):
+            ordered.append({"key": key, "label": label, "items": skills[key]})
+            seen.add(key)
+    for key, items in skills.items():
+        if key not in seen and items:
+            ordered.append(
+                {"key": key, "label": key.replace("_", " ").capitalize(), "items": items}
+            )
+    public["skills"] = ordered
+
+    for cert in public.get("certifications", []):
+        if cert.get("issued"):
+            cert["issued_display"] = human_date(cert["issued"])
+        if cert.get("expires"):
+            cert["expires_display"] = human_date(cert["expires"])
 
     return public
 

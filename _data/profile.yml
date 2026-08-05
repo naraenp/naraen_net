@@ -26,6 +26,9 @@ education:
   start: 2023-08
   end: 2024-05
   degree_line: Master of Engineering (M.Eng.), Bioengineering
+  dates: Aug 2023 - May 2024
+  start_iso: 2023-08
+  end_iso: 2024-05
 - id: edu_bs
   institution: University of Illinois Urbana-Champaign
   degree: Bachelor of Science (B.S.)
@@ -34,6 +37,9 @@ education:
   start: 2019-08
   end: 2023-05
   degree_line: Bachelor of Science (B.S.), Bioengineering
+  dates: Aug 2019 - May 2023
+  start_iso: 2019-08
+  end_iso: 2023-05
 experience:
 - id: exp_phalaena
   org: Phalaena Automata
@@ -64,6 +70,8 @@ experience:
     - infra
     text: Architected containerized Nextflow DSL2 workflows executing on Cloud Run under least-privilege
       IAM, with a FastAPI ingestion layer normalizing heterogeneous sequencing inputs.
+  dates: Mar 2026 - Present
+  start_iso: 2026-03
 - id: exp_indep
   org: Independent Research & Development
   title: Bioinformatics Engineer (Independent Projects)
@@ -100,6 +108,9 @@ experience:
     - self-directed
     text: Self-directed period spent deepening single-cell methods, pipeline engineering, and cloud architecture,
       culminating in founding Phalaena Automata to productionize these workflows.
+  dates: Jul 2025 - Mar 2026
+  start_iso: 2025-07
+  end_iso: 2026-03
 - id: exp_malloy
   org: Malloy Lab, Uniformed Services University of the Health Sciences
   title: Research Assistant
@@ -165,6 +176,9 @@ experience:
     - presentation
     text: Presented bioinformatic findings to lab and collaborator audiences, translating repertoire analyses
       into figures and diagrams for non-computational stakeholders.
+  dates: Oct 2024 - Jun 2025
+  start_iso: 2024-10
+  end_iso: 2025-06
 - id: exp_carle
   org: Carle Foundation Hospital, Emergency Department
   title: Healthcare Technician
@@ -191,6 +205,9 @@ experience:
     - domain
     text: Worked across every ED functional area over roughly 1,000 hours, building direct familiarity
       with clinical data capture at point of care.
+  dates: Sep 2023 - Jul 2024
+  start_iso: 2023-09
+  end_iso: 2024-07
 - id: exp_sweeney
   org: Sweeney Lab, University of Illinois Urbana-Champaign
   title: Undergraduate Research Assistant
@@ -213,14 +230,6 @@ experience:
     - rse
     text: Built and launched an interactive R Shiny application to streamline fiber photometry data processing
       and interpretation, contributing to published research in The Journal of Neuroscience.
-  - id: swe_3
-    tags:
-    - tooling
-    - rse
-    - reproducibility
-    text: Replaced per-experiment analysis scripts with a single parameterized application, eliminating
-      redundant code across photometry sessions and enabling reactive, real-time parameter adjustment
-      by non-programmer lab members.
   - id: swe_6
     tags:
     - tooling
@@ -241,6 +250,9 @@ experience:
     - comp-bio
     text: Used both R and Python to analyze scRNA-seq and fiber photometry data characterizing MC3R-expressing
       neurons in energy homeostasis.
+  dates: Aug 2021 - Jun 2023
+  start_iso: 2021-08
+  end_iso: 2023-06
 - id: exp_iems
   org: Illini Emergency Medical Services
   title: Emergency Medical Technician (EMT-B)
@@ -258,6 +270,9 @@ experience:
     - clinical
     - documentation
     text: Maintained meticulous incident records and managed essential medical equipment across shifts.
+  dates: Jan 2022 - May 2023
+  start_iso: 2022-01
+  end_iso: 2023-05
 - id: exp_haedos
   org: Haedos LLC
   title: Coding Tutor
@@ -277,6 +292,9 @@ experience:
     - pedagogy
     text: Adapted instruction to individual learning styles, using project-based builds to sustain engagement
       over traditional exercises.
+  dates: Sep 2020 - Feb 2021
+  start_iso: 2020-09
+  end_iso: 2021-02
 - id: exp_thom
   org: Thom Lab, Wheaton College
   title: Data Analyst and Research Assistant
@@ -298,6 +316,9 @@ experience:
     - reproducibility
     text: Produced a seven-part training video series onboarding incoming lab members on software tools
       and analytical workflows, from raw data to results.
+  dates: May 2020 - Aug 2020
+  start_iso: 2020-05
+  end_iso: 2020-08
 - id: exp_argonne
   org: Argonne National Laboratory
   title: ESRP Intern
@@ -312,6 +333,9 @@ experience:
     - national-lab
     text: Explored applications of synchrotron X-ray scanning tunneling microscopy (SX-STM) for atomic-scale
       imaging and characterization of metallic surfaces.
+  dates: Sep 2017 - May 2018
+  start_iso: 2017-09
+  end_iso: 2018-05
 - id: exp_portillos
   org: Portillo's
   title: Cashier
@@ -323,6 +347,9 @@ experience:
     tags:
     - service
     text: Facilitated high-volume order processing and kitchen communication in a fast-paced service environment.
+  dates: Jun 2019 - Aug 2019
+  start_iso: 2019-06
+  end_iso: 2019-08
 projects:
 - id: proj_bench
   name: Bench @ Phalaena Automata
@@ -353,6 +380,8 @@ projects:
     - rag
     text: Tool-augmented RAG loop over Vertex AI cross-referencing pipeline output against PubMed and
       public catalogs for accelerated interpretation.
+  dates: Mar 2026 - Present
+  start_iso: 2026-03
 - id: proj_aml_sc
   name: AML scRNA-seq Analysis (pre-leukemic populations)
   slug: aml_proj
@@ -387,6 +416,9 @@ projects:
     - rshiny
     - viz
     text: Deployed findings as an interactive R Shiny dashboard.
+  dates: Sep 2025 - Oct 2025
+  start_iso: 2025-09
+  end_iso: 2025-10
 - id: proj_aml_bulk
   name: AML Bulk RNA-seq Differential Expression (TCGA-LAML vs. GTEx)
   slug: aml_proj
@@ -557,6 +589,8 @@ projects:
     - data-standards
     text: Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires
       against curated IEDB and VDJdb reference sets to compute total and antigen-specific clonality metrics.
+  dates: '2022'
+  start_iso: '2022'
 - id: proj_fiberphot
   name: Fiber Photometry Web App
   slug: fiberphot_proj
@@ -604,6 +638,8 @@ projects:
     - robotics
     text: Designed and tuned a PID controller for patient-specific anaesthetic dosing under variable drug
       sensitivity, achieving top cohort performance in steady-state error and 10% settling time.
+  dates: '2023'
+  start_iso: '2023'
 - id: proj_emgsax
   name: EMG-Controlled Saxophone
   slug: emgsax_proj
@@ -623,16 +659,19 @@ projects:
     text: Built a surface-EMG analog front end with instrumentation amplifier, bandpass filtering, and
       rectification, paired with an Arduino driving servo motors over saxophone keys. Exhibited at the
       2023 Engineering Open House as an assistive prosthetic concept.
+  dates: '2023'
+  start_iso: '2023'
 publications:
 - id: pub_fimmu
-  citation: 'Parsons E, Lu Z, Richard SA, Zelkoski A, Le J, Palanikumar N, Nguyen P, Alba C, Sukumar G,
+  citation: Parsons E, Lu Z, Richard SA, Zelkoski A, Le J, Palanikumar N, Nguyen P, Alba C, Sukumar G,
     Rosenberger J, Zhang X, Burgess TH, Colombo R, Mende K, Berjohn C, Epsi N, Agan BK, Tribble D, Lindholm
     DA, Dalgard CL, Pollett SD, Malloy AMW, and EPICC COVID-19 Cohort Study Group. Patterns of restricted
     TCR usage following SARS-CoV-2 vaccination and severe disease. Frontiers in Immunology. 2025;16:1576903.
     doi:10.3389/fimmu.2025.1576903
-
-    '
   short_citation: Parsons E, et al. Front Immunol. 2025;16:1576903.
+  title: Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease
+  journal: Frontiers in Immunology
+  doi: 10.3389/fimmu.2025.1576903
   published: 2025-10-02
   contribution: Bioinformatically isolated and modeled CD4 T-cell populations using custom data extraction
     scripts to analyze TCR repertoires.
@@ -640,13 +679,18 @@ publications:
   - immunology
   - repertoire
   - single-cell
+  published_display: Oct 2025
+  published_iso: '2025-10-02'
 - id: pub_jneuro
   citation: 'Cho D, O''Berry K, Possa-Paranhos IC, Butts J, Palanikumar N, Sweeney P. Paraventricular
     Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior. The Journal of Neuroscience.
-    2023 Sep 6;43(36):6280-6296. doi:10.1523/JNEUROSCI.0704-23.2023. PMID: 37591737. PMCID: PMC10490510.
-
-    '
+    2023 Sep 6;43(36):6280-6296. doi:10.1523/JNEUROSCI.0704-23.2023. PMID: 37591737. PMCID: PMC10490510.'
   short_citation: Cho D, et al. J Neurosci. 2023;43(36):6280-6296.
+  title: Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior
+  journal: The Journal of Neuroscience
+  doi: 10.1523/JNEUROSCI.0704-23.2023
+  pmid: '37591737'
+  pmcid: PMC10490510
   published: 2023-09-06
   contribution: Developed an interactive R Shiny application for fiber photometry data processing and
     visualization used in the publication.
@@ -654,8 +698,33 @@ publications:
   - neuroscience
   - single-cell
   - tooling
+  published_display: Sep 2023
+  published_iso: '2023-09-06'
+certifications:
+- id: cert_gcp
+  name: Google Cloud Professional Data Engineer
+  issued: 2025-12-19
+  expires: 2027-12-19
+  status: active
+  display: Google Cloud Certified, Professional Data Engineer (Dec 2025 to Dec 2027)
+  issued_display: Dec 2025
+  expires_display: Dec 2027
+- id: cert_ibm
+  name: IBM Data Science Professional Certificate
+honors:
+- id: hon_nmf
+  text: National Merit Scholarship Finalist (Feb 2019)
+- id: hon_apschol
+  text: National AP Scholar (May 2019)
+- id: hon_usabo
+  text: USA Biology Olympiad Semifinalist (Apr 2018)
+summary: Bioinformatics engineer with 2+ years of professional experience spanning wet-lab sample processing,
+  single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed co-authorships,
+  and a record of building tools researchers actually use.
 skills:
-  languages:
+- key: languages
+  label: Languages
+  items:
   - Python
   - R
   - SQL
@@ -664,12 +733,16 @@ skills:
   - JavaScript
   - TypeScript
   - HTML/CSS
-  frameworks:
+- key: frameworks
+  label: Frameworks
+  items:
   - FastAPI
   - React
   - R Shiny
   - Jekyll
-  workflow:
+- key: workflow
+  label: Workflow &amp; reproducibility
+  items:
   - Nextflow (DSL2)
   - Docker
   - Git
@@ -678,27 +751,18 @@ skills:
   - conda
   - pytest
   - reproducible pipelines
-  cloud:
+- key: cloud
+  label: Cloud &amp; infrastructure
+  items:
   - Google Cloud Platform
   - Cloud Run
   - Vertex AI
   - IAM
   - cloud-native architecture
   - data engineering
-  singlecell:
-  - Seurat
-  - Scanpy
-  - Cell Ranger
-  - tcrdist3
-  - UMAP
-  - clustering
-  - pseudotime
-  - trajectory inference
-  - anchor-based integration
-  - reference-guided annotation
-  - AnnData
-  - Squidpy
-  genomics:
+- key: genomics
+  label: Genomics &amp; sequencing
+  items:
   - genomics
   - transcriptomics
   - proteomics
@@ -725,12 +789,31 @@ skills:
   - spatial transcriptomics (computational)
   - 10x Visium
   - cell-type deconvolution
-  ml:
+- key: singlecell
+  label: Single-cell &amp; spatial
+  items:
+  - Seurat
+  - Scanpy
+  - Cell Ranger
+  - tcrdist3
+  - UMAP
+  - clustering
+  - pseudotime
+  - trajectory inference
+  - anchor-based integration
+  - reference-guided annotation
+  - AnnData
+  - Squidpy
+- key: ml
+  label: ML &amp; AI
+  items:
   - PyTorch
   - machine learning
   - LLM/RAG architecture
   - dimensionality reduction
-  stats:
+- key: stats
+  label: Statistics &amp; analysis
+  items:
   - meta-analysis
   - survival analysis
   - statistical validation
@@ -744,7 +827,9 @@ skills:
   - permutation testing
   - non-negative least squares
   - spatial autocorrelation (Moran's I)
-  wetlab:
+- key: wetlab
+  label: Laboratory
+  items:
   - spectral flow cytometry (Cytek Aurora)
   - FlowJo
   - flow panel design
@@ -763,7 +848,9 @@ skills:
   - 10x Genomics library prep support
   - biosafety and specimen chain-of-custody
   - laboratory documentation
-  clinical_research:
+- key: clinical_research
+  label: Clinical research
+  items:
   - Epic EMR
   - clinical data capture
   - patient-facing workflows
@@ -774,27 +861,10 @@ skills:
   - EKG
   - phlebotomy
   - urinalysis
-  domain:
+- key: domain
+  label: Domain
+  items:
   - immune repertoire analysis
   - computational immunology
   - reproducible research
   - regulatory and safety awareness
-certifications:
-- id: cert_gcp
-  name: Google Cloud Professional Data Engineer
-  issued: 2025-12-19
-  expires: 2027-12-19
-  status: active
-  display: Google Cloud Certified, Professional Data Engineer (Dec 2025 to Dec 2027)
-- id: cert_ibm
-  name: IBM Data Science Professional Certificate
-honors:
-- id: hon_nmf
-  text: National Merit Scholarship Finalist (Feb 2019)
-- id: hon_apschol
-  text: National AP Scholar (May 2019)
-- id: hon_usabo
-  text: USA Biology Olympiad Semifinalist (Apr 2018)
-summary: Bioinformatics engineer with 2+ years of professional experience spanning wet-lab sample processing,
-  single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed co-authorships,
-  and a record of building tools researchers actually use.

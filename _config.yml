@@ -26,6 +26,11 @@ description: >- # this means to ignore newlines until "baseurl:"
   Naraen Palanikumar. Bioinformatics engineer and cloud architect; founding engineer at Phalaena Automata.
 image: /assets/images/og-image.png
 formspree_form_id: "xdawzyez" # e.g. "xyzabcde". Create a form at formspree.io and paste the form ID here.
+
+# Resume PDF, referenced everywhere as {{ site.resume_pdf }}. Resume generation
+# happens outside this repo: drop a new file in assets/pdf/ and, if the filename
+# changes, edit this one line. Nothing else references the path.
+resume_pdf: /assets/pdf/naraenp_resume.pdf
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://naraen.net" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  naraenp
