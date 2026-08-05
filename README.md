@@ -40,7 +40,8 @@ python3 bin/build-content.py --check   # fail if the derived file is stale
 ```
 
 `bin/publish.sh` runs this automatically before committing, so editing
-`content.yml` and publishing is enough. The script strips the private sections,
+`content.yml` and publishing is enough. The site is light-themed by default;
+`.theme-dark` on `<html>` is the opt-in, stored in `localStorage`. The script strips the private sections,
 strips `note` / `verify` / `context` and personal contact fields at any depth,
 then re-scans its own output and refuses to write if anything private survived.
 Edit `content.yml`, never `_data/profile.yml`.
