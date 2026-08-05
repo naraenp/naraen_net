@@ -42,6 +42,7 @@ education:
   end_iso: 2023-05
 experience:
 - id: exp_phalaena
+  featured: true
   org: Phalaena Automata
   title: Founding Engineer
   location: Austin, TX
@@ -73,6 +74,7 @@ experience:
   dates: Mar 2026 - Present
   start_iso: 2026-03
 - id: exp_indep
+  featured: true
   org: Independent Research & Development
   title: Bioinformatics Engineer (Independent Projects)
   location: Remote
@@ -112,6 +114,7 @@ experience:
   start_iso: 2025-07
   end_iso: 2026-03
 - id: exp_malloy
+  featured: true
   org: Malloy Lab, Uniformed Services University of the Health Sciences
   title: Research Assistant
   location: Bethesda, MD
@@ -209,6 +212,7 @@ experience:
   start_iso: 2023-09
   end_iso: 2024-07
 - id: exp_sweeney
+  featured: true
   org: Sweeney Lab, University of Illinois Urbana-Champaign
   title: Undergraduate Research Assistant
   location: Champaign, IL
@@ -352,7 +356,9 @@ experience:
   end_iso: 2019-08
 projects:
 - id: proj_bench
+  featured: true
   name: Bench @ Phalaena Automata
+  short_name: Bench
   stack:
   - Python
   - FastAPI
@@ -383,6 +389,7 @@ projects:
   dates: Mar 2026 - Present
   start_iso: 2026-03
 - id: proj_aml_sc
+  featured: true
   name: AML scRNA-seq Analysis (pre-leukemic populations)
   slug: aml_proj
   stack:
@@ -669,6 +676,7 @@ publications:
     TCR usage following SARS-CoV-2 vaccination and severe disease. Frontiers in Immunology. 2025;16:1576903.
     doi:10.3389/fimmu.2025.1576903
   short_citation: Parsons E, et al. Front Immunol. 2025;16:1576903.
+  short_title: restricted TCR usage following SARS-CoV-2 vaccination
   title: Patterns of restricted TCR usage following SARS-CoV-2 vaccination and severe disease
   journal: Frontiers in Immunology
   doi: 10.3389/fimmu.2025.1576903
@@ -686,6 +694,7 @@ publications:
     Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior. The Journal of Neuroscience.
     2023 Sep 6;43(36):6280-6296. doi:10.1523/JNEUROSCI.0704-23.2023. PMID: 37591737. PMCID: PMC10490510.'
   short_citation: Cho D, et al. J Neurosci. 2023;43(36):6280-6296.
+  short_title: paraventricular thalamic MC3R circuits
   title: Paraventricular Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior
   journal: The Journal of Neuroscience
   doi: 10.1523/JNEUROSCI.0704-23.2023

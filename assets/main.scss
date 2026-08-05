@@ -494,6 +494,13 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--aq-rule);
 }
 
+.landing-section__more {
+  margin: var(--aq-space-5) 0 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: var(--aq-fs-mono-sm);
+  letter-spacing: 0.02em;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   padding: var(--aq-space-8) 0 var(--aq-space-6);

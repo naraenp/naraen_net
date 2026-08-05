@@ -1,16 +1,20 @@
 ---
 layout: default
 ---
+{%- assign cv = site.data.profile -%}
+{%- assign now_project = cv.projects | where: "featured", true | first -%}
+{%- assign primary_cert = cv.certifications | first -%}
+{%- assign current_job = cv.experience | first -%}
 
 <section class="hero" id="top">
   <div class="hero__profile-wrap">
-    <img src="{{ '/assets/images/profile.webp' | relative_url }}" alt="Naraen Palanikumar" width="160" height="160" loading="eager" fetchpriority="high">
+    <img src="{{ '/assets/images/profile.webp' | relative_url }}" alt="Portrait of {{ cv.identity.name }}" width="160" height="160" loading="eager" fetchpriority="high" decoding="async">
   </div>
   <div class="hero__text">
-    <span class="hero__eyebrow">Founding engineer, <a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a></span>
-    <h1 class="hero__title">Naraen Palanikumar</h1>
-    <p class="hero__tagline">Bioinformatics engineer with 4+ years of experience building scalable platforms for lab research, spanning Nextflow pipelines, Google Cloud architectures, and applied AI for biological data.</p>
-    <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong><a href="https://bench.phalaena.ai" rel="noopener">Bench</a></strong> at Phalaena Automata. Google Cloud Certified Professional Data Engineer.</p>
+    <p class="hero__eyebrow">{{ current_job.title }}, <a href="https://phalaena.ai" rel="noopener">{{ current_job.org }}</a></p>
+    <h1 class="hero__title">{{ cv.identity.name }}</h1>
+    <p class="hero__tagline">{{ cv.summary }}</p>
+    <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong><a href="{{ now_project.url }}" rel="noopener">{{ now_project.short_name }}</a></strong> at {{ current_job.org }}. {{ primary_cert.name }}.</p>
     {%- assign current_book = site.data.reading | where: "status", "reading" | first -%}
     {%- if current_book -%}
     <p class="hero__now"><span class="hero__now-label">Reading</span> <em>{{ current_book.title }}</em> by {{ current_book.author }}. <a href="{{ '/reading/' | relative_url }}">More on the shelf</a>.</p>
@@ -19,84 +23,62 @@ layout: default
 </section>
 
 
-<section class="landing-section" id="about">
-  <h2 class="landing-section__title">About</h2>
+<section class="landing-section" id="about" aria-labelledby="about-title">
+  <h2 class="landing-section__title" id="about-title">About</h2>
   <div class="about-block">
-    <p>Founding engineer at <strong><a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a></strong>, leading end-to-end development of <strong><a href="https://bench.phalaena.ai" rel="noopener">Bench</a></strong>, a production omics platform that ingests sequencing data into a centralized API, runs containerized Nextflow workflows on Google Cloud, and uses a tool-augmented RAG loop over Vertex AI to cross-reference results with PubMed and public catalogs.</p>
-    <p>Prior work spans <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">CD4 T-cell repertoire analysis</a> at <strong>USUHS</strong>, single-cell sequencing and an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive R Shiny tool</a> at the <strong>Sweeney Lab</strong> at UIUC, and clinical and emergency-response roles. Peer-reviewed contributions cover restricted TCR usage following SARS-CoV-2 vaccination (<a href="https://doi.org/10.3389/fimmu.2025.1576903"><em>Frontiers in Immunology</em></a>) and paraventricular thalamic MC3R circuits (<a href="https://www.jneurosci.org/content/43/36/6280"><em>The Journal of Neuroscience</em></a>).</p>
+    {%- comment -%}
+      The narrative here is hand-written: content.yml carries facts, not prose.
+      Everything factual in it (roles, venues, links) comes from the data below
+      or is linked to the page that documents it.
+    {%- endcomment -%}
+    <p>{{ current_job.title }} at <strong><a href="https://phalaena.ai" rel="noopener">{{ current_job.org }}</a></strong>, leading end-to-end development of <strong><a href="{{ now_project.url }}" rel="noopener">Bench</a></strong>, a production omics platform that ingests sequencing data into a centralized API, runs containerized Nextflow workflows on Google Cloud, and uses a tool-augmented RAG loop over Vertex AI to cross-reference results with PubMed and public catalogs.</p>
+    <p>Prior work spans <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">CD4 T-cell repertoire analysis</a> at <strong>USUHS</strong>, single-cell sequencing and an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive R Shiny tool</a> at the <strong>Sweeney Lab</strong> at UIUC, and clinical and emergency-response roles. Peer-reviewed contributions cover
+      {%- for pub in cv.publications %} {{ pub.short_title }} (<a href="https://doi.org/{{ pub.doi }}" rel="noopener"><em>{{ pub.journal }}</em></a>){% unless forloop.last %} and{% else %}.{% endunless %}{% endfor %}</p>
     <p>Browse the <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>, read the <a href="{{ '/cv/' | relative_url }}">CV</a>, check out my <a href="{{ '/gallery/' | relative_url }}">gallery</a> or <a href="{{ '/log/' | relative_url }}">log</a> entries, or <a href="{{ '/contact/' | relative_url }}">get in touch</a> to collaborate.</p>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/naraenp/" aria-label="LinkedIn"><img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt="" width="20" height="20"> LinkedIn</a>
-      <a href="https://github.com/naraenp" aria-label="GitHub"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="" width="20" height="20"> GitHub</a>
-      <a href="https://orcid.org/0000-0001-8513-4590" aria-label="ORCID"><img src="{{ '/assets/icons/orcid.svg' | relative_url }}" alt="" width="20" height="20"> ORCID</a>
+      <a href="{{ cv.identity.linkedin }}" rel="me noopener"><img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> LinkedIn</a>
+      <a href="{{ cv.identity.github }}" rel="me noopener"><img src="{{ '/assets/icons/github.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> GitHub</a>
+      <a href="{{ cv.identity.orcid }}" rel="me noopener"><img src="{{ '/assets/icons/orcid.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> ORCID</a>
     </div>
   </div>
 </section>
 
-<section class="landing-section" id="projects">
-  <h2 class="landing-section__title">Selected projects</h2>
+<section class="landing-section" id="projects" aria-labelledby="projects-title">
+  <h2 class="landing-section__title" id="projects-title">Selected projects</h2>
   <div class="projects-grid">
-    <a class="project-card" href="https://bench.phalaena.ai" rel="noopener">
-      <p class="project-card__eyebrow">Phalaena Automata</p>
-      <h3 class="project-card__title">Bench</h3>
-      <p class="project-card__stack">Python · FastAPI · React · Nextflow · Docker · GCP · Vertex AI</p>
-      <p class="project-card__desc">Production omics platform ingesting varied sequencing data into a centralized API and running containerized Nextflow workflows on Cloud Run with strict IAM. Integrates a tool-augmented RAG loop over Vertex AI to cross-reference output against PubMed for accelerated insights.</p>
+    {%- for project in cv.projects -%}
+    {%- if project.featured -%}
+    {%- assign page_match = site.portfolio | where: "slug", project.slug | first -%}
+    {%- if page_match -%}{%- assign href = page_match.url | relative_url -%}{%- else -%}{%- assign href = project.url -%}{%- endif -%}
+    <a class="project-card" href="{{ href }}"{% unless page_match %} rel="noopener"{% endunless %}>
+      <p class="project-card__eyebrow">{% if page_match %}Bioinformatics portfolio{% else %}{{ current_job.org }}{% endif %}</p>
+      <h3 class="project-card__title">{% if page_match %}{{ page_match.title }}{% else %}{{ project.short_name | default: project.name }}{% endif %}</h3>
+      <p class="project-card__stack">{{ project.stack | join: " · " }}</p>
+      <p class="project-card__desc">{% if page_match %}{{ page_match.description }}{% else %}{{ project.bullets | map: "text" | join: " " }}{% endif %}</p>
     </a>
-    <a class="project-card" href="{{ '/portfolio/aml_proj/' | relative_url }}">
-      <p class="project-card__eyebrow">Bioinformatics portfolio</p>
-      <h3 class="project-card__title">AML transcriptomics</h3>
-      <p class="project-card__stack">R · Python · Seurat · Scanpy · Nextflow · R Shiny</p>
-      <p class="project-card__desc">Two complementary AML projects: a single-cell pipeline characterizing pre-leukemic populations across 38 patient samples (pseudotime, fate mapping, PLPS/Stem11 survival) as an R Shiny dashboard, and a Nextflow bulk RNA-seq differential-expression pipeline on TCGA-LAML vs. GTEx with an interactive volcano.</p>
-    </a>
+    {%- endif -%}
+    {%- endfor -%}
   </div>
 </section>
 
-<section class="landing-section" id="experience">
-  <h2 class="landing-section__title">Experience</h2>
+<section class="landing-section" id="experience" aria-labelledby="experience-title">
+  <h2 class="landing-section__title" id="experience-title">Experience</h2>
   <ul class="experience-list">
+    {%- for job in cv.experience -%}
+    {%- if job.featured %}
     <li class="experience-item">
       <div class="experience-item__head">
-        <span class="experience-item__org">Phalaena Automata</span>
-        <span class="experience-item__date">Mar 2026 - Present</span>
+        <span class="experience-item__org">{{ job.org }}</span>
+        <span class="experience-item__date">{{ job.dates }}</span>
       </div>
       <div class="experience-item__sub">
-        <span class="experience-item__role">Founding Engineer</span>
-        <span class="experience-item__loc">Austin, TX, USA</span>
+        <span class="experience-item__role">{{ job.title }}</span>
+        <span class="experience-item__loc">{{ job.location }}</span>
       </div>
-      <p class="experience-item__desc">Spearheading end-to-end development of a <strong>biotechnology research accelerator</strong>, managing the product lifecycle from initial architecture to cloud deployment. Developing full-stack AI-centric infrastructure on Google Cloud, integrating <strong>RAG + LLM architecture</strong> to automate unstructured data interpretation.</p>
+      <p class="experience-item__desc">{{ job.bullets | map: "text" | slice: 0, 2 | join: " " }}</p>
     </li>
-    <li class="experience-item">
-      <div class="experience-item__head">
-        <span class="experience-item__org">Independent</span>
-        <span class="experience-item__date">Jul 2025 - Feb 2026</span>
-      </div>
-      <div class="experience-item__sub">
-        <span class="experience-item__role">Bioinformatics Consultant</span>
-        <span class="experience-item__loc">Remote</span>
-      </div>
-      <p class="experience-item__desc">Consulted on <a href="{{ '/portfolio/aml_proj/' | relative_url }}"><strong>single-cell sequencing pipelines</strong></a>, metabolic pathway analysis, and cellular heterogeneity queries to provide scalable workflows for research teams. Applied cloud-native bioinformatics pipelines built for high-throughput omics research.</p>
-    </li>
-    <li class="experience-item">
-      <div class="experience-item__head">
-        <span class="experience-item__org">Malloy Lab @ USUHS</span>
-        <span class="experience-item__date">Oct 2024 - Jun 2025</span>
-      </div>
-      <div class="experience-item__sub">
-        <span class="experience-item__role">Research Assistant</span>
-        <span class="experience-item__loc">Bethesda, MD, USA</span>
-      </div>
-      <p class="experience-item__desc">Led <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">bioinformatics analysis</a> to extract and analyze <strong>CD4 T-cell repertoires</strong> from scTCR-seq data, contributing to published research in <a href="https://doi.org/10.3389/fimmu.2025.1576903"><em>Frontiers in Immunology</em></a>. Processed study participant biosamples and metadata for downstream flow cytometry and scRNA-seq.</p>
-    </li>
-    <li class="experience-item">
-      <div class="experience-item__head">
-        <span class="experience-item__org">Sweeney Lab @ UIUC</span>
-        <span class="experience-item__date">Aug 2021 - Jun 2023</span>
-      </div>
-      <div class="experience-item__sub">
-        <span class="experience-item__role">Undergraduate Research Assistant</span>
-        <span class="experience-item__loc">Champaign, IL, USA</span>
-      </div>
-      <p class="experience-item__desc">Analyzed complex scRNAseq datasets using <strong>Cell Ranger</strong> and <strong>Seurat</strong> to uncover metabolism-associated neural circuits and rare cell populations. Built an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive <strong>R Shiny</strong> web app</a> for fiber photometry data processing, contributing to published research in <a href="https://www.jneurosci.org/content/43/36/6280"><em>The Journal of Neuroscience</em></a>.</p>
-    </li>
+    {%- endif -%}
+    {%- endfor %}
   </ul>
+  <p class="landing-section__more"><a href="{{ '/cv/' | relative_url }}">Full CV, publications, and skills →</a></p>
 </section>
