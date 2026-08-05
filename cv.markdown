@@ -20,7 +20,7 @@ permalink: /cv/
         <a href="{{ cv.identity.orcid }}" rel="me noopener"><img src="{{ '/assets/icons/orcid.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> ORCID</a>
       </p>
     </div>
-    <a href="{{ site.resume_pdf | relative_url }}" class="download-button" download>Download resume (PDF)</a>
+    <a href="{{ site.resume_pdf | relative_url }}" class="download-button" download="naraen_palanikumar_resume.pdf">Download resume (PDF)</a>
   </header>
 
   <div class="post-content">

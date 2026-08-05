@@ -71,6 +71,14 @@ experience:
     - infra
     text: Architected containerized Nextflow DSL2 workflows executing on Cloud Run under least-privilege
       IAM, with a FastAPI ingestion layer normalizing heterogeneous sequencing inputs.
+  - id: ph_4
+    tags:
+    - validation
+    - quality
+    - accuracy
+    - clinical
+    text: Validated variant-calling output against the GIAB HG002 benchmark to establish pipeline accuracy
+      on a public ground-truth reference.
   dates: Mar 2026 - Present
   start_iso: 2026-03
 - id: exp_indep
@@ -731,9 +739,9 @@ honors:
   text: National AP Scholar (May 2019)
 - id: hon_usabo
   text: USA Biology Olympiad Semifinalist (Apr 2018)
-summary: Bioinformatics engineer with 3+ years of professional experience spanning wet-lab sample processing,
-  single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed co-authorships,
-  and a record of building tools researchers actually use.
+summary: Bioinformatics engineer with 3+ years of research and engineering experience spanning wet-lab
+  sample processing, single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed
+  co-authorships, and a record of building tools researchers actually use.
 skills:
 - key: languages
   label: Languages

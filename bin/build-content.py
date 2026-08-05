@@ -78,11 +78,16 @@ PRIVATE_ANYWHERE = {
 }
 
 # Bullets carrying `verify: true` are unconfirmed and are dropped by default.
-# The exception: claims already published on the live site, which this list
-# re-admits explicitly so the modernization does not silently retract them.
+# The exception: claims already published elsewhere, which this list re-admits
+# explicitly so the site does not contradict what is already public.
 #   ph_3 -- containerized Nextflow on Cloud Run + API ingestion layer; already
 #           stated in the home About section and the CV Bench entry.
-UNVERIFIED_BUT_PUBLIC = {"ph_3"}
+#   ph_4 -- GIAB HG002 validation. Added 2026-08-05: it appears on the canonical
+#           resume, which this site hosts and links from /cv/. Suppressing it
+#           here while the linked PDF states it would be the inconsistency.
+# Still suppressed (absent from the canonical resume): ph_5, mal_4, bench_3,
+# and the proj_side project.
+UNVERIFIED_BUT_PUBLIC = {"ph_3", "ph_4"}
 
 # Which summary variant the site uses. The others are job-application framings.
 SITE_SUMMARY_ID = "sum_general"
@@ -231,6 +236,49 @@ def build(master: dict) -> dict:
     return public
 
 
+def check_site_renders(public: dict) -> list[str]:
+    """Fail loudly on keys the site renders from but Liquid would render empty.
+
+    content.yml is edited by several sessions, and three times now a rewrite has
+    dropped `featured` / `short_name` / `short_title` / `variant_of`. Liquid
+    renders a missing key as the empty string, so the result is not an error but
+    a silently empty home page: no project cards, no experience list, a hero
+    link with no text. These assertions turn that into a build failure.
+    """
+    problems = []
+
+    if not [e for e in public.get("experience", []) if e.get("featured")]:
+        problems.append(
+            "no experience entry has `featured: true` -> the home page Experience "
+            "list would render empty"
+        )
+
+    featured_projects = [p for p in public.get("projects", []) if p.get("featured")]
+    if not featured_projects:
+        problems.append(
+            "no project has `featured: true` -> the home page Selected projects "
+            "grid would render empty"
+        )
+    for project in featured_projects:
+        # A featured project with no page of its own is titled by short_name.
+        if not project.get("slug") and not project.get("short_name"):
+            problems.append(
+                f"featured project {project['id']!r} has no `slug` and no "
+                "`short_name` -> its card title and the hero link would be blank"
+            )
+
+    for pub in public.get("publications", []):
+        if not pub.get("short_title"):
+            problems.append(
+                f"publication {pub['id']!r} has no `short_title` -> the home page "
+                "About sentence would name it as an empty string"
+            )
+        if not pub.get("doi"):
+            problems.append(f"publication {pub['id']!r} has no `doi` -> broken DOI link")
+
+    return problems
+
+
 HEADER = """\
 # GENERATED FILE -- DO NOT EDIT BY HAND.
 #
@@ -269,6 +317,17 @@ def main() -> int:
         print("REFUSING TO WRITE -- private keys survived the strip:", file=sys.stderr)
         for leak in leaks:
             print(f"  {leak}", file=sys.stderr)
+        return 1
+
+    problems = check_site_renders(public)
+    if problems:
+        print(
+            "REFUSING TO WRITE -- content.yml is missing keys the site renders from.\n"
+            "A rewrite of content.yml probably dropped them; re-add them there:",
+            file=sys.stderr,
+        )
+        for problem in problems:
+            print(f"  - {problem}", file=sys.stderr)
         return 1
 
     body = yaml.safe_dump(public, sort_keys=False, allow_unicode=True, width=100)
