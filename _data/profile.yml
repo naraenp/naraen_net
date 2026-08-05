@@ -1,0 +1,800 @@
+# GENERATED FILE -- DO NOT EDIT BY HAND.
+#
+# Derived from the private master content.yml by bin/build-content.py.
+# Edit content.yml, then run:
+#
+#     python3 bin/build-content.py
+#
+# content.yml is gitignored: it holds job-search strategy, reference contact
+# details, and personal disclosure decisions. This file is the public subset and
+# is what Liquid reads as site.data.profile.
+
+identity:
+  name: Naraen Palanikumar
+  location: Frisco, TX, USA
+  linkedin: https://www.linkedin.com/in/naraenp/
+  github: https://github.com/naraenp
+  orcid: https://orcid.org/0000-0001-8513-4590
+  website: https://naraen.net
+  portfolio: https://naraen.net/portfolio/
+education:
+- id: edu_meng
+  institution: University of Illinois Urbana-Champaign
+  degree: Master of Engineering (M.Eng.)
+  field: Bioengineering
+  location: Urbana-Champaign, IL
+  start: 2023-08
+  end: 2024-05
+  degree_line: Master of Engineering (M.Eng.), Bioengineering
+- id: edu_bs
+  institution: University of Illinois Urbana-Champaign
+  degree: Bachelor of Science (B.S.)
+  field: Bioengineering
+  location: Urbana-Champaign, IL
+  start: 2019-08
+  end: 2023-05
+  degree_line: Bachelor of Science (B.S.), Bioengineering
+experience:
+- id: exp_phalaena
+  org: Phalaena Automata
+  title: Founding Engineer
+  location: Austin, TX
+  start: 2026-03
+  end: present
+  bullets:
+  - id: ph_1
+    tags:
+    - platform
+    - leadership
+    - general
+    text: Spearheading end-to-end development of a biotechnology research accelerator platform, managing
+      the product lifecycle from initial architecture to cloud deployment.
+  - id: ph_2
+    tags:
+    - ml
+    - ai
+    - llm
+    - platform
+    text: Developing full-stack AI-centric infrastructure on Google Cloud, integrating RAG and LLM architecture
+      to automate unstructured data interpretation pipelines and accelerate the sequence-to-insight loop.
+  - id: ph_3
+    tags:
+    - pipeline
+    - nextflow
+    - infra
+    text: Architected containerized Nextflow DSL2 workflows executing on Cloud Run under least-privilege
+      IAM, with a FastAPI ingestion layer normalizing heterogeneous sequencing inputs.
+- id: exp_indep
+  org: Independent Research & Development
+  title: Bioinformatics Engineer (Independent Projects)
+  location: Remote
+  start: 2025-07
+  end: 2026-03
+  bullets:
+  - id: ind_1
+    tags:
+    - single-cell
+    - cancer
+    - comp-bio
+    text: Built end-to-end single-cell and bulk RNA-seq analyses on public oncology datasets, covering
+      QC, integration, cell-type annotation, trajectory inference, and survival analysis.
+  - id: ind_2
+    tags:
+    - pipeline
+    - nextflow
+    - cloud
+    - infra
+    text: Developed cloud-native, containerized bioinformatics pipelines for high-throughput omics workflows,
+      applying Google Cloud Professional Data Engineer practices to reproducible research infrastructure.
+  - id: ind_3
+    tags:
+    - tooling
+    - rshiny
+    - viz
+    - rse
+    text: Published analyses as interactive dashboards and open project write-ups to make results explorable
+      by non-computational audiences.
+  - id: ind_4
+    tags:
+    - general
+    - self-directed
+    text: Self-directed period spent deepening single-cell methods, pipeline engineering, and cloud architecture,
+      culminating in founding Phalaena Automata to productionize these workflows.
+- id: exp_malloy
+  org: Malloy Lab, Uniformed Services University of the Health Sciences
+  title: Research Assistant
+  location: Bethesda, MD
+  start: 2024-10
+  end: 2025-06
+  bullets:
+  - id: mal_1
+    tags:
+    - wetlab
+    - flow
+    - sample-prep
+    text: Processed study participant biosamples and metadata for downstream high-throughput processing
+      using flow cytometry and scRNA-seq.
+  - id: mal_2
+    tags:
+    - immunology
+    - repertoire
+    - single-cell
+    - publication
+    text: Led bioinformatics analysis to extract and analyze CD4 T-cell repertoires from scTCR-seq data,
+      contributing to published research in Frontiers in Immunology.
+  - id: mal_3
+    tags:
+    - immunology
+    - repertoire
+    - comp-bio
+    text: Bioinformatically isolated and modeled CD4 T-cell populations using custom extraction scripts,
+      comparing TCR repertoire usage across participants stratified by COVID-19 severity and vaccination
+      status.
+  - id: mal_5
+    tags:
+    - wetlab
+    - sample-prep
+    - clinical-research
+    text: Handled nasopharyngeal and blood specimen processing for a longitudinal respiratory infectious
+      disease cohort.
+  - id: mal_7
+    tags:
+    - wetlab
+    - cellculture
+    - molecular
+    text: Performed mammalian cell culture, PCR, and microscopy in support of a longitudinal respiratory
+      infectious disease study.
+  - id: mal_8
+    tags:
+    - flow
+    - flowjo
+    - analysis
+    text: Analyzed high-parameter spectral flow cytometry data in FlowJo, including gating strategy design,
+      compensation, and population quantification.
+  - id: mal_9
+    tags:
+    - wetlab
+    - molecular
+    - assay
+    text: Executed molecular and cell-based assays end to end, from sample receipt and processing through
+      staining, acquisition, and downstream analysis, bridging bench work and computational output within
+      a single workflow.
+  - id: mal_6
+    tags:
+    - communication
+    - presentation
+    text: Presented bioinformatic findings to lab and collaborator audiences, translating repertoire analyses
+      into figures and diagrams for non-computational stakeholders.
+- id: exp_carle
+  org: Carle Foundation Hospital, Emergency Department
+  title: Healthcare Technician
+  location: Champaign, IL
+  start: 2023-09
+  end: 2024-07
+  bullets:
+  - id: carle_1
+    tags:
+    - clinical
+    - ehr
+    - health-system
+    text: Managed patient care and diagnostic workflows on Epic EMR in a Level I Trauma Center, performing
+      EKGs, blood collection, and urinalysis.
+  - id: carle_2
+    tags:
+    - clinical
+    - communication
+    text: Facilitated information flow between patients and providers, rotating across triage and specialized
+      EKG technician roles.
+  - id: carle_3
+    tags:
+    - clinical
+    - domain
+    text: Worked across every ED functional area over roughly 1,000 hours, building direct familiarity
+      with clinical data capture at point of care.
+- id: exp_sweeney
+  org: Sweeney Lab, University of Illinois Urbana-Champaign
+  title: Undergraduate Research Assistant
+  location: Champaign, IL
+  start: 2021-08
+  end: 2023-06
+  bullets:
+  - id: swe_1
+    tags:
+    - single-cell
+    - comp-bio
+    - r
+    text: Analyzed complex scRNA-seq datasets using Cell Ranger and Seurat to uncover metabolism-associated
+      neural circuits and rare cell populations.
+  - id: swe_2
+    tags:
+    - tooling
+    - rshiny
+    - publication
+    - rse
+    text: Built and launched an interactive R Shiny application to streamline fiber photometry data processing
+      and interpretation, contributing to published research in The Journal of Neuroscience.
+  - id: swe_3
+    tags:
+    - tooling
+    - rse
+    - reproducibility
+    text: Replaced per-experiment analysis scripts with a single parameterized application, eliminating
+      redundant code across photometry sessions and enabling reactive, real-time parameter adjustment
+      by non-programmer lab members.
+  - id: swe_6
+    tags:
+    - tooling
+    - impact
+    - rse
+    text: Consolidated a multi-step manual analysis into a single reactive application, cutting photometry
+      processing from a multi-hour scripting task per session to minutes and enabling non-programmer lab
+      members to run their own analyses.
+  - id: swe_4
+    tags:
+    - wetlab
+    - histology
+    text: Performed mouse brain slice mounting, immunostaining, and imaging, iterating antibody concentration
+      protocols to resolve failed staining runs.
+  - id: swe_5
+    tags:
+    - python
+    - comp-bio
+    text: Used both R and Python to analyze scRNA-seq and fiber photometry data characterizing MC3R-expressing
+      neurons in energy homeostasis.
+- id: exp_iems
+  org: Illini Emergency Medical Services
+  title: Emergency Medical Technician (EMT-B)
+  location: Champaign, IL
+  start: 2022-01
+  end: 2023-05
+  bullets:
+  - id: ems_1
+    tags:
+    - clinical
+    text: Provided immediate medical response and direct patient care at university athletic and cultural
+      events.
+  - id: ems_2
+    tags:
+    - clinical
+    - documentation
+    text: Maintained meticulous incident records and managed essential medical equipment across shifts.
+- id: exp_haedos
+  org: Haedos LLC
+  title: Coding Tutor
+  location: Naperville, IL
+  start: 2020-09
+  end: 2021-02
+  bullets:
+  - id: hae_1
+    tags:
+    - teaching
+    - mentorship
+    text: Tutored students aged 10 to 17 in Python, Java, and JavaScript, and volunteered at interstate
+      Hour of Code events.
+  - id: hae_2
+    tags:
+    - teaching
+    - pedagogy
+    text: Adapted instruction to individual learning styles, using project-based builds to sustain engagement
+      over traditional exercises.
+- id: exp_thom
+  org: Thom Lab, Wheaton College
+  title: Data Analyst and Research Assistant
+  location: Wheaton, IL
+  start: 2020-05
+  end: 2020-08
+  bullets:
+  - id: thom_1
+    tags:
+    - stats
+    - r
+    - meta-analysis
+    text: Led a meta-analysis across 54 studies and 94 effect sizes, designing R scripts for automated
+      data extraction, transformation, and statistical validation.
+  - id: thom_2
+    tags:
+    - documentation
+    - teaching
+    - reproducibility
+    text: Produced a seven-part training video series onboarding incoming lab members on software tools
+      and analytical workflows, from raw data to results.
+- id: exp_argonne
+  org: Argonne National Laboratory
+  title: ESRP Intern
+  location: Lemont, IL
+  start: 2017-09
+  end: 2018-05
+  bullets:
+  - id: arg_1
+    tags:
+    - instrumentation
+    - physics
+    - national-lab
+    text: Explored applications of synchrotron X-ray scanning tunneling microscopy (SX-STM) for atomic-scale
+      imaging and characterization of metallic surfaces.
+- id: exp_portillos
+  org: Portillo's
+  title: Cashier
+  location: Bolingbrook, IL
+  start: 2019-06
+  end: 2019-08
+  bullets:
+  - id: por_1
+    tags:
+    - service
+    text: Facilitated high-volume order processing and kitchen communication in a fast-paced service environment.
+projects:
+- id: proj_bench
+  name: Bench @ Phalaena Automata
+  stack:
+  - Python
+  - FastAPI
+  - React
+  - Nextflow
+  - Docker
+  - GCP
+  - Cloud Run
+  - Vertex AI
+  url: https://bench.phalaena.ai
+  start: 2026-03
+  end: present
+  bullets:
+  - id: bench_1
+    tags:
+    - platform
+    - pipeline
+    - infra
+    text: Production omics platform ingesting varied sequencing data into a centralized API and running
+      containerized Nextflow workflows on Cloud Run under strict IAM.
+  - id: bench_2
+    tags:
+    - ml
+    - llm
+    - rag
+    text: Tool-augmented RAG loop over Vertex AI cross-referencing pipeline output against PubMed and
+      public catalogs for accelerated interpretation.
+- id: proj_aml_sc
+  name: AML scRNA-seq Analysis (pre-leukemic populations)
+  slug: aml_proj
+  stack:
+  - R
+  - Python
+  - R Shiny
+  - Seurat
+  - Scanpy
+  url: https://naraen.net/portfolio/aml_proj/
+  start: 2025-09
+  end: 2025-10
+  bullets:
+  - id: aml_1
+    tags:
+    - single-cell
+    - cancer
+    - comp-bio
+    text: Reproducible scRNA-seq pipeline across 38 public AML patient samples, covering QC, anchor-based
+      integration, and reference-guided cell-type annotation to characterize pre-leukemic populations.
+  - id: aml_2
+    tags:
+    - single-cell
+    - trajectory
+    - survival
+    - stats
+    text: Extended with pseudotime, fate mapping, and survival analysis of PLPS/Stem11 signatures against
+      NCI clinical data.
+  - id: aml_3
+    tags:
+    - tooling
+    - rshiny
+    - viz
+    text: Deployed findings as an interactive R Shiny dashboard.
+- id: proj_aml_bulk
+  name: AML Bulk RNA-seq Differential Expression (TCGA-LAML vs. GTEx)
+  slug: aml_proj
+  stack:
+  - Nextflow
+  - R
+  - Python
+  url: https://naraen.net/portfolio/aml_proj/
+  bullets:
+  - id: amlb_1
+    tags:
+    - pipeline
+    - nextflow
+    - bulk-rnaseq
+    text: Nextflow bulk RNA-seq differential-expression pipeline comparing TCGA-LAML against GTEx normal
+      tissue, with an interactive volcano plot for result exploration.
+- id: proj_variant_calling
+  name: Germline Variant Calling (GATK short-variant pipeline)
+  slug: variant_calling_proj
+  stack:
+  - Nextflow
+  - GATK4
+  - BWA-MEM
+  - samtools
+  - bcftools
+  - fastp
+  - Python
+  url: https://naraen.net/portfolio/variant_calling_proj/
+  repo: https://github.com/naraenp/bioinformatics-public/tree/main/variant_calling_nf
+  bullets:
+  - id: vc_1
+    tags:
+    - pipeline
+    - nextflow
+    - variant-calling
+    - genomics
+    text: Twelve-stage Nextflow DSL2 germline short-variant pipeline following the GATK best-practice
+      path, from BWA-MEM alignment and duplicate marking through HaplotypeCaller GVCF calling, joint genotyping,
+      hard-filtering, and consequence annotation to a filtered cohort VCF.
+  - id: vc_2
+    tags:
+    - validation
+    - quality
+    - accuracy
+    - testing
+    text: Built a synthetic diploid cohort with planted germline variants as the offline validation path,
+      achieving perfect recovery of all 24 planted sites (recall = precision = 1.00, genotype concordance
+      1.00 across 144 sample-genotypes) via an automated self-check that gates every run.
+  - id: vc_3
+    tags:
+    - reproducibility
+    - rse
+    - infra
+    text: Made the whole pipeline laptop-reproducible with one fetch script, a pinned conda environment,
+      and a sub-minute offline mode used as the CI smoke test, with the Nextflow and shell-driven paths
+      verified to emit identical normalized callsets.
+  - id: vc_4
+    tags:
+    - validation
+    - benchmarking
+    - genomics
+    text: Wired a GIAB HG002 benchmarking path against the NIST v4.2.1 high-confidence truth set, range-slicing
+      reads directly out of GIAB's chr20 BAM over HTTPS so only the bytes for the target window are fetched.
+- id: proj_spatial_visium
+  name: Spatial Transcriptomics Deconvolution (10x Visium breast cancer)
+  slug: spatial_visium_proj
+  stack:
+  - Nextflow
+  - Python
+  - scanpy
+  - anndata
+  - squidpy
+  - SciPy
+  - scikit-learn
+  url: https://naraen.net/portfolio/spatial_visium_proj/
+  repo: https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf
+  bullets:
+  - id: spv_1
+    tags:
+    - pipeline
+    - nextflow
+    - spatial
+    - single-cell
+    text: Nine-stage Nextflow DSL2 pipeline mapping cell types into tissue space from a 10x Visium breast-cancer
+      section (3,798 spots) against a 100,064-cell annotated scRNA-seq reference, covering QC, shared-gene-space
+      normalization, signature construction, per-spot deconvolution, and spatially variable genes.
+  - id: spv_2
+    tags:
+    - comp-bio
+    - stats
+    - spatial
+    text: Implemented per-spot deconvolution as non-negative least squares with inverse-mean gene weighting
+      to keep the fit from collapsing onto high-expression immune signatures under cross-platform reference
+      shift, recovering the expected tumor composition with cancer epithelium leading in 2,201 of 3,798
+      spots.
+  - id: spv_3
+    tags:
+    - comp-bio
+    - stats
+    - spatial
+    text: Computed spatially variable genes by a from-first-principles Moran's I on a symmetric kNN spot
+      graph, vectorized across genes with a seeded permutation test, identifying 949 significant genes
+      that resolve into epithelial, stromal, and immune compartments.
+  - id: spv_4
+    tags:
+    - reproducibility
+    - rse
+    - testing
+    text: Validated with an offline demo mode that synthesizes a toy section with planted spatial cell-type
+      proportions and self-checks recovery to 0.008 mean absolute error against known truth.
+- id: proj_plant_rnaseq
+  name: Plant Bulk RNA-seq (rice drought tolerance, Nextflow)
+  slug: plant_rnaseq_proj
+  stack:
+  - Nextflow
+  - HISAT2
+  - featureCounts
+  - pydeseq2
+  - Python
+  - samtools
+  url: https://naraen.net/portfolio/plant_rnaseq_proj/
+  repo: https://github.com/naraenp/bioinformatics-public/tree/main/plant_rnaseq_nf
+  bullets:
+  - id: plr_1
+    tags:
+    - pipeline
+    - nextflow
+    - bulk-rnaseq
+    text: Ten-stage Nextflow DSL2 bulk RNA-seq pipeline taking raw Illumina reads from drought-tolerant
+      and drought-susceptible rice cultivars through trimming, spliced HISAT2 alignment (83-94% aligned
+      across 38,993 quantified genes), featureCounts quantification, differential expression, and GO over-representation.
+  - id: plr_2
+    tags:
+    - stats
+    - comp-bio
+    - bulk-rnaseq
+    text: Modeled the genotype contrast with pydeseq2 on a ~condition + genotype design so tolerance is
+      estimated controlling for drought treatment, resolving 56 genes at padj < 0.05 that concentrate
+      in defense-response and diterpenoid (phytoalexin) biology.
+  - id: plr_3
+    tags:
+    - stats
+    - reproducibility
+    text: Hand-rolled hypergeometric GO over-representation with Benjamini-Hochberg adjustment rather
+      than a black-box package, keeping every reported number traceable to a few lines of source.
+- id: proj_tcr
+  name: TCR Clonality Analysis (TB progressors vs. controllers)
+  slug: tcrclonal_proj
+  stack:
+  - Python
+  - Jupyter
+  - tcrdist3
+  - pandas
+  - SciPy
+  url: https://naraen.net/portfolio/tcrclonal_proj/
+  year: 2022
+  bullets:
+  - id: tcr_1
+    tags:
+    - immunology
+    - repertoire
+    - python
+    text: End-to-end reproducible TCR-beta repertoire workflow comparing TB progressors against controllers.
+  - id: tcr_2
+    tags:
+    - immunology
+    - repertoire
+    - data-standards
+    text: Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires
+      against curated IEDB and VDJdb reference sets to compute total and antigen-specific clonality metrics.
+- id: proj_fiberphot
+  name: Fiber Photometry Web App
+  slug: fiberphot_proj
+  stack:
+  - R
+  - R Shiny
+  url: https://naraen.net/portfolio/fiberphot_proj/
+  bullets:
+  - id: fp_1
+    tags:
+    - tooling
+    - rse
+    - rshiny
+    - publication
+    text: R Shiny application streamlining fiber photometry data processing and figure generation for
+      the Sweeney Lab, with outputs used in a Journal of Neuroscience publication.
+- id: proj_meta_yt
+  name: R Meta-Analysis Walkthrough
+  slug: metayt_proj
+  stack:
+  - R
+  url: https://naraen.net/portfolio/metayt_proj/
+  bullets:
+  - id: myt_1
+    tags:
+    - teaching
+    - documentation
+    - reproducibility
+    text: Seven-part video walkthrough of an end-to-end meta-analysis in R, produced as a lab onboarding
+      resource.
+- id: proj_pid
+  name: PID Controller for Anaesthetic Dosing
+  slug: bioe420final_proj
+  stack:
+  - MATLAB
+  - Simulink
+  url: https://naraen.net/portfolio/bioe420final_proj/
+  year: 2023
+  team: group project
+  bullets:
+  - id: pid_1
+    tags:
+    - controls
+    - medical-device
+    - robotics
+    text: Designed and tuned a PID controller for patient-specific anaesthetic dosing under variable drug
+      sensitivity, achieving top cohort performance in steady-state error and 10% settling time.
+- id: proj_emgsax
+  name: EMG-Controlled Saxophone
+  slug: emgsax_proj
+  stack:
+  - Arduino
+  - C/C++
+  - surface EMG circuitry
+  url: https://naraen.net/portfolio/emgsax_proj/
+  year: 2023
+  team: group project
+  bullets:
+  - id: emg_1
+    tags:
+    - hardware
+    - embedded
+    - biosignals
+    text: Built a surface-EMG analog front end with instrumentation amplifier, bandpass filtering, and
+      rectification, paired with an Arduino driving servo motors over saxophone keys. Exhibited at the
+      2023 Engineering Open House as an assistive prosthetic concept.
+publications:
+- id: pub_fimmu
+  citation: 'Parsons E, Lu Z, Richard SA, Zelkoski A, Le J, Palanikumar N, Nguyen P, Alba C, Sukumar G,
+    Rosenberger J, Zhang X, Burgess TH, Colombo R, Mende K, Berjohn C, Epsi N, Agan BK, Tribble D, Lindholm
+    DA, Dalgard CL, Pollett SD, Malloy AMW, and EPICC COVID-19 Cohort Study Group. Patterns of restricted
+    TCR usage following SARS-CoV-2 vaccination and severe disease. Frontiers in Immunology. 2025;16:1576903.
+    doi:10.3389/fimmu.2025.1576903
+
+    '
+  short_citation: Parsons E, et al. Front Immunol. 2025;16:1576903.
+  published: 2025-10-02
+  contribution: Bioinformatically isolated and modeled CD4 T-cell populations using custom data extraction
+    scripts to analyze TCR repertoires.
+  tags:
+  - immunology
+  - repertoire
+  - single-cell
+- id: pub_jneuro
+  citation: 'Cho D, O''Berry K, Possa-Paranhos IC, Butts J, Palanikumar N, Sweeney P. Paraventricular
+    Thalamic MC3R Circuits Link Energy Homeostasis with Anxiety-Related Behavior. The Journal of Neuroscience.
+    2023 Sep 6;43(36):6280-6296. doi:10.1523/JNEUROSCI.0704-23.2023. PMID: 37591737. PMCID: PMC10490510.
+
+    '
+  short_citation: Cho D, et al. J Neurosci. 2023;43(36):6280-6296.
+  published: 2023-09-06
+  contribution: Developed an interactive R Shiny application for fiber photometry data processing and
+    visualization used in the publication.
+  tags:
+  - neuroscience
+  - single-cell
+  - tooling
+skills:
+  languages:
+  - Python
+  - R
+  - SQL
+  - Bash
+  - MATLAB
+  - JavaScript
+  - TypeScript
+  - HTML/CSS
+  frameworks:
+  - FastAPI
+  - React
+  - R Shiny
+  - Jekyll
+  workflow:
+  - Nextflow (DSL2)
+  - Docker
+  - Git
+  - containerization
+  - CI
+  - conda
+  - pytest
+  - reproducible pipelines
+  cloud:
+  - Google Cloud Platform
+  - Cloud Run
+  - Vertex AI
+  - IAM
+  - cloud-native architecture
+  - data engineering
+  singlecell:
+  - Seurat
+  - Scanpy
+  - Cell Ranger
+  - tcrdist3
+  - UMAP
+  - clustering
+  - pseudotime
+  - trajectory inference
+  - anchor-based integration
+  - reference-guided annotation
+  - AnnData
+  - Squidpy
+  genomics:
+  - genomics
+  - transcriptomics
+  - proteomics
+  - metabolomics
+  - 10x Genomics
+  - variant calling
+  - bulk RNA-seq
+  - differential expression
+  - GIAB/HG002 benchmarking
+  - GATK4
+  - HaplotypeCaller
+  - joint genotyping
+  - BWA-MEM
+  - HISAT2
+  - samtools
+  - bcftools
+  - featureCounts
+  - fastp
+  - seqtk
+  - FASTQ/BAM/VCF
+  - pydeseq2
+  - DESeq2
+  - GO over-representation analysis
+  - spatial transcriptomics (computational)
+  - 10x Visium
+  - cell-type deconvolution
+  ml:
+  - PyTorch
+  - machine learning
+  - LLM/RAG architecture
+  - dimensionality reduction
+  stats:
+  - meta-analysis
+  - survival analysis
+  - statistical validation
+  - SciPy
+  - pandas
+  - NumPy
+  - scikit-learn
+  - negative-binomial modeling
+  - hypergeometric enrichment
+  - multiple-testing correction
+  - permutation testing
+  - non-negative least squares
+  - spatial autocorrelation (Moran's I)
+  wetlab:
+  - spectral flow cytometry (Cytek Aurora)
+  - FlowJo
+  - flow panel design
+  - compensation
+  - gating strategy
+  - PCR
+  - qPCR
+  - mammalian cell culture
+  - aseptic technique
+  - immunostaining
+  - immunohistochemistry
+  - fluorescence microscopy
+  - tissue sectioning and slide mounting
+  - PBMC and biospecimen processing
+  - nasopharyngeal and blood specimen handling
+  - 10x Genomics library prep support
+  - biosafety and specimen chain-of-custody
+  - laboratory documentation
+  clinical_research:
+  - Epic EMR
+  - clinical data capture
+  - patient-facing workflows
+  - IRB-context human-subjects research
+  - longitudinal cohort study support
+  - participant biosample and metadata handling
+  - HIPAA-context data handling
+  - EKG
+  - phlebotomy
+  - urinalysis
+  domain:
+  - immune repertoire analysis
+  - computational immunology
+  - reproducible research
+  - regulatory and safety awareness
+certifications:
+- id: cert_gcp
+  name: Google Cloud Professional Data Engineer
+  issued: 2025-12-19
+  expires: 2027-12-19
+  status: active
+  display: Google Cloud Certified, Professional Data Engineer (Dec 2025 to Dec 2027)
+- id: cert_ibm
+  name: IBM Data Science Professional Certificate
+honors:
+- id: hon_nmf
+  text: National Merit Scholarship Finalist (Feb 2019)
+- id: hon_apschol
+  text: National AP Scholar (May 2019)
+- id: hon_usabo
+  text: USA Biology Olympiad Semifinalist (Apr 2018)
+summary: Bioinformatics engineer with 2+ years of professional experience spanning wet-lab sample processing,
+  single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed co-authorships,
+  and a record of building tools researchers actually use.

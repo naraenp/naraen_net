@@ -8,6 +8,12 @@ vendor
 bin/write-log.sh
 bin/reading.sh
 
+# Private master content file. Holds job-search strategy, reference contact
+# details, interview answers, and personal disclosure decisions alongside the
+# public facts. The public subset is derived into _data/profile.yml (committed)
+# by bin/build-content.py. Never commit this.
+content.yml
+
 # Agent-local (Claude Code)
 .claude/
 CLAUDE.md
