@@ -12,6 +12,9 @@ permalink: /portfolio/
   - `projects` supplies the order and the stack chips.
   - The matching _portfolio page supplies the thumbnail, title, description,
     and the URL, so page-level content stays with the page.
+  - Where several projects share one page (the two AML projects), the extras
+    carry `secondary_to`. Only the primary renders a card; the secondaries
+    still contribute their stack chips.
   - Projects with no page (Bench) render as external cards.
   - Any _portfolio page that no project references still renders, at the end.
     Adding a page without a content.yml entry must never drop it from here.
@@ -21,6 +24,7 @@ permalink: /portfolio/
 
 <div class="portfolio-grid">
 {%- for project in site.data.profile.projects -%}
+  {%- if project.secondary_to -%}{%- continue -%}{%- endif -%}
   {%- if project.slug -%}
     {%- unless rendered_slugs contains project.slug -%}
     {%- assign page_match = site.portfolio | where: "slug", project.slug | first -%}

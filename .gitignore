@@ -17,3 +17,6 @@ content.yml
 # Agent-local (Claude Code)
 .claude/
 CLAUDE.md
+
+# Browser-verification artifacts (Playwright MCP)
+.playwright-mcp/

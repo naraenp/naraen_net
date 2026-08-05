@@ -54,7 +54,8 @@ PRIVATE_TOP_LEVEL = {
     "education_display_policy",  # applied at build time (below), never shipped
     "exam_scores",            # suppression policy note (holds no scores)
     "coursework_nameable",    # per-posting coursework selection
-    "summaries",             # role-targeted summary variants; see SITE_SUMMARY_ID
+    "summaries",              # role-targeted summary variants; see SITE_SUMMARY_ID
+    "selection_policy",       # how many bullets to fire per resume, and pairing rules
 }
 
 # Keys stripped at any depth, in any section.
@@ -72,6 +73,8 @@ PRIVATE_ANYWHERE = {
     "hours",              # experience.*.hours (application-form detail)
     "author_position",    # publications.*.author_position
     "variant_of",         # alternate phrasing marker; see strip() below
+    "priority_note",      # per-family bullet-ordering rationale (resume strategy)
+    "max_bullets",        # per-family render cap (resume strategy)
 }
 
 # Bullets carrying `verify: true` are unconfirmed and are dropped by default.

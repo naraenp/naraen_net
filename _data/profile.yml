@@ -392,6 +392,7 @@ projects:
   featured: true
   name: AML scRNA-seq Analysis (pre-leukemic populations)
   slug: aml_proj
+  primary: true
   stack:
   - R
   - Python
@@ -429,6 +430,7 @@ projects:
 - id: proj_aml_bulk
   name: AML Bulk RNA-seq Differential Expression (TCGA-LAML vs. GTEx)
   slug: aml_proj
+  secondary_to: proj_aml_sc
   stack:
   - Nextflow
   - R
@@ -443,6 +445,7 @@ projects:
     text: Nextflow bulk RNA-seq differential-expression pipeline comparing TCGA-LAML against GTEx normal
       tissue, with an interactive volcano plot for result exploration.
 - id: proj_variant_calling
+  featured: true
   name: Germline Variant Calling (GATK short-variant pipeline)
   slug: variant_calling_proj
   stack:
@@ -490,6 +493,7 @@ projects:
     text: Wired a GIAB HG002 benchmarking path against the NIST v4.2.1 high-confidence truth set, range-slicing
       reads directly out of GIAB's chr20 BAM over HTTPS so only the bytes for the target window are fetched.
 - id: proj_spatial_visium
+  featured: true
   name: Spatial Transcriptomics Deconvolution (10x Visium breast cancer)
   slug: spatial_visium_proj
   stack:
