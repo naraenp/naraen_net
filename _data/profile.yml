@@ -54,8 +54,8 @@ experience:
     - platform
     - leadership
     - general
-    text: Spearheading end-to-end development of a biotechnology research accelerator platform, managing
-      the product lifecycle from initial architecture to cloud deployment.
+    text: Leading end-to-end development of a biotechnology research platform, from architecture through
+      cloud deployment.
   - id: ph_2
     tags:
     - ml
@@ -69,8 +69,8 @@ experience:
     - pipeline
     - nextflow
     - infra
-    text: Architected containerized Nextflow DSL2 workflows executing on Cloud Run under least-privilege
-      IAM, with a FastAPI ingestion layer normalizing heterogeneous sequencing inputs.
+    text: Built containerized Nextflow DSL2 workflows that run on Cloud Run under least-privilege IAM,
+      with a FastAPI ingestion layer that normalizes varied sequencing inputs.
   - id: ph_4
     tags:
     - validation
@@ -208,8 +208,8 @@ experience:
     tags:
     - clinical
     - communication
-    text: Facilitated information flow between patients and providers, rotating across triage and specialized
-      EKG technician roles.
+    text: Relayed information between patients and providers, rotating across triage and EKG technician
+      roles.
   - id: carle_3
     tags:
     - clinical
@@ -240,16 +240,16 @@ experience:
     - rshiny
     - publication
     - rse
-    text: Built and launched an interactive R Shiny application to streamline fiber photometry data processing
-      and interpretation, contributing to published research in The Journal of Neuroscience.
+    text: Built an interactive R Shiny application for fiber photometry data processing and interpretation.
+      Its outputs contributed to a paper in The Journal of Neuroscience.
   - id: swe_6
     tags:
     - tooling
     - impact
     - rse
-    text: Consolidated a multi-step manual analysis into a single reactive application, cutting photometry
-      processing from a multi-hour scripting task per session to minutes and enabling non-programmer lab
-      members to run their own analyses.
+    text: Consolidated a multi-step manual analysis into one reactive application. Photometry processing
+      dropped from a multi-hour scripting task per session to minutes, and lab members who do not code
+      could run their own analyses.
   - id: swe_4
     tags:
     - wetlab
@@ -358,7 +358,7 @@ experience:
   - id: por_1
     tags:
     - service
-    text: Facilitated high-volume order processing and kitchen communication in a fast-paced service environment.
+    text: Handled high-volume order processing and kitchen communication.
   dates: Jun 2019 - Aug 2019
   start_iso: 2019-06
   end_iso: 2019-08
@@ -627,8 +627,8 @@ projects:
     - rse
     - rshiny
     - publication
-    text: R Shiny application streamlining fiber photometry data processing and figure generation for
-      the Sweeney Lab, with outputs used in a Journal of Neuroscience publication.
+    text: R Shiny application for fiber photometry data processing and figure generation at the Sweeney
+      Lab. Its outputs were used in a Journal of Neuroscience paper.
 - id: proj_meta_yt
   name: R Meta-Analysis Walkthrough
   slug: metayt_proj

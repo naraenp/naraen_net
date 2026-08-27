@@ -12,8 +12,8 @@ reference** and maps cell types back into tissue space. Two readouts: per-spot
 **cell-type deconvolution** (which cell types sit where, and in what proportion)
 and **spatially variable genes** (which genes vary across the tissue rather than
 at random). It is the spatial companion to my two bulk pipelines, the
-[AML differential-expression pipeline](aml_proj) (counts in) and the
-[plant drought RNA-seq pipeline](plant_rnaseq_proj) (reads in): where those map
+[AML differential-expression pipeline](/portfolio/aml_proj/) (counts in) and the
+[plant drought RNA-seq pipeline](/portfolio/plant_rnaseq_proj/) (reads in): where those map
 *phenotype to genes*, this one maps *tissue to cell-types-in-space*.
 
 ### Data

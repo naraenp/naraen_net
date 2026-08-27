@@ -11,7 +11,7 @@ A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes
 phenotypes (the tolerant landrace **Apo** and the susceptible variety
 **IR64**) all the way to a functional read-out of *which genes, and which
 biological processes, distinguish the two*. It's the read-processing companion
-to my [bulk AML pipeline](aml_proj): where that one starts from pre-quantified
+to my [bulk AML pipeline](/portfolio/aml_proj/): where that one starts from pre-quantified
 counts, this one demonstrates the full short-read path (QC and trimming,
 spliced **genome alignment**, gene-level quantification, differential
 expression, and **GO over-representation**) on real public plant data.
