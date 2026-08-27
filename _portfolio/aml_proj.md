@@ -1,26 +1,28 @@
 ---
 layout: page
-title: "AML transcriptomics: single-cell + bulk RNA-seq"
-description: "Two complementary acute myeloid leukemia projects: a single-cell pipeline characterizing pre-leukemic populations (R Shiny dashboard) and a Nextflow bulk RNA-seq differential-expression pipeline (interactive volcano)."
+title: "Preleukemia and AML transcriptomics: single-cell + bulk RNA-seq"
+description: "Two projects on the road into AML: a single-cell analysis of preleukemic mouse HSPCs with an R Shiny dashboard, and a Nextflow bulk RNA-seq differential-expression pipeline with an interactive volcano."
 thumbnail: "/assets/images/portfolio/aml_scrna.svg"
 slug: aml_proj   # joins this page to its entry in content.yml projects
 ---
 
-Two complementary takes on **acute myeloid leukemia** transcriptomics: a single-cell pipeline that characterizes pre-leukemic populations across patient cohorts, and a bulk RNA-seq differential-expression pipeline built as a workflow-engineering exercise. The first asks *which cells* drive the disease; the second asks *which genes* separate AML from healthy blood at the cohort level.
+Two takes on the road into **acute myeloid leukemia**: a single-cell analysis of preleukemic mouse blood progenitors, and a bulk RNA-seq differential-expression pipeline built as a workflow-engineering exercise. The first asks *which cells* change before leukemia; the second asks *which genes* separate AML from healthy blood in bulk cohorts.
 
-### Single-cell RNA-seq: pre-leukemic populations
+### Single-cell RNA-seq: preleukemic populations
 
-Built a reproducible scRNA-seq pipeline on **38 public AML patient samples** spanning the full pipeline from raw 10X data to clinical correlation. The R-side ([Seurat](https://satijalab.org/seurat/)) workflow handles per-sample QC, normalization, anchor-based integration, and **reference-guided cell-type annotation** against a hematopoietic atlas to surface pre-leukemic populations. The Python-side workflow ([Scanpy](https://scanpy.readthedocs.io/) + [CellRank](https://cellrank.readthedocs.io/)) extends the analysis with **diffusion pseudotime, GPCCA macrostates, and fate probabilities** out of HSC-rooted trajectories, then scores **PLPS/Stem11 gene signatures** with `decoupler` and runs Kaplan-Meier **survival analysis** against TCGA LAML clinical data using `lifelines`.
+Built a reproducible scRNA-seq analysis of **38 mouse bone-marrow HSPC samples** spanning eight preleukemic mutation models, from raw 10X data through to a human survival readout. The R side ([Seurat](https://satijalab.org/seurat/)) handles per-sample QC, normalization, anchor-based integration, and **reference-guided cell-type annotation** against a hematopoietic atlas to surface preleukemic populations. The Python side ([Scanpy](https://scanpy.readthedocs.io/) + [CellRank](https://cellrank.readthedocs.io/)) adds **diffusion pseudotime, GPCCA macrostates, and fate probabilities** out of HSC-rooted trajectories.
 
-Findings are surfaced through an interactive R Shiny dashboard with two views: a filterable UMAP of integrated hematopoietic lineages, and a gallery of analysis figures (integrated UMAP, cell-type abundance, macrostates, fate probabilities, metabolic pathway activity, pseudotime gene dynamics, and the two survival plots).
+The human arm is separate. It scores the paper's **PLPS and Stem11 signatures** with `decoupler` in the **TCGA-LAML** cohort, then splits patients at the median score and compares Kaplan-Meier curves with a log-rank test using `lifelines`. That cohort is 163 patients with both expression and overall-survival data (NCI clinical data via cBioPortal).
+
+Results are shown through an interactive R Shiny dashboard with two views: a filterable UMAP of integrated hematopoietic lineages, and a gallery of analysis figures (integrated UMAP, cell-type abundance, macrostates, fate probabilities, metabolic pathway activity, pseudotime gene dynamics, and the two survival plots).
 
 **Platforms & Tools:** R, Python, R Shiny, Seurat, Scanpy, CellRank, decoupler, lifelines, Jupyter, Conda, shinyapps.io
 
-Source data drawn from [Zeng et al., *Cell Genomics* (2023)](https://doi.org/10.1016/j.xgen.2023.100426) and AML clinical data from NCI. Pipeline source lives in [`bioinformatics-public/preleukemia_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/preleukemia_analysis).
+Source data drawn from [Isobe et al., *Cell Genomics* (2023)](https://doi.org/10.1016/j.xgen.2023.100426), and TCGA-LAML clinical data from NCI via cBioPortal. Pipeline source lives in [`bioinformatics-public/preleukemia_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/preleukemia_analysis).
 
 <figure class="media-figure">
   <iframe src="https://naraenp2.shinyapps.io/preleuk_dashboard/"
-          title="AML scRNA-seq Shiny dashboard"
+          title="Preleukemia scRNA-seq Shiny dashboard"
           loading="lazy"
           style="height: 800px;">
   </iframe>
@@ -29,7 +31,7 @@ Source data drawn from [Zeng et al., *Cell Genomics* (2023)](https://doi.org/10.
 
 ### Bulk RNA-seq differential expression (Nextflow)
 
-A compact **[Nextflow DSL2](https://www.nextflow.io/)** pipeline for bulk RNA-seq differential expression, **AML vs. healthy**, run end-to-end on real public RNA-seq cohorts. AML samples come from **TCGA-LAML** and healthy controls from **GTEx whole blood**, both pulled from the **[recount3](https://rna.recount.bio/)** project, which re-aligns and re-quantifies TCGA and GTEx through one uniform Monorail / STAR / GENCODE v26 pipeline so the gene-level counts are directly comparable across the two sources.
+A compact **[Nextflow DSL2](https://www.nextflow.io/)** pipeline for bulk RNA-seq differential expression, **AML vs. healthy**, run on real public RNA-seq cohorts. It complements the single-cell work: where that analysis follows preleukemic cells in mice, this one checks that the canonical AML markers separate AML from healthy blood in bulk human cohorts. AML samples come from **TCGA-LAML** and healthy controls from **GTEx whole blood**, both pulled from the **[recount3](https://rna.recount.bio/)** project, which re-aligns and re-quantifies TCGA and GTEx through one uniform Monorail / STAR / GENCODE v26 pipeline so the gene-level counts are directly comparable across the two sources.
 
 It's a workflow-engineering exercise: a small, readable pipeline (channels, processes, `publishDir`, profile-driven config) on top of a transparent, dependency-light biology layer: library-size CPM normalization, a per-gene Welch t-test on log2-CPM, and a hand-rolled Benjamini-Hochberg FDR. The interactive volcano below labels the canonical AML markers (FLT3, KIT, MEIS1, HOXA9, MPO, CD34, …), which sit cleanly above the significance line.
 

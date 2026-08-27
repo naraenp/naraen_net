@@ -63,6 +63,6 @@
   </g>
 
   <!-- labels -->
-  <text class="label" x="56" y="32">AML scRNA-seq · UMAP</text>
-  <text class="label-dim" x="56" y="345">38 patient samples · seurat · scanpy</text>
+  <text class="label" x="56" y="32">Preleukemia scRNA-seq · UMAP</text>
+  <text class="label-dim" x="56" y="345">38 mouse HSPC samples · seurat · scanpy</text>
 </svg>
