@@ -3,6 +3,7 @@ layout: page
 title: Log
 description: "Occasional notes on what's on my mind, what I'm reading, and what I'm building."
 permalink: /log/
+published: false   # Log disabled; remove this line to bring it back.
 ---
 
 <p class="log-intro">Occasional notes on what I'm building and thinking about, including a running habit of reading and reviewing one paper a day.</p>

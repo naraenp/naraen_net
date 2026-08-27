@@ -10,15 +10,18 @@ and published via GitHub Pages from `main`.
 - **Portfolio** (`/portfolio/`): Grid generated from the `projects` list in
   `_data/profile.yml`, joined to the pages in `_portfolio/` on a `slug` front
   matter key (which also carries `title`, `description`, `thumbnail`).
-- **Log** (`/log/`): The blog. Posts live in `_posts/` and use the
-  `/log/:title/` permalink. The index (`log.markdown`) filters posts
-  client-side by a fixed tag vocabulary (`log_tags` in `_config.yml`).
+- **Log** (`/log/`): **Currently disabled.** Posts remain in `_posts/` but are
+  not built or linked. They are switched off by a `type: posts` default in
+  `_config.yml` (`published: false`), plus `published: false` on `log.markdown`
+  and `log/tag/*.html`. Removing those, restoring the nav link in
+  `_includes/header.html`, and restoring the About sentence in
+  `_layouts/home.html` brings it back.
 - **CV** (`/cv/`): Rendered entirely from `_data/profile.yml`. The résumé PDF
   link comes from `resume_pdf` in `_config.yml`.
 - **Gallery** (`/gallery/`): Lightbox photo grid driven by
   `assets/gallery/captions.json`.
 - **Reading** (`/reading/`): Bookshelf driven by `_data/reading.yml`; the same
-  data feeds a "Currently reading" strip on `/log/` and the home hero.
+  data feeds the "Now reading" line in the home hero.
 - **Search** (`/search/`): Client-side site search (Pagefind).
 - **Contact** (`/contact/`): Formspree-backed contact form; the recipient
   email is not stored in the repo.
@@ -54,13 +57,13 @@ Edit `content.yml`, never `_data/profile.yml`.
 ├── _includes/           # header, head, footer, contact_form, theme_toggle
 ├── _layouts/            # default, home, page, post
 ├── _portfolio/          # One .md per portfolio project (collection)
-├── _posts/              # Log entries (the blog)
+├── _posts/              # Log entries (the blog; currently unpublished)
 ├── _sass/               # (empty; the design system lives in assets/main.scss)
 ├── assets/              # main.scss, images/, icons/, fonts/, pdf/, gallery/, embeds/
 ├── bin/                 # Helpers (new-post.sh, publish.sh, build-content.py)
 ├── index.markdown       # layout: home
 ├── portfolio.markdown   # Portfolio grid index
-├── log.markdown         # Log index (client-side tag filter)
+├── log.markdown         # Log index (unpublished)
 ├── cv.markdown          # CV page
 ├── gallery.markdown     # Photo gallery (lightbox)
 ├── reading.markdown     # Reading bookshelf

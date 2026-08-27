@@ -55,6 +55,15 @@ defaults:
       path: ""
     values:
       image: /assets/images/og-image.png
+  # The Log is disabled. Posts stay in _posts/ but are not built or linked
+  # anywhere. To bring the blog back: delete this scope block, re-add
+  # `published: false` removal in log.markdown and log/tag/*.html, restore the
+  # nav link in _includes/header.html and the home-page About sentence.
+  - scope:
+      path: ""
+      type: posts
+    values:
+      published: false
 
 # Blog posts ("Log") live under /log/<title>/.
 permalink: /log/:title/
@@ -72,7 +81,6 @@ google_analytics: G-C0F7DZGTG0
 header_pages:
   - index.markdown  # Main landing page (About, Projects, Experience)
   - cv.markdown
-  - log.markdown
 
 # Exclude from processing.
 exclude:

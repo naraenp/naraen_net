@@ -1,5 +1,5 @@
-# Reading list. Drives /reading/, the "Now reading" line on the home page,
-# and the "Currently reading" strip on /log/.
+# Reading list. Drives /reading/ and the "Now reading" line on the home page.
+# (It also fed a strip on /log/, which is currently disabled.)
 # status: reading | finished | queue
 # Optional fields per entry: link, note, post (a /log/ write-up URL).
 # The first entry with status: reading becomes the hero "Now reading" line.
