@@ -31,12 +31,12 @@ Once the animal or the patient is the unit of inference and the covariates are i
 Source data drawn from [Isobe et al., *Cell Genomics* (2023)](https://doi.org/10.1016/j.xgen.2023.100426) (GEO GSE227026), and TCGA-LAML clinical data from NCI via cBioPortal. The Quarto stages, helper scripts, and the dashboard live in [`bioinformatics-public/preleukemia_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/preleukemia_analysis).
 
 <figure class="media-figure">
-  <iframe src="https://naraenp2.shinyapps.io/preleuk_dashboard/"
+  <iframe src="https://naraenp2.shinyapps.io/dashboard/"
           title="Preleukemia scRNA-seq Shiny dashboard"
           loading="lazy"
           style="height: 800px;">
   </iframe>
-  <figcaption>The deployed R Shiny dashboard: a filterable UMAP of integrated hematopoietic lineages and a gallery of analysis figures. It still shows the original analysis; the revised dashboard (QC, atlas, composition, differential expression, and survival tabs) is in the repository and has not been deployed yet.</figcaption>
+  <figcaption>The deployed R Shiny dashboard for the revised analysis. Tabs cover per-sample QC, a UMAP of the integrated HSPC atlas colored by cell type, condition, model, or pseudotime, propeller composition tests, a pseudobulk edgeR volcano per cell type, and TCGA-LAML Kaplan–Meier curves with the age-adjusted Cox results. The app opens in its own window at <a href="https://naraenp2.shinyapps.io/dashboard/">naraenp2.shinyapps.io/dashboard</a>.</figcaption>
 </figure>
 
 ### Bulk RNA-seq differential expression (Nextflow)
