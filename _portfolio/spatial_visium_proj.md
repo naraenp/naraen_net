@@ -1,20 +1,19 @@
 ---
 layout: page
 title: "Spatial transcriptomics: Visium breast-cancer cell-type deconvolution (Nextflow)"
-description: "A reproducible Nextflow DSL2 pipeline that takes a 10x Visium breast-cancer section plus a matched scRNA-seq atlas and maps cell types back into tissue space: per-spot NNLS deconvolution and spatially variable genes, rendered as interactive figures."
+description: "A reproducible Nextflow DSL2 pipeline that takes a 10x Visium breast-cancer section plus an annotated scRNA-seq atlas and maps cell types back into tissue space: per-spot NNLS deconvolution and spatially variable genes, rendered as interactive figures."
 thumbnail: "/assets/images/portfolio/spatial_visium.svg"
 slug: spatial_visium_proj   # joins this page to its entry in content.yml projects
 ---
 
 A reproducible **[Nextflow DSL2](https://www.nextflow.io/)** pipeline that takes a
-**10x Visium** spatial transcriptomics section plus a **matched scRNA-seq
+**10x Visium** spatial transcriptomics section plus an **annotated scRNA-seq
 reference** and maps cell types back into tissue space. Two readouts: per-spot
 **cell-type deconvolution** (which cell types sit where, and in what proportion)
 and **spatially variable genes** (which genes vary across the tissue rather than
-at random). It is the spatial companion to my two bulk pipelines, the
-[AML differential-expression pipeline](/portfolio/aml_proj/) (counts in) and the
-[plant drought RNA-seq pipeline](/portfolio/plant_rnaseq_proj/) (reads in): where those map
-*phenotype to genes*, this one maps *tissue to cell-types-in-space*.
+at random). It is the spatial companion to my
+[AML differential-expression pipeline](/portfolio/aml_proj/): where that one maps
+*phenotype to genes*, this one maps *tissue to cell types in space*.
 
 ### Data
 
@@ -43,7 +42,7 @@ profile-driven config). **Nine stages:**
 
 I deliberately kept the methods transparent (a mean-expression signature, plain
 NNLS, a hand-rolled Moran's I) rather than reaching for a heavier black box. The
-same preference runs through the bulk pipelines, and it makes every number on this
+same preference runs through the AML pipeline, and it makes every number on this
 page traceable to a few lines of code.
 
 ### Result
@@ -66,13 +65,14 @@ space.
 Because the reference is not patient-matched to this section, the absolute
 proportions carry the cross-platform shift between the two assays; the
 inverse-mean weighting is what keeps the transparent NNLS baseline honest under
-that shift. Quantifying it against a probabilistic method built for the problem
-(cell2location or RCTD), alongside an interactive R Shiny viewer over the exported
-maps, is a planned follow-up.
+that shift. NNLS also gives a point estimate with no uncertainty. Comparing it
+against a probabilistic method that models the counts and returns a posterior
+(cell2location or RCTD), alongside an R Shiny viewer over the exported maps, is a
+planned follow-up.
 
 **Platforms & Tools:** Nextflow DSL2, Python (scanpy, anndata, squidpy, numpy, scipy, scikit-learn, pandas, plotly), 10x Visium, conda, pytest
 
-The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/main.nf) workflow live in [`bioinformatics-public/spatial_visium_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf); see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/docs/REPORT.md) for a full run report. The whole thing is reproducible with one fetch script, a pinned conda env, and an offline `--demo` mode that synthesizes a toy section with planted, spatially structured cell-type proportions and self-checks that the deconvolution recovers them (mean absolute error 0.008 against the known truth), the spatial analogue of the planted differential-expression checks in my bulk pipelines and the CI smoke test; the Nextflow and no-Nextflow paths are verified to produce identical proportions.
+The pipeline source and the [`main.nf`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/main.nf) workflow live in [`bioinformatics-public/spatial_visium_nf`](https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf); see [`docs/REPORT.md`](https://github.com/naraenp/bioinformatics-public/blob/main/spatial_visium_nf/docs/REPORT.md) for a full run report. The whole thing is reproducible with one fetch script, a pinned conda env, and an offline `--demo` mode. The demo synthesizes a toy section with planted, spatially structured cell-type proportions and self-checks that the deconvolution recovers them (mean absolute error 0.0074 against the known truth). That check is the CI gate: if a change to the method stops it recovering the planted values, the build fails. The Nextflow and no-Nextflow paths are verified to produce identical proportions.
 
 <figure class="media-figure">
   <iframe src="{{ '/assets/embeds/spatial_celltypes.html' | relative_url }}"

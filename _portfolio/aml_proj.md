@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Preleukemia and AML transcriptomics: single-cell + bulk RNA-seq"
-description: "Two projects on the road into AML: a single-cell analysis of preleukemic mouse HSPCs with an R Shiny dashboard, and a Nextflow bulk RNA-seq differential-expression pipeline with an interactive volcano."
+description: "Two projects on the road into AML: a revised single-cell analysis of preleukemic mouse HSPCs (38 samples, eight mutation models) with a TCGA-LAML survival arm and an R Shiny dashboard, and a Nextflow bulk RNA-seq differential-expression pipeline with an interactive volcano."
 thumbnail: "/assets/images/portfolio/aml_scrna.svg"
 slug: aml_proj   # joins this page to its entry in content.yml projects
 ---
@@ -10,15 +10,25 @@ Two takes on the road into **acute myeloid leukemia**: a single-cell analysis of
 
 ### Single-cell RNA-seq: preleukemic populations
 
-Built a reproducible scRNA-seq analysis of **38 mouse bone-marrow HSPC samples** spanning eight preleukemic mutation models, from raw 10X data through to a human survival readout. The R side ([Seurat](https://satijalab.org/seurat/)) handles per-sample QC, normalization, anchor-based integration, and **reference-guided cell-type annotation** against a hematopoietic atlas to surface preleukemic populations. The Python side ([Scanpy](https://scanpy.readthedocs.io/) + [CellRank](https://cellrank.readthedocs.io/)) adds **diffusion pseudotime, GPCCA macrostates, and fate probabilities** out of HSC-rooted trajectories.
+A reanalysis of **38 mouse bone-marrow HSPC samples** across eight preleukemic mutation models (*Calr*, *Dnmt3a*, *Ezh2*, *Flt3*-ITD, *Idh1*, *Jak2*, *Npm1c*, *Utx*) from Isobe et al., with a trajectory arm, a **TCGA-LAML** survival arm, and an R Shiny dashboard. Each stage is a [Quarto](https://quarto.org/) document, and the rendered HTML files are the analysis record: they explain each method choice in place.
 
-The human arm is separate. It scores the paper's **PLPS and Stem11 signatures** with `decoupler` in the **TCGA-LAML** cohort, then splits patients at the median score and compares Kaplan-Meier curves with a log-rank test using `lifelines`. That cohort is 163 patients with both expression and overall-survival data (NCI clinical data via cBioPortal).
+The first version of this analysis used one fixed QC cutoff for all 38 samples, anchor-based integration to an arbitrary reference sample, and cell-level tests for composition and differential expression. This version is a statistical revision. The question is the same; how it is answered changed:
 
-Results are shown through an interactive R Shiny dashboard with two views: a filterable UMAP of integrated hematopoietic lineages, and a gallery of analysis figures (integrated UMAP, cell-type abundance, macrostates, fate probabilities, metabolic pathway activity, pseudotime gene dynamics, and the two survival plots).
+- **Cell calling** with `emptyDrops` (FDR ≤ 0.001) instead of a fixed 200-gene floor, so each barcode is tested against the ambient profile.
+- **Per-sample adaptive QC** (3 MADs on the log scale) plus doublet removal with `scDblFinder`. Libraries differ, and a fixed cutoff conflates quality with biology.
+- **Harmony integration** over 50 PCs with sample as the batch, so no sample is picked as an arbitrary reference and condition is not treated as nuisance.
+- **SingleR annotation** against the Dahlin 2018 mouse HSPC atlas, with pruned scores and marker verification, so each label carries a confidence.
+- **Composition** tested with `propeller` and **differential expression** with pseudobulk `edgeR`, both on `~ model + condition`. The mouse, not the cell, is the replicate.
+- **Trajectory** by diffusion pseudotime and [CellRank](https://cellrank.readthedocs.io/) fate probabilities from an *Hlf*-high HSC root. There are no spliced counts, so no velocity; that limitation is stated rather than worked around.
+- **Survival** by age-adjusted Cox proportional hazards on the continuous signature score, with Kaplan-Meier curves for display. A median split discards information, and age is the dominant confounder.
 
-**Platforms & Tools:** R, Python, R Shiny, Seurat, Scanpy, CellRank, decoupler, lifelines, Jupyter, Conda, shinyapps.io
+**What it found.** 276,294 barcodes were called as cells and 230,684 remained after QC and doublet removal. Harmony mixed the 38 samples well (per-cluster sample-mixing entropy 0.95 to 0.97, where 1 is even mixing). Only 0.24% of cells were low-confidence under SingleR, and the label distribution matches an LK sort (4.6% HSCs). Then most of the results the original pipeline reported as significant went away. A chi-square on pooled cells gives *p* < 10⁻¹⁵ for composition, but `propeller` at the sample level finds no cell type at FDR 0.05. Pseudobulk differential expression finds no shared mutant-versus-WT genes in HSCs and at most 13 in any cell type. A program shared across eight different mutations is not detectable at *n* = 38, and per-model effects cannot be tested with 2 to 3 mice per arm. In TCGA-LAML (*n* = 151), neither the paper's **PLPS** nor **Stem11** signature is associated with overall survival after age adjustment (hazard ratio per SD 0.97 for both; *p* = 0.75 and 0.81), and the unadjusted result is null too.
 
-Source data drawn from [Isobe et al., *Cell Genomics* (2023)](https://doi.org/10.1016/j.xgen.2023.100426), and TCGA-LAML clinical data from NCI via cBioPortal. Pipeline source lives in [`bioinformatics-public/preleukemia_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/preleukemia_analysis).
+Once the animal or the patient is the unit of inference and the covariates are included, most of the original findings do not hold. That is the correct result, not a disappointing one.
+
+**Platforms & Tools:** R, Python, Quarto, R Shiny, Seurat, DropletUtils, scDblFinder, Harmony, SingleR, propeller / limma, edgeR, Scanpy, CellRank, lifelines, Conda, shinyapps.io
+
+Source data drawn from [Isobe et al., *Cell Genomics* (2023)](https://doi.org/10.1016/j.xgen.2023.100426) (GEO GSE227026), and TCGA-LAML clinical data from NCI via cBioPortal. The Quarto stages, helper scripts, and the dashboard live in [`bioinformatics-public/preleukemia_analysis`](https://github.com/naraenp/bioinformatics-public/tree/main/preleukemia_analysis).
 
 <figure class="media-figure">
   <iframe src="https://naraenp2.shinyapps.io/preleuk_dashboard/"
@@ -26,7 +36,7 @@ Source data drawn from [Isobe et al., *Cell Genomics* (2023)](https://doi.org/10
           loading="lazy"
           style="height: 800px;">
   </iframe>
-  <figcaption>Interactive R Shiny dashboard: a filterable UMAP of integrated hematopoietic lineages and a gallery of analysis figures.</figcaption>
+  <figcaption>The deployed R Shiny dashboard: a filterable UMAP of integrated hematopoietic lineages and a gallery of analysis figures. It still shows the original analysis; the revised dashboard (QC, atlas, composition, differential expression, and survival tabs) is in the repository and has not been deployed yet.</figcaption>
 </figure>
 
 ### Bulk RNA-seq differential expression (Nextflow)
@@ -37,14 +47,14 @@ It's a workflow-engineering exercise: a small, readable pipeline (channels, proc
 
 **Four stages:**
 
-1. [`LOAD_COUNTS`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/load_counts.py): join the TCGA-LAML + GTEx gene sums on Ensembl ID, map to HGNC symbols via GENCODE v26, subsample to balanced groups, and filter low-expression genes.
+1. [`LOAD_COUNTS`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/load_counts.py): join the TCGA-LAML + GTEx gene sums on Ensembl ID, map to HGNC symbols via GENCODE v26, subsample to balanced groups, and filter low-expression genes on pooled expression so the filter stays independent of the group contrast.
 2. [`NORMALIZE_COUNTS`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/normalize_counts.py): library-size CPM, then `log2(CPM + 1)`.
 3. [`RUN_DE`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/run_de.py): per-gene Welch t-test with BH-adjusted p-values.
 4. [`MAKE_VOLCANO`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/bin/make_volcano.py): an interactive Plotly volcano.
 
 The real-data inputs (~130 MB from recount3 + the GENCODE annotation) are fetched once with a small [`fetch_real_data.sh`](https://github.com/naraenp/bioinformatics-public/blob/main/aml_rnaseq_nf/fetch_real_data.sh) helper, and the whole thing runs in seconds on a laptop. Pinned conda env, project-relative paths, and fast data-free unit tests for the DE math.
 
-> **Comparator caveat:** GTEx has no bone-marrow tissue, so whole peripheral blood is the closest large healthy comparator. The AML markers recover cleanly, but progenitor-associated genes can read as "up in AML" simply because mature blood lacks progenitor populations. Swapping in a healthy bone-marrow cohort is the natural next step.
+> **Comparator caveat:** GTEx has no bone-marrow tissue, so whole peripheral blood is the closest large healthy comparator. Cohort is therefore confounded with disease, tissue, and collection protocol at once. The AML markers still recover cleanly, but progenitor genes can read as "up in AML" simply because mature blood has no progenitor populations, so the direction of a fold change should be read with that in mind. Swapping in a healthy bone-marrow cohort is the natural next step.
 
 **Platforms & Tools:** Nextflow DSL2, Python (numpy / pandas / scipy / plotly), recount3, GENCODE v26, conda, pytest
 

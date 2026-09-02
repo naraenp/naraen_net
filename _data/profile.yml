@@ -405,8 +405,10 @@ projects:
   stack:
   - R
   - Python
+  - Quarto
   - R Shiny
   - Seurat
+  - Harmony
   - Scanpy
   url: https://naraen.net/portfolio/aml_proj/
   start: 2025-09
@@ -417,17 +419,20 @@ projects:
     - single-cell
     - cancer
     - comp-bio
-    text: Reproducible scRNA-seq analysis of 38 mouse bone-marrow HSPC samples spanning eight preleukemic
-      mutation models (Isobe et al., Cell Genomics 2023), covering QC, anchor-based integration, and reference-guided
-      cell-type annotation.
+    text: 'Revised scRNA-seq analysis of 38 mouse bone-marrow HSPC samples spanning eight preleukemic
+      mutation models (Isobe et al., Cell Genomics 2023): emptyDrops cell calling, per-sample adaptive
+      QC with doublet removal, Harmony integration, and SingleR annotation against a mouse HSPC atlas,
+      each stage a rendered Quarto document.'
   - id: aml_2
     tags:
     - single-cell
     - trajectory
     - survival
     - stats
-    text: Extended with pseudotime, fate mapping, and a Kaplan-Meier survival analysis of the paper's
-      PLPS and Stem11 signatures in 163 TCGA-LAML patients (NCI clinical data via cBioPortal).
+    text: Tested composition (propeller) and differential expression (pseudobulk edgeR) with the mouse
+      as the replicate, added CellRank fate mapping, and tested the paper's PLPS and Stem11 signatures
+      against overall survival in 151 TCGA-LAML patients with age-adjusted Cox models; most of the original
+      pipeline's significant findings did not hold.
   - id: aml_3
     tags:
     - tooling
@@ -443,7 +448,6 @@ projects:
   secondary_to: proj_aml_sc
   stack:
   - Nextflow
-  - R
   - Python
   url: https://naraen.net/portfolio/aml_proj/
   bullets:
@@ -455,54 +459,6 @@ projects:
     text: Nextflow bulk RNA-seq differential-expression pipeline comparing TCGA-LAML against GTEx whole
       blood, checking that canonical AML markers separate the two cohorts. Includes an interactive volcano
       plot.
-- id: proj_variant_calling
-  featured: true
-  name: Germline Variant Calling (GATK short-variant pipeline)
-  slug: variant_calling_proj
-  stack:
-  - Nextflow
-  - GATK4
-  - BWA-MEM
-  - samtools
-  - bcftools
-  - fastp
-  - Python
-  url: https://naraen.net/portfolio/variant_calling_proj/
-  repo: https://github.com/naraenp/bioinformatics-public/tree/main/variant_calling_nf
-  bullets:
-  - id: vc_1
-    tags:
-    - pipeline
-    - nextflow
-    - variant-calling
-    - genomics
-    text: Twelve-stage Nextflow DSL2 germline short-variant pipeline following the GATK best-practice
-      path, from BWA-MEM alignment and duplicate marking through HaplotypeCaller GVCF calling, joint genotyping,
-      hard-filtering, and consequence annotation to a filtered cohort VCF.
-  - id: vc_2
-    tags:
-    - validation
-    - quality
-    - accuracy
-    - testing
-    text: Built a synthetic diploid cohort with planted germline variants as the offline validation path,
-      achieving perfect recovery of all 24 planted sites (recall = precision = 1.00, genotype concordance
-      1.00 across 144 sample-genotypes) via an automated self-check that gates every run.
-  - id: vc_3
-    tags:
-    - reproducibility
-    - rse
-    - infra
-    text: Made the whole pipeline laptop-reproducible with one fetch script, a pinned conda environment,
-      and a sub-minute offline mode used as the CI smoke test, with the Nextflow and shell-driven paths
-      verified to emit identical normalized callsets.
-  - id: vc_4
-    tags:
-    - validation
-    - benchmarking
-    - genomics
-    text: Wired a GIAB HG002 benchmarking path against the NIST v4.2.1 high-confidence truth set, range-slicing
-      reads directly out of GIAB's chr20 BAM over HTTPS so only the bytes for the target window are fetched.
 - id: proj_spatial_visium
   featured: true
   name: Spatial Transcriptomics Deconvolution (10x Visium breast cancer)
@@ -551,41 +507,6 @@ projects:
     - testing
     text: Validated with an offline demo mode that synthesizes a toy section with planted spatial cell-type
       proportions and self-checks recovery to 0.008 mean absolute error against known truth.
-- id: proj_plant_rnaseq
-  name: Plant Bulk RNA-seq (rice drought tolerance, Nextflow)
-  slug: plant_rnaseq_proj
-  stack:
-  - Nextflow
-  - HISAT2
-  - featureCounts
-  - pydeseq2
-  - Python
-  - samtools
-  url: https://naraen.net/portfolio/plant_rnaseq_proj/
-  repo: https://github.com/naraenp/bioinformatics-public/tree/main/plant_rnaseq_nf
-  bullets:
-  - id: plr_1
-    tags:
-    - pipeline
-    - nextflow
-    - bulk-rnaseq
-    text: Ten-stage Nextflow DSL2 bulk RNA-seq pipeline taking raw Illumina reads from drought-tolerant
-      and drought-susceptible rice cultivars through trimming, spliced HISAT2 alignment (83-94% aligned
-      across 38,993 quantified genes), featureCounts quantification, differential expression, and GO over-representation.
-  - id: plr_2
-    tags:
-    - stats
-    - comp-bio
-    - bulk-rnaseq
-    text: Modeled the genotype contrast with pydeseq2 on a ~condition + genotype design so tolerance is
-      estimated controlling for drought treatment, resolving 56 genes at padj < 0.05 that concentrate
-      in defense-response and diterpenoid (phytoalexin) biology.
-  - id: plr_3
-    tags:
-    - stats
-    - reproducibility
-    text: Hand-rolled hypergeometric GO over-representation with Benjamini-Hochberg adjustment rather
-      than a black-box package, keeping every reported number traceable to a few lines of source.
 - id: proj_tcr
   name: TCR Clonality Analysis (TB progressors vs. controllers)
   slug: tcrclonal_proj
@@ -603,14 +524,19 @@ projects:
     - immunology
     - repertoire
     - python
-    text: End-to-end reproducible TCR-beta repertoire workflow comparing TB progressors against controllers.
+    text: 'Reproducible TCR-beta repertoire workflow comparing TB progressors against controllers (Musvosvi
+      et al., Nature Medicine 2022), revised to respect the matched case-control design: one baseline
+      sample per donor, a stratified rank test within matched sets, and rarefaction to a common sequencing
+      depth.'
   - id: tcr_2
     tags:
     - immunology
     - repertoire
     - data-standards
     text: Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires
-      against curated IEDB and VDJdb reference sets to compute total and antigen-specific clonality metrics.
+      against curated IEDB and VDJdb reference sets to compute total and antigen-specific clonality metrics,
+      reported with Hodges-Lehmann effect sizes, bootstrap confidence intervals, and BH adjustment across
+      metrics.
   dates: '2022'
   start_iso: '2022'
 - id: proj_fiberphot
