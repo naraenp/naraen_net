@@ -8,6 +8,11 @@
 # content.yml is gitignored: it holds job-search strategy, reference contact
 # details, and personal disclosure decisions. This file is the public subset and
 # is what Liquid reads as site.data.profile.
+#
+# NOTE 2026-10-01: edited by hand on the Windows machine (content.yml was not
+# available there) to match Palanikumar_Resume_Master and the career master
+# record. Copy these changes into content.yml before the next publish.sh run,
+# or the build will overwrite them.
 
 identity:
   name: Naraen Palanikumar
@@ -17,12 +22,13 @@ identity:
   orcid: https://orcid.org/0000-0001-8513-4590
   website: https://naraen.net
   portfolio: https://naraen.net/portfolio/
+headline: Bioinformatics researcher working on immunology, single-cell and multi-omics data, and reproducible research.
 education:
 - id: edu_meng
   institution: University of Illinois Urbana-Champaign
   degree: Master of Engineering (M.Eng.)
   field: Bioengineering
-  location: Urbana-Champaign, IL
+  location: Urbana, IL
   start: 2023-08
   end: 2024-05
   degree_line: Master of Engineering (M.Eng.), Bioengineering
@@ -33,235 +39,99 @@ education:
   institution: University of Illinois Urbana-Champaign
   degree: Bachelor of Science (B.S.)
   field: Bioengineering
-  location: Urbana-Champaign, IL
+  location: Urbana, IL
   start: 2019-08
   end: 2023-05
-  degree_line: Bachelor of Science (B.S.), Bioengineering
+  degree_line: Bachelor of Science (B.S.), Bioengineering. GPA 3.68/4.00
   dates: Aug 2019 - May 2023
   start_iso: 2019-08
   end_iso: 2023-05
+- id: edu_hes
+  institution: Harvard Extension School
+  degree: Non-degree course
+  location: ""
+  start: 2026-09
+  end: present
+  degree_line: CSCI E-22 Data Structures (in progress)
+  dates: Fall 2026
+  start_iso: 2026-09
 experience:
-- id: exp_phalaena
+- id: exp_research
   featured: true
-  org: Phalaena Automata
-  title: Founding Engineer
-  location: Austin, TX
-  start: 2026-03
+  org: Self-directed research (Phalaena Automata, formed Mar 2026)
+  title: Independent Bioinformatics Researcher
+  location: Frisco, TX (remote)
+  start: 2025-07
   end: present
   bullets:
-  - id: ph_1
-    tags:
-    - platform
-    - leadership
-    - general
-    text: Leading end-to-end development of a biotechnology research platform, from architecture through
-      cloud deployment.
-  - id: ph_2
-    tags:
-    - ml
-    - ai
-    - llm
-    - platform
-    text: Developing full-stack AI-centric infrastructure on Google Cloud, integrating RAG and LLM architecture
-      to automate unstructured data interpretation pipelines and accelerate the sequence-to-insight loop.
-  - id: ph_3
-    tags:
-    - pipeline
-    - nextflow
-    - infra
-    text: Built containerized Nextflow DSL2 workflows that run on Cloud Run under least-privilege IAM,
-      with a FastAPI ingestion layer that normalizes varied sequencing inputs.
-  - id: ph_4
-    tags:
-    - validation
-    - quality
-    - accuracy
-    - clinical
-    text: Validated variant-calling output against the GIAB HG002 benchmark to establish pipeline accuracy
-      on a public ground-truth reference.
-  dates: Mar 2026 - Present
-  start_iso: 2026-03
-- id: exp_indep
-  featured: true
-  org: Independent Research & Development
-  title: Bioinformatics Engineer (Independent Projects)
-  location: Remote
-  start: 2025-07
-  end: 2026-03
-  bullets:
-  - id: ind_1
-    tags:
-    - single-cell
-    - cancer
-    - comp-bio
-    text: Built end-to-end single-cell and bulk RNA-seq analyses on public oncology datasets, covering
-      QC, integration, cell-type annotation, trajectory inference, and survival analysis.
-  - id: ind_2
-    tags:
-    - pipeline
-    - nextflow
-    - cloud
-    - infra
-    text: Developed cloud-native, containerized bioinformatics pipelines for high-throughput omics workflows,
-      applying Google Cloud Professional Data Engineer practices to reproducible research infrastructure.
-  - id: ind_3
-    tags:
-    - tooling
-    - rshiny
-    - viz
-    - rse
-    text: Published analyses as interactive dashboards and open project write-ups to make results explorable
-      by non-computational audiences.
-  - id: ind_4
-    tags:
-    - general
-    - self-directed
-    text: Self-directed period spent deepening single-cell methods, pipeline engineering, and cloud architecture,
-      culminating in founding Phalaena Automata to productionize these workflows.
-  dates: Jul 2025 - Mar 2026
+  - id: res_1
+    text: Reanalyzed a published single-cell dataset (230,000 bone marrow cells, 38 samples, eight preleukemic
+      mutation models); re-tested the main comparisons across samples rather than individual cells, found
+      that most of the original differences did not hold, and reported that null result.
+  - id: res_2
+    text: Compared T cell receptor repertoires of 140 donors from a tuberculosis cohort who did or did not
+      progress to disease, using matched permutation tests and public reference sequences, and reported
+      the null result plainly.
+  - id: res_3
+    text: Built Bench, a cloud platform of seven analysis pipelines for sequencing and mass spectrometry
+      data, as its sole developer, and ran 42 published datasets through it end to end (42 of 42 completed).
+  - id: res_4
+    text: Built a research assistant that answers questions about each analysis only from its recorded
+      results; it passed 66 of 69 graded questions (95.7 percent) and declines questions the data cannot
+      answer.
+  dates: Jul 2025 - Present
   start_iso: 2025-07
-  end_iso: 2026-03
-- id: exp_malloy
+- id: exp_usu
   featured: true
-  org: Malloy Lab, Uniformed Services University of the Health Sciences
-  title: Research Assistant
+  org: Uniformed Services University of the Health Sciences
+  title: Research Assistant, Laboratory of Pediatric Infection and Immunity
   location: Bethesda, MD
+  employer_of_record: Henry M. Jackson Foundation
   start: 2024-10
   end: 2025-06
   bullets:
-  - id: mal_1
-    tags:
-    - wetlab
-    - flow
-    - sample-prep
-    text: Processed study participant biosamples and metadata for downstream high-throughput processing
-      using flow cytometry and scRNA-seq.
-  - id: mal_2
-    tags:
-    - immunology
-    - repertoire
-    - single-cell
-    - publication
-    text: Led bioinformatics analysis to extract and analyze CD4 T-cell repertoires from scTCR-seq data,
-      contributing to published research in Frontiers in Immunology.
-  - id: mal_3
-    tags:
-    - immunology
-    - repertoire
-    - comp-bio
-    text: Bioinformatically isolated and modeled CD4 T-cell populations using custom extraction scripts,
-      comparing TCR repertoire usage across participants stratified by COVID-19 severity and vaccination
-      status.
-  - id: mal_5
-    tags:
-    - wetlab
-    - sample-prep
-    - clinical-research
-    text: Handled nasopharyngeal and blood specimen processing for a longitudinal respiratory infectious
-      disease cohort.
-  - id: mal_7
-    tags:
-    - wetlab
-    - cellculture
-    - molecular
-    text: Performed mammalian cell culture, PCR, and microscopy in support of a longitudinal respiratory
-      infectious disease study.
-  - id: mal_8
-    tags:
-    - flow
-    - flowjo
-    - analysis
-    text: Analyzed high-parameter spectral flow cytometry data in FlowJo, including gating strategy design,
-      compensation, and population quantification.
-  - id: mal_9
-    tags:
-    - wetlab
-    - molecular
-    - assay
-    text: Executed molecular and cell-based assays end to end, from sample receipt and processing through
-      staining, acquisition, and downstream analysis, bridging bench work and computational output within
-      a single workflow.
-  - id: mal_6
-    tags:
-    - communication
-    - presentation
-    text: Presented bioinformatic findings to lab and collaborator audiences, translating repertoire analyses
-      into figures and diagrams for non-computational stakeholders.
+  - id: usu_1
+    text: Processed incoming human blood and nasopharyngeal specimens and ran high-parameter spectral flow
+      cytometry (Cytek Aurora, FlowJo) alongside the bench team.
+  - id: usu_2
+    text: Isolated PBMCs by Ficoll density gradient and cultured them, extracted RNA and DNA, and immunostained
+      cells for flow cytometry in support of the lab's immunology studies.
+  - id: usu_3
+    text: Analyzed the CD4 T cell arm of a T cell receptor study of SARS-CoV-2 vaccination and severe disease
+      in a longitudinal military cohort (EPICC), published in Frontiers in Immunology (2025).
+  - id: usu_4
+    text: Built a CD4-specific reference set from public data, removing any sequence also found among 76.6
+      million pre-pandemic T cell receptor sequences, and compared clonality across four clinical groups.
   dates: Oct 2024 - Jun 2025
   start_iso: 2024-10
   end_iso: 2025-06
 - id: exp_carle
-  org: Carle Foundation Hospital, Emergency Department
-  title: Healthcare Technician
-  location: Champaign, IL
+  org: Carle Foundation Hospital
+  title: Emergency Department Technician
+  location: Urbana, IL
   start: 2023-09
   end: 2024-07
   bullets:
   - id: carle_1
-    tags:
-    - clinical
-    - ehr
-    - health-system
-    text: Managed patient care and diagnostic workflows on Epic EMR in a Level I Trauma Center, performing
-      EKGs, blood collection, and urinalysis.
-  - id: carle_2
-    tags:
-    - clinical
-    - communication
-    text: Relayed information between patients and providers, rotating across triage and EKG technician
-      roles.
-  - id: carle_3
-    tags:
-    - clinical
-    - domain
-    text: Worked across every ED functional area over roughly 1,000 hours, building direct familiarity
-      with clinical data capture at point of care.
+    text: Performed EKGs, phlebotomy, urinalysis and triage support in the emergency department of a Level
+      I trauma center, documenting in Epic, 25 hours per week alongside the M.Eng.
   dates: Sep 2023 - Jul 2024
   start_iso: 2023-09
   end_iso: 2024-07
 - id: exp_sweeney
   featured: true
-  org: Sweeney Lab, University of Illinois Urbana-Champaign
+  org: Sweeney Lab, Molecular and Integrative Physiology, University of Illinois
   title: Undergraduate Research Assistant
-  location: Champaign, IL
+  location: Urbana, IL
   start: 2021-08
   end: 2023-06
   bullets:
   - id: swe_1
-    tags:
-    - single-cell
-    - comp-bio
-    - r
-    text: Analyzed complex scRNA-seq datasets using Cell Ranger and Seurat to uncover metabolism-associated
-      neural circuits and rare cell populations.
+    text: Built the lab's fiber photometry analysis application in R Shiny, replacing hours of per-session
+      scripting; credited in the Journal of Neuroscience (2023) and still live online.
   - id: swe_2
-    tags:
-    - tooling
-    - rshiny
-    - publication
-    - rse
-    text: Built an interactive R Shiny application for fiber photometry data processing and interpretation.
-      Its outputs contributed to a paper in The Journal of Neuroscience.
-  - id: swe_6
-    tags:
-    - tooling
-    - impact
-    - rse
-    text: Consolidated a multi-step manual analysis into one reactive application. Photometry processing
-      dropped from a multi-hour scripting task per session to minutes, and lab members who do not code
-      could run their own analyses.
-  - id: swe_4
-    tags:
-    - wetlab
-    - histology
-    text: Performed mouse brain slice mounting, immunostaining, and imaging, iterating antibody concentration
-      protocols to resolve failed staining runs.
-  - id: swe_5
-    tags:
-    - python
-    - comp-bio
-    text: Used both R and Python to analyze scRNA-seq and fiber photometry data characterizing MC3R-expressing
-      neurons in energy homeostasis.
+    text: Analyzed single-cell RNA-seq data to characterize MC3R-expressing neurons; cryosectioned mouse brain
+      samples and handled mice for colony upkeep and documentation.
   dates: Aug 2021 - Jun 2023
   start_iso: 2021-08
   end_iso: 2023-06
@@ -273,61 +143,32 @@ experience:
   end: 2023-05
   bullets:
   - id: ems_1
-    tags:
-    - clinical
-    text: Provided immediate medical response and direct patient care at university athletic and cultural
-      events.
-  - id: ems_2
-    tags:
-    - clinical
-    - documentation
-    text: Maintained meticulous incident records and managed essential medical equipment across shifts.
+    text: Volunteer EMT-B providing medical coverage at university events.
   dates: Jan 2022 - May 2023
   start_iso: 2022-01
   end_iso: 2023-05
 - id: exp_haedos
-  org: Haedos LLC
+  org: Haedos
   title: Coding Tutor
   location: Naperville, IL
   start: 2020-09
   end: 2021-02
   bullets:
   - id: hae_1
-    tags:
-    - teaching
-    - mentorship
-    text: Tutored students aged 10 to 17 in Python, Java, and JavaScript, and volunteered at interstate
-      Hour of Code events.
-  - id: hae_2
-    tags:
-    - teaching
-    - pedagogy
-    text: Adapted instruction to individual learning styles, using project-based builds to sustain engagement
-      over traditional exercises.
+    text: Tutored students in Python, Java and JavaScript, and volunteered at Hour of Code events.
   dates: Sep 2020 - Feb 2021
   start_iso: 2020-09
   end_iso: 2021-02
 - id: exp_thom
   org: Thom Lab, Wheaton College
-  title: Data Analyst and Research Assistant
+  title: Research Assistant
   location: Wheaton, IL
   start: 2020-05
   end: 2020-08
   bullets:
   - id: thom_1
-    tags:
-    - stats
-    - r
-    - meta-analysis
-    text: Led a meta-analysis across 54 studies and 94 effect sizes, designing R scripts for automated
-      data extraction, transformation, and statistical validation.
-  - id: thom_2
-    tags:
-    - documentation
-    - teaching
-    - reproducibility
-    text: Produced a seven-part training video series onboarding incoming lab members on software tools
-      and analytical workflows, from raw data to results.
+    text: Ran a meta-analysis of 54 studies (94 effect sizes) in R and produced a seven-part training series
+      on the methods for incoming lab students.
   dates: May 2020 - Aug 2020
   start_iso: 2020-05
   end_iso: 2020-08
@@ -339,12 +180,8 @@ experience:
   end: 2018-05
   bullets:
   - id: arg_1
-    tags:
-    - instrumentation
-    - physics
-    - national-lab
     text: Explored applications of synchrotron X-ray scanning tunneling microscopy (SX-STM) for atomic-scale
-      imaging and characterization of metallic surfaces.
+      imaging of metallic surfaces.
   dates: Sep 2017 - May 2018
   start_iso: 2017-09
   end_iso: 2018-05
@@ -356,8 +193,6 @@ experience:
   end: 2019-08
   bullets:
   - id: por_1
-    tags:
-    - service
     text: Handled high-volume order processing and kitchen communication.
   dates: Jun 2019 - Aug 2019
   start_iso: 2019-06
@@ -374,7 +209,7 @@ projects:
   - React
   - Nextflow
   - Docker
-  - GCP
+  - Google Cloud Batch
   - Cloud Run
   - Vertex AI
   url: https://bench.phalaena.ai
@@ -382,19 +217,12 @@ projects:
   end: present
   bullets:
   - id: bench_1
-    tags:
-    - platform
-    - pipeline
-    - infra
-    text: Production omics platform ingesting varied sequencing data into a centralized API and running
-      containerized Nextflow workflows on Cloud Run under strict IAM.
+    text: Multi-omics analysis platform built as sole developer, in closed beta. Seven Nextflow pipelines
+      for genomics, transcriptomics, proteomics and metabolomics run on Google Cloud Batch behind a FastAPI
+      service on Cloud Run; 42 of 42 published datasets ran end to end.
   - id: bench_2
-    tags:
-    - ml
-    - llm
-    - rag
-    text: Tool-augmented RAG loop over Vertex AI cross-referencing pipeline output against PubMed and
-      public catalogs for accelerated interpretation.
+    text: A results assistant (Vertex AI) answers only from each run's recorded summary; 66 of 69 graded
+      questions passed (95.7 percent).
   dates: Mar 2026 - Present
   start_iso: 2026-03
 - id: proj_aml_sc
@@ -415,29 +243,16 @@ projects:
   end: 2025-10
   bullets:
   - id: aml_1
-    tags:
-    - single-cell
-    - cancer
-    - comp-bio
     text: 'Revised scRNA-seq analysis of 38 mouse bone-marrow HSPC samples spanning eight preleukemic
       mutation models (Isobe et al., Cell Genomics 2023): emptyDrops cell calling, per-sample adaptive
       QC with doublet removal, Harmony integration, and SingleR annotation against a mouse HSPC atlas,
       each stage a rendered Quarto document.'
   - id: aml_2
-    tags:
-    - single-cell
-    - trajectory
-    - survival
-    - stats
     text: Tested composition (propeller) and differential expression (pseudobulk edgeR) with the mouse
       as the replicate, added CellRank fate mapping, and tested the paper's PLPS and Stem11 signatures
       against overall survival in 151 TCGA-LAML patients with age-adjusted Cox models; most of the original
       pipeline's significant findings did not hold.
   - id: aml_3
-    tags:
-    - tooling
-    - rshiny
-    - viz
     text: Built an interactive R Shiny dashboard for exploring the results.
   dates: Sep 2025 - Oct 2025
   start_iso: 2025-09
@@ -452,93 +267,30 @@ projects:
   url: https://naraen.net/portfolio/aml_proj/
   bullets:
   - id: amlb_1
-    tags:
-    - pipeline
-    - nextflow
-    - bulk-rnaseq
     text: Nextflow bulk RNA-seq differential-expression pipeline comparing TCGA-LAML against GTEx whole
       blood, checking that canonical AML markers separate the two cohorts. Includes an interactive volcano
       plot.
-- id: proj_spatial_visium
-  featured: true
-  name: Spatial Transcriptomics Deconvolution (10x Visium breast cancer)
-  slug: spatial_visium_proj
-  stack:
-  - Nextflow
-  - Python
-  - scanpy
-  - anndata
-  - squidpy
-  - SciPy
-  - scikit-learn
-  url: https://naraen.net/portfolio/spatial_visium_proj/
-  repo: https://github.com/naraenp/bioinformatics-public/tree/main/spatial_visium_nf
-  bullets:
-  - id: spv_1
-    tags:
-    - pipeline
-    - nextflow
-    - spatial
-    - single-cell
-    text: Nine-stage Nextflow DSL2 pipeline mapping cell types into tissue space from a 10x Visium breast-cancer
-      section (3,798 spots) against a 100,064-cell annotated scRNA-seq reference, covering QC, shared-gene-space
-      normalization, signature construction, per-spot deconvolution, and spatially variable genes.
-  - id: spv_2
-    tags:
-    - comp-bio
-    - stats
-    - spatial
-    text: Implemented per-spot deconvolution as non-negative least squares with inverse-mean gene weighting
-      to keep the fit from collapsing onto high-expression immune signatures under cross-platform reference
-      shift, recovering the expected tumor composition with cancer epithelium leading in 2,201 of 3,798
-      spots.
-  - id: spv_3
-    tags:
-    - comp-bio
-    - stats
-    - spatial
-    text: Computed spatially variable genes by a from-first-principles Moran's I on a symmetric kNN spot
-      graph, vectorized across genes with a seeded permutation test, identifying 949 significant genes
-      that resolve into epithelial, stromal, and immune compartments.
-  - id: spv_4
-    tags:
-    - reproducibility
-    - rse
-    - testing
-    text: Validated with an offline demo mode that synthesizes a toy section with planted spatial cell-type
-      proportions and self-checks recovery to 0.008 mean absolute error against known truth.
 - id: proj_tcr
+  featured: true
   name: TCR Clonality Analysis (TB progressors vs. controllers)
   slug: tcrclonal_proj
   stack:
   - Python
   - Jupyter
-  - tcrdist3
   - pandas
+  - NumPy
   - SciPy
   url: https://naraen.net/portfolio/tcrclonal_proj/
-  year: 2022
   bullets:
   - id: tcr_1
-    tags:
-    - immunology
-    - repertoire
-    - python
-    text: 'Reproducible TCR-beta repertoire workflow comparing TB progressors against controllers (Musvosvi
-      et al., Nature Medicine 2022), revised to respect the matched case-control design: one baseline
-      sample per donor, a stratified rank test within matched sets, and rarefaction to a common sequencing
-      depth.'
+    text: 'Bulk TCR-beta repertoire comparison of 140 tuberculosis-cohort donors (52 progressors, 88 controllers;
+      Musvosvi et al., Nature Medicine 2022), revised to respect the matched case-control design: one
+      baseline sample per donor, a stratified rank test with permutations within matched sets, and rarefaction
+      to a common sequencing depth.'
   - id: tcr_2
-    tags:
-    - immunology
-    - repertoire
-    - data-standards
-    text: Standardized V/J/CDR3 nomenclature to IMGT format and cross-referenced experimental repertoires
-      against curated IEDB and VDJdb reference sets to compute total and antigen-specific clonality metrics,
-      reported with Hodges-Lehmann effect sizes, bootstrap confidence intervals, and BH adjustment across
-      metrics.
-  dates: '2022'
-  start_iso: '2022'
+    text: Standardized V/J/CDR3 nomenclature to IMGT format and matched repertoires against curated IEDB
+      and VDJdb reference clonotypes; no metric differed between groups, reported with Hodges-Lehmann
+      effect sizes and BH adjustment as an informative null.
 - id: proj_fiberphot
   name: Fiber Photometry Web App
   slug: fiberphot_proj
@@ -548,13 +300,8 @@ projects:
   url: https://naraen.net/portfolio/fiberphot_proj/
   bullets:
   - id: fp_1
-    tags:
-    - tooling
-    - rse
-    - rshiny
-    - publication
     text: R Shiny application for fiber photometry data processing and figure generation at the Sweeney
-      Lab. Its outputs were used in a Journal of Neuroscience paper.
+      Lab, credited in a Journal of Neuroscience paper (2023) and still live online.
 - id: proj_meta_yt
   name: R Meta-Analysis Walkthrough
   slug: metayt_proj
@@ -563,10 +310,6 @@ projects:
   url: https://naraen.net/portfolio/metayt_proj/
   bullets:
   - id: myt_1
-    tags:
-    - teaching
-    - documentation
-    - reproducibility
     text: Seven-part video walkthrough of an end-to-end meta-analysis in R, produced as a lab onboarding
       resource.
 - id: proj_pid
@@ -580,12 +323,9 @@ projects:
   team: group project
   bullets:
   - id: pid_1
-    tags:
-    - controls
-    - medical-device
-    - robotics
-    text: Designed and tuned a PID controller for patient-specific anaesthetic dosing under variable drug
-      sensitivity, achieving top cohort performance in steady-state error and 10% settling time.
+    text: Course group project (BIOE 420) designing and tuning a PID controller for patient-specific anaesthetic
+      dosing under variable drug sensitivity, with top cohort performance on steady-state error and 10%
+      settling time.
   dates: '2023'
   start_iso: '2023'
 - id: proj_emgsax
@@ -600,13 +340,9 @@ projects:
   team: group project
   bullets:
   - id: emg_1
-    tags:
-    - hardware
-    - embedded
-    - biosignals
-    text: Built a surface-EMG analog front end with instrumentation amplifier, bandpass filtering, and
-      rectification, paired with an Arduino driving servo motors over saxophone keys. Exhibited at the
-      2023 Engineering Open House as an assistive prosthetic concept.
+    text: Designed the surface-EMG analog front end (instrumentation amplifier, bandpass filtering, rectification)
+      for an Arduino system driving servo motors over saxophone keys, exhibited at the 2023 Engineering
+      Open House as an assistive prosthetic concept.
   dates: '2023'
   start_iso: '2023'
 publications:
@@ -622,12 +358,12 @@ publications:
   journal: Frontiers in Immunology
   doi: 10.3389/fimmu.2025.1576903
   published: 2025-10-02
-  contribution: Bioinformatically isolated and modeled CD4 T-cell populations using custom data extraction
-    scripts to analyze TCR repertoires.
+  contribution: Analyzed the CD4 T cell arm (Supplemental Figure 3) of this bulk TCR-beta repertoire study,
+    building a CD4-specific reference set from public data with a pre-pandemic exclusion filter and comparing
+    clonality and antigen specificity across four clinical groups.
   tags:
   - immunology
   - repertoire
-  - single-cell
   published_display: Oct 2025
   published_iso: '2025-10-02'
 - id: pub_jneuro
@@ -642,11 +378,10 @@ publications:
   pmid: '37591737'
   pmcid: PMC10490510
   published: 2023-09-06
-  contribution: Developed an interactive R Shiny application for fiber photometry data processing and
-    visualization used in the publication.
+  contribution: Built the R Shiny fiber photometry analysis application used to process the paper's photometry
+    recordings, and analyzed data.
   tags:
   - neuroscience
-  - single-cell
   - tooling
   published_display: Sep 2023
   published_iso: '2023-09-06'
@@ -661,6 +396,8 @@ certifications:
   expires_display: Dec 2027
 - id: cert_ibm
   name: IBM Data Science Professional Certificate
+- id: cert_emt
+  name: Illinois EMT-B license
 honors:
 - id: hon_nmf
   text: National Merit Scholarship Finalist (Feb 2019)
@@ -668,153 +405,68 @@ honors:
   text: National AP Scholar (May 2019)
 - id: hon_usabo
   text: USA Biology Olympiad Semifinalist (Apr 2018)
-summary: Bioinformatics engineer with 3+ years of research and engineering experience spanning wet-lab
-  sample processing, single-cell and repertoire analysis, and cloud-native pipeline engineering. Two peer-reviewed
-  co-authorships, and a record of building tools researchers actually use.
+summary: Bioengineer (B.S. and M.Eng., University of Illinois) with two years of full-time research experience
+  at the bench and at the computer. At the Uniformed Services University I processed human specimens, isolated
+  and cultured PBMCs, ran high-parameter spectral flow cytometry, and analyzed the CD4 T cell arm of a published
+  COVID-19 immunology study. Since July 2025 I have worked as an independent researcher,
+  reanalyzing published datasets and building tools that make sequencing analyses reproducible. I keep
+  careful records, report results plainly (including null results), and am a co-author on two peer-reviewed
+  papers.
 skills:
+- key: lab
+  label: Laboratory
+  items:
+  - human specimen processing (blood, nasopharyngeal)
+  - PBMC isolation (Ficoll density gradient) and culture
+  - RNA and DNA extraction
+  - immunostaining of cells for flow cytometry
+  - spectral flow cytometry (Cytek Aurora, FlowJo)
+  - cryosectioning of mouse brain samples
+  - mouse handling and colony upkeep
+- key: omics
+  label: Genomics &amp; omics analysis
+  items:
+  - single-cell RNA-seq (Cell Ranger, Seurat, Scanpy, Harmony, SingleR)
+  - bulk RNA-seq differential expression
+  - TCR repertoire analysis (immunoSEQ, IMGT, IEDB/VDJdb)
+  - germline variant calling (BWA-MEM2, GATK HaplotypeCaller, DeepVariant, SnpEff)
+  - proteomics (MSFragger, Percolator, MaxLFQ)
+  - metabolomics (OpenMS)
 - key: languages
   label: Languages
   items:
-  - Python
-  - R
-  - SQL
+  - Python (pandas, NumPy, SciPy, statsmodels, Scanpy, FastAPI)
+  - R (tidyverse, Seurat, edgeR/limma, Shiny, ggplot2)
   - Bash
-  - MATLAB
-  - JavaScript
-  - TypeScript
-  - HTML/CSS
-- key: frameworks
-  label: Frameworks
-  items:
-  - FastAPI
-  - React
-  - R Shiny
-  - Jekyll
+  - SQL (BigQuery)
+  - TypeScript/React
+  - PyTorch (foundations, in progress)
 - key: workflow
-  label: Workflow &amp; reproducibility
+  label: Pipelines &amp; infrastructure
   items:
-  - Nextflow (DSL2)
+  - Nextflow DSL2
   - Docker
-  - Git
-  - containerization
-  - CI
-  - conda
+  - conda/mamba
+  - Git and GitHub Actions CI
   - pytest
-  - reproducible pipelines
-- key: cloud
-  label: Cloud &amp; infrastructure
-  items:
-  - Google Cloud Platform
-  - Cloud Run
-  - Vertex AI
-  - IAM
-  - cloud-native architecture
-  - data engineering
-- key: genomics
-  label: Genomics &amp; sequencing
-  items:
-  - genomics
-  - transcriptomics
-  - proteomics
-  - metabolomics
-  - 10x Genomics
-  - variant calling
-  - bulk RNA-seq
-  - differential expression
-  - GIAB/HG002 benchmarking
-  - GATK4
-  - HaplotypeCaller
-  - joint genotyping
-  - BWA-MEM
-  - HISAT2
-  - samtools
-  - bcftools
-  - featureCounts
-  - fastp
-  - seqtk
-  - FASTQ/BAM/VCF
-  - pydeseq2
-  - DESeq2
-  - GO over-representation analysis
-  - spatial transcriptomics (computational)
-  - 10x Visium
-  - cell-type deconvolution
-- key: singlecell
-  label: Single-cell &amp; spatial
-  items:
-  - Seurat
-  - Scanpy
-  - Cell Ranger
-  - tcrdist3
-  - UMAP
-  - clustering
-  - pseudotime
-  - trajectory inference
-  - anchor-based integration
-  - reference-guided annotation
-  - AnnData
-  - Squidpy
-- key: ml
-  label: ML &amp; AI
-  items:
-  - PyTorch
-  - machine learning
-  - LLM/RAG architecture
-  - dimensionality reduction
+  - Quarto
+  - Google Cloud (Batch, Cloud Run, Cloud Storage, Firestore, Vertex AI, IAM)
 - key: stats
-  label: Statistics &amp; analysis
+  label: Statistics
   items:
-  - meta-analysis
-  - survival analysis
-  - statistical validation
-  - SciPy
-  - pandas
-  - NumPy
-  - scikit-learn
-  - negative-binomial modeling
-  - hypergeometric enrichment
+  - sample-level and pseudobulk inference
+  - permutation and rank-based tests
   - multiple-testing correction
-  - permutation testing
-  - non-negative least squares
-  - spatial autocorrelation (Moran's I)
-- key: wetlab
-  label: Laboratory
+  - survival analysis (Cox, Kaplan-Meier)
+  - meta-analysis (metafor)
+  - retrieval-augmented LLM tooling with schema-constrained outputs
+- key: clinical
+  label: Clinical
   items:
-  - spectral flow cytometry (Cytek Aurora)
-  - FlowJo
-  - flow panel design
-  - compensation
-  - gating strategy
-  - PCR
-  - qPCR
-  - mammalian cell culture
-  - aseptic technique
-  - immunostaining
-  - immunohistochemistry
-  - fluorescence microscopy
-  - tissue sectioning and slide mounting
-  - PBMC and biospecimen processing
-  - nasopharyngeal and blood specimen handling
-  - 10x Genomics library prep support
-  - biosafety and specimen chain-of-custody
-  - laboratory documentation
-- key: clinical_research
-  label: Clinical research
-  items:
-  - Epic EMR
-  - clinical data capture
-  - patient-facing workflows
-  - IRB-context human-subjects research
-  - longitudinal cohort study support
-  - participant biosample and metadata handling
-  - HIPAA-context data handling
   - EKG
   - phlebotomy
   - urinalysis
-- key: domain
-  label: Domain
-  items:
-  - immune repertoire analysis
-  - computational immunology
-  - reproducible research
-  - regulatory and safety awareness
+  - triage
+  - Epic EMR
+  - REDCap
+  - Illinois EMT-B

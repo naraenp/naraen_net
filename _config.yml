@@ -23,7 +23,7 @@ author:
   name: Naraen Palanikumar
 # Email not exposed on site; contact form uses Formspree (set formspree_form_id below).
 description: >- # this means to ignore newlines until "baseurl:"
-  Naraen Palanikumar. Bioinformatics engineer and cloud architect; founding engineer at Phalaena Automata.
+  Naraen Palanikumar. Independent bioinformatics researcher working on immunology, single-cell and multi-omics data, and reproducible research.
 image: /assets/images/og-image.png
 formspree_form_id: "xdawzyez" # e.g. "xyzabcde". Create a form at formspree.io and paste the form ID here.
 

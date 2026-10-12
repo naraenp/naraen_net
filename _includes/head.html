@@ -49,7 +49,6 @@
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/profile.webp",
     "jobTitle": {{ current_job.title | jsonify }},
     "description": {{ cv.summary | jsonify }},
-    "worksFor": { "@type": "Organization", "name": {{ current_job.org | jsonify }}, "url": "https://phalaena.ai" },
     "alumniOf": [
       {%- for school in schools -%}
       { "@type": "CollegeOrUniversity", "name": {{ school | jsonify }} }{% unless forloop.last %},{% endunless %}

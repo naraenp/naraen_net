@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Portfolio
-description: "Bioinformatics and engineering projects by Naraen Palanikumar: Nextflow pipelines, single-cell and spatial analyses, and research tooling."
+description: "Bioinformatics and engineering projects by Naraen Palanikumar: Nextflow pipelines, single-cell and repertoire analyses, and research tooling."
 permalink: /portfolio/
 ---
 

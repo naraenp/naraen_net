@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CV
-description: "Curriculum vitae of Naraen Palanikumar: bioinformatics engineer and cloud architect. Experience, peer-reviewed publications, projects, and skills."
+description: "Curriculum vitae of Naraen Palanikumar: independent bioinformatics researcher. Experience, peer-reviewed publications, projects, and skills."
 permalink: /cv/
 ---
 
@@ -12,7 +12,7 @@ permalink: /cv/
   <header class="title-container">
     <div class="name-and-links">
       <h1 class="cv-name">{{ cv.identity.name }}</h1>
-      <p class="pa-eyebrow">Bioinformatics engineer · Cloud architect · {{ cv.identity.location }}</p>
+      <p class="pa-eyebrow">Bioinformatics researcher · {{ cv.identity.location }}</p>
       <p class="social-links">
         <a href="{{ '/contact/' | relative_url }}"><img src="{{ '/assets/icons/mail.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> Contact</a>
         <a href="{{ cv.identity.linkedin }}" rel="me noopener"><img src="{{ '/assets/icons/linkedin.svg' | relative_url }}" alt="" width="20" height="20" loading="lazy"> LinkedIn</a>
@@ -56,7 +56,7 @@ permalink: /cv/
         </div>
         <div class="cv-entry__sub">
           <span class="cv-entry__role">{{ job.title }}</span>
-          <span class="cv-entry__loc">{{ job.location }}</span>
+          <span class="cv-entry__loc">{{ job.location }}{% if job.employer_of_record %} · employer of record: {{ job.employer_of_record }}{% endif %}</span>
         </div>
         {%- if job.bullets.size > 0 %}
         <ul>
@@ -154,27 +154,6 @@ permalink: /cv/
       </ul>
     </section>
 
-    {%- comment -%}
-      Standardized exam scores are deliberately hardcoded. The numbers exist
-      nowhere in content.yml (its `exam_scores` key holds only a suppression
-      policy, and is private), so there is nothing to render them from.
-    {%- endcomment -%}
-    <section class="cv-section" aria-labelledby="cv-exams">
-      <h2 class="cv-section__title" id="cv-exams">Standardized exam scores</h2>
-      <div class="table-scroll">
-        <table>
-          <caption class="visually-hidden">Standardized exam scores with percentile and date taken</caption>
-          <thead>
-            <tr><th scope="col">Exam</th><th scope="col">Score</th><th scope="col">Percentile</th><th scope="col">Date</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">MCAT</th><td>521 / 528</td><td>98th</td><td>Jan 2024</td></tr>
-            <tr><th scope="row">ACT</th><td>35 / 36</td><td>99th</td><td>Jul 2018</td></tr>
-            <tr><th scope="row">SAT</th><td>1550 / 1600</td><td>99th</td><td>Apr 2018</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
   </div>
 </article>

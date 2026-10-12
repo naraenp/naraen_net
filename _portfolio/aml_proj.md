@@ -36,7 +36,7 @@ Source data drawn from [Isobe et al., *Cell Genomics* (2023)](https://doi.org/10
           loading="lazy"
           style="height: 800px;">
   </iframe>
-  <figcaption>The deployed R Shiny dashboard for the revised analysis. Tabs cover per-sample QC, a UMAP of the integrated HSPC atlas colored by cell type, condition, model, or pseudotime, propeller composition tests, a pseudobulk edgeR volcano per cell type, and TCGA-LAML Kaplan–Meier curves with the age-adjusted Cox results. The app opens in its own window at <a href="https://naraenp2.shinyapps.io/dashboard/">naraenp2.shinyapps.io/dashboard</a>.</figcaption>
+  <figcaption>The deployed R Shiny dashboard for the revised analysis. Tabs cover per-sample QC, a UMAP of the integrated HSPC atlas colored by cell type, condition, model, or pseudotime, propeller composition tests, a pseudobulk edgeR volcano per cell type, and TCGA-LAML Kaplan-Meier curves with the age-adjusted Cox results. The app opens in its own window at <a href="https://naraenp2.shinyapps.io/dashboard/">naraenp2.shinyapps.io/dashboard</a>.</figcaption>
 </figure>
 
 ### Bulk RNA-seq differential expression (Nextflow)

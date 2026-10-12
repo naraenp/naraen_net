@@ -11,10 +11,10 @@ layout: default
     <img src="{{ '/assets/images/profile.webp' | relative_url }}" alt="Portrait of {{ cv.identity.name }}" width="160" height="160" loading="eager" fetchpriority="high" decoding="async">
   </div>
   <div class="hero__text">
-    <p class="hero__eyebrow">{{ current_job.title }}, <a href="https://phalaena.ai" rel="noopener">{{ current_job.org }}</a></p>
+    <p class="hero__eyebrow">{{ current_job.title }} · {{ cv.identity.location }}</p>
     <h1 class="hero__title">{{ cv.identity.name }}</h1>
-    <p class="hero__tagline">{{ cv.summary }}</p>
-    <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong><a href="{{ now_project.url }}" rel="noopener">{{ now_project.short_name }}</a></strong> at {{ current_job.org }}. {{ primary_cert.name }}.</p>
+    <p class="hero__tagline">{{ cv.headline | default: cv.summary }}</p>
+    <p class="hero__now"><span class="hero__now-label">Now</span> Building <strong><a href="{{ now_project.url }}" rel="noopener">{{ now_project.short_name }}</a></strong>, a multi-omics analysis platform, under <a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a>. {{ primary_cert.name }}.</p>
     {%- assign current_book = site.data.reading | where: "status", "reading" | first -%}
     {%- if current_book -%}
     <p class="hero__now"><span class="hero__now-label">Reading</span> <em>{{ current_book.title }}</em> by {{ current_book.author }}. <a href="{{ '/reading/' | relative_url }}">More on the shelf</a>.</p>
@@ -31,8 +31,8 @@ layout: default
       Everything factual in it (roles, venues, links) comes from the data below
       or is linked to the page that documents it.
     {%- endcomment -%}
-    <p>{{ current_job.title }} at <strong><a href="https://phalaena.ai" rel="noopener">{{ current_job.org }}</a></strong>, leading development of <strong><a href="{{ now_project.url }}" rel="noopener">Bench</a></strong>, an omics platform. It ingests sequencing data through a central API and runs containerized Nextflow workflows on Google Cloud. A tool-augmented RAG loop over Vertex AI cross-references the results against PubMed and public catalogs.</p>
-    <p>Prior work spans <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">CD4 T-cell repertoire analysis</a> at <strong>USUHS</strong>, single-cell sequencing and an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive R Shiny tool</a> at the <strong>Sweeney Lab</strong> at UIUC, and clinical and emergency-response roles. Peer-reviewed contributions cover
+    <p>Since July 2025 I have worked as an independent bioinformatics researcher. I reanalyze published datasets with the sample, not the cell, as the unit of inference (a <a href="{{ '/portfolio/aml_proj/' | relative_url }}">230,000-cell preleukemia reanalysis</a> and a <a href="{{ '/portfolio/tcrclonal_proj/' | relative_url }}">140-donor tuberculosis TCR study</a>), report what holds up, null results included, and build tools that make sequencing analyses reproducible. The largest is <strong><a href="{{ now_project.url }}" rel="noopener">Bench</a></strong>, seven Nextflow pipelines for genomics, transcriptomics, proteomics and metabolomics data on Google Cloud, which I formed <a href="https://phalaena.ai" rel="noopener">Phalaena Automata</a> in March 2026 to host. Its results assistant answers only from each run's recorded results.</p>
+    <p>Before that I was a research assistant at the <strong>Uniformed Services University</strong>, where I processed human specimens (PBMC isolation and culture, RNA and DNA extraction), immunostained cells and ran spectral flow cytometry, and analyzed the CD4 T cell arm of a published TCR repertoire study. Earlier, at the <strong>Sweeney Lab</strong> at UIUC, I built an <a href="{{ '/portfolio/fiberphot_proj/' | relative_url }}">interactive R Shiny tool</a>, analyzed single-cell data, cryosectioned mouse brain samples and handled mice for colony upkeep, and worked clinical and emergency-response roles. Peer-reviewed contributions cover
       {%- for pub in cv.publications %} {{ pub.short_title }} (<a href="https://doi.org/{{ pub.doi }}" rel="noopener"><em>{{ pub.journal }}</em></a>){% unless forloop.last %} and{% else %}.{% endunless %}{% endfor %}</p>
     <p>Browse the <a href="{{ '/portfolio/' | relative_url }}">portfolio</a>, read the <a href="{{ '/cv/' | relative_url }}">CV</a>, check out my <a href="{{ '/gallery/' | relative_url }}">gallery</a>, or <a href="{{ '/contact/' | relative_url }}">get in touch</a> to collaborate.</p>
     <div class="social-links">
@@ -51,7 +51,7 @@ layout: default
     {%- assign page_match = site.portfolio | where: "slug", project.slug | first -%}
     {%- if page_match -%}{%- assign href = page_match.url | relative_url -%}{%- else -%}{%- assign href = project.url -%}{%- endif -%}
     <a class="project-card" href="{{ href }}"{% unless page_match %} rel="noopener"{% endunless %}>
-      <p class="project-card__eyebrow">{% if page_match %}Bioinformatics portfolio{% else %}{{ current_job.org }}{% endif %}</p>
+      <p class="project-card__eyebrow">{% if page_match %}Bioinformatics portfolio{% else %}Phalaena Automata{% endif %}</p>
       <h3 class="project-card__title">{% if page_match %}{{ page_match.title }}{% else %}{{ project.short_name | default: project.name }}{% endif %}</h3>
       <p class="project-card__stack">{{ project.stack | join: " · " }}</p>
       <p class="project-card__desc">{% if page_match %}{{ page_match.description }}{% else %}{{ project.bullets | map: "text" | join: " " }}{% endif %}</p>
