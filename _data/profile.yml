@@ -455,8 +455,8 @@ summary: Bioengineer (B.S. and M.Eng., University of Illinois) with two years of
   and cultured PBMCs, ran high-parameter spectral flow cytometry, and analyzed the CD4 T cell arm of a published
   COVID-19 immunology study. Since July 2025 I have worked as an independent researcher,
   reanalyzing published datasets and building tools that make sequencing analyses reproducible. I keep
-  careful records and report results plainly, including null results and the failures I found in my own
-  platform. I am the sole author of a preprint and a co-author on two peer-reviewed papers.
+  careful records, report results plainly (including null results and failures in my own platform), and am
+  the sole author of a preprint and a co-author on two peer-reviewed papers.
 skills:
 - key: lab
   label: Laboratory
