@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CV
-description: "Curriculum vitae of Naraen Palanikumar: independent bioinformatics researcher. Experience, peer-reviewed publications, projects, and skills."
+description: "Curriculum vitae of Naraen Palanikumar: independent bioinformatics researcher. Experience, preprint, peer-reviewed publications, projects, and skills."
 permalink: /cv/
 ---
 
@@ -98,6 +98,32 @@ permalink: /cv/
       </div>
       {%- endfor %}
     </section>
+
+    {%- if cv.preprints.size > 0 %}
+    <section class="cv-section" aria-labelledby="cv-preprints">
+      <h2 class="cv-section__title" id="cv-preprints">Preprints</h2>
+      <ol class="cv-pub-list">
+        {%- for pre in cv.preprints %}
+        <li class="cv-pub">
+          <p class="cv-pub__title">
+            <a href="https://doi.org/{{ pre.doi }}" rel="noopener">{{ pre.title }}</a>
+          </p>
+          <p class="cv-pub__citation">{{ pre.citation }}</p>
+          <p class="cv-pub__links">
+            <a href="https://doi.org/{{ pre.doi }}" rel="noopener">{{ pre.server }}, {{ pre.posted_display }}</a>
+            {%- if pre.status %}<span class="cv-pub__sep" aria-hidden="true">·</span>
+            {{ pre.status }}{% endif -%}
+            {%- if pre.archive_doi %}<span class="cv-pub__sep" aria-hidden="true">·</span>
+            <a href="https://doi.org/{{ pre.archive_doi }}" rel="noopener">Code and data (Zenodo)</a>{% endif -%}
+          </p>
+          {%- if pre.contribution %}
+          <p class="cv-pub__contribution"><span class="cv-pub__label">Contribution</span> {{ pre.contribution }}</p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
 
     <section class="cv-section" aria-labelledby="cv-publications">
       <h2 class="cv-section__title" id="cv-publications">Peer-reviewed publications</h2>

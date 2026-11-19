@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Silent-failures audit thumbnail: 42 validation runs that all reported success, 14 of them marked as confirmed silent failures">
+  <defs>
+    <style>
+      .bg { fill: #18150C; }
+      .grid-line { stroke: #35281A; stroke-width: 1; }
+      .node { fill: none; stroke: #52412E; stroke-width: 1; }
+      .node-accent { fill: none; stroke: #D68B5B; stroke-width: 1.5; }
+      .fill-dim { fill: #A26C3D; }
+      .wire { stroke: #52412E; stroke-width: 1; fill: none; }
+      .wire-accent { stroke: #D68B5B; stroke-width: 1.5; fill: none; }
+      .node-label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; fill: #89735C; letter-spacing: 0.04em; }
+      .big { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 40px; fill: #D68B5B; letter-spacing: 0.02em; }
+      .label { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; fill: #D68B5B; letter-spacing: 0.04em; }
+      .label-dim { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; fill: #89735C; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="640" height="360"/>
+
+  <g class="grid-line">
+    <line x1="0" y1="62"  x2="640" y2="62"/>
+    <line x1="0" y1="310" x2="640" y2="310"/>
+  </g>
+
+  <!-- 42 validation runs; outlined, crossed cells are the 14 confirmed silent failures -->
+  <g>
+    <rect x="40" y="84" width="34" height="26" rx="2" class="fill-dim"/><rect x="82" y="84" width="34" height="26" rx="2" class="fill-dim"/><rect x="124" y="84" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 135 91 L 147 103 M 147 91 L 135 103"/><rect x="166" y="84" width="34" height="26" rx="2" class="fill-dim"/><rect x="208" y="84" width="34" height="26" rx="2" class="fill-dim"/><rect x="250" y="84" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 261 91 L 273 103 M 273 91 L 261 103"/><rect x="292" y="84" width="34" height="26" rx="2" class="fill-dim"/><rect x="40" y="120" width="34" height="26" rx="2" class="fill-dim"/><rect x="82" y="120" width="34" height="26" rx="2" class="fill-dim"/><rect x="124" y="120" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 135 127 L 147 139 M 147 127 L 135 139"/><rect x="166" y="120" width="34" height="26" rx="2" class="fill-dim"/><rect x="208" y="120" width="34" height="26" rx="2" class="fill-dim"/><rect x="250" y="120" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 261 127 L 273 139 M 273 127 L 261 139"/><rect x="292" y="120" width="34" height="26" rx="2" class="fill-dim"/><rect x="40" y="156" width="34" height="26" rx="2" class="fill-dim"/><rect x="82" y="156" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 93 163 L 105 175 M 105 163 L 93 175"/><rect x="124" y="156" width="34" height="26" rx="2" class="fill-dim"/><rect x="166" y="156" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 177 163 L 189 175 M 189 163 L 177 175"/><rect x="208" y="156" width="34" height="26" rx="2" class="fill-dim"/><rect x="250" y="156" width="34" height="26" rx="2" class="fill-dim"/><rect x="292" y="156" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 303 163 L 315 175 M 315 163 L 303 175"/><rect x="40" y="192" width="34" height="26" rx="2" class="fill-dim"/><rect x="82" y="192" width="34" height="26" rx="2" class="fill-dim"/><rect x="124" y="192" width="34" height="26" rx="2" class="fill-dim"/><rect x="166" y="192" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 177 199 L 189 211 M 189 199 L 177 211"/><rect x="208" y="192" width="34" height="26" rx="2" class="fill-dim"/><rect x="250" y="192" width="34" height="26" rx="2" class="fill-dim"/><rect x="292" y="192" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 303 199 L 315 211 M 315 199 L 303 211"/><rect x="40" y="228" width="34" height="26" rx="2" class="fill-dim"/><rect x="82" y="228" width="34" height="26" rx="2" class="fill-dim"/><rect x="124" y="228" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 135 235 L 147 247 M 147 235 L 135 247"/><rect x="166" y="228" width="34" height="26" rx="2" class="fill-dim"/><rect x="208" y="228" width="34" height="26" rx="2" class="fill-dim"/><rect x="250" y="228" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 261 235 L 273 247 M 273 235 L 261 247"/><rect x="292" y="228" width="34" height="26" rx="2" class="fill-dim"/><rect x="40" y="264" width="34" height="26" rx="2" class="fill-dim"/><rect x="82" y="264" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 93 271 L 105 283 M 105 271 L 93 283"/><rect x="124" y="264" width="34" height="26" rx="2" class="fill-dim"/><rect x="166" y="264" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 177 271 L 189 283 M 189 271 L 177 283"/><rect x="208" y="264" width="34" height="26" rx="2" class="fill-dim"/><rect x="250" y="264" width="34" height="26" rx="2" class="fill-dim"/><rect x="292" y="264" width="34" height="26" rx="2" class="node-accent"/><path class="wire-accent" d="M 303 271 L 315 283 M 315 271 L 303 283"/>
+  </g>
+  <text class="node-label" x="40" y="304">42 runs · status: success</text>
+
+  <!-- the audit's count -->
+  <path class="wire" d="M 360 100 L 360 290"/>
+  <text class="big" x="392" y="168">14 / 42</text>
+  <text class="node-label" x="394" y="192">confirmed silent failures</text>
+  <rect x="394" y="222" width="176" height="30" rx="3" class="node"/>
+  <text class="node-label" x="406" y="241">status: success ≠ right</text>
+
+  <!-- external-link glyph, top right -->
+  <g>
+    <rect x="556" y="18" width="30" height="30" rx="3" class="node"/>
+    <path class="wire-accent" d="M 566 38 L 584 20"/>
+    <path class="wire-accent" d="M 574 20 L 584 20 L 584 30"/>
+  </g>
+
+  <text class="label" x="40" y="38">preprint · silent-failures audit</text>
+  <text class="label-dim" x="40" y="340">preprints.org · nov 2026 · not peer reviewed</text>
+</svg>

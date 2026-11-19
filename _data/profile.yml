@@ -13,6 +13,11 @@
 # available there) to match Palanikumar_Resume_Master and the career master
 # record. Copy these changes into content.yml before the next publish.sh run,
 # or the build will overwrite them.
+#
+# NOTE 2026-11-19: edited by hand again (content.yml still not on this machine)
+# to add the Preprints.org preprint (preprints, proj_preprint), align Bench with
+# phalaena.ai's maintenance mode and the audit, and mark EMT-B inactive. Copy
+# these into content.yml too.
 
 identity:
   name: Naraen Palanikumar
@@ -73,12 +78,13 @@ experience:
       progress to disease, using matched permutation tests and public reference sequences, and reported
       the null result plainly.
   - id: res_3
-    text: Built Bench, a cloud platform of seven analysis pipelines for sequencing and mass spectrometry
-      data, as its sole developer, and ran 42 published datasets through it end to end (42 of 42 completed).
+    text: Built Bench, a cloud platform of seven Nextflow pipelines for sequencing and mass spectrometry
+      data, as its sole developer, and ran 42 published datasets through it as its validation.
   - id: res_4
-    text: Built a research assistant that answers questions about each analysis only from its recorded
-      results; it passed 66 of 69 graded questions (95.7 percent) and declines questions the data cannot
-      answer.
+    text: Audited those 42 validation runs; all reported success, and 14 had a confirmed silent failure
+      (for example, non-human RNA-seq quantified against a human index) that the validation's grading
+      missed. Traced each to its code and reported it in a sole-author preprint (Preprints.org, Nov 2026,
+      not peer reviewed).
   dates: Jul 2025 - Present
   start_iso: 2025-07
 - id: exp_usu
@@ -212,17 +218,39 @@ projects:
   - Google Cloud Batch
   - Cloud Run
   - Vertex AI
-  url: https://bench.phalaena.ai
+  url: https://phalaena.ai
   start: 2026-03
   end: present
   bullets:
   - id: bench_1
-    text: Multi-omics analysis platform built as sole developer, in closed beta. Seven Nextflow pipelines
-      for genomics, transcriptomics, proteomics and metabolomics run on Google Cloud Batch behind a FastAPI
-      service on Cloud Run; 42 of 42 published datasets ran end to end.
+    text: Multi-omics analysis platform built as sole developer. Seven Nextflow pipelines for genomics,
+      transcriptomics, proteomics and metabolomics run on Google Cloud Batch behind a FastAPI service on
+      Cloud Run, with a results assistant (Vertex AI) that answers from each run's recorded summary. Now
+      in maintenance mode and not taking new users.
   - id: bench_2
-    text: A results assistant (Vertex AI) answers only from each run's recorded summary; 66 of 69 graded
-      questions passed (95.7 percent).
+    text: An audit of its 42 validation runs, posted as a preprint, found a confirmed silent failure in
+      14.
+- id: proj_preprint
+  featured: true
+  name: Silent-failures audit (preprint)
+  short_name: Silent-failures audit
+  eyebrow: Preprint
+  thumbnail: /assets/images/portfolio/silent_failures.svg
+  stack:
+  - Python
+  - pytest
+  - JSON Schema
+  - LaTeX
+  url: https://doi.org/10.20944/preprints202611.0178.v1
+  repo: https://github.com/naraenp/silent-failures-preprint
+  bullets:
+  - id: pre_1
+    text: 'Sole-author audit of Bench''s 42 validation runs: every run reported success, and 14 had a confirmed
+      silent failure in five classes traced to specific code. The checks written afterward catch the targeted
+      failures but were tested on only nine clean runs.'
+  - id: pre_2
+    text: The audit code, run registry and results are released as an open archive (Zenodo, doi:10.5281/zenodo.23717230).
+  dates: Nov 2026
   dates: Mar 2026 - Present
   start_iso: 2026-03
 - id: proj_aml_sc
@@ -345,6 +373,23 @@ projects:
       Open House as an assistive prosthetic concept.
   dates: '2023'
   start_iso: '2023'
+preprints:
+- id: pre_silent
+  title: 'Runs That Succeed and Are Wrong: An Audit of Silent Failures in a Multi-Omics Platform''s Validation
+    Runs'
+  short_title: Runs that succeed and are wrong
+  citation: 'Palanikumar N. Runs That Succeed and Are Wrong: An Audit of Silent Failures in a Multi-Omics
+    Platform''s Validation Runs. Preprints. 2026. doi:10.20944/preprints202611.0178.v1'
+  server: Preprints.org
+  doi: 10.20944/preprints202611.0178.v1
+  status: Version 1, not peer reviewed
+  archive_doi: 10.5281/zenodo.23717230
+  repo: https://github.com/naraenp/silent-failures-preprint
+  posted_display: Nov 2026
+  posted_iso: '2026-11-03'
+  contribution: Sole author. Audited the 42 validation runs of Bench, the platform I built. Every run reported
+    success; 14 had a confirmed silent failure, and the validation's model-based grading did not catch them
+    because its expected answers came from the same summaries it graded.
 publications:
 - id: pub_fimmu
   citation: Parsons E, Lu Z, Richard SA, Zelkoski A, Le J, Palanikumar N, Nguyen P, Alba C, Sukumar G,
@@ -397,7 +442,7 @@ certifications:
 - id: cert_ibm
   name: IBM Data Science Professional Certificate
 - id: cert_emt
-  name: Illinois EMT-B license
+  name: Illinois EMT-B (inactive)
 honors:
 - id: hon_nmf
   text: National Merit Scholarship Finalist (Feb 2019)
@@ -410,8 +455,8 @@ summary: Bioengineer (B.S. and M.Eng., University of Illinois) with two years of
   and cultured PBMCs, ran high-parameter spectral flow cytometry, and analyzed the CD4 T cell arm of a published
   COVID-19 immunology study. Since July 2025 I have worked as an independent researcher,
   reanalyzing published datasets and building tools that make sequencing analyses reproducible. I keep
-  careful records, report results plainly (including null results), and am a co-author on two peer-reviewed
-  papers.
+  careful records and report results plainly, including null results and the failures I found in my own
+  platform. I am the sole author of a preprint and a co-author on two peer-reviewed papers.
 skills:
 - key: lab
   label: Laboratory
@@ -469,4 +514,4 @@ skills:
   - triage
   - Epic EMR
   - REDCap
-  - Illinois EMT-B
+  - Illinois EMT-B (inactive)
